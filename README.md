@@ -9,3 +9,7 @@ Businessplan für AVplus e.U.
 
 ## Status
 In Planung
+
+## Kontakt
+- Unternehmen: AVplus e.U.
+- E-Mail: ab84620@gmail.com
