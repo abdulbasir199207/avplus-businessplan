@@ -146,11 +146,12 @@
 
 <footer>
   <span>© 2025 AVplus e.U. · Wien</span>
-  <span><a href="index.html">Startseite</a> · <a href="index.html#kontakt">Kontakt</a></span>
+  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
 </footer>
 <script>
   const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+<script src="cookie-consent.js"></script>
 </body>
 </html>

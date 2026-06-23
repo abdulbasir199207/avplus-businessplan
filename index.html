@@ -406,7 +406,7 @@
     }
 
     .l-card-img {
-      height: 200px;
+      aspect-ratio: 16 / 9;
       position: relative;
       overflow: hidden;
     }
@@ -465,7 +465,8 @@
     .ueber-main-img {
       width: 100%;
       border-radius: 20px;
-      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      background: var(--blue-dark);
+      overflow: hidden;
       height: 420px;
       display: flex;
       align-items: center;
@@ -594,7 +595,7 @@
 
     .kunden-wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
     }
 
@@ -610,8 +611,9 @@
       align-items: center;
       gap: 1rem;
     }
-    .kunden-block:first-child .kunden-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
-    .kunden-block:last-child .kunden-header { background: linear-gradient(135deg, #1a3a1a, var(--green)); }
+    .kunden-block:nth-child(1) .kunden-header { background: linear-gradient(135deg, #2c3e50, #4a6fa5); }
+    .kunden-block:nth-child(2) .kunden-header { background: linear-gradient(135deg, #1a3a1a, var(--green)); }
+    .kunden-block:nth-child(3) .kunden-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
 
     .kunden-header h3 { font-size: 1.2rem; font-weight: 700; }
     .kunden-header span { font-size: 2rem; }
@@ -741,7 +743,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .footer-brand img { height: 36px; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: 0.9; }
+    .footer-brand img { height: 36px; margin-bottom: 1rem; opacity: 0.95; border-radius: 6px; }
     .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
 
     .footer-col h4 { color: var(--white); font-size: 0.92rem; font-weight: 700; margin-bottom: 1rem; }
@@ -927,7 +929,7 @@
 
     <a href="medientechnik.html" class="l-card reveal delay-2">
       <div class="l-card-img">
-        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=700&q=80" alt="Medientechnik" />
+        <img src="bilder/konferenzraum.png" alt="Medientechnik" />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
@@ -1029,8 +1031,7 @@
   <div class="ueber-wrap">
     <div class="ueber-img-wrap reveal-left">
       <div class="ueber-main-img">
-        <div class="bg-dots"></div>
-        <span style="position:relative;z-index:1;">🏢</span>
+        <img src="bilder/konferenzraum.png" alt="AVplus Konferenzraum" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;" />
       </div>
       <div class="ueber-badge">
         <div class="ueber-badge-num">AVplus</div>
@@ -1106,30 +1107,30 @@
 <!-- KUNDEN -->
 <section id="kunden">
   <div class="reveal">
-    <p class="section-label">Wen wir betreuen</p>
-    <h2>Unsere Kunden</h2>
-    <p class="section-intro">Wir sind Partner für Unternehmen und Bildungseinrichtungen in Wien und Österreich.</p>
+    <p class="section-label">Für wen wir da sind</p>
+    <h2>Unsere Zielgruppen</h2>
+    <p class="section-intro">Unsere Leistungen sind speziell auf die Anforderungen von Unternehmen und Bildungseinrichtungen in Wien und Österreich ausgerichtet.</p>
   </div>
 
   <div class="kunden-wrap">
     <div class="kunden-block reveal-left">
       <div class="kunden-header">
-        <span>🏢</span>
+        <span>🏠</span>
         <div>
-          <h3>Business</h3>
-          <p style="font-size:0.82rem;opacity:0.8;margin-top:0.2rem;">Unternehmen & Organisationen</p>
+          <h3>Privat</h3>
+          <p style="font-size:0.82rem;opacity:0.8;margin-top:0.2rem;">Privatpersonen & Haushalte</p>
         </div>
       </div>
       <ul class="kunden-list">
-        <li>Banken & Finanzdienstleister</li>
-        <li>Autohäuser & Showrooms</li>
-        <li>Restaurants & Gastronomie</li>
-        <li>Gesundheitswesen & Kliniken</li>
-        <li>Öffentliche Einrichtungen</li>
-        <li>Events & Leihstellung</li>
+        <li>Eigenheime & Wohnungen</li>
+        <li>Smart-Home & Hausautomation</li>
+        <li>Einbruchschutz & Alarmanlagen</li>
+        <li>Videoüberwachung</li>
+        <li>TV & Sat-Empfang</li>
+        <li>Heimnetzwerk & WLAN</li>
       </ul>
     </div>
-    <div class="kunden-block reveal-right">
+    <div class="kunden-block reveal">
       <div class="kunden-header">
         <span>🎓</span>
         <div>
@@ -1143,6 +1144,23 @@
         <li>Berufsschulen & HTLs</li>
         <li>Fachhochschulen</li>
         <li>Universitäten</li>
+      </ul>
+    </div>
+    <div class="kunden-block reveal-right">
+      <div class="kunden-header">
+        <span>🏢</span>
+        <div>
+          <h3>Wirtschaft & Gewerbe</h3>
+          <p style="font-size:0.82rem;opacity:0.8;margin-top:0.2rem;">Unternehmen & Organisationen</p>
+        </div>
+      </div>
+      <ul class="kunden-list">
+        <li>Banken & Finanzdienstleister</li>
+        <li>Autohäuser & Showrooms</li>
+        <li>Restaurants & Gastronomie</li>
+        <li>Gesundheitswesen & Kliniken</li>
+        <li>Öffentliche Einrichtungen</li>
+        <li>Events & Veranstaltungen</li>
       </ul>
     </div>
   </div>
@@ -1258,7 +1276,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
-    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
   </div>
 </footer>
 
@@ -1314,5 +1332,6 @@
     }, 3000);
   }
 </script>
+<script src="cookie-consent.js"></script>
 </body>
 </html>
