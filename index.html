@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVplus e.U. – Medien- & Sicherheitstechnik Wien</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #2d6ea8;
+      --blue-dark: #1b4f7a;
+      --blue-light: #e8f2fb;
+      --green: #6ab04c;
+      --green-dark: #4e8a36;
+      --white: #ffffff;
+      --gray-light: #f5f7fa;
+      --gray: #6b7280;
+      --text: #1a2332;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      transition: height 0.3s;
+    }
+
+    header.scrolled { height: 60px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+
+    .logo { display:inline-flex; flex-direction:column; align-items:flex-start; text-decoration:none; }
+    .logo img { height: 42px; transition: height 0.3s; }
+    .logo-tagline { font-size:0.72rem; font-weight:600; color:#4a5568; letter-spacing:0.5px; white-space:nowrap; margin-top:3px; }
+    header.scrolled .logo img { height: 34px; }
+
+    nav { display: flex; gap: 0.2rem; align-items: center; }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .nav-link:hover { color: var(--blue); background: var(--blue-light); }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+    .dropdown-arrow { font-size: 0.7rem; margin-left: 3px; }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+      padding: 0.6rem;
+      min-width: 240px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover { background: var(--gray-light); }
+    .dropdown-menu a .di { font-size: 1.1rem; }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(45,110,168,0.3);
+    }
+    .btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(45,110,168,0.4);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      margin-top: 72px;
+      min-height: 520px;
+      background:
+        linear-gradient(135deg, rgba(15,39,68,0.78) 0%, rgba(27,79,122,0.68) 45%, rgba(45,110,168,0.58) 100%),
+        url('bilder/Vorderbild.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 6% 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating logo watermarks */
+    .hero-logo-bg {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      animation: floatLogo var(--dur, 10s) ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+    .hero-logo-bg img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: invert(1);
+      mix-blend-mode: screen;
+      opacity: var(--op, 0.18);
+    }
+
+    .hero-logo-1 { width: 420px; right: -30px;  top: -20px;   --dur:12s; --delay:0s;   --op:0.13; }
+    .hero-logo-2 { width: 260px; right: 300px;  bottom: -20px;--dur:9s;  --delay:1.8s; --op:0.09; }
+    .hero-logo-3 { width: 180px; left: 36%;     top: 12%;     --dur:14s; --delay:3.5s; --op:0.08; }
+    .hero-logo-4 { width: 120px; left: 8%;      bottom: 15%;  --dur:11s; --delay:5s;   --op:0.07; }
+
+    @keyframes floatLogo {
+      0%   { transform: translateY(0px)   rotate(0deg);  }
+      25%  { transform: translateY(-16px) rotate(2deg);  }
+      50%  { transform: translateY(-24px) rotate(-2deg); }
+      75%  { transform: translateY(-10px) rotate(3deg);  }
+      100% { transform: translateY(0px)   rotate(0deg);  }
+    }
+
+    /* Animated grid lines */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(106,176,76,0.2);
+      border: 1px solid rgba(106,176,76,0.5);
+      color: #a8e88a;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fadeDown 0.8s ease forwards;
+    }
+    .hero-badge::before { content: '●'; font-size: 0.6rem; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+    .hero-content h1 span { color: var(--green); }
+    .hero-content h1 em { font-style: normal; color: rgba(255,255,255,0.6); }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .btn-hero {
+      background: var(--green);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 20px rgba(106,176,76,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(106,176,76,0.5); }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+    .hero-stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 0.1rem; }
+
+    /* Hero visual (right side) */
+    .hero-visual {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 420px;
+      animation: fadeLeft 1s ease 0.5s both;
+    }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeLeft { from { opacity:0; transform:translate(40px,-50%); } to { opacity:1; transform:translate(0,-50%); } }
+
+    /* Service cards in hero visual */
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 1.4rem;
+      color: var(--white);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+    .hero-card .hc-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .hero-card .hc-title { font-size: 0.85rem; font-weight: 700; }
+    .hero-card .hc-sub { font-size: 0.75rem; opacity: 0.6; margin-top: 0.2rem; }
+    .hero-card.featured {
+      grid-column: 1 / -1;
+      background: rgba(106,176,76,0.2);
+      border-color: rgba(106,176,76,0.4);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--white);
+      padding: 1.5rem 5%;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--gray);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .trust-item .ti { font-size: 1.2rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 5%; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      color: var(--gray);
+      max-width: 560px;
+      margin-bottom: 3.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ── LEISTUNGEN ── */
+    #leistungen { background: var(--gray-light); }
+
+    .leistungen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .l-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+    .l-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    }
+
+    .l-card-img {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .l-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .l-card:hover .l-card-img img { transform: scale(1.06); }
+
+    .l-card-img .img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.35) 100%);
+    }
+
+    .l-card-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .l-card-body h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .l-card-body p { font-size: 0.88rem; color: var(--gray); flex: 1; line-height: 1.6; }
+
+    .l-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f0f0f0;
+    }
+    .l-card-footer span { font-size: 0.8rem; font-weight: 700; color: var(--blue); }
+    .l-card-arrow {
+      width: 32px; height: 32px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .l-card:hover .l-card-arrow { background: var(--blue); color: var(--white); transform: translateX(3px); }
+
+    /* ── ÜBER UNS ── */
+    #ueber { background: var(--white); }
+
+    .ueber-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .ueber-img-wrap { position: relative; }
+
+    .ueber-main-img {
+      width: 100%;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(45,110,168,0.25);
+    }
+
+    .ueber-main-img .bg-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .ueber-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      box-shadow: 0 8px 32px rgba(106,176,76,0.4);
+    }
+    .ueber-badge-num { font-size: 2rem; font-weight: 800; }
+    .ueber-badge-label { font-size: 0.78rem; opacity: 0.9; }
+
+    .ueber-text .section-label { margin-bottom: 0.4rem; }
+    .ueber-text p { color: var(--gray); margin-bottom: 1rem; font-size: 1rem; }
+
+    .ueber-features { margin: 1.8rem 0; display: flex; flex-direction: column; gap: 1rem; }
+
+    .ueber-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .uf-icon {
+      width: 42px; height: 42px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .uf-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--text); }
+    .uf-text span { font-size: 0.85rem; color: var(--gray); }
+
+    /* ── NUMBERS ── */
+    #zahlen {
+      background: linear-gradient(135deg, #0f2744 0%, #1b4f7a 100%);
+      padding: 5rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    #zahlen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .zahlen-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+
+    .zahl-item { text-align: center; color: var(--white); }
+    .zahl-num {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .zahl-label { font-size: 0.9rem; opacity: 0.75; }
+
+    /* ── PROZESS ── */
+    #prozess { background: var(--gray-light); }
+
+    .prozess-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .prozess-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+    }
+
+    .prozess-step { text-align: center; position: relative; }
+
+    .step-num {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1.2rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(45,110,168,0.2);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .prozess-step:hover .step-num { transform: scale(1.1); border-color: var(--green); }
+
+    .prozess-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .prozess-step p { font-size: 0.85rem; color: var(--gray); }
+
+    /* ── KUNDEN ── */
+    #kunden { background: var(--white); }
+
+    .kunden-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .kunden-block {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .kunden-header {
+      padding: 1.8rem 2rem;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .kunden-block:first-child .kunden-header { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+    .kunden-block:last-child .kunden-header { background: linear-gradient(135deg, #1a3a1a, var(--green)); }
+
+    .kunden-header h3 { font-size: 1.2rem; font-weight: 700; }
+    .kunden-header span { font-size: 2rem; }
+
+    .kunden-list { background: var(--gray-light); }
+    .kunden-list li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 2rem;
+      border-bottom: 1px solid #eee;
+      font-size: 0.93rem;
+      transition: background 0.15s;
+    }
+    .kunden-list li:hover { background: var(--blue-light); }
+    .kunden-list li:last-child { border-bottom: none; }
+    .kunden-list li::before { content: '→'; color: var(--blue); font-weight: 700; }
+
+    /* ── KONTAKT ── */
+    #kontakt { background: var(--gray-light); }
+
+    .kontakt-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .kontakt-info-card {
+      background: linear-gradient(135deg, #0f2744, var(--blue));
+      border-radius: 20px;
+      padding: 2.5rem;
+      color: var(--white);
+    }
+
+    .kontakt-info-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .kontakt-info-card > p { opacity: 0.75; font-size: 0.92rem; margin-bottom: 2rem; }
+
+    .ki-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .ki-icon {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .ki-label { font-size: 0.78rem; opacity: 0.6; margin-bottom: 0.2rem; }
+    .ki-value { font-weight: 600; font-size: 0.95rem; }
+    .ki-value a { color: var(--white); text-decoration: none; }
+    .ki-value a:hover { color: var(--green); }
+
+    .kontakt-form-wrap {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+
+    .kontakt-form-wrap h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .kontakt-form-wrap > p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.8rem; }
+
+    form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 0.93rem;
+      font-family: inherit;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--white);
+    }
+
+    form input:focus, form textarea:focus, form select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(45,110,168,0.12);
+    }
+
+    form textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(45,110,168,0.3);
+    }
+    .form-submit:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45,110,168,0.4);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d1b2a;
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 5% 1.5rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-brand img { height: 36px; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: 0.9; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+
+    .footer-col h4 { color: var(--white); font-size: 0.92rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* ── BACK TO TOP ── */
+    #back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 46px; height: 46px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s, background 0.2s;
+      box-shadow: 0 4px 20px rgba(45,110,168,0.4);
+      z-index: 999;
+      text-decoration: none;
+    }
+    #back-top.show { opacity: 1; pointer-events: all; }
+    #back-top:hover { background: var(--blue-dark); transform: translateY(-3px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-visual { display: none; }
+      .leistungen-grid { grid-template-columns: repeat(2, 1fr); }
+      .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      nav .nav-link:not(.btn):not(:last-child) { display: none; }
+      .ueber-wrap, .kunden-wrap, .kontakt-wrap { grid-template-columns: 1fr; }
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .prozess-steps { grid-template-columns: 1fr 1fr; }
+      .prozess-steps::before { display: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
+    <a href="#hero" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheit · Medien · Netzwerktechnik</span>
+  </div>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="#leistungen" class="nav-link">Leistungen <span class="dropdown-arrow">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+
+        <a href="lwl.html"><span class="di">🔗</span> Glasfaser & Spleißtechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
+    <a href="#ueber" class="nav-link">Über uns</a>
+    <a href="#kunden" class="nav-link">Kunden</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-logo-bg hero-logo-1"><img src="logo.png" alt="" /></div>
+  <div class="hero-logo-bg hero-logo-2"><img src="logo.png" alt="" /></div>
+  <div class="hero-logo-bg hero-logo-3"><img src="logo.png" alt="" /></div>
+  <div class="hero-logo-bg hero-logo-4"><img src="logo.png" alt="" /></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Wien · Österreich · Gegründet 2025</div>
+    <h1>Technik, die <span>schützt</span><br><em>und</em> <span>verbindet.</span></h1>
+    <p>AVplus e.U. realisiert professionelle Sicherheits-, Medien- und Glasfaserlösungen für Unternehmen und Bildungseinrichtungen in Wien.</p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-hero">Kostenloses Erstgespräch</a>
+      <a href="#leistungen" class="btn-ghost">Unsere Leistungen</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">5+</div>
+        <div class="hero-stat-label">Fachbereiche</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Wien</div>
+        <div class="hero-stat-label">Standort</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Aus einer Hand</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-cards">
+      <div class="hero-card featured">
+        <div class="hc-icon">🔒</div>
+        <div class="hc-title">Sicherheitstechnik</div>
+        <div class="hc-sub">Videoüberwachung · Alarmanlagen · Zutrittskontrolle</div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-icon">📺</div>
+        <div class="hc-title">Medientechnik</div>
+        <div class="hc-sub">AV · Displays · Digital Signage</div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-icon">🔗</div>
+        <div class="hc-title">Spleißtechnik</div>
+        <div class="hc-sub">LWL · Glasfaser · Netzwerk</div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-icon">🏠</div>
+        <div class="hc-title">Smart-Home</div>
+        <div class="hc-sub">Automation · App-Steuerung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="ti">✅</span> Zertifizierter Fachbetrieb</div>
+  <div class="trust-item"><span class="ti">🏛️</span> Gewerbe nach GewO § 94</div>
+  <div class="trust-item"><span class="ti">📍</span> Wien & ganz Österreich</div>
+  <div class="trust-item"><span class="ti">🤝</span> Planung bis Wartung</div>
+  <div class="trust-item"><span class="ti">⚡</span> Schnelle Reaktionszeiten</div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="reveal">
+    <p class="section-label">Was wir bieten</p>
+    <h2>Unsere Leistungen</h2>
+    <p class="section-intro">Von der Planung bis zur Wartung — wir liefern zukunftssichere Techniklösungen aus einer Hand.</p>
+  </div>
+
+  <div class="leistungen-grid">
+    <a href="sicherheitstechnik.html" class="l-card reveal delay-1">
+      <div class="l-card-img">
+        <img src="bilder/ST Allgemein.jpeg" alt="Sicherheitstechnik" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>Sicherheitstechnik</h3>
+        <p>Videoüberwachung, Alarmanlagen, Zutrittskontrolle und intelligente Sicherheitssysteme — wir schützen Ihr Gebäude rund um die Uhr.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="medientechnik.html" class="l-card reveal delay-2">
+      <div class="l-card-img">
+        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=700&q=80" alt="Medientechnik" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>Medientechnik</h3>
+        <p>Displays, interaktive Boards, Beamer, LED-Walls und Digital Signage — maßgeschneiderte AV-Lösungen für Büros und Schulen.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="ucc.html" class="l-card reveal delay-3">
+      <div class="l-card-img">
+        <img src="bilder/Starlink 2.png" alt="Starlink und Sat-Technik" style="object-fit:contain;background:#fff;" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>Starlink & Sat-Technik</h3>
+        <p>Satelliteninternet via Starlink, Sat-Anlagen und professionelle Installation — schnelles Internet überall, auch ohne Festnetz.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="lwl.html" class="l-card reveal delay-4">
+      <div class="l-card-img">
+        <img src="https://images.unsplash.com/photo-1606904825846-647eb07f5be2?auto=format&fit=crop&w=700&q=80" alt="Glasfaser Spleißtechnik" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>Glasfaser & Spleißtechnik</h3>
+        <p>Professionelle LWL-Verlegung, Messung und Spleißung — für schnelle, stabile Netzwerkinfrastruktur in Gebäuden und Anlagen.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="smarthome.html" class="l-card reveal delay-5">
+      <div class="l-card-img">
+        <img src="https://images.unsplash.com/photo-1558002038-bb4237bb0c55?auto=format&fit=crop&w=700&q=80" alt="Smart Home" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>Smart-Home-Systeme</h3>
+        <p>Beleuchtung, Heizung, Rollläden und Sicherheit automatisiert steuern — per App oder Sprachassistent. Für Neu- und Bestandsbauten.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="edv.html" class="l-card reveal delay-1">
+      <div class="l-card-img">
+        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=700&q=80" alt="EDV IT Service" />
+        <div class="img-overlay"></div>
+      </div>
+      <div class="l-card-body">
+        <h3>EDV & IT-Service</h3>
+        <p>PC- & Laptop-Reparatur, Netzwerk-Einrichtung, WLAN-Optimierung und strukturierte Netzwerkverkabelung — schnell und zuverlässig vor Ort.</p>
+        <div class="l-card-footer">
+          <span>Mehr erfahren</span>
+          <div class="l-card-arrow">→</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ZAHLEN -->
+<section id="zahlen">
+  <div class="zahlen-grid">
+    <div class="zahl-item reveal delay-1">
+      <div class="zahl-num" data-count="5">0</div>
+      <div class="zahl-label">Fachbereiche</div>
+    </div>
+    <div class="zahl-item reveal delay-2">
+      <div class="zahl-num" data-count="100">0</div>
+      <div class="zahl-label">% Kundenzufriedenheit</div>
+    </div>
+    <div class="zahl-item reveal delay-3">
+      <div class="zahl-num">Wien</div>
+      <div class="zahl-label">Unser Standort</div>
+    </div>
+    <div class="zahl-item reveal delay-4">
+      <div class="zahl-num" data-count="24">0</div>
+      <div class="zahl-label">h Reaktionszeit</div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section id="ueber">
+  <div class="ueber-wrap">
+    <div class="ueber-img-wrap reveal-left">
+      <div class="ueber-main-img">
+        <div class="bg-dots"></div>
+        <span style="position:relative;z-index:1;">🏢</span>
+      </div>
+      <div class="ueber-badge">
+        <div class="ueber-badge-num">AVplus</div>
+        <div class="ueber-badge-label">e.U. · Wien</div>
+      </div>
+    </div>
+
+    <div class="ueber-text reveal-right">
+      <p class="section-label">Wer wir sind</p>
+      <h2>Erfahrung trifft<br>moderne Technik.</h2>
+      <p>AVplus e.U. ist ein Wiener Dienstleistungsunternehmen spezialisiert auf die Planung, Installation, Programmierung und Wartung moderner Techniklösungen.</p>
+      <p>Gründer Abdul Basir Alavi bringt jahrelange Expertise in Medientechnik, IT-Projektleitung und AV-Systemintegration mit.</p>
+
+      <div class="ueber-features">
+        <div class="ueber-feature">
+          <div class="uf-icon">🎯</div>
+          <div class="uf-text">
+            <strong>Gesamtlösungen aus einer Hand</strong>
+            <span>Von der Planung über Installation bis zur Wartung und Nutzerschulung</span>
+          </div>
+        </div>
+        <div class="ueber-feature">
+          <div class="uf-icon">🏛️</div>
+          <div class="uf-text">
+            <strong>Zertifizierter Gewerbebetrieb</strong>
+            <span>Kommunikationselektronik (§ 94 Z 39 GewO) & Elektrotechnik (§ 94 Z 16 GewO)</span>
+          </div>
+        </div>
+        <div class="ueber-feature">
+          <div class="uf-icon">📋</div>
+          <div class="uf-text">
+            <strong>Vollständige Dokumentation</strong>
+            <span>Benutzerhandbücher, Bedienungsanleitungen und Ausführungspläne</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section id="prozess">
+  <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+    <p class="section-label">Wie wir arbeiten</p>
+    <h2>Unser Prozess</h2>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Strukturiert, transparent und zuverlässig — von der ersten Anfrage bis zur Übergabe.</p>
+  </div>
+
+  <div class="prozess-steps">
+    <div class="prozess-step reveal delay-1">
+      <div class="step-num">💬</div>
+      <h3>Beratung</h3>
+      <p>Kostenlose Erstberatung und Aufnahme Ihrer Anforderungen</p>
+    </div>
+    <div class="prozess-step reveal delay-2">
+      <div class="step-num">📐</div>
+      <h3>Planung</h3>
+      <p>Maßgeschneidertes Konzept mit Angebot und Kostenplan</p>
+    </div>
+    <div class="prozess-step reveal delay-3">
+      <div class="step-num">🔧</div>
+      <h3>Installation</h3>
+      <p>Professionelle Umsetzung durch zertifizierte Techniker</p>
+    </div>
+    <div class="prozess-step reveal delay-4">
+      <div class="step-num">✅</div>
+      <h3>Übergabe</h3>
+      <p>Einschulung, Dokumentation und laufender Support</p>
+    </div>
+  </div>
+</section>
+
+<!-- KUNDEN -->
+<section id="kunden">
+  <div class="reveal">
+    <p class="section-label">Wen wir betreuen</p>
+    <h2>Unsere Kunden</h2>
+    <p class="section-intro">Wir sind Partner für Unternehmen und Bildungseinrichtungen in Wien und Österreich.</p>
+  </div>
+
+  <div class="kunden-wrap">
+    <div class="kunden-block reveal-left">
+      <div class="kunden-header">
+        <span>🏢</span>
+        <div>
+          <h3>Business</h3>
+          <p style="font-size:0.82rem;opacity:0.8;margin-top:0.2rem;">Unternehmen & Organisationen</p>
+        </div>
+      </div>
+      <ul class="kunden-list">
+        <li>Banken & Finanzdienstleister</li>
+        <li>Autohäuser & Showrooms</li>
+        <li>Restaurants & Gastronomie</li>
+        <li>Gesundheitswesen & Kliniken</li>
+        <li>Öffentliche Einrichtungen</li>
+        <li>Events & Leihstellung</li>
+      </ul>
+    </div>
+    <div class="kunden-block reveal-right">
+      <div class="kunden-header">
+        <span>🎓</span>
+        <div>
+          <h3>Bildung</h3>
+          <p style="font-size:0.82rem;opacity:0.8;margin-top:0.2rem;">Schulen & Hochschulen</p>
+        </div>
+      </div>
+      <ul class="kunden-list">
+        <li>Kindergärten & Volksschulen</li>
+        <li>Mittelschulen & Gymnasien</li>
+        <li>Berufsschulen & HTLs</li>
+        <li>Fachhochschulen</li>
+        <li>Universitäten</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="kontakt-wrap">
+    <div class="reveal-left">
+      <p class="section-label">Sprechen Sie uns an</p>
+      <h2>Kontakt</h2>
+      <p style="color:var(--gray);margin-bottom:2rem;">Wir freuen uns auf Ihre Anfrage und melden uns innerhalb von 24 Stunden.</p>
+
+      <div class="kontakt-info-card">
+        <h3>AVplus e.U.</h3>
+        <p>Ihr Partner für Medien-, Sicherheits- und Glasfasertechnik in Wien.</p>
+
+        <div class="ki-item">
+          <div class="ki-icon">📍</div>
+          <div>
+            <div class="ki-label">Adresse</div>
+            <div class="ki-value">Edith-Kramer-Weg 6/12<br>1220 Wien, Österreich</div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon">📞</div>
+          <div>
+            <div class="ki-label">Telefon</div>
+            <div class="ki-value"><a href="tel:+436766520263">+43 676 6520263</a></div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon">✉️</div>
+          <div>
+            <div class="ki-label">E-Mail</div>
+            <div class="ki-value"><a href="mailto:office@avplus.at">office@avplus.at</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kontakt-form-wrap reveal-right">
+      <h3>Anfrage senden</h3>
+      <p>Unverbindlich und kostenlos — wir beraten Sie gerne.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Vorname *</label>
+            <input type="text" placeholder="Max" required />
+          </div>
+          <div class="form-group">
+            <label>Nachname *</label>
+            <input type="text" placeholder="Mustermann" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-Mail *</label>
+          <input type="email" placeholder="max@mustermann.at" required />
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+43 ..." />
+        </div>
+        <div class="form-group">
+          <label>Bereich</label>
+          <select>
+            <option value="" disabled selected>Bitte wählen …</option>
+            <option>Sicherheitstechnik</option>
+            <option>Medientechnik</option>
+            <option>UCC & Konferenztechnik</option>
+            <option>Glasfaser & Spleißtechnik</option>
+            <option>Smart-Home</option>
+            <option>Service & Wartung</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ihre Nachricht *</label>
+          <textarea placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage …" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Anfrage absenden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Medientechnik, Sicherheitstechnik und Glasfasertechnik in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+
+        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<a href="#hero" id="back-top" title="Nach oben">↑</a>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Counter animation
+        const num = e.target.querySelector('[data-count]');
+        if (num && !num.dataset.animated) {
+          num.dataset.animated = true;
+          const target = +num.dataset.count;
+          let current = 0;
+          const step = target / 60;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            num.textContent = Math.round(current);
+          }, 20);
+        }
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // Header scroll effect
+  const header = document.getElementById('header');
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      header.classList.add('scrolled');
+      backTop.classList.add('show');
+    } else {
+      header.classList.remove('scrolled');
+      backTop.classList.remove('show');
+    }
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Nachricht gesendet!';
+    btn.style.background = 'var(--green)';
+    setTimeout(() => {
+      btn.textContent = 'Anfrage absenden →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>

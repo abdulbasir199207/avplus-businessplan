@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sicherheitstechnik – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s} .delay-5{transition-delay:.5s} .delay-6{transition-delay:.6s}
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+
+    /* HERO */
+    .page-hero { margin-top:72px; position:relative; overflow:hidden; min-height:420px; display:flex; align-items:center; }
+    .page-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,#0f2744 0%,#1b4f7a 50%,#2d6ea8 100%); }
+    .page-hero-bg img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.18; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:30px 30px; z-index:1; }
+    .page-hero-shape { position:absolute; border-radius:50%; opacity:0.08; }
+    .page-hero-shape-1 { width:400px; height:400px; background:var(--blue); right:-100px; top:-100px; animation:float 8s ease-in-out infinite; z-index:1; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+    .page-hero-content { position:relative; z-index:2; padding:5rem 5% 4rem; max-width:700px; color:var(--white); }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1.2rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .breadcrumb span { margin:0 0.5rem; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(45,110,168,0.3); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.9); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
+    .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
+    .page-hero-content h1 span { color:var(--green); }
+    .page-hero-content p { font-size:1.05rem; opacity:0.85; max-width:560px; }
+
+    section { padding:5rem 5%; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
+    .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; font-size:1rem; }
+
+    /* Services grid */
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .service-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--blue); }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+    .sc-img { height:160px; overflow:hidden; position:relative; }
+    .sc-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .service-card:hover .sc-img img { transform:scale(1.05); }
+    .sc-body { padding:1.4rem; }
+    .sc-icon { font-size:1.8rem; margin-bottom:0.6rem; }
+    .service-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+    .service-card p { font-size:0.88rem; color:var(--gray); }
+
+    /* Feature split */
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; overflow:hidden; height:400px; position:relative; box-shadow:0 16px 48px rgba(0,0,0,0.15); }
+    .feature-visual img { width:100%; height:100%; object-fit:cover; }
+    .feature-visual .fv-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(15,39,68,0.5),rgba(45,110,168,0.3)); }
+    .feature-visual .fv-badge { position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(255,255,255,0.95); border-radius:10px; padding:0.8rem 1.2rem; display:flex; align-items:center; gap:0.6rem; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .fv-badge-icon { font-size:1.5rem; }
+    .fv-badge-text strong { display:block; font-size:0.88rem; font-weight:700; color:var(--text); }
+    .fv-badge-text span { font-size:0.75rem; color:var(--gray); }
+
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; font-size:1rem; margin-top:1px; flex-shrink:0; }
+
+    /* Products/Brands section */
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .product-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; }
+    .product-card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,0.1); }
+    .product-img { height:200px; overflow:hidden; position:relative; background:#f8f9fb; }
+    .product-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .product-card:hover .product-img img { transform:scale(1.04); }
+    .product-brand-badge { position:absolute; top:0.8rem; left:0.8rem; background:rgba(15,39,68,0.85); color:var(--white); font-size:0.72rem; font-weight:700; padding:0.3rem 0.7rem; border-radius:6px; letter-spacing:0.5px; }
+    .product-body { padding:1.2rem; }
+    .product-body h4 { font-size:0.95rem; font-weight:700; margin-bottom:0.3rem; color:var(--text); }
+    .product-body .product-model { font-size:0.78rem; color:var(--blue); font-weight:600; margin-bottom:0.5rem; font-family:monospace; }
+    .product-body p { font-size:0.83rem; color:var(--gray); line-height:1.5; }
+
+    /* Brand logos bar */
+    .brands-bar { display:flex; align-items:center; justify-content:center; gap:2.5rem; flex-wrap:wrap; padding:2.5rem 5%; background:var(--white); border-top:1px solid #eee; border-bottom:1px solid #eee; }
+    .brand-logo { display:flex; align-items:center; justify-content:center; padding:0.8rem 1.4rem; border-radius:10px; border:1.5px solid #e8ecf0; background:var(--white); transition:border-color 0.2s, box-shadow 0.2s; min-width:120px; }
+    .brand-logo:hover { border-color:var(--blue); box-shadow:0 4px 16px rgba(45,110,168,0.12); }
+    .brand-logo span { font-size:0.95rem; font-weight:800; color:var(--text); letter-spacing:0.5px; }
+
+    .cta-box { background:linear-gradient(135deg,#0f2744,#2d6ea8); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
+    .cta-box p { opacity:0.8; margin-bottom:2rem; }
+    .btn-green { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); transition:transform 0.2s,box-shadow 0.2s; display:inline-block; }
+    .btn-green:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(106,176,76,0.5); }
+
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; filter:brightness(0) invert(1); opacity:0.9; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+
+    @media(max-width:1024px) { .services-grid,.products-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:768px) { .services-grid,.products-grid{grid-template-columns:1fr} .feature-split{grid-template-columns:1fr} nav .nav-link:not(.btn){display:none} .footer-top{grid-template-columns:1fr;gap:2rem} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+
+        <a href="lwl.html"><span class="di">🔗</span> Glasfaser & Spleißtechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80" alt="Sicherheitstechnik" />
+  </div>
+  <div class="page-hero-shape page-hero-shape-1"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Leistungen <span>›</span> Sicherheitstechnik</div>
+    <div class="page-badge">🔒 Sicherheitstechnik</div>
+    <h1>Ihr Gebäude.<br><span>Sicher. Intelligent.</span> Vernetzt.</h1>
+    <p>Von der Videoüberwachung bis zur Zutrittskontrolle — AVplus e.U. schützt Ihre Räumlichkeiten mit modernster Sicherheitstechnik namhafter Hersteller.</p>
+  </div>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">Unsere Leistungen</p>
+    <h2>Sicherheitstechnik im Überblick</h2>
+    <p class="section-intro">Professionelle Sicherheitslösungen von der Planung bis zur Wartung — maßgeschneidert für Ihr Objekt.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1">
+      <div class="sc-img">
+        <img src="../Bilder/ST Kamera 1.png" alt="Videoüberwachung" style="object-fit:contain;background:#ffffff;" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">📷</div>
+        <h3>Videoüberwachung</h3>
+        <p>IP-Kameras, NVR-Systeme und Remote-Monitoring für lückenlose Überwachung Ihres Gebäudes – innen und außen.</p>
+      </div>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Alarmanlagen" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🚨</div>
+        <h3>Alarmanlagen</h3>
+        <p>Einbruchmeldesysteme mit Bewegungsmeldern, Erschütterungssensoren und direkter Alarmweiterleitung.</p>
+      </div>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1618333452609-e28f1dba0e4c?auto=format&fit=crop&w=600&q=80" alt="Zutrittskontrolle" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🚪</div>
+        <h3>Zutrittskontrolle</h3>
+        <p>Elektronische Schließsysteme, Chipkarten, PIN-Codes und biometrische Zugangslösungen für kontrollierte Bereiche.</p>
+      </div>
+    </div>
+    <div class="service-card reveal delay-1">
+      <div class="sc-img">
+        <img src="../Bilder/Gegensprechanlage.png" alt="Gegensprechanlagen" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🔔</div>
+        <h3>Gegensprechanlagen</h3>
+        <p>Video-Türsprechanlagen mit Kamera, Türöffner und App-Anbindung — für Türen, Tore und Einfahrten.</p>
+      </div>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=600&q=80" alt="Smart Security" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">📱</div>
+        <h3>Smart-Security</h3>
+        <p>Integration in Smart-Home-Systeme – Steuerung und Überwachung bequem per App oder Sprachassistent.</p>
+      </div>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=600&q=80" alt="Wartung und Support" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🔧</div>
+        <h3>Wartung & Support</h3>
+        <p>Regelmäßige Wartung, Fehlerdiagnose und schneller Support – damit Ihre Sicherheitssysteme immer zuverlässig funktionieren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: VIDEOÜBERWACHUNG -->
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img src="../Bilder/ST Kamera 2.png" alt="Videoüberwachung Monitoring" style="object-fit:contain;background:#ffffff;" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">📷</span>
+        <div class="fv-badge-text">
+          <strong>4K Ultra HD</strong>
+          <span>Tag & Nacht Überwachung</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Videoüberwachung</p>
+      <h2>Lückenlose Überwachung, die Sie beruhigt.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Moderne IP-Kamerasysteme ermöglichen hochauflösende Aufzeichnungen, Fernzugriff und intelligente Bewegungserkennung — von Hikvision, Dahua und Axis.</p>
+      <ul class="feature-list">
+        <li>HD- und 4K-Kameras für Innen und Außen</li>
+        <li>Dome-, Bullet- und PTZ-Schwenkkameras</li>
+        <li>Nachtsicht mit IR-LEDs bis 60m Reichweite</li>
+        <li>Zentrales Netzwerk-Videorekorder (NVR)</li>
+        <li>Fernzugriff per Smartphone oder PC</li>
+        <li>KI-gestützte Bewegungserkennung & Alarmfunktion</li>
+        <li>Datenschutzkonforme Installation nach DSGVO</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: GEGENSPRECHANLAGE -->
+<section style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Türkommunikation</p>
+      <h2>Gegensprechanlagen mit Videoübertragung.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Video-Türsprechanlagen verbinden Eingangsbereich und Innenraum — per Wandgerät, Smartphone oder Tablet. Wir installieren Systeme von 2N, Siedle und Hikvision.</p>
+      <ul class="feature-list">
+        <li>IP-Video-Türstation mit HD-Kamera</li>
+        <li>Gegensprechanlage für Einfamilienhäuser & Mehrfamilienhäuser</li>
+        <li>Türöffnersteuerung per App aus der Ferne</li>
+        <li>Aufzeichnung von Besuchern bei Abwesenheit</li>
+        <li>Integration mit Zutrittskontrolle und Alarmsystem</li>
+        <li>Mehrteilnehmer-Anlagen für Wohnanlagen</li>
+        <li>Einbindung in KNX und Smart-Home-Systeme</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img src="../Bilder/Gegensprechanlage.png" alt="Gegensprechanlage Türkommunikation" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">🔔</span>
+        <div class="fv-badge-text">
+          <strong>Video-Türstation</strong>
+          <span>App-Öffnung von überall</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: ZUTRITTSKONTROLLE -->
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img src="https://images.unsplash.com/photo-1609770231080-e321deccc34c?auto=format&fit=crop&w=800&q=80" alt="Zutrittskontrolle Chipkarte" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">🔑</span>
+        <div class="fv-badge-text">
+          <strong>Elektronisches Schloss</strong>
+          <span>Chipkarte · Fingerprint · PIN</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Zutrittskontrolle</p>
+      <h2>Wer darf rein? Sie entscheiden.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Elektronische Zutrittssysteme ersetzen mechanische Schlösser durch flexible, verwaltbare Zugangslösungen — vollständig protokolliert und skalierbar.</p>
+      <ul class="feature-list">
+        <li>Chipkarten- und Transponder-Systeme (RFID/NFC)</li>
+        <li>PIN-Code und biometrische Fingerprint-Lösungen</li>
+        <li>Zeitgesteuerte Zugänge für Mitarbeiter</li>
+        <li>Protokollierung aller Zutrittsversuche</li>
+        <li>Integration mit Alarm- und Videosystemen</li>
+        <li>Verwaltung via Software oder App</li>
+        <li>Online-Verwaltung auch für mehrere Standorte</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUKTE & HERSTELLER -->
+<section style="background:var(--gray-light)">
+  <div class="reveal" style="margin-bottom:3rem;">
+    <p class="section-label">Namhafte Hersteller</p>
+    <h2>Produkte, die wir installieren</h2>
+    <p class="section-intro">Wir arbeiten ausschließlich mit zertifizierten Produkten führender Hersteller — für maximale Zuverlässigkeit und langfristigen Support.</p>
+  </div>
+
+  <!-- Kamerasysteme -->
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue);">📷 Kamerasysteme & NVR</h3>
+  <div class="products-grid" style="margin-bottom:3rem;">
+    <div class="product-card reveal delay-1">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" alt="Hikvision Dome Kamera" />
+        <span class="product-brand-badge">HIKVISION</span>
+      </div>
+      <div class="product-body">
+        <h4>4MP AcuSense Dome-Kamera</h4>
+        <div class="product-model">DS-2CD2143G2-I</div>
+        <p>Outdoor-Dome mit KI-Bewegungserkennung, 4MP Auflösung, IR-Nachtsicht bis 40m und IP67-Schutz.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-2">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1597424216809-3ba9864aeb86?auto=format&fit=crop&w=600&q=80" alt="Hikvision PTZ Kamera" />
+        <span class="product-brand-badge">HIKVISION</span>
+      </div>
+      <div class="product-body">
+        <h4>4K PTZ-Schwenkkamera</h4>
+        <div class="product-model">DS-2DE4425IWG-E</div>
+        <p>Motorisierte Schwenk-Neige-Kamera mit 25-fachem optischem Zoom und KI-Tracking für weitläufige Bereiche.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-3">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1580894742597-87bc8789db3d?auto=format&fit=crop&w=600&q=80" alt="Dahua Kamera" />
+        <span class="product-brand-badge">DAHUA</span>
+      </div>
+      <div class="product-body">
+        <h4>Full-Color Turret-Kamera</h4>
+        <div class="product-model">IPC-HDW2849H-S-IL</div>
+        <p>Farb-Nachtsicht auch bei wenig Licht, Dual-Light (IR + Weißlicht), 8MP mit WDR für optimale Bildqualität.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gegensprechanlagen -->
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue);">🔔 Gegensprechanlagen & Türkommunikation</h3>
+  <div class="products-grid" style="margin-bottom:3rem;">
+    <div class="product-card reveal delay-1">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1614267861476-0d129972a0f4?auto=format&fit=crop&w=600&q=80" alt="2N IP Verso" />
+        <span class="product-brand-badge">2N</span>
+      </div>
+      <div class="product-body">
+        <h4>IP Video-Türstation</h4>
+        <div class="product-model">2N IP Verso 2.0</div>
+        <p>Modulares IP-Türsprechsystem mit HD-Kamera, RFID-Leser, Fingerabdruckscanner und direkter App-Integration.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-2">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Siedle Gegensprechanlage" />
+        <span class="product-brand-badge">SIEDLE</span>
+      </div>
+      <div class="product-body">
+        <h4>Video-Türstation Steel</h4>
+        <div class="product-model">Siedle Steel BTC 850</div>
+        <p>Hochwertige Edelstahl-Türstation mit 180°-Weitwinkelkamera und robustem Design für Büro- und Wohngebäude.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-3">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=600&q=80" alt="Hikvision Video Intercom" />
+        <span class="product-brand-badge">HIKVISION</span>
+      </div>
+      <div class="product-body">
+        <h4>Video-Gegensprechanlage</h4>
+        <div class="product-model">DS-KV8113-WME1</div>
+        <p>WLAN-fähige Türstation mit 2MP-Kamera, Nachtsicht und direkter Verbindung zur Hikvision Hik-Connect App.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alarmanlagen -->
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue);">🚨 Alarmanlagen & Sicherheitszentralen</h3>
+  <div class="products-grid">
+    <div class="product-card reveal delay-1">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Bosch Alarmzentrale" />
+        <span class="product-brand-badge">BOSCH</span>
+      </div>
+      <div class="product-body">
+        <h4>Einbruchmeldesystem</h4>
+        <div class="product-model">Bosch Solution 3000</div>
+        <p>Professionelle Alarmzentrale für bis zu 32 Zonen mit Funk-Erweiterung, Notruf-Aufschaltung und App-Bedienung.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-2">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1574074479580-93d27f3a82af?auto=format&fit=crop&w=600&q=80" alt="Ajax Funkalarmanlage" />
+        <span class="product-brand-badge">AJAX</span>
+      </div>
+      <div class="product-body">
+        <h4>Funk-Alarmanlage</h4>
+        <div class="product-model">Ajax Hub 2 Plus</div>
+        <p>Moderne Funkalarmanlage mit LTE-Backup, bis zu 200 Geräten, Sabotageschutz und einfacher App-Verwaltung.</p>
+      </div>
+    </div>
+    <div class="product-card reveal delay-3">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1618333452609-e28f1dba0e4c?auto=format&fit=crop&w=600&q=80" alt="Zutrittskontrolle" />
+        <span class="product-brand-badge">AXIS</span>
+      </div>
+      <div class="product-body">
+        <h4>Netzwerk-Zutrittskontrolle</h4>
+        <div class="product-model">Axis A1601 + A4010</div>
+        <p>Skalierbare IP-Zutrittskontrolle mit RFID, PIN und mobiler Zugangsberechtigung — für 1 bis 100+ Türen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKENPARTNER -->
+<div class="brands-bar">
+  <div class="brand-logo"><span>HIKVISION</span></div>
+  <div class="brand-logo"><span>DAHUA</span></div>
+  <div class="brand-logo"><span>AXIS</span></div>
+  <div class="brand-logo"><span>BOSCH</span></div>
+  <div class="brand-logo"><span>2N</span></div>
+  <div class="brand-logo"><span>SIEDLE</span></div>
+  <div class="brand-logo"><span>AJAX</span></div>
+  <div class="brand-logo"><span>GENETEC</span></div>
+</div>
+
+<!-- CTA -->
+<section style="background:var(--white)">
+  <div class="cta-box reveal">
+    <h2>Sicherheit planen – kostenlos beraten lassen.</h2>
+    <p>Wir analysieren Ihr Objekt und erstellen ein maßgeschneidertes Sicherheitskonzept — mit Produkten führender Hersteller. Unverbindlich und kostenlos.</p>
+    <a href="index.html#kontakt" class="btn-green">Jetzt Beratung anfragen</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik und EDV in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

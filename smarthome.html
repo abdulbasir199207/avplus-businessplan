@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart-Home – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; --orange:#e07820; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+    .page-hero { margin-top:72px; background:linear-gradient(135deg,#2a1a0a 0%,var(--orange) 70%,#f0a040 100%); padding:5rem 5% 4rem; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px); background-size:30px 30px; }
+    .page-hero-shape { position:absolute; width:450px; height:450px; border-radius:50%; background:#f0a040; opacity:0.1; right:-80px; top:-80px; animation:float 8s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+    .breadcrumb { color:rgba(255,255,255,0.65); font-size:0.85rem; margin-bottom:1.2rem; position:relative; }
+    .breadcrumb a { color:rgba(255,255,255,0.65); text-decoration:none; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.95); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
+    .page-hero-content { position:relative; max-width:700px; color:var(--white); }
+    .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
+    .page-hero-content h1 span { color:#ffe0a0; }
+    .page-hero-content p { font-size:1.05rem; opacity:0.88; }
+    section { padding:5rem 5%; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
+    .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; }
+
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .service-card { background:var(--white); border-radius:14px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--orange); }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+    .sc-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .service-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+    .service-card p { font-size:0.88rem; color:var(--gray); }
+
+    /* Voice assistants */
+    .voice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .voice-card { background:var(--white); border-radius:14px; padding:2rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s; }
+    .voice-card:hover { transform:translateY(-4px); }
+    .voice-icon { font-size:3rem; margin-bottom:0.8rem; }
+    .voice-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+    .voice-card p { font-size:0.85rem; color:var(--gray); }
+
+    /* Benefits */
+    .benefits-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    .benefit { display:flex; gap:1.2rem; align-items:flex-start; background:var(--white); border-radius:14px; padding:1.8rem; box-shadow:0 4px 16px rgba(0,0,0,0.05); }
+    .benefit-icon { width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#2a1a0a,var(--orange)); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    .benefit h4 { font-size:1rem; font-weight:700; margin-bottom:0.3rem; }
+    .benefit p { font-size:0.88rem; color:var(--gray); }
+
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; height:360px; display:flex; align-items:center; justify-content:center; font-size:8rem; position:relative; overflow:hidden; }
+    .fv-bg { position:absolute; inset:0; background:linear-gradient(135deg,#2a1a0a,var(--orange)); }
+    .fv-dots { background-image:radial-gradient(circle,rgba(255,255,255,0.12) 1px,transparent 1px); background-size:20px 20px; }
+    .fv-icon { position:relative; z-index:1; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.3)); }
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; flex-shrink:0; }
+
+    .cta-box { background:linear-gradient(135deg,#2a1a0a,var(--orange)); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
+    .cta-box p { opacity:0.85; margin-bottom:2rem; }
+    .btn-light { background:#ffe0a0; color:#2a1a0a; padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; display:inline-block; transition:transform 0.2s; }
+    .btn-light:hover { transform:translateY(-2px); }
+
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
+    footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    footer a:hover { color:var(--white); }
+    @media(max-width:768px) { .services-grid,.voice-grid,.benefits-grid,.feature-split{grid-template-columns:1fr} nav .nav-link:not(.btn){display:none} }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <nav>
+    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-shape"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Smart-Home</div>
+    <div class="page-badge">🏠 Smart-Home-Systeme</div>
+    <h1>Ihr Zuhause.<br><span>Intelligent. Sicher.</span> Komfortabel.</h1>
+    <p>Beleuchtung, Heizung, Sicherheit und Unterhaltung — automatisiert und steuerbar per App oder Sprachassistent.</p>
+  </div>
+</div>
+
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">Unsere Leistungen</p>
+    <h2>Smart-Home im Überblick</h2>
+    <p class="section-intro">Modulare Systeme für Neubauten und Bestandsimmobilien — wir integrieren Technik nahtlos.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1"><div class="sc-icon">💡</div><h3>Smart Lighting</h3><p>Intelligente Beleuchtungssteuerung — Szenarien, Zeitpläne, Dimmung und Farbsteuerung per App.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">🌡️</div><h3>Heizung & Klima</h3><p>Smarte Thermostate und Klimasteuerung — energieeffizient und bequem vom Smartphone aus steuerbar.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">🪟</div><h3>Rollläden & Beschattung</h3><p>Automatisierte Rollläden, Jalousien und Markisen — zeitgesteuert oder wetterabhängig.</p></div>
+    <div class="service-card reveal delay-1"><div class="sc-icon">🔒</div><h3>Smart Security</h3><p>Türklingel mit Kamera, smarte Schlösser und Alarmanlagen — integriert in Ihr Smart-Home-System.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">🎵</div><h3>Multiroom Audio</h3><p>Musik in jedem Raum — synchron oder einzeln steuerbar, integriert mit Ihren Streaming-Diensten.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">⚡</div><h3>Energiemanagement</h3><p>Intelligente Steckdosen, Verbrauchsmessung und Automatisierungen für mehr Energieeffizienz.</p></div>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <div class="reveal">
+    <p class="section-label">Sprachsteuerung</p>
+    <h2>Kompatibel mit allen großen Assistenten.</h2>
+    <p class="section-intro">Steuern Sie Ihr Zuhause einfach mit der Stimme — wir richten alles ein.</p>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card reveal delay-1"><div class="voice-icon">🔵</div><h3>Amazon Alexa</h3><p>„Alexa, mach das Licht aus." — vollständige Integration aller Geräte.</p></div>
+    <div class="voice-card reveal delay-2"><div class="voice-icon">🍎</div><h3>Apple Siri</h3><p>„Hey Siri, schließ die Rollläden." — nahtlos mit iPhone und iPad.</p></div>
+    <div class="voice-card reveal delay-3"><div class="voice-icon">🔴</div><h3>Google Assistant</h3><p>„Ok Google, schalte alles aus." — kompatibel mit Android und Nest.</p></div>
+  </div>
+</section>
+
+<section style="background:var(--gray-light)">
+  <div class="reveal" style="margin-bottom:2.5rem;">
+    <p class="section-label">Vorteile</p>
+    <h2>Warum Smart-Home von AVplus?</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit reveal delay-1"><div class="benefit-icon">🎯</div><div><h4>Maßgeschneidert</h4><p>Kein Standardpaket — jedes System wird individuell auf Ihre Bedürfnisse und Ihr Gebäude abgestimmt.</p></div></div>
+    <div class="benefit reveal delay-2"><div class="benefit-icon">🏗️</div><div><h4>Neu- & Bestandsbau</h4><p>Wir integrieren Smart-Home sowohl in Neubauten als auch in bestehende Gebäude ohne großen Aufwand.</p></div></div>
+    <div class="benefit reveal delay-3"><div class="benefit-icon">📈</div><div><h4>Zukunftssicher</h4><p>Modulare Systeme lassen sich jederzeit erweitern — Ihr Smart-Home wächst mit Ihren Anforderungen.</p></div></div>
+    <div class="benefit reveal delay-4"><div class="benefit-icon">🤝</div><div><h4>Rundum-Service</h4><p>Von der Planung bis zur Einschulung — wir sind Ihr Ansprechpartner für alles rund um Ihr Smart-Home.</p></div></div>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Energieeffizienz</p>
+      <h2>Intelligent sparen. Bewusst leben.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Smarte Automatisierungen reduzieren Strom- und Heizkosten spürbar — ohne auf Komfort zu verzichten.</p>
+      <ul class="feature-list">
+        <li>Automatische Abschaltung bei Abwesenheit</li>
+        <li>Präsenzbasierte Heizungssteuerung</li>
+        <li>Verbrauchsanzeige in Echtzeit per App</li>
+        <li>Zeitpläne für alle Geräte</li>
+        <li>Integration mit Photovoltaikanlagen möglich</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <div class="fv-bg fv-dots"></div>
+      <span class="fv-icon">⚡</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-light)">
+  <div class="cta-box reveal">
+    <h2>Ihr Smart-Home — wir planen es für Sie.</h2>
+    <p>Kostenlose Beratung vor Ort oder telefonisch — wir zeigen Ihnen, was in Ihrem Zuhause möglich ist.</p>
+    <a href="index.html#kontakt" class="btn-light">Jetzt Beratung anfragen</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 AVplus e.U. · Wien</span>
+  <span><a href="index.html">Startseite</a> · <a href="index.html#kontakt">Kontakt</a></span>
+</footer>
+<script>
+  const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

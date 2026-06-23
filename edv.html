@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDV & IT-Service – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+
+    /* HERO */
+    .page-hero { margin-top:72px; position:relative; overflow:hidden; min-height:420px; display:flex; align-items:center; }
+    .page-hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,#0f2744 0%,#1b4f7a 50%,#2d6ea8 100%); }
+    .page-hero-bg img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.2; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:30px 30px; z-index:1; }
+    .page-hero-content { position:relative; z-index:2; padding:5rem 5% 4rem; max-width:700px; color:var(--white); }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1.2rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .breadcrumb span { margin:0 0.5rem; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(45,110,168,0.3); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.9); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
+    .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
+    .page-hero-content h1 span { color:var(--green); }
+    .page-hero-content p { font-size:1.05rem; opacity:0.85; max-width:560px; }
+
+    section { padding:5rem 5%; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
+    .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; font-size:1rem; }
+
+    /* Services grid */
+    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    .service-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--blue); }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+    .sc-img { height:200px; overflow:hidden; position:relative; }
+    .sc-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .service-card:hover .sc-img img { transform:scale(1.05); }
+    .sc-body { padding:1.6rem; }
+    .sc-icon { font-size:2rem; margin-bottom:0.6rem; }
+    .service-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; }
+    .service-card p { font-size:0.88rem; color:var(--gray); margin-bottom:1rem; }
+    .sc-tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .sc-tag { font-size:0.75rem; font-weight:600; background:var(--blue-light); color:var(--blue); padding:0.25rem 0.65rem; border-radius:20px; }
+
+    /* Feature split */
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; overflow:hidden; height:400px; position:relative; box-shadow:0 16px 48px rgba(0,0,0,0.15); }
+    .feature-visual img { width:100%; height:100%; object-fit:cover; }
+    .feature-visual .fv-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(15,39,68,0.5),rgba(45,110,168,0.3)); }
+    .feature-visual .fv-badge { position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(255,255,255,0.95); border-radius:10px; padding:0.8rem 1.2rem; display:flex; align-items:center; gap:0.6rem; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .fv-badge-icon { font-size:1.5rem; }
+    .fv-badge-text strong { display:block; font-size:0.88rem; font-weight:700; color:var(--text); }
+    .fv-badge-text span { font-size:0.75rem; color:var(--gray); }
+
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; font-size:1rem; margin-top:1px; flex-shrink:0; }
+
+    /* Pricing */
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .pricing-card { background:var(--white); border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:2px solid #eee; transition:border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-align:center; }
+    .pricing-card:hover { border-color:var(--blue); transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,0.1); }
+    .pricing-card.featured { border-color:var(--blue); background:linear-gradient(135deg,var(--blue-dark),var(--blue)); color:var(--white); }
+    .pricing-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .pricing-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.4rem; }
+    .pricing-card.featured h3 { color:var(--white); }
+    .pricing-price { font-size:2rem; font-weight:800; color:var(--blue); margin:0.8rem 0; }
+    .pricing-card.featured .pricing-price { color:#a8e88a; }
+    .pricing-unit { font-size:0.8rem; opacity:0.7; }
+    .pricing-features { list-style:none; text-align:left; margin-top:1.2rem; }
+    .pricing-features li { padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:0.87rem; display:flex; gap:0.6rem; }
+    .pricing-card.featured .pricing-features li { border-bottom-color:rgba(255,255,255,0.15); color:rgba(255,255,255,0.9); }
+    .pricing-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+    .pricing-card.featured .pricing-features li::before { color:#a8e88a; }
+    .pricing-btn { display:block; margin-top:1.5rem; padding:0.8rem; border-radius:8px; text-decoration:none; font-weight:700; font-size:0.9rem; transition:background 0.2s, transform 0.15s; background:var(--blue-light); color:var(--blue); }
+    .pricing-card.featured .pricing-btn { background:rgba(255,255,255,0.2); color:var(--white); }
+    .pricing-btn:hover { transform:translateY(-1px); background:var(--blue); color:var(--white); }
+    .pricing-card.featured .pricing-btn:hover { background:rgba(255,255,255,0.35); }
+
+    .cta-box { background:linear-gradient(135deg,#0f2744,#2d6ea8); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
+    .cta-box p { opacity:0.8; margin-bottom:2rem; }
+    .btn-green { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); transition:transform 0.2s,box-shadow 0.2s; display:inline-block; }
+    .btn-green:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(106,176,76,0.5); }
+
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; filter:brightness(0) invert(1); opacity:0.9; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+
+    @media(max-width:1024px) { .services-grid{grid-template-columns:1fr} .pricing-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:768px) { .feature-split{grid-template-columns:1fr} .pricing-grid{grid-template-columns:1fr} nav .nav-link:not(.btn){display:none} .footer-top{grid-template-columns:1fr;gap:2rem} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+
+        <a href="lwl.html"><span class="di">🔗</span> Glasfaser & Spleißtechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="EDV IT Service" />
+  </div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Leistungen <span>›</span> EDV & IT-Service</div>
+    <div class="page-badge">💻 EDV & IT-Service</div>
+    <h1>Ihr IT-Partner.<br><span>Schnell. Zuverlässig.</span> Vor Ort.</h1>
+    <p>Von der PC-Reparatur über WLAN-Optimierung bis zur vollständigen Netzwerkverkabelung — AVplus e.U. löst Ihre IT-Probleme professionell und effizient.</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">EDV-Dienstleistungen</p>
+    <h2>IT-Service im Überblick</h2>
+    <p class="section-intro">Professionelle IT-Dienstleistungen für Unternehmen und Privatpersonen — von der Hardware-Reparatur bis zur Netzwerkinfrastruktur.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=700&q=80" alt="PC Laptop Reparatur" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🖥️</div>
+        <h3>PC & Laptop Reparatur</h3>
+        <p>Schnelle Diagnose und Reparatur von Desktop-PCs, Laptops und All-in-One-Systemen. Wir tauschen defekte Komponenten aus und sorgen für optimale Performance.</p>
+        <div class="sc-tags">
+          <span class="sc-tag">Hardware-Diagnose</span>
+          <span class="sc-tag">Bildschirmtausch</span>
+          <span class="sc-tag">Akku-Erneuerung</span>
+          <span class="sc-tag">Datensicherung</span>
+          <span class="sc-tag">Windows-Neuinstallation</span>
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="Netzwerk Einrichtung" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🌐</div>
+        <h3>Netzwerk-Einrichtung</h3>
+        <p>Professioneller Aufbau und Konfiguration von Heim- und Büronetzwerken — Router, Switches, Firewall und alle angebundenen Geräte eingerichtet und gesichert.</p>
+        <div class="sc-tags">
+          <span class="sc-tag">Router-Konfiguration</span>
+          <span class="sc-tag">Firewall-Setup</span>
+          <span class="sc-tag">VPN-Einrichtung</span>
+          <span class="sc-tag">Switch-Verwaltung</span>
+          <span class="sc-tag">Netzwerk-Sicherheit</span>
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1606904825846-647eb07f5be2?auto=format&fit=crop&w=700&q=80" alt="WLAN Optimierung" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">📶</div>
+        <h3>WLAN-Optimierung</h3>
+        <p>Analyse und Optimierung Ihres WLAN-Netzes für maximale Reichweite und Stabilität. Wir planen professionelle Access-Point-Infrastrukturen für lückenlosen Empfang.</p>
+        <div class="sc-tags">
+          <span class="sc-tag">WLAN-Analyse</span>
+          <span class="sc-tag">Access Points</span>
+          <span class="sc-tag">Mesh-Netzwerk</span>
+          <span class="sc-tag">Störungsbeseitigung</span>
+          <span class="sc-tag">Gäste-WLAN</span>
+        </div>
+      </div>
+    </div>
+    <div class="service-card reveal delay-4">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=700&q=80" alt="Netzwerkverkabelung" />
+      </div>
+      <div class="sc-body">
+        <div class="sc-icon">🔌</div>
+        <h3>Netzwerkverkabelung</h3>
+        <p>Strukturierte Netzwerkverkabelung mit Cat.6A- und Cat.7-Leitungen — sauber verlegt, beschriftet und vollständig dokumentiert. Für Büros, Schulen und Gewerbeflächen.</p>
+        <div class="sc-tags">
+          <span class="sc-tag">Cat.6A / Cat.7</span>
+          <span class="sc-tag">Patchfelder</span>
+          <span class="sc-tag">Netzwerkdosen</span>
+          <span class="sc-tag">Kabelkanal</span>
+          <span class="sc-tag">Leitungsdokumentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: PC REPARATUR -->
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&q=80" alt="PC Reparatur Techniker" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">🖥️</span>
+        <div class="fv-badge-text">
+          <strong>Reparatur vor Ort</strong>
+          <span>Schnelle Diagnose & Behebung</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">PC & Laptop Reparatur</p>
+      <h2>Ihr Gerät läuft wieder — garantiert.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Egal ob langsamer PC, defekter Bildschirm oder abgestürztes Betriebssystem — unser Techniker kommt zu Ihnen oder Sie bringen Ihr Gerät direkt zu uns.</p>
+      <ul class="feature-list">
+        <li>Kostenlose Erstdiagnose bei Vor-Ort-Service</li>
+        <li>Bildschirm-, Tastatur- und Akku-Austausch</li>
+        <li>SSD-Upgrade für mehr Geschwindigkeit</li>
+        <li>Virenentfernung und Systemreinigung</li>
+        <li>Windows 10/11 Neuinstallation inkl. Treiber</li>
+        <li>Datensicherung und Datenwiederherstellung</li>
+        <li>Einrichtung von Office 365 und Cloud-Diensten</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: NETZWERK & WLAN -->
+<section style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Netzwerk & WLAN</p>
+      <h2>Stabiles Netzwerk für Ihr Unternehmen.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ein zuverlässiges Netzwerk ist die Grundlage für effizientes Arbeiten. Wir planen, installieren und warten Ihre gesamte Netzwerkinfrastruktur — kabelgebunden und drahtlos.</p>
+      <ul class="feature-list">
+        <li>WLAN-Ausleuchtung mit professionellen Access Points (Ubiquiti, TP-Link Omada)</li>
+        <li>Strukturierte Cat.6A/7 Verkabelung nach Standard</li>
+        <li>Managed Switches und VLAN-Konfiguration</li>
+        <li>Firewall-Einrichtung und Netzwerksegmentierung</li>
+        <li>VPN für sicheren Fernzugriff</li>
+        <li>Leitungsmessung mit Prüfprotokoll</li>
+        <li>Vollständige Netzwerkdokumentation</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Netzwerk Server Infrastruktur" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">🌐</span>
+        <div class="fv-badge-text">
+          <strong>Professionelle Infrastruktur</strong>
+          <span>Von Planung bis Dokumentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREISE / SERVICE-PAKETE -->
+<section style="background:var(--white)">
+  <div class="reveal" style="margin-bottom:3rem;">
+    <p class="section-label">Transparente Preise</p>
+    <h2>IT-Service-Pakete</h2>
+    <p class="section-intro">Klare Preise ohne versteckte Kosten — wählen Sie das passende Paket für Ihren Bedarf.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal delay-1">
+      <div class="pricing-icon">🔧</div>
+      <h3>Basis-Service</h3>
+      <div class="pricing-price">ab 49 €</div>
+      <div class="pricing-unit">pro Einsatz</div>
+      <ul class="pricing-features">
+        <li>PC/Laptop Diagnose</li>
+        <li>Virenentfernung</li>
+        <li>Windows-Update & Optimierung</li>
+        <li>Telefon-Support 30 Min.</li>
+      </ul>
+      <a href="index.html#kontakt" class="pricing-btn">Jetzt anfragen</a>
+    </div>
+    <div class="pricing-card featured reveal delay-2">
+      <div class="pricing-icon">⭐</div>
+      <h3>Profi-Paket</h3>
+      <div class="pricing-price">ab 129 €</div>
+      <div class="pricing-unit">pro Einsatz inkl. Anfahrt</div>
+      <ul class="pricing-features">
+        <li>Vor-Ort-Service in Wien</li>
+        <li>PC/Laptop Reparatur & Austausch</li>
+        <li>WLAN-Einrichtung & Optimierung</li>
+        <li>Netzwerk-Konfiguration</li>
+        <li>Datensicherung & -migration</li>
+        <li>Nachbetreuung 14 Tage</li>
+      </ul>
+      <a href="index.html#kontakt" class="pricing-btn">Jetzt anfragen</a>
+    </div>
+    <div class="pricing-card reveal delay-3">
+      <div class="pricing-icon">🏢</div>
+      <h3>Business-Lösung</h3>
+      <div class="pricing-price">Auf Anfrage</div>
+      <div class="pricing-unit">individuelle Planung</div>
+      <ul class="pricing-features">
+        <li>Komplette Netzwerkverkabelung</li>
+        <li>WLAN-Infrastruktur (Ausleuchtung)</li>
+        <li>Server & Firewall Setup</li>
+        <li>Laufende IT-Betreuung (SLA)</li>
+        <li>Vollständige Dokumentation</li>
+        <li>Prioritäts-Support</li>
+      </ul>
+      <a href="index.html#kontakt" class="pricing-btn">Angebot anfordern</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--gray-light)">
+  <div class="cta-box reveal">
+    <h2>IT-Problem? Wir helfen — schnell und unkompliziert.</h2>
+    <p>Kontaktieren Sie uns für eine kostenlose Erstberatung. Wir melden uns innerhalb von 24 Stunden und finden die beste Lösung für Ihre Anforderungen.</p>
+    <a href="index.html#kontakt" class="btn-green">Jetzt IT-Hilfe anfragen</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik, EDV und Glasfasertechnik in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

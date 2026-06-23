@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medientechnik – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+    .page-hero { margin-top:72px; background:linear-gradient(135deg,#1a3a1a 0%,#2d6ea8 100%); padding:5rem 5% 4rem; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:30px 30px; }
+    .page-hero-shape { position:absolute; width:400px; height:400px; border-radius:50%; background:var(--green); opacity:0.08; right:-80px; top:-80px; animation:float 8s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1.2rem; position:relative; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(106,176,76,0.2); border:1px solid rgba(106,176,76,0.4); color:#a8e88a; font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
+    .page-hero-content { position:relative; max-width:700px; color:var(--white); }
+    .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
+    .page-hero-content h1 span { color:#a8e88a; }
+    .page-hero-content p { font-size:1.05rem; opacity:0.85; }
+    section { padding:5rem 5%; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
+    .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; }
+
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .service-card { background:var(--white); border-radius:14px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--green); }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+    .sc-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .service-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+    .service-card p { font-size:0.88rem; color:var(--gray); }
+
+    /* Display comparison */
+    .display-compare { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .display-card { border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
+    .display-card-header { padding:2rem; color:var(--white); text-align:center; }
+    .display-card:first-child .display-card-header { background:linear-gradient(135deg,var(--blue-dark),var(--blue)); }
+    .display-card:last-child .display-card-header { background:linear-gradient(135deg,#1a3a1a,var(--green)); }
+    .display-card-header .dc-icon { font-size:3rem; margin-bottom:0.8rem; }
+    .display-card-header h3 { font-size:1.2rem; font-weight:700; }
+    .display-card-body { background:var(--gray-light); padding:1.5rem 2rem; }
+    .display-card-body ul { list-style:none; }
+    .display-card-body ul li { padding:0.5rem 0; border-bottom:1px solid #e5e7eb; font-size:0.9rem; display:flex; gap:0.6rem; }
+    .display-card-body ul li:last-child { border-bottom:none; }
+    .display-card-body ul li::before { content:'→'; color:var(--blue); font-weight:700; }
+
+    /* Mounting options */
+    .mounting-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+    .mounting-item { background:var(--white); border-radius:12px; padding:1.5rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.05); transition:transform 0.2s; }
+    .mounting-item:hover { transform:translateY(-4px); }
+    .mounting-item .mi-icon { font-size:2rem; margin-bottom:0.8rem; }
+    .mounting-item h4 { font-size:0.88rem; font-weight:700; color:var(--text); }
+
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; height:360px; display:flex; align-items:center; justify-content:center; font-size:8rem; position:relative; overflow:hidden; }
+    .fv-bg { position:absolute; inset:0; }
+    .fv-icon { position:relative; z-index:1; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.3)); }
+    .fv-bg-1 { background:linear-gradient(135deg,#1a3a1a,#4a8a2a); }
+    .fv-bg-dots { background-image:radial-gradient(circle,rgba(255,255,255,0.12) 1px,transparent 1px); background-size:20px 20px; }
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; flex-shrink:0; }
+
+    .cta-box { background:linear-gradient(135deg,#1a3a1a,#2d6ea8); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
+    .cta-box p { opacity:0.8; margin-bottom:2rem; }
+    .btn-green { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); display:inline-block; transition:transform 0.2s; }
+    .btn-green:hover { transform:translateY(-2px); }
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
+    footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    footer a:hover { color:var(--white); }
+    @media(max-width:768px) { .services-grid,.display-compare,.feature-split,.mounting-grid{grid-template-columns:1fr} nav .nav-link:not(.btn){display:none} }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <nav>
+    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-shape"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Medientechnik</div>
+    <div class="page-badge">📺 Medientechnik</div>
+    <h1>AV-Lösungen, die<br><span>begeistern</span> und überzeugen.</h1>
+    <p>Displays, interaktive Boards, Beamer und Digital Signage — wir gestalten moderne Medienwelten für Büros, Schulen und öffentliche Räume.</p>
+  </div>
+</div>
+
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">Unsere Leistungen</p>
+    <h2>Medientechnik im Überblick</h2>
+    <p class="section-intro">Alles rund um AV-Technik — von der Beratung bis zur Inbetriebnahme.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1"><div class="sc-icon">🖥️</div><h3>Display-Lösungen</h3><p>Normale und interaktive Displays für Konferenzräume, Klassenzimmer und Empfangsbereiche — jede Größe, jeder Hersteller.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">📡</div><h3>Digital Signage</h3><p>Digitale Werbe- und Informationsdisplays für Restaurants, Autohäuser und öffentliche Einrichtungen — zentral steuerbar.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">🎬</div><h3>Beamer & Projektionen</h3><p>Beamer-Installationen mit Leinwänden oder Projektionsflächen — für Konferenzsäle, Veranstaltungsräume und Schulen.</p></div>
+    <div class="service-card reveal delay-1"><div class="sc-icon">💡</div><h3>LED-Walls</h3><p>Großflächige LED-Display-Wände für Events, Empfangsbereiche und Showrooms — beeindruckende Wirkung, einfache Steuerung.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">🔌</div><h3>Signalmanagement</h3><p>Switcher, Extender, Matrizen und Tischanschlussfelder mit HDMI, USB, LAN und Strom — alles sauber verkabelt.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">🔊</div><h3>Beschallung</h3><p>Lautsprechersysteme, Verstärker und Mikrofone für optimale Sprachverständlichkeit in jedem Raum.</p></div>
+  </div>
+</section>
+
+<!-- UCC-LÖSUNGEN -->
+<section style="background:var(--white)">
+  <div class="reveal">
+    <p class="section-label">UCC & Konferenztechnik</p>
+    <h2>UCC-Lösungen im Überblick</h2>
+    <p class="section-intro">Unified Communications & Collaboration — wir bringen Ihr Team zusammen, egal wo es ist.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1"><div class="sc-icon">📹</div><h3>Videokonferenzsysteme</h3><p>Kameras, Mikrofone und Codec-Lösungen von führenden Herstellern — für kristallklare Bild- und Tonqualität.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">🎙️</div><h3>Mikrofonarrays</h3><p>Tischmikrofone, Deckenmikrofone und Mikrofonarrays mit Geräuschunterdrückung — jeder im Raum wird gehört.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">📶</div><h3>Kabellose Präsentation</h3><p>BYOD-Systeme für kabellose Bildschirmübertragung — ein Tastendruck genügt, kein Kabel nötig.</p></div>
+    <div class="service-card reveal delay-1"><div class="sc-icon">🖥️</div><h3>Raumsteuerung</h3><p>Touchpanel-Steuerung für Licht, Beschattung, Display und Konferenztechnik — alles auf einem Panel.</p></div>
+    <div class="service-card reveal delay-2"><div class="sc-icon">🔊</div><h3>Raumakustik & Audio</h3><p>Lautsprecheranlagen und Verstärker für optimale Sprachverständlichkeit in Konferenzräumen jeder Größe.</p></div>
+    <div class="service-card reveal delay-3"><div class="sc-icon">⚙️</div><h3>Wartung & Support</h3><p>Regelmäßige Wartung, Software-Updates und schneller Support bei technischen Problemen.</p></div>
+  </div>
+
+  <div style="margin-top:3.5rem;">
+    <div class="reveal" style="margin-bottom:2rem;">
+      <p class="section-label">Nach Raumgröße</p>
+      <h2>Die richtige Lösung für jeden Raum.</h2>
+      <p class="section-intro">Die Technik richtet sich nach der Raumgröße und Teilnehmerzahl — wir beraten Sie individuell.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);" class="reveal delay-1">
+        <div style="background:#fff;text-align:center;padding:1.2rem 1rem 0.8rem;">
+          <img src="../Bilder/UCC klein.png" alt="Kleiner Raum" style="width:100%;max-height:180px;object-fit:contain;" />
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-top:0.8rem;">Kleiner Raum</h3>
+          <p style="font-size:0.82rem;color:var(--gray);margin-top:0.3rem;">3–5 Personen</p>
+        </div>
+        <div style="background:var(--gray-light);padding:1.5rem;">
+          <ul style="list-style:none;">
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> All-in-One Konferenzbar</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Integrierte Kamera & Mikrofon</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Einfache USB-Anbindung</li>
+            <li style="padding:0.45rem 0;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Platzsparend & schnell installiert</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);" class="reveal delay-2">
+        <div style="background:#fff;text-align:center;padding:1.2rem 1rem 0.8rem;">
+          <img src="../Bilder/UCC mittel.png" alt="Mittlerer Raum" style="width:100%;max-height:180px;object-fit:contain;" />
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-top:0.8rem;">Mittlerer Raum</h3>
+          <p style="font-size:0.82rem;color:var(--gray);margin-top:0.3rem;">6–9 Personen</p>
+        </div>
+        <div style="background:var(--gray-light);padding:1.5rem;">
+          <ul style="list-style:none;">
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> PTZ-Kamera mit Auto-Tracking</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Mikrofonarray für den Tisch</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Codec-basierte Lösung</li>
+            <li style="padding:0.45rem 0;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Touch-Steuerung optional</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);" class="reveal delay-3">
+        <div style="background:#fff;text-align:center;padding:1.2rem 1rem 0.8rem;">
+          <img src="../Bilder/UCC groß.png" alt="Großer Raum" style="width:100%;max-height:180px;object-fit:contain;" />
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-top:0.8rem;">Großer Raum</h3>
+          <p style="font-size:0.82rem;color:var(--gray);margin-top:0.3rem;">10–14+ Personen</p>
+        </div>
+        <div style="background:var(--gray-light);padding:1.5rem;">
+          <ul style="list-style:none;">
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Mehrkamerasystem</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Deckenmikrofon-Array</li>
+            <li style="padding:0.45rem 0;border-bottom:1px solid #e5e7eb;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Professionelles Audiosystem</li>
+            <li style="padding:0.45rem 0;font-size:0.88rem;display:flex;gap:0.6rem;"><span style="color:#0e7a8a;font-weight:700;">→</span> Zentrales Raummanagement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <div class="reveal">
+    <p class="section-label">Display-Typen</p>
+    <h2>Welches Display passt zu Ihnen?</h2>
+    <p class="section-intro">Wir bieten beide gängigen Display-Arten — je nach Anforderung und Budget.</p>
+  </div>
+  <div class="display-compare">
+    <div class="display-card reveal delay-1">
+      <div class="display-card-header"><div class="dc-icon">🖥️</div><h3>Standard-Display</h3><p style="opacity:0.8;font-size:0.88rem;margin-top:0.4rem;">Für einfache Inhaltsdarstellung</p></div>
+      <div class="display-card-body">
+        <ul>
+          <li>Hohe Helligkeit (ideal für helle Räume)</li>
+          <li>Keine Touchfunktion</li>
+          <li>Kostengünstiger in der Anschaffung</li>
+          <li>Ideal für Digital Signage & Präsentation</li>
+          <li>Verschiedene Größen verfügbar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="display-card reveal delay-2">
+      <div class="display-card-header"><div class="dc-icon">🖱️</div><h3>Interaktives Display</h3><p style="opacity:0.8;font-size:0.88rem;margin-top:0.4rem;">Für kollaboratives Arbeiten</p></div>
+      <div class="display-card-body">
+        <ul>
+          <li>Touchfunktion mit Multitouch</li>
+          <li>Integriertes Betriebssystem (Android)</li>
+          <li>OPS-Slot für Mini-PC (2. Betriebssystem)</li>
+          <li>Gehärtetes Frontglas</li>
+          <li>Integrierter USB-Hub</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">Montage</p>
+    <h2>Flexibel montiert — für jeden Raum.</h2>
+    <p class="section-intro">Wir bieten alle gängigen Halterungssysteme für Displays jeder Größe.</p>
+  </div>
+  <div class="mounting-grid">
+    <div class="mounting-item reveal delay-1"><div class="mi-icon">🧲</div><h4>Wandhalterung Fix</h4></div>
+    <div class="mounting-item reveal delay-2"><div class="mi-icon">↕️</div><h4>Wandhalterung mit Höhenverstellung</h4></div>
+    <div class="mounting-item reveal delay-3"><div class="mi-icon">🛞</div><h4>Fahrgestell mobil</h4></div>
+    <div class="mounting-item reveal delay-4"><div class="mi-icon">🏛️</div><h4>Pylonensystem</h4></div>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Digital Signage</p>
+      <h2>Digitale Kommunikation, die auffällt.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Digital Signage ersetzt statische Schilder durch dynamische, zentral steuerbare Displays — für maximale Aufmerksamkeit.</p>
+      <ul class="feature-list">
+        <li>Zentrale Content-Verwaltung via Software</li>
+        <li>Zeitgesteuerte Inhalte und Playlists</li>
+        <li>Geeignet für Restaurants, Autohäuser, Hotels</li>
+        <li>Hochauflösende Darstellung (Full HD / 4K)</li>
+        <li>Fernwartung und Remote-Update</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <div class="fv-bg fv-bg-1 fv-bg-dots"></div>
+      <span class="fv-icon">📡</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-light)">
+  <div class="cta-box reveal">
+    <h2>Ihr Raum. Ihre Medienwelt.</h2>
+    <p>Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch — wir finden die perfekte AV-Lösung für Sie.</p>
+    <a href="index.html#kontakt" class="btn-green">Jetzt Beratung anfragen</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 AVplus e.U. · Wien</span>
+  <span><a href="index.html">Startseite</a> · <a href="index.html#kontakt">Kontakt</a></span>
+</footer>
+<script>
+  const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

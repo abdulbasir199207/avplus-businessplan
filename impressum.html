@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum & Datenschutz – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.7; overflow-x: hidden; }
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+
+    /* PAGE HERO */
+    .page-hero { margin-top:72px; background:linear-gradient(135deg,#0f2744 0%,#1b4f7a 50%,#2d6ea8 100%); padding:4rem 5% 3rem; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:30px 30px; }
+    .page-hero-content { position:relative; max-width:700px; color:var(--white); }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .breadcrumb span { margin:0 0.5rem; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(45,110,168,0.3); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.9); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1rem; }
+    .page-hero-content h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; line-height:1.2; }
+    .page-hero-content p { margin-top:0.8rem; opacity:0.8; font-size:1rem; }
+
+    /* TABS */
+    .tab-bar { background:var(--white); border-bottom:2px solid #eee; padding:0 5%; display:flex; gap:0; position:sticky; top:72px; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+    .tab-btn { padding:1.1rem 1.8rem; font-size:0.92rem; font-weight:600; color:var(--gray); text-decoration:none; border-bottom:3px solid transparent; margin-bottom:-2px; transition:color 0.2s, border-color 0.2s; cursor:pointer; background:none; border-top:none; border-left:none; border-right:none; font-family:inherit; }
+    .tab-btn:hover { color:var(--blue); }
+    .tab-btn.active { color:var(--blue); border-bottom-color:var(--blue); }
+
+    /* CONTENT */
+    .content-wrap { max-width:860px; margin:0 auto; padding:3.5rem 5%; }
+
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    /* Impressum table */
+    .imprint-table { width:100%; border-collapse:collapse; margin-bottom:2.5rem; }
+    .imprint-table tr { border-bottom:1px solid #eee; }
+    .imprint-table tr:last-child { border-bottom:none; }
+    .imprint-table td { padding:0.9rem 0; vertical-align:top; font-size:0.95rem; }
+    .imprint-table td:first-child { width:260px; color:var(--gray); font-weight:600; font-size:0.88rem; padding-right:1.5rem; }
+    .imprint-table td:last-child { color:var(--text); font-weight:500; }
+    .imprint-table a { color:var(--blue); text-decoration:none; }
+    .imprint-table a:hover { text-decoration:underline; }
+
+    .info-box { background:var(--blue-light); border-left:4px solid var(--blue); border-radius:0 10px 10px 0; padding:1.2rem 1.5rem; margin-bottom:2rem; }
+    .info-box p { font-size:0.92rem; color:var(--blue-dark); }
+
+    /* Privacy sections */
+    .privacy-section { margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid #eee; }
+    .privacy-section:last-child { border-bottom:none; }
+    .privacy-section h2 { font-size:1.25rem; font-weight:700; color:var(--text); margin-bottom:0.8rem; display:flex; align-items:center; gap:0.6rem; }
+    .privacy-section h3 { font-size:1rem; font-weight:700; color:var(--blue); margin:1.2rem 0 0.5rem; }
+    .privacy-section p { font-size:0.93rem; color:#444; margin-bottom:0.8rem; line-height:1.75; }
+    .privacy-section p:last-child { margin-bottom:0; }
+
+    .section-icon { width:36px; height:36px; background:var(--blue-light); border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+
+    /* Download button */
+    .download-btn { display:inline-flex; align-items:center; gap:0.6rem; background:var(--blue); color:var(--white); padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; margin-top:1rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.25); }
+    .download-btn:hover { background:var(--blue-dark); }
+
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; margin-top:0; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; filter:brightness(0) invert(1); opacity:0.9; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+
+    @media(max-width:768px) { nav .nav-link:not(.btn){display:none} .footer-top{grid-template-columns:1fr;gap:2rem} .imprint-table td:first-child{width:160px} .tab-btn{padding:1rem 1rem;font-size:0.85rem} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <nav>
+    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Impressum & Datenschutz</div>
+    <div class="page-badge">⚖️ Rechtliches</div>
+    <h1>Impressum & Datenschutz</h1>
+    <p>Pflichtangaben gemäß österreichischem Unternehmensrecht und EU-DSGVO.</p>
+  </div>
+</div>
+
+<!-- TAB NAVIGATION -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('impressum', this)">📋 Impressum</button>
+  <button class="tab-btn" onclick="showTab('datenschutz', this)">🔒 Datenschutzerklärung</button>
+</div>
+
+<div class="content-wrap">
+
+  <!-- IMPRESSUM -->
+  <div id="impressum" class="tab-panel active">
+
+    <div class="info-box">
+      <p>Informationspflicht laut § 5 ECG (E-Commerce-Gesetz), § 14 UGB (Unternehmensgesetzbuch) sowie Offenlegungspflicht laut § 25 MedienG.</p>
+    </div>
+
+    <table class="imprint-table">
+      <tr>
+        <td>Inhaber</td>
+        <td>Ing. Abdul Basir Alavi, MSc.</td>
+      </tr>
+      <tr>
+        <td>Firmenwortlaut</td>
+        <td>AVplus e.U.</td>
+      </tr>
+      <tr>
+        <td>Gewerberechtliche Tätigkeit</td>
+        <td>Kommunikationselektronik (Handwerk)</td>
+      </tr>
+      <tr>
+        <td>Firmenbuchnummer</td>
+        <td>612904f</td>
+      </tr>
+      <tr>
+        <td>UID-Nummer</td>
+        <td>ATU79397939</td>
+      </tr>
+      <tr>
+        <td>Firmengericht</td>
+        <td>Handelsgericht Wien</td>
+      </tr>
+      <tr>
+        <td>Firmensitz</td>
+        <td>Edith-Kramer-Weg 6/12, A-1220 Wien</td>
+      </tr>
+      <tr>
+        <td>Telefon</td>
+        <td><a href="tel:+436766520263">+43 676 6520263</a></td>
+      </tr>
+      <tr>
+        <td>E-Mail</td>
+        <td><a href="mailto:office@avplus.at">office@avplus.at</a></td>
+      </tr>
+    </table>
+
+    <a href="#" class="download-btn">⬇ AGBs herunterladen</a>
+
+  </div>
+
+  <!-- DATENSCHUTZ -->
+  <div id="datenschutz" class="tab-panel">
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">👤</span> Verantwortlicher</h2>
+      <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
+      <p>
+        <strong>Ing. Abdul Basir Alavi, BSc. MSc.</strong><br>
+        Edith-Kramer-Weg 6/12<br>
+        1220 Wien, Österreich<br>
+        Telefon: <a href="tel:+436766520263" style="color:var(--blue)">+43 676 6520263</a><br>
+        E-Mail: <a href="mailto:office@avplus.at" style="color:var(--blue)">office@avplus.at</a>
+      </p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">ℹ️</span> Allgemeiner Hinweis</h2>
+      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">🍪</span> Cookies</h2>
+      <p>Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.</p>
+      <p>Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies". Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.</p>
+      <p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">✉️</span> Kontaktformular</h2>
+      <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+      <p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">📂</span> Recht auf Auskunft, Löschung, Sperrung</h2>
+      <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><span class="section-icon">🚫</span> Widerspruch gegen Werbe-Mails</h2>
+      <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik, EDV und Glasfasertechnik in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html" onclick="showTab('datenschutz',null);return false;">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  // Auto-open Datenschutz if URL hash says so
+  if (window.location.hash === '#datenschutz') {
+    showTab('datenschutz', document.querySelectorAll('.tab-btn')[1]);
+  }
+</script>
+</body>
+</html>
