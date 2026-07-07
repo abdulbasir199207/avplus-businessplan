@@ -2,7 +2,85 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google Consent Mode v2: standardmäßig alles abgelehnt, bis der Besucher im Cookie-Banner zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-Z25PB37C6Y');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
+  <meta name="description" content="Sicherheitstechnik &amp; Medientechnik Wien – Videoüberwachung, Alarmanlage, Smart Home &amp; Sat-Montage. AVplus e.U. Faire Preise ✓ Kostenlose Beratung ✓ Jetzt anfragen!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.avplus.at/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.avplus.at/" />
+  <meta property="og:title" content="AVplus e.U. – Sicherheitstechnik & Medientechnik Wien" />
+  <meta property="og:description" content="Videoüberwachung, Alarmanlage, Smart Home & Medientechnik in Wien. Professionell, fair und zuverlässig – AVplus e.U." />
+  <meta property="og:image" content="https://www.avplus.at/bilder/header.png" />
+  <meta property="og:locale" content="de_AT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AVplus e.U. – Sicherheitstechnik & Medientechnik Wien" />
+  <meta name="twitter:description" content="Videoüberwachung, Alarmanlage, Smart Home & Medientechnik in Wien. Professionell, fair und zuverlässig." />
+  <meta name="twitter:image" content="https://www.avplus.at/bilder/header.png" />
+  <!-- Schema.org: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.avplus.at/",
+    "name": "AVplus e.U.",
+    "description": "Professionelle Sicherheitstechnik, Medientechnik, Smart Home, Glasfasertechnik und IT-Service in Wien und ganz Österreich.",
+    "url": "https://www.avplus.at",
+    "telephone": "+436766520263",
+    "email": "office@avplus.at",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Edith-Kramer-Weg 6/12",
+      "postalCode": "1220",
+      "addressLocality": "Wien",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.243966,
+      "longitude": 16.481721
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Wien und ganz Österreich"
+    },
+    "priceRange": "€€",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sicherheitstechnik Wien", "url": "https://www.avplus.at/sicherheitstechnik.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Medientechnik Wien", "url": "https://www.avplus.at/medientechnik.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smart Home Wien", "url": "https://www.avplus.at/smarthome.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Glasfasertechnik Wien", "url": "https://www.avplus.at/lwl.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Computer & IT-Hilfe Wien", "url": "https://www.avplus.at/edv.html"}}
+      ]
+    },
+    "sameAs": []
+  }
+  </script>
   <title>AVplus e.U. – Medien- & Sicherheitstechnik Wien</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -150,15 +228,17 @@
     /* ── HERO ── */
     #hero {
       margin-top: 72px;
-      min-height: 520px;
-      background:
-        linear-gradient(135deg, rgba(15,39,68,0.78) 0%, rgba(27,79,122,0.68) 45%, rgba(45,110,168,0.58) 100%),
-        url('bilder/Vorderbild.png') center/cover no-repeat;
+      min-height: 416px;
+      background: linear-gradient(135deg, #0d1b2e 0%, #162840 60%, #1a3350 100%);
       display: flex;
       align-items: center;
-      padding: 6% 5%;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 5% 5%;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
+      isolation: isolate;
+      transform: translateZ(0);
     }
 
     /* Floating logo watermarks */
@@ -166,8 +246,6 @@
       position: absolute;
       pointer-events: none;
       user-select: none;
-      animation: floatLogo var(--dur, 10s) ease-in-out infinite;
-      animation-delay: var(--delay, 0s);
     }
     .hero-logo-bg img {
       width: 100%;
@@ -202,7 +280,8 @@
     }
 
     .hero-content {
-      max-width: 680px;
+      flex: 1;
+      min-width: 0;
       color: var(--white);
       position: relative;
       z-index: 1;
@@ -233,6 +312,11 @@
       line-height: 1.15;
       margin-bottom: 1.4rem;
       animation: fadeUp 0.8s ease 0.2s both;
+      min-height: calc(clamp(2.2rem, 5vw, 3.8rem) * 1.15 * 2);
+    }
+    .hero-content {
+      flex: 0 0 45%;
+      max-width: 45%;
     }
     .hero-content h1 span { color: var(--green); }
     .hero-content h1 em { font-style: normal; color: rgba(255,255,255,0.6); }
@@ -293,43 +377,182 @@
     }
     .hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 0.1rem; }
 
-    /* Hero visual (right side) */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── CANVAS PARTIKEL ── */
+    #hero-canvas { position:absolute; inset:0; z-index:0; pointer-events:none; }
+
+    /* ── TYPEWRITER CURSOR ── */
+    .type-cursor {
+      display:inline-block;
+      width:3px;
+      height:0.82em;
+      background:rgba(255,255,255,0.9);
+      vertical-align:middle;
+      margin-left:3px;
+      border-radius:2px;
+      animation:type-blink 0.75s step-end infinite;
+    }
+    @keyframes type-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* H1 startet unsichtbar — Typewriter übernimmt */
+    .hero-content h1 { animation:none !important; opacity:1; }
+
+    /* ── PREMIUM PROMO CARD ── */
+    .promo-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.2rem 1.6rem 1.2rem;
+      color: var(--text);
+      box-shadow: 0 24px 72px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08);
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+    @keyframes heartbeat {
+      0%,100% { box-shadow: 0 24px 72px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08); }
+      14%      { box-shadow: 0 28px 80px rgba(106,176,76,0.35), 0 4px 20px rgba(106,176,76,0.2); transform: scale(1.012); }
+      28%      { transform: scale(1); }
+      42%      { box-shadow: 0 26px 76px rgba(106,176,76,0.2), 0 4px 16px rgba(0,0,0,0.08); transform: scale(1.006); }
+      70%      { transform: scale(1); }
+    }
+    .promo-card.heartbeat { animation: heartbeat 2.6s ease-in-out infinite; }
+
+    .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, #e07820, #f5a830);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.42rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 14px rgba(224,120,32,0.4);
+    }
+    .promo-card h3 {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+      color: #0f1f36;
+      letter-spacing: -0.3px;
+    }
+    .promo-card h3 span { color: var(--green); }
+    .promo-card > p {
+      font-size: 0.87rem;
+      color: #5a6575;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .promo-list { list-style: none; margin-bottom: 0.8rem; }
+    .promo-list li {
+      font-size: 0.84rem;
+      padding: 0.3rem 0;
+      color: #1a2332;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .promo-list li:last-child { border-bottom: none; }
+    .promo-list li::before {
+      content: '✓';
+      display: flex; align-items: center; justify-content: center;
+      width: 18px; height: 18px; min-width: 18px;
+      background: #edfaf0;
+      color: var(--green);
+      font-weight: 800;
+      font-size: 0.72rem;
+      border-radius: 50%;
+      margin-top: 1px;
+    }
+    .promo-urgency {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.78rem;
+      color: #2d6a38;
+      margin-bottom: 0.8rem;
+      padding: 0.55rem 0.8rem;
+      background: #edfaf0;
+      border-radius: 10px;
+      border: 1px solid #b6dfc0;
+      line-height: 1.4;
+    }
+    .promo-urgency strong { color: #1a4d25; font-weight: 700; }
+    .promo-live-dot {
+      width: 9px; height: 9px; min-width: 9px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 4px;
+      box-shadow: 0 0 0 3px rgba(106,176,76,0.25);
+      animation: pulse 1.5s infinite;
+    }
+    .promo-divider {
+      border: none;
+      border-top: 1px solid #eef0f3;
+      margin: 1.2rem 0;
+    }
+    .promo-trust {
+      text-align: center;
+      font-size: 0.76rem;
+      color: #8a95a3;
+      margin-top: 0.8rem;
+      letter-spacing: 0.2px;
+    }
+    .promo-trust span { color: var(--green); font-weight: 600; }
+
+    /* Hero Promo Card */
     .hero-visual {
       position: absolute;
       right: 5%;
       top: 50%;
-      transform: translateY(-50%);
-      width: 420px;
-      animation: fadeLeft 1s ease 0.5s both;
+      transform: translateY(-50%) translateX(60px);
+      width: 440px;
+      z-index: 3;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.34,1.3,0.64,1);
     }
-
-    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes fadeLeft { from { opacity:0; transform:translate(40px,-50%); } to { opacity:1; transform:translate(0,-50%); } }
-
-    /* Service cards in hero visual */
-    .hero-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    .hero-visual.show {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(-50%) translateX(0) !important;
     }
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 14px;
-      padding: 1.4rem;
-      color: var(--white);
-      transition: background 0.2s, transform 0.2s;
+    @media (max-width: 1100px) {
+      #hero { flex-direction: column; }
+      .hero-content { flex: 1 1 auto; max-width: 100%; }
+      .hero-visual { position: static; width: 100%; max-width: 440px; margin: 2.5rem auto 0; transform: none !important; }
     }
-    .hero-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
-    .hero-card .hc-icon { font-size: 2rem; margin-bottom: 0.6rem; }
-    .hero-card .hc-title { font-size: 0.85rem; font-weight: 700; }
-    .hero-card .hc-sub { font-size: 0.75rem; opacity: 0.6; margin-top: 0.2rem; }
-    .hero-card.featured {
-      grid-column: 1 / -1;
-      background: rgba(106,176,76,0.2);
-      border-color: rgba(106,176,76,0.4);
+    .promo-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+    }
+    .promo-price-label { font-size: 0.78rem; opacity: 0.6; }
+    .promo-price-val { font-size: 1.6rem; font-weight: 800; color: var(--green); }
+    .promo-price-note { font-size: 0.75rem; opacity: 0.55; }
+    .promo-cta {
+      display: block;
+      background: var(--green);
+      color: #fff !important;
+      text-align: center;
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(106,176,76,0.45);
+    }
+    .promo-cta:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(106,176,76,0.55);
     }
 
     /* ── TRUST BAR ── */
@@ -792,13 +1015,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .hero-visual { display: none; }
       .leistungen-grid { grid-template-columns: repeat(2, 1fr); }
       .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-      nav .nav-link:not(.btn):not(:last-child) { display: none; }
       .ueber-wrap, .kunden-wrap, .kontakt-wrap { grid-template-columns: 1fr; }
       .leistungen-grid { grid-template-columns: 1fr; }
       .prozess-steps { grid-template-columns: 1fr 1fr; }
@@ -808,6 +1029,17 @@
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
       .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ── MOBILE NAVIGATION ── */
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--text); padding: 0.3rem 0.6rem; border-radius: 8px; }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      header nav { position: fixed; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0.2rem; padding: 0.8rem 5% 1.2rem; box-shadow: 0 16px 30px rgba(0,0,0,0.14); display: none; max-height: calc(100vh - 72px); overflow-y: auto; }
+      header nav.nav-open { display: flex; }
+      header nav .nav-link { display: block; padding: 0.85rem 0.4rem; font-size: 1rem; }
+      .nav-dropdown .dropdown-menu { position: static; opacity: 1; pointer-events: all; transform: none; box-shadow: none; min-width: 0; padding: 0 0 0 0.8rem; }
+      header nav .btn { text-align: center; margin-top: 0.4rem; }
+    }
   </style>
 </head>
 <body>
@@ -816,7 +1048,7 @@
 <header id="header">
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="#hero" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheit · Medien · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
   </div>
   <nav>
     <div class="nav-dropdown">
@@ -824,74 +1056,54 @@
       <div class="dropdown-menu">
         <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
         <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
-
-        <a href="lwl.html"><span class="di">🔗</span> Glasfaser & Spleißtechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
         <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
         <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
       </div>
     </div>
     <a href="#ueber" class="nav-link">Über uns</a>
     <a href="#kunden" class="nav-link">Kunden</a>
+    <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;transition:background 0.2s;" onmouseover="this.style.background='#d0eeda'" onmouseout="this.style.background='#eaf4ee'">📞 +43 676 6520263</a>
     <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
 </header>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-logo-bg hero-logo-1"><img src="logo.png" alt="" /></div>
-  <div class="hero-logo-bg hero-logo-2"><img src="logo.png" alt="" /></div>
-  <div class="hero-logo-bg hero-logo-3"><img src="logo.png" alt="" /></div>
-  <div class="hero-logo-bg hero-logo-4"><img src="logo.png" alt="" /></div>
   <div class="hero-grid"></div>
+  <img fetchpriority="high" src="bilder/header.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:0.35;pointer-events:none;z-index:0;transform:translateZ(0);will-change:transform;backface-visibility:hidden;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,46,0.85) 0%,rgba(13,27,46,0.65) 50%,rgba(13,27,46,0.85) 100%);z-index:1;pointer-events:none;"></div>
 
   <div class="hero-content">
-    <div class="hero-badge">Wien · Österreich · Gegründet 2025</div>
     <h1>Technik, die <span>schützt</span><br><em>und</em> <span>verbindet.</span></h1>
     <p>AVplus e.U. realisiert professionelle Sicherheits-, Medien- und Glasfaserlösungen für Unternehmen und Bildungseinrichtungen in Wien.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-hero">Kostenloses Erstgespräch</a>
       <a href="#leistungen" class="btn-ghost">Unsere Leistungen</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">5+</div>
-        <div class="hero-stat-label">Fachbereiche</div>
+  </div>
+
+
+  <div class="hero-visual">
+    <div class="promo-card">
+      <div class="promo-badge">☀️ SOMMERAKTION 2026</div>
+      <h3>Genießen Sie Ihren Urlaub –<br>wir <span>schützen</span> Ihr Zuhause.</h3>
+<ul class="promo-list">
+        <li>Kostenlose Sicherheitsanalyse vor Ort</li>
+        <li>Individuelles Festpreisangebot innerhalb von 24 Stunden</li>
+        <li>Montage meist innerhalb eines Werktages</li>
+        <li>2 Jahre Garantie auf alle Systeme</li>
+      </ul>
+      <div class="promo-urgency">
+        <span class="promo-live-dot"></span>
+        <span><strong>Sommer-Termine:</strong> Sichern Sie sich jetzt Ihren Wunschtermin für Juli & August.</span>
       </div>
-      <div>
-        <div class="hero-stat-num">Wien</div>
-        <div class="hero-stat-label">Standort</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">100%</div>
-        <div class="hero-stat-label">Aus einer Hand</div>
-      </div>
+      <a href="#kontakt" class="promo-cta">Kostenlose Sicherheitsanalyse sichern →</a>
     </div>
   </div>
 
-  <div class="hero-visual">
-    <div class="hero-cards">
-      <div class="hero-card featured">
-        <div class="hc-icon">🔒</div>
-        <div class="hc-title">Sicherheitstechnik</div>
-        <div class="hc-sub">Videoüberwachung · Alarmanlagen · Zutrittskontrolle</div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-icon">📺</div>
-        <div class="hc-title">Medientechnik</div>
-        <div class="hc-sub">AV · Displays · Digital Signage</div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-icon">🔗</div>
-        <div class="hc-title">Spleißtechnik</div>
-        <div class="hc-sub">LWL · Glasfaser · Netzwerk</div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-icon">🏠</div>
-        <div class="hc-title">Smart-Home</div>
-        <div class="hc-sub">Automation · App-Steuerung</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- TRUST BAR -->
@@ -914,7 +1126,7 @@
   <div class="leistungen-grid">
     <a href="sicherheitstechnik.html" class="l-card reveal delay-1">
       <div class="l-card-img">
-        <img src="bilder/ST Allgemein.jpeg" alt="Sicherheitstechnik" />
+        <img loading="lazy" decoding="async" src="bilder/sicherheit-collage.webp" alt="Sicherheitstechnik Wien – Ajax Alarmanlage, Videoüberwachung und Zutrittskontrolle von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
@@ -929,7 +1141,7 @@
 
     <a href="medientechnik.html" class="l-card reveal delay-2">
       <div class="l-card-img">
-        <img src="bilder/konferenzraum.png" alt="Medientechnik" />
+        <img loading="lazy" decoding="async" src="bilder/konferenzraum.webp" alt="Medientechnik Wien – TV-Montage, Displays und Digital Signage von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
@@ -942,9 +1154,10 @@
       </div>
     </a>
 
+
     <a href="ucc.html" class="l-card reveal delay-3">
       <div class="l-card-img">
-        <img src="bilder/Starlink 2.png" alt="Starlink und Sat-Technik" style="object-fit:contain;background:#fff;" />
+        <img loading="lazy" decoding="async" src="bilder/starlink-wien.webp" alt="Starlink Montage Wien – Techniker installiert Starlink-Antenne auf Dach mit Wiener Skyline, AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
@@ -959,11 +1172,11 @@
 
     <a href="lwl.html" class="l-card reveal delay-4">
       <div class="l-card-img">
-        <img src="https://images.unsplash.com/photo-1606904825846-647eb07f5be2?auto=format&fit=crop&w=700&q=80" alt="Glasfaser Spleißtechnik" />
+        <img loading="lazy" decoding="async" src="bilder/lwl-glasfaser.webp" alt="Glasfasertechnik Wien – LWL-Verlegung und Spleißtechnik von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
-        <h3>Glasfaser & Spleißtechnik</h3>
+        <h3>Glasfasertechnik</h3>
         <p>Professionelle LWL-Verlegung, Messung und Spleißung — für schnelle, stabile Netzwerkinfrastruktur in Gebäuden und Anlagen.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
@@ -974,7 +1187,7 @@
 
     <a href="smarthome.html" class="l-card reveal delay-5">
       <div class="l-card-img">
-        <img src="https://images.unsplash.com/photo-1558002038-bb4237bb0c55?auto=format&fit=crop&w=700&q=80" alt="Smart Home" />
+        <img loading="lazy" decoding="async" src="bilder/smarthome-system.webp" alt="Smart Home Wien – Beleuchtung, Heizung, Rolläden und Sicherheit per App steuern, AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
@@ -989,12 +1202,12 @@
 
     <a href="edv.html" class="l-card reveal delay-1">
       <div class="l-card-img">
-        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=700&q=80" alt="EDV IT Service" />
+        <img loading="lazy" decoding="async" src="bilder/serverraum.webp" alt="Computer und IT-Hilfe Wien – PC-Reparatur, WLAN und Technikhilfe von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
-        <h3>EDV & IT-Service</h3>
-        <p>PC- & Laptop-Reparatur, Netzwerk-Einrichtung, WLAN-Optimierung und strukturierte Netzwerkverkabelung — schnell und zuverlässig vor Ort.</p>
+        <h3>Computer, Netzwerktechnik & IT-Hilfe</h3>
+        <p>PC-Reparatur, Netzwerkinstallation oder persönliche Technikhilfe? Wir kommen zu Ihnen, lösen das Problem und erklären alles verständlich — direkt vor Ort.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1012,8 +1225,8 @@
       <div class="zahl-label">Fachbereiche</div>
     </div>
     <div class="zahl-item reveal delay-2">
-      <div class="zahl-num" data-count="100">0</div>
-      <div class="zahl-label">% Kundenzufriedenheit</div>
+      <div class="zahl-num" data-count="2">0</div>
+      <div class="zahl-label">Jahre Garantie auf alle Systeme</div>
     </div>
     <div class="zahl-item reveal delay-3">
       <div class="zahl-num">Wien</div>
@@ -1031,7 +1244,7 @@
   <div class="ueber-wrap">
     <div class="ueber-img-wrap reveal-left">
       <div class="ueber-main-img">
-        <img src="bilder/konferenzraum.png" alt="AVplus Konferenzraum" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;" />
+        <img loading="lazy" decoding="async" src="bilder/konferenzraum.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen aus einer Hand" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;" />
       </div>
       <div class="ueber-badge">
         <div class="ueber-badge-num">AVplus</div>
@@ -1043,7 +1256,7 @@
       <p class="section-label">Wer wir sind</p>
       <h2>Erfahrung trifft<br>moderne Technik.</h2>
       <p>AVplus e.U. ist ein Wiener Dienstleistungsunternehmen spezialisiert auf die Planung, Installation, Programmierung und Wartung moderner Techniklösungen.</p>
-      <p>Gründer Abdul Basir Alavi bringt jahrelange Expertise in Medientechnik, IT-Projektleitung und AV-Systemintegration mit.</p>
+
 
       <div class="ueber-features">
         <div class="ueber-feature">
@@ -1205,33 +1418,39 @@
     <div class="kontakt-form-wrap reveal-right">
       <h3>Anfrage senden</h3>
       <p>Unverbindlich und kostenlos — wir beraten Sie gerne.</p>
-      <form onsubmit="handleSubmit(event)">
+      <form id="kontakt-form" action="https://formspree.io/f/xvzjgjkg" method="POST" onsubmit="handleSubmit(event)">
+
+        <!-- Spam-Schutz (Honeypot) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <!-- Betreffzeile der E-Mail -->
+        <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at" />
+
         <div class="form-row">
           <div class="form-group">
             <label>Vorname *</label>
-            <input type="text" placeholder="Max" required />
+            <input type="text" name="vorname" placeholder="Max" required />
           </div>
           <div class="form-group">
             <label>Nachname *</label>
-            <input type="text" placeholder="Mustermann" required />
+            <input type="text" name="nachname" placeholder="Mustermann" required />
           </div>
         </div>
         <div class="form-group">
           <label>E-Mail *</label>
-          <input type="email" placeholder="max@mustermann.at" required />
+          <input type="email" name="email" placeholder="max@mustermann.at" required />
         </div>
         <div class="form-group">
           <label>Telefon</label>
-          <input type="tel" placeholder="+43 ..." />
+          <input type="tel" name="telefon" placeholder="+43 ..." />
         </div>
         <div class="form-group">
           <label>Bereich</label>
-          <select>
+          <select name="bereich">
             <option value="" disabled selected>Bitte wählen …</option>
             <option>Sicherheitstechnik</option>
             <option>Medientechnik</option>
             <option>UCC & Konferenztechnik</option>
-            <option>Glasfaser & Spleißtechnik</option>
+            <option>Netzwerk- & Glasfasertechnik</option>
             <option>Smart-Home</option>
             <option>Service & Wartung</option>
             <option>Sonstiges</option>
@@ -1239,9 +1458,10 @@
         </div>
         <div class="form-group">
           <label>Ihre Nachricht *</label>
-          <textarea placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage …" required></textarea>
+          <textarea name="nachricht" placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage …" required></textarea>
         </div>
-        <button type="submit" class="form-submit">Anfrage absenden →</button>
+        <button type="submit" class="form-submit" id="form-submit-btn">Anfrage absenden →</button>
+        <div id="form-msg" style="display:none;margin-top:1rem;padding:0.9rem 1.2rem;border-radius:10px;font-size:0.93rem;font-weight:600;"></div>
       </form>
     </div>
   </div>
@@ -1251,7 +1471,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="logo.png" alt="AVplus e.U." />
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
       <p>AVplus e.U. ist Ihr zuverlässiger Partner für Medientechnik, Sicherheitstechnik und Glasfasertechnik in Wien und ganz Österreich.</p>
     </div>
     <div class="footer-col">
@@ -1260,7 +1480,7 @@
         <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
         <li><a href="medientechnik.html">Medientechnik</a></li>
 
-        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
         <li><a href="smarthome.html">Smart-Home</a></li>
         <li><a href="edv.html">EDV & IT-Service</a></li>
       </ul>
@@ -1275,8 +1495,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
-    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
   </div>
 </footer>
 
@@ -1320,18 +1540,208 @@
     }
   });
 
-  function handleSubmit(e) {
+  /* ══════════════════════════════════════════
+     CANVAS PARTIKEL / NETZWERK ANIMATION
+  ══════════════════════════════════════════ */
+  (function () {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const HERO = document.getElementById('hero');
+    const N = 68, MAX_D = 145;
+    let W, H, particles = [];
+
+    function resize() {
+      W = canvas.width  = HERO.offsetWidth;
+      H = canvas.height = HERO.offsetHeight;
+    }
+
+    function Particle() {
+      this.reset();
+    }
+    Particle.prototype.reset = function () {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.45;
+      this.vy = (Math.random() - 0.5) * 0.45;
+      this.r  = Math.random() * 1.8 + 0.6;
+      this.a  = Math.random() * 0.38 + 0.08;
+    };
+    Particle.prototype.update = function () {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > W) this.vx *= -1;
+      if (this.y < 0 || this.y > H) this.vy *= -1;
+    };
+    Particle.prototype.draw = function () {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + this.a + ')';
+      ctx.fill();
+    };
+
+    function init() {
+      particles = [];
+      for (let i = 0; i < N; i++) particles.push(new Particle());
+    }
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < N; i++) {
+        particles[i].update();
+        particles[i].draw();
+        for (let j = i + 1; j < N; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d  = Math.sqrt(dx * dx + dy * dy);
+          if (d < MAX_D) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(144,200,255,' + (1 - d / MAX_D) * 0.13 + ')';
+            ctx.lineWidth = 0.75;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    resize();
+    init();
+    frame();
+    window.addEventListener('resize', function () { resize(); init(); });
+  })();
+
+  /* ══════════════════════════════════════════
+     TYPEWRITER HERO HEADLINE
+  ══════════════════════════════════════════ */
+  (function () {
+    const h1 = document.querySelector('.hero-content h1');
+    if (!h1) return;
+
+    const segments = [
+      { text: 'Technik, die ',  tag: null  },
+      { text: 'schützt',        tag: 'span' },
+      { br: true },
+      { text: 'und ',           tag: 'em'   },
+      { text: 'verbindet.',     tag: 'span' }
+    ];
+
+    h1.innerHTML = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'type-cursor';
+    h1.appendChild(cursor);
+
+    let si = 0, ci = 0, activeEl = h1;
+
+    function moveCursorToEnd() {
+      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      h1.appendChild(cursor);
+    }
+
+    function tick() {
+      if (si >= segments.length) {
+        setTimeout(function () {
+          cursor.style.animation = 'none';
+          cursor.style.opacity   = '0';
+        }, 800);
+        return;
+      }
+
+      const seg = segments[si];
+
+      if (seg.br) {
+        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+        h1.appendChild(document.createElement('br'));
+        activeEl = h1;
+        h1.appendChild(cursor);
+        si++; ci = 0;
+        setTimeout(tick, 100);
+        return;
+      }
+
+      if (ci === 0) {
+        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+        if (seg.tag) {
+          activeEl = document.createElement(seg.tag);
+          h1.appendChild(activeEl);
+        } else {
+          activeEl = h1;
+        }
+        h1.appendChild(cursor);
+      }
+
+      if (ci < seg.text.length) {
+        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+        activeEl.appendChild(document.createTextNode(seg.text[ci]));
+        h1.appendChild(cursor);
+        ci++;
+        const delay = seg.text[ci - 1] === ' ' ? 38 : (ci % 5 === 0 ? 95 : 72);
+        setTimeout(tick, delay);
+      } else {
+        si++; ci = 0;
+        setTimeout(tick, 60);
+      }
+    }
+
+    setTimeout(tick, 700);
+  })();
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Nachricht gesendet!';
-    btn.style.background = 'var(--green)';
-    setTimeout(() => {
+    const form = e.target;
+    const btn = document.getElementById('form-submit-btn');
+    const msg = document.getElementById('form-msg');
+
+
+    btn.textContent = 'Wird gesendet …';
+    btn.disabled = true;
+    msg.style.display = 'none';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        msg.style.display = 'block';
+        msg.style.background = '#d4edda';
+        msg.style.color = '#155724';
+        msg.style.border = '1px solid #c3e6cb';
+        msg.textContent = '✓ Ihre Anfrage wurde erfolgreich gesendet! Wir melden uns innerhalb von 24 Stunden.';
+        form.reset();
+        btn.textContent = 'Anfrage absenden →';
+        btn.disabled = false;
+      } else {
+        throw new Error('Serverfehler');
+      }
+    } catch (err) {
+      msg.style.display = 'block';
+      msg.style.background = '#f8d7da';
+      msg.style.color = '#721c24';
+      msg.style.border = '1px solid #f5c6cb';
+      msg.textContent = '✗ Fehler beim Senden. Bitte schreiben Sie direkt an: office@avplus.at';
       btn.textContent = 'Anfrage absenden →';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
+      btn.disabled = false;
+    }
   }
 </script>
 <script src="cookie-consent.js"></script>
+<script src="site.js"></script>
+
+<script>
+setTimeout(function() {
+  var v = document.querySelector('.hero-visual');
+  if (!v) return;
+  v.classList.add('show');
+  setTimeout(function() {
+    var c = v.querySelector('.promo-card');
+    if (c) c.classList.add('heartbeat');
+  }, 700);
+}, 1000);
+</script>
 </body>
 </html>

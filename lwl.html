@@ -2,8 +2,67 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google Consent Mode v2: standardmäßig alles abgelehnt, bis der Besucher im Cookie-Banner zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-Z25PB37C6Y');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
+  <meta name="description" content="Glasfaser &amp; Spleißtechnik Wien – Netzwerkinstallation, LWL-Verlegung &amp; Starlink-Montage. AVplus e.U. ✓ Faire Preise ✓ Jetzt anfragen!" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.avplus.at/lwl.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.avplus.at/lwl.html" />
+  <meta property="og:title" content="Glasfaser Wien – LWL-Verlegung, Spleißtechnik & Starlink | AVplus e.U." />
+  <meta property="og:description" content="Glasfaser-Netzwerke, LWL-Verlegung & Starlink-Montage in Wien. AVplus e.U. – professionelle Netzwerkinstallation zu fairen Preisen." />
+  <meta property="og:image" content="https://www.avplus.at/bilder/lwl-glasfaser.jpg" />
+  <meta property="og:locale" content="de_AT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glasfasertechnik Wien | AVplus e.U." />
+  <meta name="twitter:description" content="LWL-Verlegung, Spleißtechnik & Starlink-Montage in Wien." />
+  <meta name="twitter:image" content="https://www.avplus.at/bilder/lwl-glasfaser.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.avplus.at/lwl.html",
+        "name": "Glasfasertechnik Wien",
+        "description": "LWL-Verlegung, Spleißtechnik, Netzwerkinstallation und Starlink-Montage in Wien.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "AVplus e.U.",
+          "telephone": "+436766520263",
+          "email": "office@avplus.at",
+          "address": { "@type": "PostalAddress", "streetAddress": "Edith-Kramer-Weg 6/12", "postalCode": "1220", "addressLocality": "Wien", "addressCountry": "AT" },
+          "url": "https://www.avplus.at/"
+        },
+        "areaServed": { "@type": "City", "name": "Wien" },
+        "serviceType": ["Glasfaser", "LWL-Verlegung", "Spleißtechnik", "Starlink", "Netzwerkinstallation"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.avplus.at/" },
+          { "@type": "ListItem", "position": 2, "name": "Glasfasertechnik", "item": "https://www.avplus.at/lwl.html" }
+        ]
+      }
+    ]
+  }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glasfaser & Spleißtechnik – AVplus e.U.</title>
+  <title>Glasfaser Wien | Spleißtechnik & Netzwerkinstallation | AVplus e.U.</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
@@ -62,24 +121,41 @@
     footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
     footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
     footer a:hover { color:var(--white); }
-    @media(max-width:768px) { .services-grid,.feature-split,.steps{grid-template-columns:1fr} nav .nav-link:not(.btn){display:none} }
+    @media(max-width:768px) { .services-grid,.feature-split,.steps{grid-template-columns:1fr} }
+
+    /* ── MOBILE NAVIGATION ── */
+    .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width: 768px) {
+      .nav-toggle { display:block; }
+      header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
+      header nav.nav-open { display:flex; }
+      header nav .nav-link { display:block; padding:0.85rem 0.4rem; font-size:1rem; }
+      .nav-dropdown .dropdown-menu { position:static; opacity:1; pointer-events:all; transform:none; box-shadow:none; min-width:0; padding:0 0 0 0.8rem; }
+      header nav .btn { text-align:center; margin-top:0.4rem; }
+    }
   </style>
 </head>
 <body>
 <header>
-  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
+    <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+  </div>
   <nav>
     <a href="index.html#leistungen" class="nav-link">Leistungen</a>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
     <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
 </header>
 
 <div class="page-hero">
+  <img fetchpriority="high" src="bilder/lwl-glasfaser.webp" alt="Glasfaserkabel Wien – LWL-Verlegung und Netzwerkinstallation von AVplus e.U." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.18;z-index:0;" />
   <div class="page-hero-shape"></div>
   <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Glasfaser & Spleißtechnik</div>
-    <div class="page-badge">🔗 Glasfaser & Spleißtechnik</div>
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Netzwerk- & Glasfasertechnik</div>
+    <div class="page-badge">🔗 Netzwerk- & Glasfasertechnik</div>
     <h1>Lichtschnelle Verbindungen.<br><span>Glasfaser</span> für Ihr Gebäude.</h1>
     <p>Professionelle LWL-Verlegung, präzise Spleißtechnik und Netzwerkmessungen — für stabile Infrastruktur, die zukunftssicher ist.</p>
   </div>
@@ -88,7 +164,7 @@
 <section style="background:var(--gray-light)">
   <div class="reveal">
     <p class="section-label">Unsere Leistungen</p>
-    <h2>Glasfaser & Spleißtechnik</h2>
+    <h2>Netzwerk- & Glasfasertechnik</h2>
     <p class="section-intro">Von der Planung bis zur Übergabe — wir verlegen, spleiße und messen Ihr LWL-Netz.</p>
   </div>
   <div class="services-grid">
@@ -104,8 +180,8 @@
 <section style="background:var(--white)">
   <div class="feature-split">
     <div class="feature-visual reveal">
-      <div class="fv-bg fv-dots"></div>
-      <span class="fv-icon">✂️</span>
+      <img loading="lazy" decoding="async" src="bilder/lwl-glasfaser.webp" alt="LWL Spleißtechnik Wien – Glasfaserkabel verbinden und messen von AVplus e.U." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,62,0.55),rgba(64,96,192,0.40));"></div>
     </div>
     <div class="reveal">
       <p class="section-label">Spleißtechnik</p>
@@ -144,14 +220,56 @@
   </div>
 </section>
 
+<section style="background:#f5f7fa; padding:4rem 1.5rem;">
+  <div style="max-width:800px; margin:0 auto;">
+    <h2 style="font-size:1.7rem; color:#1a2332; margin-bottom:2rem; text-align:center;">Häufige Fragen zur Glasfasertechnik</h2>
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was ist der Unterschied zwischen Glasfaser und normalem Internet?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Glasfaser überträgt Daten per Licht statt Kupferkabel — dadurch ist sie schneller, stabiler und störungsunempfindlicher. Ideal für Homeoffice, Streaming und Unternehmen.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet eine Glasfaser-Installation in Wien?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Die Kosten hängen von der Länge der Strecke und dem Aufwand ab. Wir erstellen Ihnen ein kostenloses, unverbindliches Angebot nach einer kurzen Besichtigung.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Könnt ihr auch Starlink montieren und einrichten?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir montieren die Starlink-Schüssel fachgerecht, verlegen Kabel und richten alles ein — damit Sie sofort online sind.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Wie lange dauert eine LWL-Verlegung?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Kleine Installationen (z.B. innerhalb eines Büros) dauern einen halben bis ganzen Tag. Größere Strecken werden individuell geplant — wir informieren Sie vorab über den genauen Zeitaufwand.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Ist Glasfaser auch für Privatwohnungen sinnvoll?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, besonders wenn Sie viel streamen, im Homeoffice arbeiten oder mehrere Geräte gleichzeitig nutzen. Glasfaser sorgt für eine stabile und schnelle Verbindung in der ganzen Wohnung.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was ist der Unterschied zwischen Glasfaser und normalem Internet?", "acceptedAnswer": { "@type": "Answer", "text": "Glasfaser überträgt Daten per Licht — dadurch ist sie schneller, stabiler und störungsunempfindlicher als Kupferkabel." } },
+    { "@type": "Question", "name": "Was kostet eine Glasfaser-Installation in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten hängen von Länge und Aufwand ab. Wir erstellen ein kostenloses Angebot nach einer Besichtigung." } },
+    { "@type": "Question", "name": "Könnt ihr auch Starlink montieren und einrichten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir montieren die Starlink-Schüssel, verlegen Kabel und richten alles ein." } },
+    { "@type": "Question", "name": "Wie lange dauert eine LWL-Verlegung?", "acceptedAnswer": { "@type": "Answer", "text": "Kleine Installationen dauern einen halben bis ganzen Tag. Größere Strecken werden individuell geplant." } },
+    { "@type": "Question", "name": "Ist Glasfaser auch für Privatwohnungen sinnvoll?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, besonders für Homeoffice, Streaming und viele Geräte gleichzeitig. Glasfaser sorgt für stabile, schnelle Verbindungen." } }
+  ]
+}
+</script>
+
 <footer>
-  <span>© 2025 AVplus e.U. · Wien</span>
-  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  <span>© 2026 AVplus e.U. · Wien</span>
+  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
 </footer>
 <script>
   const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 <script src="cookie-consent.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

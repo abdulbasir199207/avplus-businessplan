@@ -1,0 +1,5 @@
+# Lokale Sicherheitskopie der Original-Bilder – bleibt lokal, nicht im Repository
+bilder-original/
+
+# Private Arbeitsdokumente (Word)
+*.docx

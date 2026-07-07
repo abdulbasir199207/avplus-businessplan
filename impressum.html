@@ -2,8 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google Consent Mode v2: standardmäßig alles abgelehnt, bis der Besucher im Cookie-Banner zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-Z25PB37C6Y');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum & Datenschutz – AVplus e.U.</title>
+  <title>Impressum, AGB & Datenschutz – AVplus e.U.</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
@@ -71,7 +87,7 @@
 
     footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; margin-top:0; }
     .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
-    .footer-brand img { height:36px; margin-bottom:1rem; filter:brightness(0) invert(1); opacity:0.9; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
     .footer-brand p { font-size:0.88rem; line-height:1.7; }
     .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
     .footer-col ul { list-style:none; }
@@ -82,25 +98,39 @@
     .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
     .footer-bottom a:hover { color:var(--white); }
 
-    @media(max-width:768px) { nav .nav-link:not(.btn){display:none} .footer-top{grid-template-columns:1fr;gap:2rem} .imprint-table td:first-child{width:160px} .tab-btn{padding:1rem 1rem;font-size:0.85rem} }
+    @media(max-width:768px) { .footer-top{grid-template-columns:1fr;gap:2rem} .imprint-table td:first-child{width:160px} .tab-btn{padding:1rem 1rem;font-size:0.85rem} }
+
+    /* ── MOBILE NAVIGATION ── */
+    .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width: 768px) {
+      .nav-toggle { display:block; }
+      header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
+      header nav.nav-open { display:flex; }
+      header nav .nav-link { display:block; padding:0.85rem 0.4rem; font-size:1rem; }
+      header nav .btn { text-align:center; margin-top:0.4rem; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
+    <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+  </div>
   <nav>
     <a href="index.html#leistungen" class="nav-link">Leistungen</a>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
 </header>
 
 <div class="page-hero">
   <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Impressum & Datenschutz</div>
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Impressum, AGB & Datenschutz</div>
     <div class="page-badge">⚖️ Rechtliches</div>
-    <h1>Impressum & Datenschutz</h1>
+    <h1>Impressum, AGB & Datenschutz</h1>
     <p>Pflichtangaben gemäß österreichischem Unternehmensrecht und EU-DSGVO.</p>
   </div>
 </div>
@@ -159,7 +189,7 @@
       </tr>
     </table>
 
-    <a href="#" class="download-btn">⬇ AGBs herunterladen</a>
+    <a href="agb-kommunikationselektroniker.pdf" class="download-btn" download="AGB-AVplus.pdf">⬇ AGBs herunterladen</a>
 
   </div>
 
@@ -167,7 +197,7 @@
   <div id="datenschutz" class="tab-panel">
 
     <div class="info-box">
-      <p>Diese Datenschutzerklärung gilt gemäß EU-Datenschutzgrundverordnung (DSGVO), dem österreichischen Datenschutzgesetz (DSG 2018) sowie dem Telekommunikationsgesetz (TKG 2021). Stand: Juni 2025.</p>
+      <p>Diese Datenschutzerklärung gilt gemäß EU-Datenschutzgrundverordnung (DSGVO), dem österreichischen Datenschutzgesetz (DSG 2018) sowie dem Telekommunikationsgesetz (TKG 2021). Stand: Juli 2026.</p>
     </div>
 
     <!-- 1. Verantwortlicher -->
@@ -345,7 +375,7 @@
     <!-- 13. Aktualität -->
     <div class="privacy-section">
       <h2><span class="section-icon">📅</span> 13. Aktualität und Änderung dieser Datenschutzerklärung</h2>
-      <p>Diese Datenschutzerklärung hat den Stand Juni 2025. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren, um sie an geänderte Rechtslagen oder bei Änderungen unserer Dienstleistungen anzupassen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.</p>
+      <p>Diese Datenschutzerklärung hat den Stand Juli 2026. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren, um sie an geänderte Rechtslagen oder bei Änderungen unserer Dienstleistungen anzupassen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.</p>
       <p>Wir empfehlen Ihnen, diese Datenschutzerklärung regelmäßig zu lesen, um über den Schutz der von uns erhobenen personenbezogenen Daten auf dem Laufenden zu bleiben.</p>
     </div>
 
@@ -355,7 +385,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="logo.png" alt="AVplus e.U." />
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
       <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik, EDV und Glasfasertechnik in Wien und ganz Österreich.</p>
     </div>
     <div class="footer-col">
@@ -364,7 +394,7 @@
         <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
         <li><a href="medientechnik.html">Medientechnik</a></li>
         <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
-        <li><a href="lwl.html">Glasfaser & Spleißtechnik</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
         <li><a href="smarthome.html">Smart-Home</a></li>
         <li><a href="edv.html">EDV & IT-Service</a></li>
       </ul>
@@ -375,14 +405,14 @@
         <li><a href="tel:+436766520263">+43 676 6520263</a></li>
         <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
         <li><a href="index.html#kontakt">Anfrage senden</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="impressum.html">Impressum & AGB</a></li>
         <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
-    <span><a href="impressum.html">Impressum</a> · <a href="impressum.html" onclick="showTab('datenschutz',null);return false;">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
   </div>
 </footer>
 
@@ -400,5 +430,6 @@
   }
 </script>
 <script src="cookie-consent.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

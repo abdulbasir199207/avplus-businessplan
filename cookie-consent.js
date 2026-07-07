@@ -21,6 +21,7 @@
     var d = { v: VERSION, ts: Date.now(), necessary: true, analytics: !!analytics, marketing: !!marketing };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
     window._avplusConsent = d;
+    updateGtagConsent(d);
     try { window.dispatchEvent(new CustomEvent('avplusConsentUpdated', { detail: d })); } catch (e) {}
     closeBanner();
     showReopenBtn();
@@ -244,9 +245,21 @@
   /* Für Footer-Links: window.avplusOpenCookieSettings() */
   window.avplusOpenCookieSettings = openModal;
 
+  /* ── Google Consent Mode v2: Einwilligung an gtag weitergeben ── */
+  function updateGtagConsent(c) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('consent', 'update', {
+      'analytics_storage': c.analytics ? 'granted' : 'denied',
+      'ad_storage': c.marketing ? 'granted' : 'denied',
+      'ad_user_data': c.marketing ? 'granted' : 'denied',
+      'ad_personalization': c.marketing ? 'granted' : 'denied'
+    });
+  }
+
   /* ── Einwilligung anwenden ── */
   function applyConsent(c) {
     window._avplusConsent = c;
+    updateGtagConsent(c);
     try { window.dispatchEvent(new CustomEvent('avplusConsentUpdated', { detail: c })); } catch (e) {}
   }
 
