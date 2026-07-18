@@ -1654,10 +1654,10 @@
   <p class="ref-hinweis reveal"><span class="check">✔</span>Alle Kundenstimmen stammen aus echten, abgeschlossenen Aufträgen und wurden von unseren Kunden nach Abschluss der Arbeiten abgegeben. Wir geben Bewertungen unverändert wieder — allenfalls leicht gekürzt, ohne den Inhalt zu verändern.</p>
 
 <!-- ═══ BEWERTUNGS-ROTATION ═══════════════════════════════════════════
-     ⚠️ Die Einträge 4–10 unten sind PLATZHALTER (Max Mustermann) und
-     dienen nur der Design-Vorschau der Rotation. Sie MÜSSEN vor dem
-     Hochladen auf IONOS durch echte Bewertungen ersetzt werden —
-     gleiche Felder wie bei den ersten drei echten Einträgen.
+     Es werden nur echte Kundenbewertungen angezeigt. Neue Bewertungen
+     unten im Array `bewertungen` ergänzen — gleiche Felder wie bei den
+     bestehenden Einträgen; ab Position 4 werden sie automatisch als
+     Karten erzeugt.
      Funktionsweise: Alle Bewertungen laufen als langsames Fließband
      von links nach rechts. Mit den Pfeil-Buttons kann man manuell vor-
      und zurückblättern. Das Band pausiert bei Maus-/Tastaturkontakt;
@@ -1857,7 +1857,7 @@
           </div>
           <div class="form-group">
             <label>Nachname *</label>
-            <input type="text" name="nachname" placeholder="Mustermann" required />
+            <input type="text" name="nachname" placeholder="Ihr Nachname" required />
           </div>
         </div>
         <div class="form-group">
