@@ -24,13 +24,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.7; overflow-x: hidden; background: var(--white); }
 
     header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
     .logo img { height:42px; }
     nav { display:flex; gap:0.5rem; align-items:center; }
     .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
     .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
     .btn:hover { background:var(--blue-dark); }
 
@@ -102,11 +108,14 @@
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
       header nav.nav-open { display:flex; }
       header nav .nav-link { display:block; padding:0.85rem 0.4rem; font-size:1rem; }
+      .nav-dropdown .dropdown-menu { position:static; opacity:1; pointer-events:all; transform:none; box-shadow:none; min-width:0; padding:0 0 0 0.8rem; }
       header nav .btn { text-align:center; margin-top:0.4rem; }
     }
   </style>
@@ -116,14 +125,24 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
-    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <div class="page-hero">
@@ -161,7 +180,7 @@
       </tr>
       <tr>
         <td>Gewerberechtliche Tätigkeit</td>
-        <td>Kommunikationselektronik (Handwerk)</td>
+        <td>Elektrotechnik, eingeschränkt auf die Errichtung von Alarmanlagen<br>Kommunikationselektronik (Handwerk)</td>
       </tr>
       <tr>
         <td>Firmenbuchnummer</td>

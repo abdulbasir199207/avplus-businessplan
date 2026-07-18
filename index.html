@@ -18,20 +18,20 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Sicherheitstechnik &amp; Medientechnik Wien – Videoüberwachung, Alarmanlage, Smart Home &amp; Sat-Montage. AVplus e.U. Faire Preise ✓ Kostenlose Beratung ✓ Jetzt anfragen!" />
+  <meta name="description" content="Sicherheitstechnik, Medientechnik, Glasfaser, Smart Home &amp; IT-Hilfe in Wien – alles aus einer Hand. Kostenlose Beratung ✓ Angebot in 24 h ✓ AVplus e.U. Jetzt anfragen!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avplus.at/" />
-  <meta property="og:title" content="AVplus e.U. – Sicherheitstechnik & Medientechnik Wien" />
-  <meta property="og:description" content="Videoüberwachung, Alarmanlage, Smart Home & Medientechnik in Wien. Professionell, fair und zuverlässig – AVplus e.U." />
+  <meta property="og:title" content="AVplus e.U. – Sicherheits-, Medien- & Netzwerktechnik in Wien" />
+  <meta property="og:description" content="Ein Ansprechpartner für Alarmanlage, Videoüberwachung, Medientechnik, Glasfaser, Smart Home & IT-Hilfe in Wien. Kostenlose Beratung, Angebot in 24 h." />
   <meta property="og:image" content="https://www.avplus.at/bilder/header.png" />
   <meta property="og:locale" content="de_AT" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AVplus e.U. – Sicherheitstechnik & Medientechnik Wien" />
-  <meta name="twitter:description" content="Videoüberwachung, Alarmanlage, Smart Home & Medientechnik in Wien. Professionell, fair und zuverlässig." />
+  <meta name="twitter:title" content="AVplus e.U. – Sicherheits-, Medien- & Netzwerktechnik in Wien" />
+  <meta name="twitter:description" content="Alarmanlage, Videoüberwachung, Medientechnik, Glasfaser, Smart Home & IT-Hilfe in Wien. Kostenlose Beratung, Angebot in 24 h." />
   <meta name="twitter:image" content="https://www.avplus.at/bilder/header.png" />
   <!-- Schema.org: LocalBusiness -->
   <script type="application/ld+json">
@@ -73,6 +73,7 @@
       "itemListElement": [
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sicherheitstechnik Wien", "url": "https://www.avplus.at/sicherheitstechnik.html"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Medientechnik Wien", "url": "https://www.avplus.at/medientechnik.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SAT-Technik & Starlink Wien", "url": "https://www.avplus.at/ucc.html"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smart Home Wien", "url": "https://www.avplus.at/smarthome.html"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Glasfasertechnik Wien", "url": "https://www.avplus.at/lwl.html"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Computer & IT-Hilfe Wien", "url": "https://www.avplus.at/edv.html"}}
@@ -81,7 +82,7 @@
     "sameAs": []
   }
   </script>
-  <title>AVplus e.U. – Medien- & Sicherheitstechnik Wien</title>
+  <title>Sicherheitstechnik, Medientechnik & Smart Home Wien | AVplus e.U.</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -97,13 +98,14 @@
       --text: #1a2332;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      background: var(--white);
     }
 
     /* ── SCROLL ANIMATIONS ── */
@@ -416,18 +418,29 @@
       70%      { transform: scale(1); }
     }
     .promo-card.heartbeat { animation: heartbeat 2.6s ease-in-out infinite; }
+    /* Handy: kräftigerer Puls mit grünem Ring, damit die Aktion auffällt */
+    @keyframes heartbeatMobil {
+      0%,100% { transform: scale(1); box-shadow: 0 24px 72px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08); }
+      14%     { transform: scale(1.035); box-shadow: 0 0 0 12px rgba(106,176,76,0.22), 0 28px 80px rgba(106,176,76,0.5); }
+      28%     { transform: scale(1); box-shadow: 0 0 0 4px rgba(106,176,76,0.1), 0 24px 72px rgba(0,0,0,0.18); }
+      42%     { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(106,176,76,0.16), 0 26px 76px rgba(106,176,76,0.35); }
+      70%     { transform: scale(1); box-shadow: 0 24px 72px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.08); }
+    }
+    @media (max-width: 768px) {
+      .promo-card.heartbeat { animation: heartbeatMobil 2.2s ease-in-out infinite; }
+    }
 
     .promo-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
       background: linear-gradient(135deg, #e07820, #f5a830);
       color: #fff;
-      font-size: 0.68rem;
+      font-size: 0.85rem;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 0.42rem 1.1rem;
+      padding: 0.52rem 1.35rem;
       border-radius: 50px;
       margin-bottom: 0.8rem;
       box-shadow: 0 4px 14px rgba(224,120,32,0.4);
@@ -526,6 +539,8 @@
       #hero { flex-direction: column; }
       .hero-content { flex: 1 1 auto; max-width: 100%; }
       .hero-visual { position: static; width: 100%; max-width: 440px; margin: 2.5rem auto 0; transform: none !important; }
+      .hero-visual.show { transform: none !important; }
+      #hero > .hero-btns { justify-content: center; margin: 1rem auto 0; position: relative; z-index: 3; }
     }
     .promo-price {
       display: flex;
@@ -555,16 +570,26 @@
       box-shadow: 0 8px 30px rgba(106,176,76,0.55);
     }
 
-    /* ── TRUST BAR ── */
+    /* ── TRUST BAR (Laufband: bewegt sich von rechts nach links) ── */
     .trust-bar {
       background: var(--white);
-      padding: 1.5rem 5%;
+      padding: 1.5rem 0;
       border-bottom: 1px solid #eee;
+      overflow: hidden;
+    }
+    .trust-track {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
+      width: max-content;
+      animation: trustLauf 35s linear infinite; /* Dauer hier = Geschwindigkeit */
+    }
+    .trust-bar:hover .trust-track { animation-play-state: paused; }
+    @keyframes trustLauf {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .trust-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
     }
     .trust-item {
       display: flex;
@@ -573,6 +598,8 @@
       color: var(--gray);
       font-size: 0.88rem;
       font-weight: 600;
+      white-space: nowrap;
+      margin-right: 4rem;
     }
     .trust-item .ti { font-size: 1.2rem; }
 
@@ -856,6 +883,127 @@
     .kunden-list li:last-child { border-bottom: none; }
     .kunden-list li::before { content: '→'; color: var(--blue); font-weight: 700; }
 
+    /* ── KUNDENSTIMMEN / REFERENZEN ── */
+    #kundenstimmen { background: linear-gradient(180deg, #eef5fc 0%, #f8fbfe 100%); }
+
+    /* Fließband-Slider */
+    .ref-slider { position: relative; }
+    .ref-viewport { overflow: hidden; padding: 0.75rem 0 1.75rem; }
+    .ref-track {
+      display: flex;
+      gap: 1.5rem;
+      align-items: stretch;
+      will-change: transform;
+    }
+    .ref-track .ref-card { flex: 0 0 calc((100% - 3rem) / 3); }
+
+    .ref-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      color: var(--blue-dark);
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 0 4px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .ref-nav:hover { background: var(--white); transform: translateY(-50%) scale(1.1); }
+    .ref-nav-links { left: -10px; }
+    .ref-nav-rechts { right: -10px; }
+
+    .ref-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.45s ease;
+    }
+    .ref-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+
+    /* Optionales Projektfoto (für spätere Referenz-Karten mit Projekt) */
+    .ref-img { aspect-ratio: 16 / 9; overflow: hidden; }
+    .ref-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .ref-card:hover .ref-img img { transform: scale(1.06); }
+
+    /* Optionaler Projekt-Block (Titel, Ort, Beschreibung, Systeme) */
+    .ref-projekt { padding: 1.5rem 1.6rem 0; }
+    .ref-projekt h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .ref-ort { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.6rem; }
+    .ref-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+    .ref-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+    .ref-tag {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    /* Bewertungstext */
+    .ref-quote { padding: 1.8rem 1.6rem 0; flex: 1; }
+    .ref-quote::before {
+      content: '\201C';
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 3rem;
+      line-height: 0.5;
+      color: var(--blue);
+      opacity: 0.3;
+      margin-bottom: 0.9rem;
+    }
+    .ref-text { font-size: 0.92rem; line-height: 1.7; color: var(--text); min-height: 6.5em; }
+
+    .ref-stars {
+      color: #f5a623;
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      margin-bottom: 0.7rem;
+    }
+
+    /* Kunde (Initialen-Avatar, Name, Meta-Zeile) */
+    .ref-autor {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 1.4rem 1.6rem 1.6rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #edf1f5;
+    }
+    .ref-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ref-name { font-weight: 700; font-size: 0.92rem; }
+    .ref-meta { font-size: 0.78rem; color: var(--gray); margin-top: 0.1rem; }
+
+    /* Ehrlichkeits-Hinweis unter den Karten */
+    .ref-hinweis {
+      max-width: 680px;
+      margin: 3rem auto 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .ref-hinweis .check { color: var(--green-dark); font-weight: 700; margin-right: 0.3rem; }
+
     /* ── KONTAKT ── */
     #kontakt { background: var(--gray-light); }
 
@@ -1017,23 +1165,35 @@
     @media (max-width: 1024px) {
       .leistungen-grid { grid-template-columns: repeat(2, 1fr); }
       .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
+      .ref-track .ref-card { flex-basis: calc((100% - 1.5rem) / 2); }
     }
 
     @media (max-width: 768px) {
       .ueber-wrap, .kunden-wrap, .kontakt-wrap { grid-template-columns: 1fr; }
       .leistungen-grid { grid-template-columns: 1fr; }
+      .ref-track .ref-card { flex-basis: 86%; }
       .prozess-steps { grid-template-columns: 1fr 1fr; }
       .prozess-steps::before { display: none; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
       .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
+      .ueber-main-img:has(img) { height: auto; }
+      .ueber-main-img img { height: auto !important; }
+      /* Hero kompakter: Aktions-Box direkt unter den Text, weniger Leerraum danach */
+      #hero { gap: 1.2rem; }
+      .hero-content p { margin-bottom: 0.6rem; }
+      .hero-visual { margin-top: 0.5rem !important; }
+      #leistungen { padding-top: 2.5rem; }
     }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--text); padding: 0.3rem 0.6rem; border-radius: 8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
     @media (max-width: 768px) {
       .nav-toggle { display: block; }
+      /* Logo-Unterzeile verkleinert und umbruchfähig, damit der Menü-Button im Bild bleibt */
+      header > div > span { font-size: 0.64rem !important; letter-spacing: 0.3px !important; white-space: normal !important; line-height: 1.3 !important; }
       header nav { position: fixed; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0.2rem; padding: 0.8rem 5% 1.2rem; box-shadow: 0 16px 30px rgba(0,0,0,0.14); display: none; max-height: calc(100vh - 72px); overflow-y: auto; }
       header nav.nav-open { display: flex; }
       header nav .nav-link { display: block; padding: 0.85rem 0.4rem; font-size: 1rem; }
@@ -1048,7 +1208,7 @@
 <header id="header">
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="#hero" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
     <div class="nav-dropdown">
@@ -1067,7 +1227,7 @@
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;transition:background 0.2s;" onmouseover="this.style.background='#d0eeda'" onmouseout="this.style.background='#eaf4ee'">📞 +43 676 6520263</a>
     <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <!-- HERO -->
@@ -1078,7 +1238,7 @@
 
   <div class="hero-content">
     <h1>Technik, die <span>schützt</span><br><em>und</em> <span>verbindet.</span></h1>
-    <p>AVplus e.U. realisiert professionelle Sicherheits-, Medien- und Glasfaserlösungen für Unternehmen und Bildungseinrichtungen in Wien.</p>
+    <p>Alarmanlage, Medientechnik, Glasfaser, Smart Home oder IT-Hilfe: AVplus plant, installiert und betreut Ihre komplette Technik — für Zuhause, Unternehmen und Schulen in Wien. Ein Ansprechpartner statt fünf Firmen.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-hero">Kostenloses Erstgespräch</a>
       <a href="#leistungen" class="btn-ghost">Unsere Leistungen</a>
@@ -1088,7 +1248,7 @@
 
   <div class="hero-visual">
     <div class="promo-card">
-      <div class="promo-badge">☀️ SOMMERAKTION 2026</div>
+      <div class="promo-badge">☀️ Sommeraktion −20 %</div>
       <h3>Genießen Sie Ihren Urlaub –<br>wir <span>schützen</span> Ihr Zuhause.</h3>
 <ul class="promo-list">
         <li>Kostenlose Sicherheitsanalyse vor Ort</li>
@@ -1098,9 +1258,9 @@
       </ul>
       <div class="promo-urgency">
         <span class="promo-live-dot"></span>
-        <span><strong>Sommer-Termine:</strong> Sichern Sie sich jetzt Ihren Wunschtermin für Juli & August.</span>
+        <span><strong>Warum jetzt?</strong> In den Sommermonaten stehen Wohnungen oft wochenlang leer — der richtige Moment, den Einbruchschutz vorher zu prüfen.</span>
       </div>
-      <a href="#kontakt" class="promo-cta">Kostenlose Sicherheitsanalyse sichern →</a>
+      <a href="#kontakt" class="promo-cta">Kostenlose Sicherheitsanalyse anfragen →</a>
     </div>
   </div>
 
@@ -1108,19 +1268,27 @@
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
+  <div class="trust-track">
   <div class="trust-item"><span class="ti">✅</span> Zertifizierter Fachbetrieb</div>
   <div class="trust-item"><span class="ti">🏛️</span> Gewerbe nach GewO § 94</div>
   <div class="trust-item"><span class="ti">📍</span> Wien & ganz Österreich</div>
-  <div class="trust-item"><span class="ti">🤝</span> Planung bis Wartung</div>
-  <div class="trust-item"><span class="ti">⚡</span> Schnelle Reaktionszeiten</div>
+  <div class="trust-item"><span class="ti">🤝</span> Alles aus einer Hand — von Planung bis Wartung</div>
+  <div class="trust-item"><span class="ti">⚡</span> Angebot innerhalb von 24 Stunden</div>
+  <!-- Duplikat für die nahtlose Endlos-Schleife -->
+  <div class="trust-item" aria-hidden="true"><span class="ti">✅</span> Zertifizierter Fachbetrieb</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">🏛️</span> Gewerbe nach GewO § 94</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">📍</span> Wien & ganz Österreich</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">🤝</span> Alles aus einer Hand — von Planung bis Wartung</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">⚡</span> Angebot innerhalb von 24 Stunden</div>
+  </div>
 </div>
 
 <!-- LEISTUNGEN -->
 <section id="leistungen">
   <div class="reveal">
-    <p class="section-label">Was wir bieten</p>
+    <p class="section-label">Ein Ansprechpartner für alles</p>
     <h2>Unsere Leistungen</h2>
-    <p class="section-intro">Von der Planung bis zur Wartung — wir liefern zukunftssichere Techniklösungen aus einer Hand.</p>
+    <p class="section-intro">Sechs Fachbereiche, ein Team: Wir planen, installieren und warten Ihre gesamte Gebäude- und Kommunikationstechnik — damit alles zusammenpasst und Sie sich um nichts kümmern müssen.</p>
   </div>
 
   <div class="leistungen-grid">
@@ -1131,7 +1299,7 @@
       </div>
       <div class="l-card-body">
         <h3>Sicherheitstechnik</h3>
-        <p>Videoüberwachung, Alarmanlagen, Zutrittskontrolle und intelligente Sicherheitssysteme — wir schützen Ihr Gebäude rund um die Uhr.</p>
+        <p>Sie möchten Ihr Zuhause oder Geschäft zuverlässig schützen? Alarmanlage, Videoüberwachung und Zutrittskontrolle — geplant und montiert vom zertifizierten Fachbetrieb.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1141,12 +1309,12 @@
 
     <a href="medientechnik.html" class="l-card reveal delay-2">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/konferenzraum.webp" alt="Medientechnik Wien – TV-Montage, Displays und Digital Signage von AVplus e.U." />
+        <img loading="lazy" decoding="async" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="Medientechnik Wien – TV-Montage, Displays und Digital Signage von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Medientechnik</h3>
-        <p>Displays, interaktive Boards, Beamer, LED-Walls und Digital Signage — maßgeschneiderte AV-Lösungen für Büros und Schulen.</p>
+        <p>Vom Fernseher an der Wohnzimmerwand bis zum fertig ausgestatteten Konferenzraum: Displays, Beamer, LED-Walls und Digital Signage — montiert, verkabelt und startklar eingerichtet.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1162,7 +1330,7 @@
       </div>
       <div class="l-card-body">
         <h3>Starlink & Sat-Technik</h3>
-        <p>Satelliteninternet via Starlink, Sat-Anlagen und professionelle Installation — schnelles Internet überall, auch ohne Festnetz.</p>
+        <p>Schlechter Empfang oder kein schnelles Internet am Standort? Sat-Anlagen und Starlink-Terminals — professionell montiert, präzise ausgerichtet und startklar übergeben.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1177,7 +1345,7 @@
       </div>
       <div class="l-card-body">
         <h3>Glasfasertechnik</h3>
-        <p>Professionelle LWL-Verlegung, Messung und Spleißung — für schnelle, stabile Netzwerkinfrastruktur in Gebäuden und Anlagen.</p>
+        <p>Ihr Netzwerk soll schnell, stabil und zukunftssicher sein? Wir verlegen, spleißen und messen Glasfaser — inklusive Messprotokoll und vollständiger Dokumentation.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1192,7 +1360,7 @@
       </div>
       <div class="l-card-body">
         <h3>Smart-Home-Systeme</h3>
-        <p>Beleuchtung, Heizung, Rollläden und Sicherheit automatisiert steuern — per App oder Sprachassistent. Für Neu- und Bestandsbauten.</p>
+        <p>Licht, Heizung, Rollläden und Sicherheit automatisch gesteuert — per App oder Sprachbefehl. Spart Energie und lässt sich auch ohne Umbau nachrüsten.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1207,7 +1375,7 @@
       </div>
       <div class="l-card-body">
         <h3>Computer, Netzwerktechnik & IT-Hilfe</h3>
-        <p>PC-Reparatur, Netzwerkinstallation oder persönliche Technikhilfe? Wir kommen zu Ihnen, lösen das Problem und erklären alles verständlich — direkt vor Ort.</p>
+        <p>Computer streikt, WLAN lahmt, Drucker schweigt? Wir kommen zu Ihnen, lösen das Problem vor Ort und erklären alles verständlich — ohne Fachchinesisch, ab 49 €.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1221,7 +1389,7 @@
 <section id="zahlen">
   <div class="zahlen-grid">
     <div class="zahl-item reveal delay-1">
-      <div class="zahl-num" data-count="5">0</div>
+      <div class="zahl-num" data-count="6">0</div>
       <div class="zahl-label">Fachbereiche</div>
     </div>
     <div class="zahl-item reveal delay-2">
@@ -1244,7 +1412,7 @@
   <div class="ueber-wrap">
     <div class="ueber-img-wrap reveal-left">
       <div class="ueber-main-img">
-        <img loading="lazy" decoding="async" src="bilder/konferenzraum.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen aus einer Hand" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;" />
+        <img loading="lazy" decoding="async" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen für Unternehmen und Privatkunden" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block;border-radius:20px;" />
       </div>
       <div class="ueber-badge">
         <div class="ueber-badge-num">AVplus</div>
@@ -1254,15 +1422,16 @@
 
     <div class="ueber-text reveal-right">
       <p class="section-label">Wer wir sind</p>
-      <h2>Erfahrung trifft<br>moderne Technik.</h2>
-      <p>AVplus e.U. ist ein Wiener Dienstleistungsunternehmen spezialisiert auf die Planung, Installation, Programmierung und Wartung moderner Techniklösungen.</p>
+      <h2>Ein Partner für Ihre<br>gesamte Technik.</h2>
+      <p>Ob Alarmanlage, Konferenzraum, Glasfasernetz oder Smart Home: Bei AVplus bekommen Sie alles von einem Team — Beratung, Planung, Installation und Wartung. Sie sparen sich die Abstimmung zwischen mehreren Firmen und haben einen Ansprechpartner, der Ihr Gebäude und Ihre Technik wirklich kennt.</p>
+      <p>Als zertifizierter Gewerbebetrieb arbeiten wir normgerecht, dokumentieren jede Anlage vollständig und bleiben auch nach der Übergabe für Sie erreichbar.</p>
 
 
       <div class="ueber-features">
         <div class="ueber-feature">
           <div class="uf-icon">🎯</div>
           <div class="uf-text">
-            <strong>Gesamtlösungen aus einer Hand</strong>
+            <strong>Gesamtlösungen statt Einzelgewerke</strong>
             <span>Von der Planung über Installation bis zur Wartung und Nutzerschulung</span>
           </div>
         </div>
@@ -1270,7 +1439,7 @@
           <div class="uf-icon">🏛️</div>
           <div class="uf-text">
             <strong>Zertifizierter Gewerbebetrieb</strong>
-            <span>Kommunikationselektronik (§ 94 Z 39 GewO) & Elektrotechnik (§ 94 Z 16 GewO)</span>
+            <span>Elektrotechnik, eingeschränkt auf die Errichtung von Alarmanlagen (§ 94 Z 16 GewO) & Kommunikationselektronik (§ 94 Z 39 GewO)</span>
           </div>
         </div>
         <div class="ueber-feature">
@@ -1297,22 +1466,22 @@
     <div class="prozess-step reveal delay-1">
       <div class="step-num">💬</div>
       <h3>Beratung</h3>
-      <p>Kostenlose Erstberatung und Aufnahme Ihrer Anforderungen</p>
+      <p>Kostenlos und unverbindlich — wir hören zu und nehmen Ihre Anforderungen vor Ort auf</p>
     </div>
     <div class="prozess-step reveal delay-2">
       <div class="step-num">📐</div>
       <h3>Planung</h3>
-      <p>Maßgeschneidertes Konzept mit Angebot und Kostenplan</p>
+      <p>Sie erhalten ein maßgeschneidertes Konzept mit transparentem Festpreisangebot</p>
     </div>
     <div class="prozess-step reveal delay-3">
       <div class="step-num">🔧</div>
       <h3>Installation</h3>
-      <p>Professionelle Umsetzung durch zertifizierte Techniker</p>
+      <p>Saubere, termintreue Montage durch zertifizierte Techniker</p>
     </div>
     <div class="prozess-step reveal delay-4">
       <div class="step-num">✅</div>
       <h3>Übergabe</h3>
-      <p>Einschulung, Dokumentation und laufender Support</p>
+      <p>Einschulung, vollständige Dokumentation und laufender Support</p>
     </div>
   </div>
 </section>
@@ -1322,7 +1491,7 @@
   <div class="reveal">
     <p class="section-label">Für wen wir da sind</p>
     <h2>Unsere Zielgruppen</h2>
-    <p class="section-intro">Unsere Leistungen sind speziell auf die Anforderungen von Unternehmen und Bildungseinrichtungen in Wien und Österreich ausgerichtet.</p>
+    <p class="section-intro">Privathaushalt, Schule oder Unternehmen: Wir kennen die Anforderungen jeder Zielgruppe — und liefern Lösungen, die im Alltag zuverlässig funktionieren.</p>
   </div>
 
   <div class="kunden-wrap">
@@ -1368,15 +1537,271 @@
         </div>
       </div>
       <ul class="kunden-list">
-        <li>Banken & Finanzdienstleister</li>
+        <li>Büros & Praxen</li>
         <li>Autohäuser & Showrooms</li>
         <li>Restaurants & Gastronomie</li>
-        <li>Gesundheitswesen & Kliniken</li>
-        <li>Öffentliche Einrichtungen</li>
+        <li>Handel & Geschäftslokale</li>
+        <li>Hausverwaltungen & Wohnanlagen</li>
         <li>Events & Veranstaltungen</li>
       </ul>
     </div>
   </div>
+</section>
+
+<!-- KUNDENSTIMMEN / REFERENZEN
+     ═══════════════════════════════════════════════════════════════════
+     Alle drei Bewertungen sind ECHTE Kundenbewertungen
+     (alle 5/5 Sterne). Texte wortgetreu übernommen, nur minimal
+     geglättet. Beim Ergänzen neuer Bewertungen: nur Originaltexte
+     verwenden, höchstens sprachlich leicht kürzen, Inhalt nie ändern.
+
+     SPÄTERER AUSBAU (ohne Designänderung möglich):
+     Jede Karte kann zu einer vollständigen Projekt-Referenz erweitert
+     werden — Foto, Projekttitel, Ort, Beschreibung und verwendete
+     Systeme werden einfach VOR dem <blockquote> eingefügt. Eine
+     fertige Beispiel-Vorlage steht auskommentiert am Ende dieser
+     Sektion.
+     ═══════════════════════════════════════════════════════════════════ -->
+<section id="kundenstimmen">
+  <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+    <p class="section-label">Kundenstimmen</p>
+    <h2>Das sagen unsere Kunden</h2>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Ehrliche Rückmeldungen aus abgeschlossenen Aufträgen — so, wie unsere Kunden sie formuliert haben.</p>
+  </div>
+
+  <div class="ref-slider reveal">
+    <button class="ref-nav ref-nav-links" type="button" aria-label="Vorherige Bewertungen anzeigen">‹</button>
+    <div class="ref-viewport">
+      <div class="ref-track">
+
+    <figure class="ref-card">
+      <blockquote class="ref-quote">
+        <div class="ref-stars" role="img" aria-label="Bewertung: 5 von 5 Sternen">★★★★★</div>
+        <p class="ref-text">Sehr kompetentes, professionelles und zuverlässiges junges Team! Alles zu unserer vollsten Zufriedenheit erledigt … die dunkle Jahreszeit kann kommen! ;-)</p>
+      </blockquote>
+      <figcaption class="ref-autor">
+        <div class="ref-avatar" aria-hidden="true">SW</div>
+        <div>
+          <div class="ref-name">Stefanie W.</div>
+          <div class="ref-meta">Funk-Beleuchtung · Stockerau · Nov. 2025</div>
+        </div>
+      </figcaption>
+    </figure>
+
+    <figure class="ref-card">
+      <blockquote class="ref-quote">
+        <div class="ref-stars" role="img" aria-label="Bewertung: 5 von 5 Sternen">★★★★★</div>
+        <p class="ref-text">Sehr freundlich, schnell und sauber gearbeitet. Danke für die schnelle Erledigung.</p>
+      </blockquote>
+      <figcaption class="ref-autor">
+        <div class="ref-avatar" aria-hidden="true">G</div>
+        <div>
+          <div class="ref-name">Gregory</div>
+          <div class="ref-meta">SAT-Anlage, TV- &amp; Netzwerkkabel · Wien-Alsergrund · Dez. 2025</div>
+        </div>
+      </figcaption>
+    </figure>
+
+    <figure class="ref-card">
+      <blockquote class="ref-quote">
+        <div class="ref-stars" role="img" aria-label="Bewertung: 5 von 5 Sternen">★★★★★</div>
+        <p class="ref-text">Prompte professionelle Durchführung des Auftrages.</p>
+      </blockquote>
+      <figcaption class="ref-autor">
+        <div class="ref-avatar" aria-hidden="true">K</div>
+        <div>
+          <div class="ref-name">Kunde aus Wien-Donaustadt</div>
+          <div class="ref-meta">Lampen- &amp; Beleuchtungsinstallation · Feb. 2026</div>
+        </div>
+      </figcaption>
+    </figure>
+
+    <!-- ▼ VORLAGE für spätere Projekt-Referenz (auskommentiert lassen,
+         bei Bedarf kopieren, ausfüllen und einkommentieren):
+
+    <figure class="ref-card reveal">
+      <div class="ref-img">
+        <img loading="lazy" decoding="async" src="bilder/projektfoto.webp" alt="Kurze Bildbeschreibung" />
+      </div>
+      <div class="ref-projekt">
+        <h3>Projekttitel</h3>
+        <p class="ref-ort">📍 Wien</p>
+        <p class="ref-desc">Kurze Beschreibung der durchgeführten Arbeiten.</p>
+        <div class="ref-tags">
+          <span class="ref-tag">Verwendetes Produkt / System</span>
+          <span class="ref-tag">Weiteres System</span>
+        </div>
+      </div>
+      <blockquote class="ref-quote">
+        <div class="ref-stars" role="img" aria-label="Bewertung: 5 von 5 Sternen">★★★★★</div>
+        <p class="ref-text">Original-Kundenbewertung zu diesem Projekt.</p>
+      </blockquote>
+      <figcaption class="ref-autor">
+        <div class="ref-avatar" aria-hidden="true">NN</div>
+        <div>
+          <div class="ref-name">Vorname N.</div>
+          <div class="ref-meta">Leistung · Plattform · Monat Jahr</div>
+        </div>
+      </figcaption>
+    </figure>
+    ▲ ENDE VORLAGE -->
+
+      </div>
+    </div>
+    <button class="ref-nav ref-nav-rechts" type="button" aria-label="Weitere Bewertungen anzeigen">›</button>
+  </div>
+
+  <p class="ref-hinweis reveal"><span class="check">✔</span>Alle Kundenstimmen stammen aus echten, abgeschlossenen Aufträgen und wurden von unseren Kunden nach Abschluss der Arbeiten abgegeben. Wir geben Bewertungen unverändert wieder — allenfalls leicht gekürzt, ohne den Inhalt zu verändern.</p>
+
+<!-- ═══ BEWERTUNGS-ROTATION ═══════════════════════════════════════════
+     ⚠️ Die Einträge 4–10 unten sind PLATZHALTER (Max Mustermann) und
+     dienen nur der Design-Vorschau der Rotation. Sie MÜSSEN vor dem
+     Hochladen auf IONOS durch echte Bewertungen ersetzt werden —
+     gleiche Felder wie bei den ersten drei echten Einträgen.
+     Funktionsweise: Alle Bewertungen laufen als langsames Fließband
+     von links nach rechts. Mit den Pfeil-Buttons kann man manuell vor-
+     und zurückblättern. Das Band pausiert bei Maus-/Tastaturkontakt;
+     bei Nutzern mit reduzierter Bewegung steht es still (Buttons
+     funktionieren weiterhin).
+     ═══════════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var bewertungen = [
+    { stars: 5, initialen: "SW", name: "Stefanie W.", meta: "Funk-Beleuchtung · Stockerau · Nov. 2025",
+      text: "Sehr kompetentes, professionelles und zuverlässiges junges Team! Alles zu unserer vollsten Zufriedenheit erledigt … die dunkle Jahreszeit kann kommen! ;-)" },
+    { stars: 5, initialen: "G", name: "Gregory", meta: "SAT-Anlage, TV- & Netzwerkkabel · Wien-Alsergrund · Dez. 2025",
+      text: "Sehr freundlich, schnell und sauber gearbeitet. Danke für die schnelle Erledigung." },
+    { stars: 5, initialen: "K", name: "Kunde aus Wien-Donaustadt", meta: "Lampen- & Beleuchtungsinstallation · Feb. 2026",
+      text: "Prompte professionelle Durchführung des Auftrages." }
+    /* Weitere echte Bewertungen hier ergänzen — gleiche Felder wie oben.
+       Einträge ab Position 4 werden automatisch als Karten erzeugt. */
+  ];
+
+  var slider = document.querySelector('#kundenstimmen .ref-slider');
+  var track = slider && slider.querySelector('.ref-track');
+  if (!track) return;
+
+  /* Karten für die Einträge 4–10 erzeugen (1–3 stehen bereits im HTML) */
+  function karte(b) {
+    var fig = document.createElement('figure');
+    fig.className = 'ref-card';
+    fig.innerHTML =
+      '<blockquote class="ref-quote">' +
+        '<div class="ref-stars" role="img"></div>' +
+        '<p class="ref-text"></p>' +
+      '</blockquote>' +
+      '<figcaption class="ref-autor">' +
+        '<div class="ref-avatar" aria-hidden="true"></div>' +
+        '<div><div class="ref-name"></div><div class="ref-meta"></div></div>' +
+      '</figcaption>';
+    var stars = fig.querySelector('.ref-stars');
+    stars.textContent = '★★★★★'.slice(0, b.stars);
+    stars.setAttribute('aria-label', 'Bewertung: ' + b.stars + ' von 5 Sternen');
+    fig.querySelector('.ref-text').textContent = b.text;
+    fig.querySelector('.ref-avatar').textContent = b.initialen;
+    fig.querySelector('.ref-name').textContent = b.name;
+    fig.querySelector('.ref-meta').textContent = b.meta;
+    return fig;
+  }
+  for (var i = 3; i < bewertungen.length; i++) track.appendChild(karte(bewertungen[i]));
+
+  /* Set einmal duplizieren, damit das Band nahtlos endlos laufen kann */
+  var originale = Array.prototype.slice.call(track.children);
+  originale.forEach(function (c) {
+    var klon = c.cloneNode(true);
+    klon.setAttribute('aria-hidden', 'true');
+    track.appendChild(klon);
+  });
+
+  var offset = 0, setBreite = 0, schritt = 0;
+  var pausiert = false, animiert = false, letzte = null;
+  var klickPauseBis = 0; /* nach Button-Klick bleibt das Band kurz stehen */
+  var autoLauf = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TEMPO = 0.022; /* Pixel pro Millisekunde (~22 px/s) — hier Geschwindigkeit ändern */
+
+  function messen() {
+    var karten = track.children;
+    var r0 = karten[0].getBoundingClientRect();
+    setBreite = karten[originale.length].getBoundingClientRect().left - r0.left;
+    schritt = karten.length > 1 ? karten[1].getBoundingClientRect().left - r0.left : 0;
+    while (offset >= 0) offset -= setBreite;
+    while (offset < -setBreite) offset += setBreite;
+    zeichne();
+  }
+  function zeichne() {
+    track.style.transform = 'translateX(' + offset + 'px)';
+  }
+  messen();
+  offset = -setBreite;
+  zeichne();
+  window.addEventListener('resize', messen);
+
+  slider.addEventListener('mouseenter', function () { pausiert = true; });
+  slider.addEventListener('mouseleave', function () { pausiert = false; });
+  slider.addEventListener('focusin', function () { pausiert = true; });
+  slider.addEventListener('focusout', function () { pausiert = false; });
+
+  /* Fließband: läuft von links nach rechts */
+  function tick(t) {
+    if (letzte !== null && autoLauf && !pausiert && !animiert && !document.hidden && t >= klickPauseBis) {
+      var dt = Math.min(t - letzte, 100);
+      offset += TEMPO * dt;
+      if (offset >= 0) offset -= setBreite;
+      zeichne();
+    }
+    letzte = t;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  /* Pfeil-Buttons: eine Karte vor / zurück */
+  function normalisiere() {
+    while (offset >= 0) offset -= setBreite;
+    while (offset < -setBreite) offset += setBreite;
+  }
+  function animiereZu(ziel) {
+    /* Ohne laufende Frames (versteckter Tab) direkt springen statt animieren */
+    if (document.hidden) {
+      offset = ziel;
+      normalisiere();
+      zeichne();
+      return;
+    }
+    animiert = true;
+    var start = offset, delta = ziel - start, t0 = performance.now();
+    function frame(t) {
+      var p = Math.min((t - t0) / 420, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      offset = start + delta * e;
+      zeichne();
+      if (p < 1) { requestAnimationFrame(frame); }
+      else {
+        normalisiere();
+        zeichne();
+        animiert = false;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  /* Ziel immer am Kartenraster ausrichten, damit nie eine halbe
+     Bewertung am linken Rand steht. richtung: +1 = zurück, -1 = weiter */
+  function geklickt(richtung) {
+    if (animiert || !schritt) return;
+    var ziel;
+    if (richtung > 0) {
+      ziel = Math.ceil(offset / schritt) * schritt;
+      if (ziel - offset < schritt * 0.25) ziel += schritt;
+    } else {
+      ziel = Math.floor(offset / schritt) * schritt;
+      if (offset - ziel < schritt * 0.25) ziel -= schritt;
+    }
+    klickPauseBis = performance.now() + 4000;
+    animiereZu(ziel);
+  }
+  slider.querySelector('.ref-nav-links').addEventListener('click', function () { geklickt(1); });
+  slider.querySelector('.ref-nav-rechts').addEventListener('click', function () { geklickt(-1); });
+})();
+</script>
 </section>
 
 <!-- KONTAKT -->
@@ -1385,11 +1810,11 @@
     <div class="reveal-left">
       <p class="section-label">Sprechen Sie uns an</p>
       <h2>Kontakt</h2>
-      <p style="color:var(--gray);margin-bottom:2rem;">Wir freuen uns auf Ihre Anfrage und melden uns innerhalb von 24 Stunden.</p>
+      <p style="color:var(--gray);margin-bottom:2rem;">Beschreiben Sie kurz Ihr Anliegen — Sie erhalten innerhalb von 24 Stunden eine Antwort, auf Wunsch mit konkretem Angebot. Kostenlos und unverbindlich.</p>
 
       <div class="kontakt-info-card">
         <h3>AVplus e.U.</h3>
-        <p>Ihr Partner für Medien-, Sicherheits- und Glasfasertechnik in Wien.</p>
+        <p>Ihr Ansprechpartner für Sicherheits-, Medien- und Netzwerktechnik in Wien — persönlich und verlässlich.</p>
 
         <div class="ki-item">
           <div class="ki-icon">📍</div>
@@ -1417,7 +1842,7 @@
 
     <div class="kontakt-form-wrap reveal-right">
       <h3>Anfrage senden</h3>
-      <p>Unverbindlich und kostenlos — wir beraten Sie gerne.</p>
+      <p>In zwei Minuten ausgefüllt — Antwort innerhalb von 24 Stunden. Unverbindlich und kostenlos.</p>
       <form id="kontakt-form" action="https://formspree.io/f/xvzjgjkg" method="POST" onsubmit="handleSubmit(event)">
 
         <!-- Spam-Schutz (Honeypot) -->
@@ -1449,9 +1874,10 @@
             <option value="" disabled selected>Bitte wählen …</option>
             <option>Sicherheitstechnik</option>
             <option>Medientechnik</option>
-            <option>UCC & Konferenztechnik</option>
+            <option>SAT-Technik & Starlink</option>
             <option>Netzwerk- & Glasfasertechnik</option>
             <option>Smart-Home</option>
+            <option>Computer & IT-Hilfe</option>
             <option>Service & Wartung</option>
             <option>Sonstiges</option>
           </select>
@@ -1472,14 +1898,14 @@
   <div class="footer-top">
     <div class="footer-brand">
       <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
-      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Medientechnik, Sicherheitstechnik und Glasfasertechnik in Wien und ganz Österreich.</p>
+      <p>AVplus e.U. ist Ihr Komplettanbieter für Sicherheits-, Medien- und Netzwerktechnik in Wien und ganz Österreich — von der Planung bis zur Wartung.</p>
     </div>
     <div class="footer-col">
       <h4>Leistungen</h4>
       <ul>
         <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
         <li><a href="medientechnik.html">Medientechnik</a></li>
-
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
         <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
         <li><a href="smarthome.html">Smart-Home</a></li>
         <li><a href="edv.html">EDV & IT-Service</a></li>
@@ -1742,6 +2168,25 @@ setTimeout(function() {
     if (c) c.classList.add('heartbeat');
   }, 700);
 }, 1000);
+
+// Mobil: Hero-Buttons unter die Aktions-Box verschieben, am Desktop zurück in den Textbereich
+(function() {
+  var btns = document.querySelector('.hero-btns');
+  var content = document.querySelector('.hero-content');
+  var visual = document.querySelector('.hero-visual');
+  if (!btns || !content || !visual) return;
+  var mq = window.matchMedia('(max-width: 1100px)');
+  function placeButtons() {
+    if (mq.matches) {
+      visual.insertAdjacentElement('afterend', btns);
+    } else {
+      content.appendChild(btns);
+    }
+  }
+  if (mq.addEventListener) { mq.addEventListener('change', placeButtons); }
+  else { mq.addListener(placeButtons); }
+  placeButtons();
+})();
 </script>
 </body>
 </html>

@@ -18,13 +18,13 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Medientechnik Wien – TV-Montage, Sat-Anlage, Displays &amp; Digital Signage. Für Privat &amp; Business. AVplus e.U. ✓ Faire Preise ✓ Jetzt anfragen!" />
+  <meta name="description" content="TV-Wandmontage ab 79 €, Displays, Beamer &amp; Digital Signage in Wien – für Zuhause &amp; Business. Geliefert, montiert &amp; fertig eingerichtet. AVplus e.U. Jetzt anfragen!" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/medientechnik.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avplus.at/medientechnik.html" />
   <meta property="og:title" content="Medientechnik Wien – TV-Montage, Sat-Anlage & Digital Signage | AVplus e.U." />
-  <meta property="og:description" content="TV-Montage, Sat-Anlage, Displays & Digital Signage in Wien. AVplus e.U. – Für Privat & Business, faire Preise." />
+  <meta property="og:description" content="TV-Montage, Sat-Anlage, Displays & Digital Signage in Wien. AVplus e.U. – für Privat & Business, TV-Wandmontage ab 79 €." />
   <meta property="og:image" content="https://www.avplus.at/bilder/konferenzraum2.png" />
   <meta property="og:locale" content="de_AT" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,11 +63,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medientechnik Wien | TV-Montage, Sat-Anlage & Digital Signage | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
     .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s} .delay-5{transition-delay:.5s} .delay-6{transition-delay:.6s}
@@ -78,6 +79,12 @@
     nav { display:flex; gap:0.5rem; align-items:center; }
     .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
     .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
     .btn:hover { background:var(--blue-dark); }
 
@@ -156,6 +163,18 @@
     .service-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:0.5rem; position:relative; z-index:1; }
     .service-card p { font-size:0.88rem; color:var(--gray); position:relative; z-index:1; }
 
+    /* FEATURE SPLIT */
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; overflow:hidden; height:400px; position:relative; box-shadow:0 16px 48px rgba(0,0,0,0.15); }
+    .feature-visual img { width:100%; height:100%; object-fit:cover; }
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; font-size:1rem; margin-top:1px; flex-shrink:0; }
+    .feature-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem; background:repeating-linear-gradient(45deg,#f0f3f7,#f0f3f7 12px,#f7f9fc 12px,#f7f9fc 24px); border:2px dashed #c3cdd9; border-radius:20px; color:var(--gray); }
+    .feature-placeholder .fp-icon { font-size:3rem; opacity:0.6; }
+    .feature-placeholder span { font-size:0.9rem; font-weight:600; }
+
     /* DISPLAY COMPARE */
     .display-compare { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
     .display-card { border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.08); }
@@ -203,13 +222,30 @@
     .btn-green { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); display:inline-block; transition:transform 0.2s; }
     .btn-green:hover { transform:translateY(-2px); }
 
-    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+    @media(max-width:768px) { .footer-top { grid-template-columns:1fr; gap:2rem; } }
     footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
     footer a:hover { color:var(--white); }
-    @media(max-width:768px) { .services-grid,.display-compare,.mounting-grid,.rooms-grid{grid-template-columns:1fr} }
+    @media(max-width:768px) { .services-grid,.display-compare,.mounting-grid,.rooms-grid,.feature-split{grid-template-columns:1fr} }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .room-img{height:auto} .room-img img{height:auto} .mounting-item img{height:auto !important} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
@@ -224,15 +260,25 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
-    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
-    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <!-- HERO -->
@@ -242,7 +288,7 @@
     <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Medientechnik</div>
     <div class="page-badge">📺 Medientechnik</div>
     <h1>AV-Lösungen für<br><span>Zuhause & Unternehmen.</span></h1>
-    <p>Von der Wandmontage im Wohnzimmer bis zur professionellen Konferenzraumausstattung — wir sind Ihr Ansprechpartner in Wien.</p>
+    <p>Der neue Fernseher soll an die Wand? Der Konferenzraum soll endlich zuverlässig funktionieren? Wir liefern, montieren und richten alles fertig ein — sauber verkabelt und verständlich erklärt. In Wien und Umgebung, TV-Wandmontage ab 79 €.</p>
     <div class="tab-switcher">
       <a href="#privat" class="tab-btn active">🏠 Privat</a>
       <a href="#business" class="tab-btn">🏢 Business</a>
@@ -259,46 +305,56 @@
   </div>
 </div>
 
-<section class="privat-section" style="background:var(--gray-light)">
+<section class="privat-section" style="background:var(--gray-light);padding-bottom:2rem;">
   <div class="reveal">
     <p class="section-label">Für Privatpersonen</p>
     <h2>Was wir für Sie zuhause installieren</h2>
-    <p class="section-intro">Egal ob neuer Fernseher, Soundsystem oder Heimkino — wir liefern, montieren und richten ein.</p>
+    <p class="section-intro" style="margin-bottom:0;">Sie möchten Filme genießen statt Bedienungsanleitungen studieren? Wir liefern, montieren und richten alles fertig ein — Sie müssen nur noch Platz nehmen.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal delay-1">
-      <div class="sc-icon">🖥️</div>
-      <h3>TV & Display</h3>
-      <p>Wir liefern und installieren Fernseher aller Größen und Marken — inkl. Kabelverlegung und Einrichtung.</p>
-    </div>
-    <div class="service-card reveal delay-2">
-      <div class="sc-icon">🧲</div>
-      <h3>Displaymontage & Wandhalterung</h3>
-      <p>Fixe Wandhalterung, schwenkbar oder höhenverstellbar — sicher montiert, sauber verkabelt, ohne sichtbare Kabel.</p>
-    </div>
-    <div class="service-card reveal delay-3">
-      <div class="sc-icon">🔊</div>
-      <h3>Beschallungssysteme</h3>
-      <p>Soundbars, Surround-Systeme und Multiroom-Audio für optimalen Klang in jedem Raum.</p>
-    </div>
-    <div class="service-card reveal delay-1">
-      <div class="sc-icon">📡</div>
-      <h3>Sat- & TV-Empfang</h3>
-      <p>Satellitenanlage, Antenneninstallation und Kabelverteilung — für störungsfreien Empfang in allen Räumen.</p>
-    </div>
-    <div class="service-card reveal delay-2">
-      <div class="sc-icon">🎬</div>
-      <h3>Heimkino</h3>
-      <p>Beamer, Leinwand und Audiosystem perfekt aufeinander abgestimmt — für das Kinoerlebnis zuhause.</p>
-    </div>
-    <div class="service-card reveal delay-3">
-      <div class="sc-icon">🏠</div>
-      <h3>Smart Home Integration</h3>
-      <p>Ihr TV und Audiosystem nahtlos in die Smart-Home-Steuerung integriert — per App oder Sprachbefehl bedienbar.</p>
-    </div>
-  </div>
+</section>
 
-  <div style="margin-top:3rem;" class="reveal">
+<!-- FEATURE: TV, DISPLAY & WANDMONTAGE -->
+<section style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/displaymontage-privat.webp" alt="TV-Wandmontage Wien – Fernseher professionell an der Wand montiert von AVplus e.U." />
+    </div>
+    <div class="reveal">
+      <p class="section-label">TV, Display & Wandmontage</p>
+      <h2>Fernseher geliefert, montiert und eingerichtet.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Kein Bohrstaub, kein Kabelsalat, kein Risiko, dass der neue Fernseher schief hängt oder herunterfällt: Wir montieren Ihren TV sicher an der Wand — fix, schwenkbar oder höhenverstellbar — und richten Sender, Apps und Streaming gleich mit ein. TV-Wandmontage ab 79 €. Guter Empfang inklusive: Auf Wunsch montieren wir auch Ihre <a href="ucc.html" style="color:var(--blue);font-weight:600;">Sat-Anlage oder Starlink</a>.</p>
+      <ul class="feature-list">
+        <li>Lieferung und Installation aller Größen und Marken</li>
+        <li>Wandhalterung fix, schwenkbar oder höhenverstellbar</li>
+        <li>Saubere Kabelverlegung — ohne sichtbare Kabel</li>
+        <li>Komplette Einrichtung: Sender, Apps & Streaming</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: BESCHALLUNGSSYSTEME -->
+<section style="background:var(--white)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Beschallungssysteme</p>
+      <h2>Optimaler Klang in jedem Raum.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Der Fernseher ist groß, aber der Ton bleibt flach? Mit der richtigen Beschallung klingt Ihr Wohnzimmer wie ein Kinosaal — und auf Wunsch läuft Ihre Musik in jedem Raum. Wir beraten ehrlich, was Ihr Raum wirklich braucht, installieren und stimmen alles perfekt ab.</p>
+      <ul class="feature-list">
+        <li>Soundbars für besseren TV-Klang</li>
+        <li>Surround-Systeme fürs Wohnzimmer</li>
+        <li>Multiroom-Audio — Musik in jedem Raum</li>
+        <li>Beratung, Installation und Einrichtung inklusive</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/heimaudio-wohnzimmer.webp" alt="Beschallungssystem Wohnzimmer Wien – Soundbar und Subwoofer unter dem TV installiert von AVplus e.U." />
+    </div>
+  </div>
+</section>
+
+<section class="privat-section" style="background:var(--gray-light)">
+  <div class="reveal">
     <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;">Montageoptionen</h3>
     <div class="mounting-grid">
       <div class="mounting-item reveal delay-1"><img loading="lazy" decoding="async" src="bilder/displayhalterung.webp" alt="TV Wandhalterung fix Wien – Flachbildschirm sauber an Wand montiert von AVplus" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;" /><h4>Wandhalterung Fix</h4></div>
@@ -322,7 +378,7 @@
   <div class="reveal">
     <p class="section-label">Für Unternehmen & Bildungseinrichtungen</p>
     <h2>Medientechnik im Überblick</h2>
-    <p class="section-intro">Von Digital Signage bis zur vollständigen Konferenzraumausstattung — alles aus einer Hand.</p>
+    <p class="section-intro">Meetings, die pünktlich starten statt an der Technik zu scheitern — und ein Empfang, der Eindruck macht: Wir planen, installieren und warten Ihre komplette Medientechnik — abgestimmt auf Ihre Räume, Abläufe und Ihr Budget.</p>
   </div>
   <div class="services-grid">
     <div class="service-card reveal delay-1">
@@ -358,36 +414,65 @@
   </div>
 </section>
 
+<!-- FEATURE: STANDARD-DISPLAY -->
 <section class="business-section" style="background:var(--gray-light)">
-  <div class="reveal">
-    <p class="section-label">Display-Typen</p>
-    <h2>Welches Display passt zu Ihnen?</h2>
-    <p class="section-intro">Wir bieten beide gängigen Display-Arten — je nach Anforderung und Budget.</p>
-  </div>
-  <div class="display-compare">
-    <div class="display-card reveal delay-1">
-      <div class="display-card-header">
-        <div style="padding:1.2rem 1.5rem;background:linear-gradient(135deg,var(--blue-dark),var(--blue));"><h3>Standard-Display</h3><p style="opacity:0.8;font-size:0.88rem;margin-top:0.3rem;">Für einfache Inhaltsdarstellung</p></div>
-      </div>
-      <div class="display-card-body"><ul>
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/standard-display-meeting.webp" alt="Display für Konferenzraum Wien – Videokonferenz auf Standard-Display von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="reveal">
+      <p class="section-label">Display-Typen</p>
+      <h2>Standard-Display.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Für einfache Inhaltsdarstellung — die kostengünstige Lösung für Präsentation und Digital Signage.</p>
+      <ul class="feature-list">
         <li>Hohe Helligkeit (ideal für helle Räume)</li>
         <li>Keine Touchfunktion</li>
         <li>Kostengünstiger in der Anschaffung</li>
         <li>Ideal für Digital Signage & Präsentation</li>
         <li>Verschiedene Größen verfügbar</li>
-      </ul></div>
+      </ul>
     </div>
-    <div class="display-card reveal delay-2">
-      <div class="display-card-header">
-        <div style="padding:1.2rem 1.5rem;background:var(--green);"><h3>Interaktives Display & Digital Signage</h3><p style="opacity:0.8;font-size:0.88rem;margin-top:0.3rem;">Für kollaboratives Arbeiten & Werbung</p></div>
-      </div>
-      <div class="display-card-body"><ul>
+  </div>
+</section>
+
+<!-- FEATURE: INTERAKTIVES DISPLAY -->
+<section class="business-section" style="background:var(--white)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Display-Typen</p>
+      <h2>Interaktives Display.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Für kollaboratives Arbeiten — Touch-Displays mit integriertem System für Konferenzräume, Schulen und Showrooms.</p>
+      <ul class="feature-list">
         <li>Touchfunktion mit Multitouch</li>
         <li>Integriertes Betriebssystem (Android)</li>
         <li>OPS-Slot für Mini-PC (2. Betriebssystem)</li>
         <li>Gehärtetes Frontglas</li>
         <li>Integrierter USB-Hub</li>
-      </ul></div>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/interaktives-display.webp" alt="Interaktives Display Wien – Touch-Display mit Stift für Schulen und Konferenzräume von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: DIGITAL SIGNAGE -->
+<section class="business-section" style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/digital-signage-displays.webp" alt="Digital Signage Wien – Werbe- und Informationsdisplays mit zentraler Steuerung von AVplus e.U." style="width:100%;height:100%;object-fit:contain;background:#fff;" />
+    </div>
+    <div class="reveal">
+      <p class="section-label">Display-Typen</p>
+      <h2>Digital Signage.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Digitale Werbe- und Informationsdisplays für Restaurants, Autohäuser und öffentliche Einrichtungen — Inhalte zentral steuerbar.</p>
+      <ul class="feature-list">
+        <li>Werbe- und Informationsdisplays in jeder Größe</li>
+        <li>Inhalte zentral steuerbar — Änderungen in Sekunden</li>
+        <li>Zeitgesteuerte Wiedergabepläne</li>
+        <li>Ideal für Restaurants, Autohäuser und öffentliche Einrichtungen</li>
+        <li>Installation, Einrichtung und Wartung inklusive</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -442,8 +527,9 @@
 <section style="background:var(--gray-light)">
   <div class="cta-box reveal">
     <h2>Ihr Raum. Ihre Medienwelt.</h2>
-    <p>Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch — wir finden die perfekte AV-Lösung für Sie.</p>
-    <a href="index.html#kontakt" class="btn-green">Jetzt Beratung anfragen</a>
+    <p>Beschreiben Sie uns kurz Ihren Raum oder Ihr Vorhaben — Sie erhalten innerhalb von 24 Stunden eine ehrliche Einschätzung mit konkretem Vorschlag. Kostenlos und unverbindlich.</p>
+    <a href="#kontakt" class="btn-green">Jetzt Beratung anfragen</a>
+    <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
   </div>
 </section>
 
@@ -456,8 +542,12 @@
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Eine einfache TV-Wandmontage beginnt ab ca. 79 €. Je nach Größe des Fernsehers, Wandmaterial und Kabelverlegung kann der Preis variieren. Anfrage kostenlos.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Muss ich den Fernseher selbst kaufen oder liefert ihr ihn?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Beides ist möglich. Wir montieren Ihr vorhandenes Gerät — oder beraten Sie bei der Auswahl, liefern den passenden Fernseher und nehmen auf Wunsch das Altgerät und die Verpackung gleich mit.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Könnt ihr auch eine Sat-Anlage für mehrere Wohnungen installieren?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir planen und installieren Gemeinschaftsantennenanlagen (SAT-Multischalter) für Mehrfamilienhäuser und Wohnanlagen in Wien.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir planen und installieren Gemeinschaftsantennenanlagen (SAT-Multischalter) für Mehrfamilienhäuser und Wohnanlagen in Wien. Alle Details finden Sie auf unserer Seite <a href="ucc.html" style="color:#2d6ea8;font-weight:600;">SAT-Technik &amp; Starlink</a>.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was ist Digital Signage und wozu brauche ich das?</summary>
@@ -480,6 +570,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Was kostet eine TV-Wandmontage in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Eine einfache TV-Wandmontage beginnt ab ca. 79 €. Je nach Größe und Wandmaterial kann der Preis variieren." } },
+    { "@type": "Question", "name": "Muss ich den Fernseher selbst kaufen oder liefert ihr ihn?", "acceptedAnswer": { "@type": "Answer", "text": "Beides ist möglich. Wir montieren Ihr vorhandenes Gerät oder beraten, liefern und entsorgen Altgerät und Verpackung." } },
     { "@type": "Question", "name": "Könnt ihr auch eine Sat-Anlage für mehrere Wohnungen installieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir planen und installieren Gemeinschaftsantennenanlagen für Mehrfamilienhäuser in Wien." } },
     { "@type": "Question", "name": "Was ist Digital Signage und wozu brauche ich das?", "acceptedAnswer": { "@type": "Answer", "text": "Digital Signage sind digitale Bildschirme für Werbung oder Informationen im Geschäft, Empfang oder in Schulen. Wir liefern, montieren und richten alles ein." } },
     { "@type": "Question", "name": "Wie lange dauert die Installation eines Displays?", "acceptedAnswer": { "@type": "Answer", "text": "Eine einfache Display-Montage dauert 1–2 Stunden. Bei aufwendiger Kabelführung rechnen wir mit einem halben Tag." } },
@@ -488,9 +579,64 @@
 }
 </script>
 
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Anfrage zur Medientechnik senden</h2>
+      <p class="ki-sub">Beschreiben Sie kurz Ihren Raum oder Ihr Vorhaben — Sie erhalten innerhalb von 24 Stunden eine Antwort, auf Wunsch mit konkretem Vorschlag.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – Medientechnik" />
+      <input type="hidden" name="bereich" value="Medientechnik" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Worum geht es? *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
+
 <footer>
-  <span>© 2026 AVplus e.U. · Wien</span>
-  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr Komplettanbieter für Sicherheits-, Medien- und Netzwerktechnik in Wien und ganz Österreich — von der Planung bis zur Wartung.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  </div>
 </footer>
 
 <script>
@@ -506,5 +652,6 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="kontakt-inline.js"></script>
 </body>
 </html>

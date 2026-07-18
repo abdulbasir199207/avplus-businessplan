@@ -18,13 +18,13 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Sicherheitstechnik Wien – Videoüberwachung, Alarmanlage &amp; Zutrittskontrolle vom Profi. AVplus e.U. Wien ✓ Faire Preise ✓ Kostenlose Beratung ✓ Jetzt anfragen!" />
+  <meta name="description" content="Alarmanlage, Videoüberwachung &amp; Zutrittskontrolle in Wien vom zertifizierten Fachbetrieb. Kostenlose Sicherheitsanalyse vor Ort ✓ Festpreisangebot in 24 h ✓ AVplus e.U." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/sicherheitstechnik.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avplus.at/sicherheitstechnik.html" />
   <meta property="og:title" content="Sicherheitstechnik Wien – Videoüberwachung, Alarmanlage & Zutrittskontrolle | AVplus e.U." />
-  <meta property="og:description" content="Videoüberwachung, Alarmanlage & Zutrittskontrolle in Wien. AVplus e.U. – Faire Preise, kostenlose Beratung, professionelle Montage." />
+  <meta property="og:description" content="Videoüberwachung, Alarmanlage & Zutrittskontrolle in Wien. AVplus e.U. – kostenlose Sicherheitsanalyse vor Ort, Festpreisangebot in 24 h, zertifizierter Fachbetrieb." />
   <meta property="og:image" content="https://www.avplus.at/bilder/videoueberwachung.png" />
   <meta property="og:locale" content="de_AT" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,11 +63,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sicherheitstechnik Wien | Videoüberwachung, Alarmanlage & Zutrittskontrolle | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
     .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s} .delay-5{transition-delay:.5s} .delay-6{transition-delay:.6s}
@@ -114,6 +115,10 @@
     /* Services grid */
     .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .service-card { background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--blue); }
+    a.service-card { display:block; text-decoration:none; color:inherit; cursor:pointer; }
+    .sc-link { display:inline-block; margin-top:0.8rem; color:var(--blue); font-weight:700; font-size:0.85rem; }
+    a.service-card:hover .sc-link { text-decoration:underline; }
+    section[id] { scroll-margin-top:85px; }
     .service-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,0.11); }
     .sc-img-placeholder { aspect-ratio:3/1; width:100%; background:linear-gradient(135deg,#eef4fb,#dceaf7); border-bottom:1px solid #d4e4f0; display:flex; align-items:center; justify-content:center; }
     .sc-img-placeholder span { font-size:0.8rem; color:#8aaac8; font-style:italic; }
@@ -178,9 +183,14 @@
 
     @media(max-width:1024px) { .services-grid,.products-grid{grid-template-columns:repeat(2,1fr)} }
     @media(max-width:768px) { .services-grid,.products-grid{grid-template-columns:1fr} .feature-split{grid-template-columns:1fr} .footer-top{grid-template-columns:1fr;gap:2rem} }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .product-img{height:auto} .product-img img{height:auto} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
@@ -196,7 +206,7 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
     <div class="nav-dropdown">
@@ -204,7 +214,7 @@
       <div class="dropdown-menu">
         <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
         <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
-
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
         <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
         <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
         <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
@@ -212,9 +222,9 @@
     </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
-    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <!-- HERO -->
@@ -230,7 +240,7 @@
     <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Leistungen <span>›</span> Sicherheitstechnik</div>
     <div class="page-badge">🔒 Sicherheitstechnik</div>
     <h1>Ihr Gebäude.<br><span>Sicher. Intelligent.</span> Vernetzt.</h1>
-    <p>Von der Videoüberwachung bis zur Zutrittskontrolle — AVplus e.U. schützt Ihre Räumlichkeiten mit modernster Sicherheitstechnik namhafter Hersteller.</p>
+    <p>Sie möchten Ihr Zuhause oder Ihr Geschäft zuverlässig schützen? Wir planen und installieren Alarmanlagen, Videoüberwachung und Zutrittskontrolle — abgestimmt auf Ihr Objekt, mit Technik namhafter Hersteller und einem Ansprechpartner für alles.</p>
   </div>
 </div>
 
@@ -239,46 +249,50 @@
   <div class="reveal">
     <p class="section-label">Unsere Leistungen</p>
     <h2>Sicherheitstechnik im Überblick</h2>
-    <p class="section-intro">Professionelle Sicherheitslösungen von der Planung bis zur Wartung — maßgeschneidert für Ihr Objekt.</p>
+    <p class="section-intro">Sie kennen das: Man verlässt das Haus und fragt sich, ob wirklich alles sicher ist. Mit dem richtigen System stellt sich diese Frage nicht mehr — Sie sehen jederzeit am Handy, dass alles in Ordnung ist. Vier Bausteine, die einzeln funktionieren und kombiniert noch stärker sind:</p>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal delay-1">
+    <a href="#videoueberwachung" class="service-card reveal delay-1">
       <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/videoueberwachung.webp" alt="Videoüberwachung Wien – IP-Kameras und NVR-Systeme von AVplus e.U.">
       <div class="sc-body">
         <div class="sc-icon">📷</div>
         <h3>Videoüberwachung</h3>
         <p>IP-Kameras, NVR-Systeme und Remote-Monitoring für lückenlose Überwachung Ihres Gebäudes – innen und außen.</p>
+        <span class="sc-link">Mehr erfahren ↓</span>
       </div>
-    </div>
-    <div class="service-card reveal delay-2">
+    </a>
+    <a href="#alarmanlagen" class="service-card reveal delay-2">
       <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/alarmanlagen-karte.webp" alt="Alarmanlagen Wien – Einbruchmeldesysteme von AVplus e.U.">
       <div class="sc-body">
         <div class="sc-icon">🚨</div>
         <h3>Alarmanlagen</h3>
         <p>Einbruchmeldesysteme mit Bewegungsmeldern, Erschütterungssensoren und direkter Alarmweiterleitung.</p>
+        <span class="sc-link">Mehr erfahren ↓</span>
       </div>
-    </div>
-    <div class="service-card reveal delay-1">
+    </a>
+    <a href="#gegensprechanlagen" class="service-card reveal delay-1">
       <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/gegensprechanlagen.webp" alt="Gegensprechanlagen Wien – Video-Türsprechanlagen von AVplus e.U.">
       <div class="sc-body">
         <div class="sc-icon">🔔</div>
         <h3>Gegensprechanlagen</h3>
         <p>Video-Türsprechanlagen mit Kamera, Türöffner und App-Anbindung — für Türen, Tore und Einfahrten.</p>
+        <span class="sc-link">Mehr erfahren ↓</span>
       </div>
-    </div>
-    <div class="service-card reveal delay-2">
+    </a>
+    <a href="#zutrittskontrolle" class="service-card reveal delay-2">
       <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/zutrittskontrolle.webp" alt="Zutrittskontrolle Wien – elektronische Schließsysteme von AVplus e.U.">
       <div class="sc-body">
         <div class="sc-icon">🚪</div>
         <h3>Zutrittskontrolle</h3>
         <p>Elektronische Schließsysteme, Chipkarten, PIN-Codes und biometrische Zugangslösungen für kontrollierte Bereiche.</p>
+        <span class="sc-link">Mehr erfahren ↓</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
 <!-- FEATURE: VIDEOÜBERWACHUNG -->
-<section style="background:var(--white)">
+<section id="videoueberwachung" style="background:var(--white)">
   <div class="feature-split">
     <div class="feature-visual reveal">
       <img loading="lazy" decoding="async" src="bilder/ST Kamera 2.webp" alt="Überwachungskamera Nahaufnahme – Videoüberwachung Wien AVplus e.U." style="object-fit:contain;background:#ffffff;" />
@@ -294,7 +308,7 @@
     <div class="reveal">
       <p class="section-label">Videoüberwachung</p>
       <h2>Lückenlose Überwachung, die Sie beruhigt.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Moderne IP-Kamerasysteme ermöglichen hochauflösende Aufzeichnungen, Fernzugriff und intelligente Bewegungserkennung — von Hikvision, Dahua und Axis.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ungebetene Gäste am Grundstück? Vorfälle, die niemand gesehen hat? Mit moderner IP-Videoüberwachung sehen Sie jederzeit, was vor Ort passiert — live am Smartphone und mit Aufzeichnung als Beweismittel. Wir planen die Kamerastandorte, installieren datenschutzkonform und übergeben alles fertig eingerichtet — mit Systemen von Hikvision, Dahua und Axis.</p>
       <ul class="feature-list">
         <li>HD- und 4K-Kameras für Innen und Außen</li>
         <li>Dome-, Bullet- und PTZ-Schwenkkameras</li>
@@ -309,12 +323,12 @@
 </section>
 
 <!-- FEATURE: ALARMANLAGEN -->
-<section style="background:var(--gray-light)">
+<section id="alarmanlagen" style="background:var(--gray-light)">
   <div class="feature-split">
     <div class="reveal">
       <p class="section-label">Alarmanlagen</p>
       <h2>Einbruchschutz, der wirklich abschreckt.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Moderne Einbruchmeldesysteme erkennen Gefahren frühzeitig und alarmieren sofort — per App, Sirene oder direkter Aufschaltung auf eine Notrufleitstelle. Wir installieren kabelgebundene und Funk-Systeme von Ajax, Bosch und Hikvision.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ein Einbruch dauert im Schnitt keine fünf Minuten — entscheidend ist, dass er sofort auffällt. Moderne Einbruchmeldesysteme erkennen den Versuch im ersten Moment und alarmieren sofort: per App, Sirene oder direkter Aufschaltung auf eine Notrufleitstelle. Wir installieren kabelgebundene und Funk-Systeme von Ajax, Bosch und Hikvision — passend zu Ihrem Gebäude, auf Wunsch ganz ohne Stemmarbeiten.</p>
       <ul class="feature-list">
         <li>Bewegungsmelder, Erschütterungs- & Glasbruchsensoren</li>
         <li>Magnetkontakte für Türen und Fenster</li>
@@ -332,12 +346,12 @@
 </section>
 
 <!-- FEATURE: GEGENSPRECHANLAGE -->
-<section style="background:var(--white)">
+<section id="gegensprechanlagen" style="background:var(--white)">
   <div class="feature-split">
     <div class="reveal">
       <p class="section-label">Türkommunikation</p>
-      <h2>Gegensprechanlagen mit Videoübertragung.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Video-Türsprechanlagen verbinden Eingangsbereich und Innenraum — per Wandgerät, Smartphone oder Tablet. Wir installieren Systeme von 2N, Siedle und Hikvision.</p>
+      <h2>Sehen, wer läutet — auch wenn Sie nicht da sind.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Es läutet, aber Sie wissen nicht, wer vor der Tür steht — oder Sie sind gerade unterwegs? Mit einer Video-Türsprechanlage sehen Sie jeden Besucher am Wandgerät oder Smartphone und öffnen die Tür von überall. Wir installieren Systeme von 2N, Siedle und Hikvision — vom Einfamilienhaus bis zur Wohnanlage.</p>
       <ul class="feature-list">
         <li>IP-Video-Türstation mit HD-Kamera</li>
         <li>Gegensprechanlage für Einfamilienhäuser & Mehrfamilienhäuser</li>
@@ -363,7 +377,7 @@
 </section>
 
 <!-- FEATURE: ZUTRITTSKONTROLLE -->
-<section style="background:var(--white)">
+<section id="zutrittskontrolle" style="background:var(--white)">
   <div class="feature-split">
     <div class="feature-visual reveal">
       <img loading="lazy" decoding="async" src="bilder/zutrittskontrolle-feature.webp" alt="Zutrittskontrolle Chipkarte Wien – AVplus e.U." style="width:100%;height:100%;object-fit:cover;object-position:center center;border-radius:1rem;">
@@ -371,7 +385,7 @@
     <div class="reveal">
       <p class="section-label">Zutrittskontrolle</p>
       <h2>Wer darf rein? Sie entscheiden.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Elektronische Zutrittssysteme ersetzen mechanische Schlösser durch flexible, verwaltbare Zugangslösungen — vollständig protokolliert und skalierbar.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Verlorene Schlüssel, ausgeschiedene Mitarbeiter mit Zugang, keine Übersicht, wer wann im Gebäude war? Elektronische Zutrittssysteme lösen genau das: Berechtigungen vergeben und sperren Sie in Sekunden — vollständig protokolliert, ohne Schlüsseldienst und beliebig erweiterbar.</p>
       <ul class="feature-list">
         <li>Chipkarten- und Transponder-Systeme (RFID/NFC)</li>
         <li>PIN-Code und biometrische Fingerprint-Lösungen</li>
@@ -391,7 +405,7 @@
     <div class="reveal">
       <p class="section-label">Smart-Security</p>
       <h2>Sicherheit per App – jederzeit und überall.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Moderne Sicherheitssysteme lassen sich nahtlos in Smart-Home-Umgebungen integrieren. Steuern und überwachen Sie Ihr Gebäude bequem per Smartphone oder Tablet — von überall auf der Welt.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Im Urlaub kurz nachsehen, ob zuhause alles in Ordnung ist? Moderne Sicherheitssysteme lassen sich nahtlos in Smart-Home-Umgebungen integrieren — Sie steuern und überwachen Ihr Gebäude bequem per Smartphone, von überall. Wie viel Komfort darüber hinaus möglich ist, zeigen unsere <a href="smarthome.html" style="color:var(--blue);font-weight:600;">Smart-Home-Lösungen</a>.</p>
       <ul class="feature-list">
         <li>Integration mit KNX, Loxone und Ajax SmartHome</li>
         <li>App-Steuerung für Alarm, Kameras und Zugang</li>
@@ -416,7 +430,7 @@
     <div class="reveal">
       <p class="section-label">Wartung & Support</p>
       <h2>Damit Ihre Anlage immer zuverlässig funktioniert.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Sicherheitstechnik ist nur so gut wie ihre Wartung. Wir bieten regelmäßige Inspektionen, schnelle Fehlerdiagnose und direkten Support — damit Sie sich zu jeder Zeit auf Ihre Anlage verlassen können.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Sicherheitstechnik ist nur so gut wie ihre Wartung. Als Ihr langfristiger Partner prüfen wir Ihre Anlage regelmäßig, reagieren schnell bei Störungen und halten die Software aktuell — auch bei Anlagen, die nicht von uns installiert wurden. Sie brauchen dafür keinen zweiten Betrieb: Auch die <a href="lwl.html" style="color:var(--blue);font-weight:600;">Netzwerk- und Glasfaserinfrastruktur</a> übernehmen wir gleich mit.</p>
       <ul class="feature-list">
         <li>Jährliche Wartung & Funktionsprüfung</li>
         <li>Schnelle Reaktionszeit bei Störungen</li>
@@ -425,121 +439,6 @@
         <li>Support auch für Fremdanlagen</li>
         <li>Wartungsvertrag mit garantierten Reaktionszeiten</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUKTE & HERSTELLER (entfernt) -->
-<section style="display:none">
-  <div class="products-grid" style="margin-bottom:3rem;">
-    <div class="product-card reveal delay-1">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="bilder/kameramontage.webp" alt="Außenkamera Montage Wien – Überwachungskamera an Hauswand installiert von AVplus" style="object-fit:contain;background:#f0f2f5;" />
-        <span class="product-brand-badge">HIKVISION</span>
-      </div>
-      <div class="product-body">
-        <h4>4MP AcuSense Dome-Kamera</h4>
-        <div class="product-model">DS-2CD2143G2-I</div>
-        <p>Outdoor-Dome mit KI-Bewegungserkennung, 4MP Auflösung, IR-Nachtsicht bis 40m und IP67-Schutz.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-2">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="bilder/kameramontage2.webp" alt="Professionelle Kameramontage Wien – Innenkamera installiert von AVplus e.U." style="object-fit:contain;background:#f0f2f5;" />
-        <span class="product-brand-badge">HIKVISION</span>
-      </div>
-      <div class="product-body">
-        <h4>4K PTZ-Schwenkkamera</h4>
-        <div class="product-model">DS-2DE4425IWG-E</div>
-        <p>Motorisierte Schwenk-Neige-Kamera mit 25-fachem optischem Zoom und KI-Tracking für weitläufige Bereiche.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-3">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="bilder/ueberwachungsmonitor.webp" alt="Überwachungsmonitor Wien – Videoüberwachungszentrale mit Live-Kameraansichten" style="object-fit:contain;background:#0d1b2a;" />
-        <span class="product-brand-badge">DAHUA</span>
-      </div>
-      <div class="product-body">
-        <h4>Full-Color Turret-Kamera</h4>
-        <div class="product-model">IPC-HDW2849H-S-IL</div>
-        <p>Farb-Nachtsicht auch bei wenig Licht, Dual-Light (IR + Weißlicht), 8MP mit WDR für optimale Bildqualität.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gegensprechanlagen -->
-  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue);">🔔 Gegensprechanlagen & Türkommunikation</h3>
-  <div class="products-grid" style="margin-bottom:3rem;">
-    <div class="product-card reveal delay-1">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1614267861476-0d129972a0f4?auto=format&fit=crop&w=600&q=80" alt="2N IP Verso" />
-        <span class="product-brand-badge">2N</span>
-      </div>
-      <div class="product-body">
-        <h4>IP Video-Türstation</h4>
-        <div class="product-model">2N IP Verso 2.0</div>
-        <p>Modulares IP-Türsprechsystem mit HD-Kamera, RFID-Leser, Fingerabdruckscanner und direkter App-Integration.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-2">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Siedle Gegensprechanlage" />
-        <span class="product-brand-badge">SIEDLE</span>
-      </div>
-      <div class="product-body">
-        <h4>Video-Türstation Steel</h4>
-        <div class="product-model">Siedle Steel BTC 850</div>
-        <p>Hochwertige Edelstahl-Türstation mit 180°-Weitwinkelkamera und robustem Design für Büro- und Wohngebäude.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-3">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=600&q=80" alt="Hikvision Video Intercom" />
-        <span class="product-brand-badge">HIKVISION</span>
-      </div>
-      <div class="product-body">
-        <h4>Video-Gegensprechanlage</h4>
-        <div class="product-model">DS-KV8113-WME1</div>
-        <p>WLAN-fähige Türstation mit 2MP-Kamera, Nachtsicht und direkter Verbindung zur Hikvision Hik-Connect App.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Alarmanlagen -->
-  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--blue);">🚨 Alarmanlagen & Sicherheitszentralen</h3>
-  <div class="products-grid">
-    <div class="product-card reveal delay-1">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Bosch Alarmzentrale" />
-        <span class="product-brand-badge">BOSCH</span>
-      </div>
-      <div class="product-body">
-        <h4>Einbruchmeldesystem</h4>
-        <div class="product-model">Bosch Solution 3000</div>
-        <p>Professionelle Alarmzentrale für bis zu 32 Zonen mit Funk-Erweiterung, Notruf-Aufschaltung und App-Bedienung.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-2">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1574074479580-93d27f3a82af?auto=format&fit=crop&w=600&q=80" alt="Ajax Funkalarmanlage" />
-        <span class="product-brand-badge">AJAX</span>
-      </div>
-      <div class="product-body">
-        <h4>Funk-Alarmanlage</h4>
-        <div class="product-model">Ajax Hub 2 Plus</div>
-        <p>Moderne Funkalarmanlage mit LTE-Backup, bis zu 200 Geräten, Sabotageschutz und einfacher App-Verwaltung.</p>
-      </div>
-    </div>
-    <div class="product-card reveal delay-3">
-      <div class="product-img">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1618333452609-e28f1dba0e4c?auto=format&fit=crop&w=600&q=80" alt="Zutrittskontrolle" />
-        <span class="product-brand-badge">AXIS</span>
-      </div>
-      <div class="product-body">
-        <h4>Netzwerk-Zutrittskontrolle</h4>
-        <div class="product-model">Axis A1601 + A4010</div>
-        <p>Skalierbare IP-Zutrittskontrolle mit RFID, PIN und mobiler Zugangsberechtigung — für 1 bis 100+ Türen.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -559,9 +458,10 @@
 <!-- CTA -->
 <section style="background:var(--white)">
   <div class="cta-box reveal">
-    <h2>Sicherheit planen – kostenlos beraten lassen.</h2>
-    <p>Wir analysieren Ihr Objekt und erstellen ein maßgeschneidertes Sicherheitskonzept — mit Produkten führender Hersteller. Unverbindlich und kostenlos.</p>
-    <a href="index.html#kontakt" class="btn-green">Jetzt Beratung anfragen</a>
+    <h2>Kostenlose Sicherheitsanalyse für Ihr Objekt.</h2>
+    <p>Wir sehen uns Ihr Zuhause oder Geschäft vor Ort an, zeigen Ihnen die Schwachstellen und erstellen ein maßgeschneidertes Konzept mit Festpreisangebot — unverbindlich, kostenlos und innerhalb von 24 Stunden.</p>
+    <a href="#kontakt" class="btn-green">Kostenlose Sicherheitsanalyse anfragen</a>
+    <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
   </div>
 </section>
 
@@ -569,6 +469,26 @@
   <div style="max-width:800px; margin:0 auto;">
     <h2 style="font-size:1.7rem; color:#1a2332; margin-bottom:2rem; text-align:center;">Häufige Fragen zur Sicherheitstechnik</h2>
     <div style="display:flex; flex-direction:column; gap:1rem;">
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet eine Alarmanlage in Wien?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Das hängt von Objektgröße, Anzahl der zu sichernden Türen und Fenster und der gewünschten Ausstattung ab — eine Wohnung braucht weniger Melder als ein Haus mit Garten. Deshalb nennen wir keinen Pauschalpreis ins Blaue: Bei der kostenlosen Sicherheitsanalyse vor Ort bekommen Sie von AVplus ein Festpreisangebot innerhalb von 24 Stunden, ohne versteckte Kosten.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann man eine Alarmanlage im Altbau oder in einer Mietwohnung nachrüsten?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, problemlos. Funk-Alarmanlagen werden ohne Stemm- und Kabelarbeiten montiert — ideal für Wiener Altbauten und Mietwohnungen. Beim Umzug lässt sich die Anlage rückstandslos abbauen und in der neuen Wohnung wieder aufbauen.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was passiert bei Strom- oder Internetausfall?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Die Alarmzentrale hat einen eingebauten Notstrom-Akku und läuft bei Stromausfall mehrere Stunden weiter. Fällt das Internet aus, übernimmt je nach System ein Mobilfunk-Modul die Alarmübertragung. Sabotageversuche — etwa das Abmontieren eines Melders — werden ebenfalls sofort gemeldet.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Ich habe Haustiere — löst die Alarmanlage dann ständig aus?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Nein. Moderne Bewegungsmelder mit Haustier-Immunität ignorieren Tiere bis zu einer bestimmten Größe. Zusätzlich planen wir die Melder-Positionen so, dass Ihre Tiere sich frei bewegen können, ohne Fehlalarme auszulösen — das gehört bei AVplus zur Planung vor Ort dazu.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann ich Alarmanlage und Videoüberwachung kombinieren?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja — das ist sogar die sinnvollste Lösung: Löst die Alarmanlage aus, sehen Sie per Kamera sofort in der App nach, was tatsächlich los ist. So erkennen Sie einen echten Einbruch auf einen Blick und vermeiden unnötige Einsätze wegen Fehlalarmen.</p>
+      </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet eine Videoüberwachung in Wien?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Die Kosten hängen von Anzahl der Kameras und dem Standort ab. Ein einfaches System für Privat startet ab ca. 300–500 €, für Unternehmen ab 800 €. Wir erstellen Ihnen gerne ein kostenloses Angebot.</p>
@@ -586,6 +506,14 @@
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir installieren Systeme mit App-Anbindung, sodass Sie jederzeit und von überall auf Ihre Kameras zugreifen können — live und mit Aufzeichnung.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was passiert, wenn die Alarmanlage auslöst?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Sie werden sofort per App benachrichtigt, die Sirene schreckt ab — und auf Wunsch wird der Alarm direkt an eine Notruf- und Serviceleitstelle weitergeleitet, die rund um die Uhr reagiert. Welche Variante sinnvoll ist, klären wir in der kostenlosen Beratung.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Funk-Alarmanlage oder verkabelt — was ist besser?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Funk-Systeme (z. B. Ajax) sind ohne Stemmarbeiten installiert und ideal für Wohnungen und Bestandsgebäude. Verkabelte Systeme spielen ihre Stärken bei Neubauten und größeren Objekten aus. Wir empfehlen Ihnen die Lösung, die zu Ihrem Gebäude passt — nicht die teuerste.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Macht ihr auch Wartung und Reparatur bestehender Anlagen?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir warten und reparieren auch Anlagen, die nicht von uns installiert wurden. Einfach anfragen — wir schauen uns das gerne an.</p>
       </details>
@@ -597,14 +525,49 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "Was kostet eine Alarmanlage in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Der Preis hängt von Objektgröße, Anzahl der zu sichernden Türen und Fenster und der Ausstattung ab. Bei der kostenlosen Sicherheitsanalyse vor Ort erstellt AVplus ein Festpreisangebot innerhalb von 24 Stunden, ohne versteckte Kosten." } },
+    { "@type": "Question", "name": "Kann man eine Alarmanlage im Altbau oder in einer Mietwohnung nachrüsten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Funk-Alarmanlagen werden ohne Stemm- und Kabelarbeiten montiert — ideal für Altbauten und Mietwohnungen. Beim Umzug lässt sich die Anlage rückstandslos abbauen und wieder aufbauen." } },
+    { "@type": "Question", "name": "Was passiert bei Strom- oder Internetausfall?", "acceptedAnswer": { "@type": "Answer", "text": "Die Alarmzentrale läuft mit Notstrom-Akku mehrere Stunden weiter, bei Internetausfall übernimmt je nach System ein Mobilfunk-Modul die Alarmübertragung. Sabotageversuche werden sofort gemeldet." } },
+    { "@type": "Question", "name": "Ich habe Haustiere — löst die Alarmanlage dann ständig aus?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Bewegungsmelder mit Haustier-Immunität ignorieren Tiere bis zu einer bestimmten Größe, und die Melder-Positionen werden bei der Planung vor Ort auf Ihre Tiere abgestimmt." } },
+    { "@type": "Question", "name": "Kann ich Alarmanlage und Videoüberwachung kombinieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja — löst die Alarmanlage aus, sehen Sie per Kamera sofort in der App nach, was los ist. So erkennen Sie echte Einbrüche und vermeiden Fehlalarm-Einsätze." } },
     { "@type": "Question", "name": "Was kostet eine Videoüberwachung in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Ein einfaches System für Privat startet ab ca. 300–500 €, für Unternehmen ab 800 €. Wir erstellen gerne ein kostenloses Angebot." } },
     { "@type": "Question", "name": "Wie lange dauert die Montage einer Alarmanlage?", "acceptedAnswer": { "@type": "Answer", "text": "Eine Standardmontage dauert in der Regel 2–4 Stunden. Bei größeren Anlagen kann es einen vollen Tag dauern." } },
     { "@type": "Question", "name": "Brauche ich eine Genehmigung für Überwachungskameras?", "acceptedAnswer": { "@type": "Answer", "text": "In Österreich gibt es Datenschutzvorschriften für Videoüberwachung. Wir beraten Sie kostenlos und helfen bei der rechtlich korrekten Einrichtung." } },
     { "@type": "Question", "name": "Kann ich die Kameras auch vom Handy aus sehen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir installieren Systeme mit App-Anbindung für Live-Zugriff und Aufzeichnung von überall." } },
+    { "@type": "Question", "name": "Was passiert, wenn die Alarmanlage auslöst?", "acceptedAnswer": { "@type": "Answer", "text": "Sofortige App-Benachrichtigung und Sirene — auf Wunsch mit direkter Aufschaltung auf eine Notruf- und Serviceleitstelle rund um die Uhr." } },
+    { "@type": "Question", "name": "Funk-Alarmanlage oder verkabelt — was ist besser?", "acceptedAnswer": { "@type": "Answer", "text": "Funk-Systeme sind ohne Stemmarbeiten ideal für Wohnungen und Bestandsgebäude, verkabelte Systeme für Neubauten und größere Objekte. Wir empfehlen die Lösung, die zum Gebäude passt." } },
     { "@type": "Question", "name": "Macht ihr auch Wartung und Reparatur bestehender Anlagen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wir warten und reparieren auch Anlagen, die nicht von uns installiert wurden." } }
   ]
 }
 </script>
+
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Kostenlose Sicherheitsanalyse anfragen</h2>
+      <p class="ki-sub">Beschreiben Sie kurz Ihr Objekt — Sie erhalten innerhalb von 24 Stunden eine Antwort, auf Wunsch mit Festpreisangebot.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – Sicherheitstechnik" />
+      <input type="hidden" name="bereich" value="Sicherheitstechnik" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Worum geht es? *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="footer-top">
@@ -617,7 +580,7 @@
       <ul>
         <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
         <li><a href="medientechnik.html">Medientechnik</a></li>
-        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
         <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
         <li><a href="smarthome.html">Smart-Home</a></li>
         <li><a href="edv.html">EDV & IT-Service</a></li>
@@ -628,7 +591,7 @@
       <ul>
         <li><a href="tel:+436766520263">+43 676 6520263</a></li>
         <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
-        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
       </ul>
     </div>
   </div>
@@ -644,5 +607,6 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="kontakt-inline.js"></script>
 </body>
 </html>

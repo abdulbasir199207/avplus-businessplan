@@ -18,13 +18,13 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Glasfaser &amp; Spleißtechnik Wien – Netzwerkinstallation, LWL-Verlegung &amp; Starlink-Montage. AVplus e.U. ✓ Faire Preise ✓ Jetzt anfragen!" />
+  <meta name="description" content="Glasfaser &amp; Netzwerktechnik Wien – LWL-Verlegung, Spleißen, OTDR-Messung &amp; strukturierte Verkabelung mit Messprotokoll. Für Büro, Schule &amp; Zuhause. AVplus e.U." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/lwl.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avplus.at/lwl.html" />
   <meta property="og:title" content="Glasfaser Wien – LWL-Verlegung, Spleißtechnik & Starlink | AVplus e.U." />
-  <meta property="og:description" content="Glasfaser-Netzwerke, LWL-Verlegung & Starlink-Montage in Wien. AVplus e.U. – professionelle Netzwerkinstallation zu fairen Preisen." />
+  <meta property="og:description" content="Glasfaser-Netzwerke, LWL-Verlegung & Spleißtechnik in Wien. AVplus e.U. – normgerechte Netzwerkinstallation mit OTDR-Messprotokoll und vollständiger Dokumentation." />
   <meta property="og:image" content="https://www.avplus.at/bilder/lwl-glasfaser.jpg" />
   <meta property="og:locale" content="de_AT" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,11 +63,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Glasfaser Wien | Spleißtechnik & Netzwerkinstallation | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
     .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
@@ -76,6 +77,12 @@
     nav { display:flex; gap:0.5rem; align-items:center; }
     .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
     .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
     .btn:hover { background:var(--blue-dark); }
     .page-hero { margin-top:72px; background:linear-gradient(135deg,#1a1a3e 0%,#2d3ea8 60%,#4060c0 100%); padding:5rem 5% 4rem; position:relative; overflow:hidden; }
@@ -93,7 +100,7 @@
     .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
     h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
     .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; }
-    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .service-card { background:var(--white); border-radius:14px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid #4060c0; }
     .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
     .sc-icon { font-size:2.5rem; margin-bottom:1rem; }
@@ -118,13 +125,30 @@
     .cta-box p { opacity:0.8; margin-bottom:2rem; }
     .btn-accent { background:#90c8ff; color:#1a1a3e; padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; display:inline-block; transition:transform 0.2s; }
     .btn-accent:hover { transform:translateY(-2px); }
-    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+    @media(max-width:768px) { .footer-top { grid-template-columns:1fr; gap:2rem; } }
     footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
     footer a:hover { color:var(--white); }
     @media(max-width:768px) { .services-grid,.feature-split,.steps{grid-template-columns:1fr} }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
@@ -139,15 +163,25 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
-    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
-    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <div class="page-hero">
@@ -157,43 +191,103 @@
     <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Netzwerk- & Glasfasertechnik</div>
     <div class="page-badge">🔗 Netzwerk- & Glasfasertechnik</div>
     <h1>Lichtschnelle Verbindungen.<br><span>Glasfaser</span> für Ihr Gebäude.</h1>
-    <p>Professionelle LWL-Verlegung, präzise Spleißtechnik und Netzwerkmessungen — für stabile Infrastruktur, die zukunftssicher ist.</p>
+    <p>Langsames Netzwerk, ständige Abbrüche, veraltete Verkabelung? Wir bauen die Infrastruktur, auf die Sie sich verlassen können: LWL-Verlegung, Spleißtechnik und Messung — normgerecht, dokumentiert und bereit für die nächsten 20 Jahre.</p>
   </div>
 </div>
 
 <section style="background:var(--gray-light)">
-  <div class="reveal">
+  <div class="reveal" style="margin-bottom:3rem;">
     <p class="section-label">Unsere Leistungen</p>
     <h2>Netzwerk- & Glasfasertechnik</h2>
-    <p class="section-intro">Von der Planung bis zur Übergabe — wir verlegen, spleiße und messen Ihr LWL-Netz.</p>
+    <p class="section-intro" style="margin-bottom:0;">Ihr Netzwerk soll einfach funktionieren — heute und wenn Ihr Bedarf wächst. Von der Planung bis zur Übergabe verlegen, spleißen und messen wir Ihr LWL-Netz. Sie erhalten eine Infrastruktur mit Messprotokoll und vollständiger Dokumentation, auf die jeder Techniker später aufbauen kann.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal delay-1"><div class="sc-icon">🔗</div><h3>LWL-Verlegung</h3><p>Fachgerechte Verlegung von Glasfaserkabeln in Gebäuden, Leerrohren und Kabeltrassen — innen und außen.</p></div>
-    <div class="service-card reveal delay-2"><div class="sc-icon">✂️</div><h3>Spleißtechnik</h3><p>Präzises Spleißen von Lichtwellenleitern mit Lichtbogenspleißgerät — für verlustfreie Verbindungen.</p></div>
-    <div class="service-card reveal delay-3"><div class="sc-icon">📏</div><h3>LWL-Messung</h3><p>OTDR-Messungen und Dämpfungsmessungen zur Qualitätsprüfung und Fehlerortung im Glasfasernetz.</p></div>
-    <div class="service-card reveal delay-1"><div class="sc-icon">🔌</div><h3>Patchung & Konfektionierung</h3><p>Steckerkonfektion, Patchpanel-Beschaltung und strukturierte Verkabelung nach EN 50173.</p></div>
-    <div class="service-card reveal delay-2"><div class="sc-icon">🏗️</div><h3>Gebäudeverkabelung</h3><p>Planung und Umsetzung strukturierter Netzwerkverkabelung für Büros, Schulen und Industrieobjekte.</p></div>
-    <div class="service-card reveal delay-3"><div class="sc-icon">📋</div><h3>Dokumentation</h3><p>Vollständige Trassenpläne, Messprotokolle und Übergabedokumentationen für Ihre Unterlagen.</p></div>
+
+  <!-- 1. LWL-Verlegung & Gebäudeverkabelung — Text links, Bild rechts -->
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Verlegung</p>
+      <h2>LWL-Verlegung & Gebäudeverkabelung</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Immer mehr Geräte, immer größere Datenmengen — und die alte Verkabelung kommt nicht mehr mit? Wir verlegen Glasfaserkabel fachgerecht in Gebäuden, Leerrohren und Kabeltrassen, innen wie außen. Ihr Vorteil: eine strukturierte Verkabelung, die heute stabil läuft und sich morgen ohne Umbau erweitern lässt.</p>
+      <ul class="feature-list">
+        <li>Verlegung in Leerrohren, Kabeltrassen und Steigzonen</li>
+        <li>Innen- und wetterfeste Außenverlegung</li>
+        <li>Strukturierte Netzwerkverkabelung nach EN 50173</li>
+        <li>Für Büros, Schulen, Industrie- und Gewerbeobjekte</li>
+        <li>Saubere, unsichtbare Kabelführung</li>
+        <li>Vorbereitet für spätere Erweiterungen</li>
+        <li>Enge Abstimmung mit Bau- und Elektroplanung</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/kabeltrasse-verlegung.webp" alt="LWL-Verlegung Wien – Netzwerkkabel sauber gebündelt auf Kabeltrassen von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+    </div>
   </div>
 </section>
 
 <section style="background:var(--white)">
+  <!-- 2. Spleißtechnik — Bild links, Text rechts -->
   <div class="feature-split">
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" src="bilder/lwl-glasfaser.webp" alt="LWL Spleißtechnik Wien – Glasfaserkabel verbinden und messen von AVplus e.U." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
-      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,62,0.55),rgba(64,96,192,0.40));"></div>
+      <img loading="lazy" decoding="async" src="bilder/spleissgeraet.webp" alt="Glasfaser spleißen Wien – Lichtbogenspleißgerät (Fusion Splicing) im Einsatz von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="reveal">
       <p class="section-label">Spleißtechnik</p>
       <h2>Präzision auf Mikrometer genau.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Beim Spleißen werden Glasfasern dauerhaft und verlustarm miteinander verbunden — mit modernsten Lichtbogenspleißgeräten.</p>
+      <p style="color:var(--gray);margin-bottom:1rem;">Beim Spleißen werden einzelne Glasfasern dauerhaft und nahezu verlustfrei miteinander verbunden — mit modernsten Lichtbogenspleißgeräten und größter Sorgfalt für jede einzelne Faser.</p>
       <ul class="feature-list">
         <li>Lichtbogenspleißen (Fusion Splicing)</li>
         <li>Spleißdämpfung unter 0,1 dB</li>
-        <li>Geeignet für SM und MM Fasern</li>
-        <li>Spleißbox-Montage und Beschriftung</li>
-        <li>Messprotokoll nach jedem Splice</li>
-        <li>Einsatz in Außen- und Innenbereichen</li>
+        <li>Geeignet für Singlemode- (SM) und Multimode-Fasern (MM)</li>
+        <li>Fachgerechte Spleißbox-Montage und Beschriftung</li>
+        <li>Messprotokoll nach jedem Spleiß</li>
+        <li>Einsatz in Innen- und Außenbereichen</li>
+        <li>Auch für Reparaturen an bestehenden Netzen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--gray-light)">
+  <!-- 3. Patchung & Konfektionierung — Text links, Bild rechts -->
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Patchung</p>
+      <h2>Patchung & Konfektionierung</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Wir konfektionieren Stecker, beschalten Patchpanels und richten Ihre strukturierte Verkabelung normgerecht ein — für eine aufgeräumte, übersichtliche und wartungsfreundliche Infrastruktur.</p>
+      <ul class="feature-list">
+        <li>Steckerkonfektion (LC, SC, ST u. a.)</li>
+        <li>Patchpanel-Beschaltung und saubere Rangierung</li>
+        <li>Strukturierte Verkabelung nach EN 50173</li>
+        <li>Eindeutige Beschriftung aller Ports und Kabel</li>
+        <li>Aufgeräumte Schrank- und Rack-Montage</li>
+        <li>Übersichtliche Dokumentation der Belegung</li>
+        <li>Jederzeit erweiterbar und wartungsfreundlich</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/patchpanel-lwl.webp" alt="LWL-Patchpanel Wien – Glasfaser-Patchung mit LC-Steckern im Netzwerkschrank von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <!-- 4. LWL-Messung & Dokumentation — Bild links, Text rechts -->
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/lwl-messung.webp" alt="LWL-Messung Wien – OTDR-Messgerät prüft Glasfaser am Patchpanel, Dokumentation von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="reveal">
+      <p class="section-label">Messung & Dokumentation</p>
+      <h2>Geprüft, gemessen, dokumentiert.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Woher wissen Sie, dass Ihre neue Verkabelung wirklich hält, was sie verspricht? Ganz einfach: Wir messen jede Strecke mit professionellen Geräten und übergeben Ihnen normgerechte Protokolle samt Plänen — Ihr schwarz auf weiß dokumentierter Qualitätsnachweis und die Grundlage für jede spätere Erweiterung.</p>
+      <ul class="feature-list">
+        <li>OTDR- und Dämpfungsmessungen</li>
+        <li>Qualitätsprüfung und punktgenaue Fehlerortung</li>
+        <li>Vollständige Trassen- und Verlegepläne</li>
+        <li>Normgerechte Messprotokolle</li>
+        <li>Übergabedokumentation für Ihre Unterlagen</li>
+        <li>Klare Basis für Wartung und Netzausbau</li>
+        <li>Auf Wunsch digital und in Papierform</li>
       </ul>
     </div>
   </div>
@@ -215,8 +309,9 @@
 <section style="background:var(--white)">
   <div class="cta-box reveal">
     <h2>Glasfaser-Infrastruktur planen.</h2>
-    <p>Wir beraten Sie kostenlos zur optimalen LWL-Lösung für Ihr Objekt — von der Schule bis zum Bürogebäude.</p>
-    <a href="index.html#kontakt" class="btn-accent">Jetzt Beratung anfragen</a>
+    <p>Beschreiben Sie uns kurz Ihr Objekt — Sie erhalten innerhalb von 24 Stunden eine ehrliche Einschätzung und ein konkretes Angebot. Kostenlos und unverbindlich, von der Wohnung bis zum Bürogebäude.</p>
+    <a href="#kontakt" class="btn-accent">Jetzt Beratung anfragen</a>
+    <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
   </div>
 </section>
 
@@ -234,7 +329,11 @@
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Könnt ihr auch Starlink montieren und einrichten?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir montieren die Starlink-Schüssel fachgerecht, verlegen Kabel und richten alles ein — damit Sie sofort online sind.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir montieren die Starlink-Schüssel fachgerecht, verlegen Kabel und richten alles ein — damit Sie sofort online sind. Alle Details finden Sie auf unserer Seite <a href="ucc.html" style="color:#2d6ea8;font-weight:600;">SAT-Technik &amp; Starlink</a>.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Verlegt ihr auch normale Netzwerkkabel (LAN) in Wohnungen und Büros?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Neben Glasfaser verlegen wir auch klassische Netzwerkverkabelung (Cat 6/7) — sauber, unsichtbar und mit beschrifteten Dosen. Für WLAN-Optimierung und Router-Einrichtung sehen Sie sich auch unsere <a href="edv.html" style="color:#2d6ea8;font-weight:600;">Computer- &amp; IT-Hilfe</a> an.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Wie lange dauert eine LWL-Verlegung?</summary>
@@ -255,15 +354,71 @@
     { "@type": "Question", "name": "Was ist der Unterschied zwischen Glasfaser und normalem Internet?", "acceptedAnswer": { "@type": "Answer", "text": "Glasfaser überträgt Daten per Licht — dadurch ist sie schneller, stabiler und störungsunempfindlicher als Kupferkabel." } },
     { "@type": "Question", "name": "Was kostet eine Glasfaser-Installation in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten hängen von Länge und Aufwand ab. Wir erstellen ein kostenloses Angebot nach einer Besichtigung." } },
     { "@type": "Question", "name": "Könnt ihr auch Starlink montieren und einrichten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir montieren die Starlink-Schüssel, verlegen Kabel und richten alles ein." } },
+    { "@type": "Question", "name": "Verlegt ihr auch normale Netzwerkkabel (LAN) in Wohnungen und Büros?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben Glasfaser verlegen wir auch klassische Netzwerkverkabelung (Cat 6/7) — sauber, unsichtbar und mit beschrifteten Dosen." } },
     { "@type": "Question", "name": "Wie lange dauert eine LWL-Verlegung?", "acceptedAnswer": { "@type": "Answer", "text": "Kleine Installationen dauern einen halben bis ganzen Tag. Größere Strecken werden individuell geplant." } },
     { "@type": "Question", "name": "Ist Glasfaser auch für Privatwohnungen sinnvoll?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, besonders für Homeoffice, Streaming und viele Geräte gleichzeitig. Glasfaser sorgt für stabile, schnelle Verbindungen." } }
   ]
 }
 </script>
 
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Glasfaser-Projekt anfragen</h2>
+      <p class="ki-sub">Beschreiben Sie kurz Ihr Objekt — Sie erhalten innerhalb von 24 Stunden eine Einschätzung und ein konkretes Angebot.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – Netzwerk- & Glasfasertechnik" />
+      <input type="hidden" name="bereich" value="Netzwerk- & Glasfasertechnik" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Worum geht es? *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
+
 <footer>
-  <span>© 2026 AVplus e.U. · Wien</span>
-  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr Komplettanbieter für Sicherheits-, Medien- und Netzwerktechnik in Wien und ganz Österreich — von der Planung bis zur Wartung.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  </div>
 </footer>
 <script>
   const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
@@ -271,5 +426,6 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="kontakt-inline.js"></script>
 </body>
 </html>

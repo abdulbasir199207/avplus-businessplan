@@ -18,7 +18,7 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Smart Home Installation Wien – Beleuchtung, Heizung &amp; Sicherheit per App steuern. AVplus e.U. ✓ Faire Preise ✓ Kostenlose Beratung ✓" />
+  <meta name="description" content="Smart Home Installation Wien – Licht, Heizung, Rollläden &amp; Sicherheit per App steuern. Nachrüstung ohne Stemmarbeiten ab ca. 200 €. Kostenlose Beratung ✓ AVplus e.U." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/smarthome.html" />
   <meta property="og:type" content="website" />
@@ -63,11 +63,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Home Wien | Beleuchtung, Heizung & Sicherheit per App | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; --orange:#e07820; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
     .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
@@ -76,18 +77,24 @@
     nav { display:flex; gap:0.5rem; align-items:center; }
     .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
     .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
     .btn:hover { background:var(--blue-dark); }
-    .page-hero { margin-top:72px; background:linear-gradient(135deg,#2a1a0a 0%,var(--orange) 70%,#f0a040 100%); padding:5rem 5% 4rem; position:relative; overflow:hidden; }
+    .page-hero { margin-top:72px; background:linear-gradient(135deg,#0f2744 0%,var(--blue-dark) 45%,var(--blue) 75%,#2d8a5a 100%); padding:5rem 5% 4rem; position:relative; overflow:hidden; }
     .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px); background-size:30px 30px; }
-    .page-hero-shape { position:absolute; width:450px; height:450px; border-radius:50%; background:#f0a040; opacity:0.1; right:-80px; top:-80px; animation:float 8s ease-in-out infinite; }
+    .page-hero-shape { position:absolute; width:450px; height:450px; border-radius:50%; background:var(--green); opacity:0.12; right:-80px; top:-80px; animation:float 8s ease-in-out infinite; }
     @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
     .breadcrumb { color:rgba(255,255,255,0.65); font-size:0.85rem; margin-bottom:1.2rem; position:relative; }
     .breadcrumb a { color:rgba(255,255,255,0.65); text-decoration:none; }
     .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.95); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
     .page-hero-content { position:relative; max-width:700px; color:var(--white); }
     .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
-    .page-hero-content h1 span { color:#ffe0a0; }
+    .page-hero-content h1 span { color:#a8e88a; }
     .page-hero-content p { font-size:1.05rem; opacity:0.88; }
     section { padding:5rem 5%; }
     .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
@@ -95,7 +102,11 @@
     .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; }
 
     .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
-    .service-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--orange); }
+    .service-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--green); }
+    a.service-card { display:block; text-decoration:none; color:inherit; cursor:pointer; }
+    .sc-link { display:inline-block; margin-top:0.8rem; color:var(--green); font-weight:700; font-size:0.85rem; }
+    a.service-card:hover .sc-link { text-decoration:underline; }
+    section[id] { scroll-margin-top:85px; }
     .service-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
     .sc-img-placeholder { aspect-ratio:3/1; width:100%; background:linear-gradient(135deg,#fff8f0,#fdecd8); border-bottom:1px solid #f5dfc0; display:flex; align-items:center; justify-content:center; }
     .sc-img-placeholder span { font-size:0.8rem; color:#c8a87a; font-style:italic; }
@@ -109,39 +120,60 @@
     .voice-card { background:var(--white); border-radius:14px; padding:2rem; text-align:center; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:transform 0.2s; }
     .voice-card:hover { transform:translateY(-4px); }
     .voice-icon { font-size:3rem; margin-bottom:0.8rem; }
+    .voice-icon img { width:56px; height:56px; object-fit:contain; display:inline-block; }
     .voice-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
     .voice-card p { font-size:0.85rem; color:var(--gray); }
 
     /* Benefits */
     .benefits-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .benefit { display:flex; gap:1.2rem; align-items:flex-start; background:var(--white); border-radius:14px; padding:1.8rem; box-shadow:0 4px 16px rgba(0,0,0,0.05); }
-    .benefit-icon { width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#2a1a0a,var(--orange)); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    .benefit-icon { width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,var(--blue-dark),var(--blue)); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
     .benefit h4 { font-size:1rem; font-weight:700; margin-bottom:0.3rem; }
     .benefit p { font-size:0.88rem; color:var(--gray); }
 
     .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
     .feature-visual { border-radius:20px; height:360px; display:flex; align-items:center; justify-content:center; font-size:8rem; position:relative; overflow:hidden; }
-    .fv-bg { position:absolute; inset:0; background:linear-gradient(135deg,#2a1a0a,var(--orange)); }
+    .fv-bg { position:absolute; inset:0; background:linear-gradient(135deg,var(--blue-dark),var(--blue)); }
     .fv-dots { background-image:radial-gradient(circle,rgba(255,255,255,0.12) 1px,transparent 1px); background-size:20px 20px; }
     .fv-icon { position:relative; z-index:1; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.3)); }
     .feature-list { list-style:none; margin:1.5rem 0; }
     .feature-list li { display:flex; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
     .feature-list li:last-child { border-bottom:none; }
     .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; flex-shrink:0; }
+    .feature-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem; background:repeating-linear-gradient(45deg,#f0f3f7,#f0f3f7 12px,#f7f9fc 12px,#f7f9fc 24px); border:2px dashed #c3cdd9; border-radius:20px; color:var(--gray); }
+    .feature-placeholder .fp-icon { font-size:3rem; opacity:0.6; filter:none; }
+    .feature-placeholder span { font-size:0.9rem; font-weight:600; }
 
-    .cta-box { background:linear-gradient(135deg,#2a1a0a,var(--orange)); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box { background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,#2d8a5a 100%); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
     .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
     .cta-box p { opacity:0.85; margin-bottom:2rem; }
-    .btn-light { background:#ffe0a0; color:#2a1a0a; padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; display:inline-block; transition:transform 0.2s; }
+    .btn-light { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; display:inline-block; transition:transform 0.2s; box-shadow:0 4px 16px rgba(0,0,0,0.2); }
     .btn-light:hover { transform:translateY(-2px); }
 
-    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:2rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.88rem; }
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+    @media(max-width:768px) { .footer-top { grid-template-columns:1fr; gap:2rem; } }
     footer a { color:rgba(255,255,255,0.6); text-decoration:none; }
     footer a:hover { color:var(--white); }
     @media(max-width:768px) { .services-grid,.voice-grid,.benefits-grid,.feature-split{grid-template-columns:1fr} }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
@@ -156,15 +188,25 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
-    <a href="index.html#leistungen" class="nav-link">Leistungen</a>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
-    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <div class="page-hero">
@@ -174,7 +216,7 @@
     <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › Smart-Home</div>
     <div class="page-badge">🏠 Smart-Home-Systeme</div>
     <h1>Ihr Zuhause.<br><span>Intelligent. Sicher.</span> Komfortabel. Energieeffizient.</h1>
-    <p>Beleuchtung, Heizung, Sicherheit und Unterhaltung — automatisiert und steuerbar per App oder Sprachassistent.</p>
+    <p>Licht, das sich Ihrem Tag anpasst. Heizung, die spart, wenn niemand da ist. Rollläden, die im Urlaub Anwesenheit simulieren. Wir planen und installieren Smart-Home-Systeme, die Ihren Alltag wirklich leichter machen — auch im Altbau, ohne Stemmarbeiten.</p>
   </div>
 </div>
 
@@ -182,41 +224,113 @@
   <div class="reveal">
     <p class="section-label">Unsere Leistungen</p>
     <h2>Smart-Home im Überblick</h2>
-    <p class="section-intro">Modulare Systeme für Neubauten und Bestandsimmobilien — wir integrieren Technik nahtlos.</p>
+    <p class="section-intro">Sie denken, Smart Home ist kompliziert, teuer oder nur etwas für Neubauten? Das Gegenteil ist der Fall: Moderne Systeme sind modular, bezahlbar und in wenigen Stunden nachgerüstet. Sie starten klein — und erweitern, wann immer Sie wollen.</p>
   </div>
   <div class="reveal" style="border-radius:16px;overflow:hidden;margin-bottom:2.5rem;height:260px;position:relative;">
     <img loading="lazy" decoding="async" src="bilder/smarthome-geraete.webp" alt="Smart Home Geräte Wien – Schalter, Sensoren und Steuereinheiten von AVplus e.U." style="width:100%;height:100%;object-fit:cover;object-position:center 30%;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,26,10,0.82) 0%,rgba(42,26,10,0.3) 60%,transparent 100%);display:flex;align-items:center;padding:2.5rem;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,39,68,0.85) 0%,rgba(27,79,122,0.35) 60%,transparent 100%);display:flex;align-items:center;padding:2.5rem;">
       <div style="color:#fff;max-width:420px;">
-        <p style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffe0a0;margin-bottom:0.5rem;">Alles vernetzt</p>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a8e88a;margin-bottom:0.5rem;">Alles vernetzt</p>
         <p style="font-size:1.1rem;font-weight:600;line-height:1.5;">Beleuchtung, Sicherheit, Heizung und Entertainment — in einem System, einer App.</p>
       </div>
     </div>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal delay-1">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-smart-lighting.webp" alt="Smart Lighting Wien – intelligente Beleuchtungssteuerung von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">💡</div><h3>Smart Lighting</h3><p>Intelligente Beleuchtungssteuerung — Szenarien, Zeitpläne, Dimmung und Farbsteuerung per App.</p></div>
+    <a href="#smart-lighting" class="service-card reveal delay-1">
+      <div class="sc-body"><div class="sc-icon">💡</div><h3>Smart Lighting</h3><p>Intelligente Beleuchtungssteuerung — Szenarien, Zeitpläne, Dimmung und Farbsteuerung per App.</p><span class="sc-link">Mehr erfahren ↓</span></div>
+    </a>
+    <a href="#heizung-klima" class="service-card reveal delay-2">
+      <div class="sc-body"><div class="sc-icon">🌡️</div><h3>Heizung & Klima</h3><p>Smarte Thermostate und Klimasteuerung — energieeffizient und bequem vom Smartphone aus steuerbar.</p><span class="sc-link">Mehr erfahren ↓</span></div>
+    </a>
+    <a href="#beschattung" class="service-card reveal delay-1">
+      <div class="sc-body"><div class="sc-icon">🪟</div><h3>Rollläden & Beschattung</h3><p>Automatisierte Rollläden, Jalousien und Markisen — zeitgesteuert oder wetterabhängig.</p><span class="sc-link">Mehr erfahren ↓</span></div>
+    </a>
+    <a href="#energiemanagement" class="service-card reveal delay-2">
+      <div class="sc-body"><div class="sc-icon">⚡</div><h3>Energiemanagement</h3><p>Intelligente Steckdosen, Verbrauchsmessung und Automatisierungen für mehr Energieeffizienz.</p><span class="sc-link">Mehr erfahren ↓</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- FEATURE: SMART LIGHTING -->
+<section id="smart-lighting" style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/smart-lighting-decke.webp" alt="Smart Lighting Wien – indirekte LED-Deckenbeleuchtung mit Lichtszenen von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
     </div>
-    <div class="service-card reveal delay-2">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-heizung-klima.webp" alt="Heizung und Klima Smart Home Wien – smarte Thermostate von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">🌡️</div><h3>Heizung & Klima</h3><p>Smarte Thermostate und Klimasteuerung — energieeffizient und bequem vom Smartphone aus steuerbar.</p></div>
+    <div class="reveal">
+      <p class="section-label">Smart Lighting</p>
+      <h2>Licht, das sich Ihrem Leben anpasst.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Intelligente Beleuchtungssteuerung macht aus jedem Raum die passende Umgebung — automatisch, per App oder auf Zuruf. Wir planen und installieren das komplette System.</p>
+      <ul class="feature-list">
+        <li>Lichtszenen für jede Stimmung — per App oder Taster</li>
+        <li>Dimmung und Farbsteuerung von warmweiß bis farbig</li>
+        <li>Zeitpläne und Anwesenheitssimulation im Urlaub</li>
+        <li>Bewegungsgesteuertes Licht in Flur und Außenbereich</li>
+        <li>Nachrüstung ohne Stemmarbeiten möglich</li>
+      </ul>
     </div>
-    <div class="service-card reveal delay-1">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-beschattung.webp" alt="Rollläden und Beschattung Smart Home Wien – automatisierte Jalousien von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">🪟</div><h3>Rollläden & Beschattung</h3><p>Automatisierte Rollläden, Jalousien und Markisen — zeitgesteuert oder wetterabhängig.</p></div>
+  </div>
+</section>
+
+<!-- FEATURE: HEIZUNG & KLIMA -->
+<section id="heizung-klima" style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Heizung & Klima</p>
+      <h2>Wohlfühlklima, das Energie spart.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Smarte Thermostate heizen nur, wenn es nötig ist — raumweise geregelt und von unterwegs steuerbar. Das senkt die Heizkosten spürbar, ohne Komfortverlust.</p>
+      <ul class="feature-list">
+        <li>Smarte Thermostate — jeder Raum einzeln regelbar</li>
+        <li>Heizpläne nach Tageszeit und Wochentag</li>
+        <li>Steuerung von unterwegs per Smartphone</li>
+        <li>Fenster-offen-Erkennung stoppt das Heizen automatisch</li>
+        <li>Integration von Klimaanlagen und Lüftung</li>
+      </ul>
     </div>
-    <div class="service-card reveal delay-2">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-smart-security.webp" alt="Smart Security Wien – smarte Türklingel und Schlösser von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">🔒</div><h3>Smart Security</h3><p>Türklingel mit Kamera, smarte Schlösser und Alarmanlagen — integriert in Ihr Smart-Home-System.</p></div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/heizung-thermostat.webp" alt="Smartes Heizkörper-Thermostat Wien – digitale Temperaturregelung installiert von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
     </div>
-    <div class="service-card reveal delay-1">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-multiroom-audio.webp" alt="Multiroom Audio Smart Home Wien – Musik in jedem Raum von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">🎵</div><h3>Multiroom Audio</h3><p>Musik in jedem Raum — synchron oder einzeln steuerbar, integriert mit Ihren Streaming-Diensten.</p></div>
+  </div>
+</section>
+
+<!-- FEATURE: ROLLLÄDEN & BESCHATTUNG -->
+<section id="beschattung" style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/beschattung-jalousien.webp" alt="Smarte Beschattung Wien – Holzjalousien per Smartphone-App gesteuert von AVplus e.U." style="width:100%;height:100%;object-fit:cover;object-position:left center;" />
     </div>
-    <div class="service-card reveal delay-2">
-      <img loading="lazy" decoding="async" class="sc-card-img" src="bilder/sh-energiemanagement.webp" alt="Energiemanagement Smart Home Wien – intelligente Steckdosen und Verbrauchsmessung von AVplus e.U." style="width:100%;aspect-ratio:3/1;object-fit:cover;object-position:center center;display:block;border-bottom:1px solid #f5dfc0;" />
-      <div class="sc-body"><div class="sc-icon">⚡</div><h3>Energiemanagement</h3><p>Intelligente Steckdosen, Verbrauchsmessung und Automatisierungen für mehr Energieeffizienz.</p></div>
+    <div class="reveal">
+      <p class="section-label">Rollläden & Beschattung</p>
+      <h2>Beschattung, die mitdenkt.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Im Sommer heizt sich die Wohnung auf, und im Urlaub sieht jeder, dass niemand zuhause ist? Automatisierte Rollläden, Jalousien und Markisen reagieren auf Uhrzeit und Wetter — und simulieren bei Abwesenheit ein bewohntes Haus. Noch mehr Schutz bietet die Kombination mit unserer <a href="sicherheitstechnik.html" style="color:var(--blue);font-weight:600;">Sicherheitstechnik</a>.</p>
+      <ul class="feature-list">
+        <li>Zeitgesteuertes Öffnen und Schließen</li>
+        <li>Wetterabhängige Automatik bei Sonne und Wind</li>
+        <li>Zentral- und Einzelsteuerung per App</li>
+        <li>Anwesenheitssimulation als Einbruchschutz</li>
+        <li>Nachrüstung bestehender Rollläden möglich</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: ENERGIEMANAGEMENT -->
+<section id="energiemanagement" style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Energiemanagement</p>
+      <h2>Wissen, wohin der Strom fließt.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Intelligente Steckdosen und Verbrauchsmessung zeigen Ihnen in Echtzeit, wo Energie verbraucht wird — und schalten unnötige Verbraucher automatisch ab.</p>
+      <ul class="feature-list">
+        <li>Verbrauchsmessung in Echtzeit per App</li>
+        <li>Intelligente Steckdosen und Schaltaktoren</li>
+        <li>Automatisches Abschalten von Standby-Verbrauchern</li>
+        <li>Auswertungen zeigen Einsparpotenziale</li>
+        <li>Kombinierbar mit Beleuchtung, Heizung und Beschattung</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/energiemanagement-dashboard.webp" alt="Energiemanagement Smart Home Wien – Verbrauchsmessung in Echtzeit per App mit intelligenter Steckdose von AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
     </div>
   </div>
 </section>
@@ -228,16 +342,16 @@
     <p class="section-intro">Steuern Sie Ihr Zuhause einfach mit der Stimme — wir richten alles ein.</p>
   </div>
   <div class="voice-grid">
-    <div class="voice-card reveal delay-1"><div class="voice-icon">🔵</div><h3>Amazon Alexa</h3><p>„Alexa, mach das Licht aus." — vollständige Integration aller Geräte.</p></div>
-    <div class="voice-card reveal delay-2"><div class="voice-icon">🍎</div><h3>Apple Siri</h3><p>„Hey Siri, schließ die Rollläden." — nahtlos mit iPhone und iPad.</p></div>
-    <div class="voice-card reveal delay-3"><div class="voice-icon">🔴</div><h3>Google Assistant</h3><p>„Ok Google, schalte alles aus." — kompatibel mit Android und Nest.</p></div>
+    <div class="voice-card reveal delay-1"><div class="voice-icon"><img loading="lazy" decoding="async" src="bilder/logo-alexa.svg" alt="Amazon Alexa Logo" /></div><h3>Amazon Alexa</h3><p>„Alexa, mach das Licht aus." — vollständige Integration aller Geräte.</p></div>
+    <div class="voice-card reveal delay-2"><div class="voice-icon"><img loading="lazy" decoding="async" src="bilder/logo-siri.svg" alt="Apple Siri Logo" /></div><h3>Apple Siri</h3><p>„Hey Siri, schließ die Rollläden." — nahtlos mit iPhone und iPad.</p></div>
+    <div class="voice-card reveal delay-3"><div class="voice-icon"><img loading="lazy" decoding="async" src="bilder/logo-google-assistant.svg" alt="Google Assistant Logo" /></div><h3>Google Assistant</h3><p>„Ok Google, schalte alles aus." — kompatibel mit Android und Nest.</p></div>
   </div>
 </section>
 
 <section style="background:var(--white);padding:4rem 5%;">
   <div class="feature-split">
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" src="bilder/smarthome-schalter.webp" alt="Eleganter Smart Home Schalter Wien – moderner Lichtschalter mit App-Steuerung" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+      <img loading="lazy" decoding="async" src="bilder/smarthome-steuerung.webp" alt="Smart Home Steuerung Wien – Wandpanel und Smartphone-App für Licht, Jalousien und Temperatur von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="reveal">
       <p class="section-label">Steuerung & Komfort</p>
@@ -281,7 +395,7 @@
       </ul>
     </div>
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" src="bilder/smarthome.webp" alt="Smart Home Steuerung Wien – Tablet-Bedienung für Beleuchtung und Heizung zuhause" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+      <img loading="lazy" decoding="async" src="bilder/smarthome.webp" alt="Smart Home Steuerung Wien – Tablet-Bedienung für Beleuchtung und Heizung zuhause" style="display:block;width:100%;height:100%;object-fit:cover;" />
     </div>
   </div>
 </section>
@@ -289,8 +403,9 @@
 <section style="background:var(--gray-light)">
   <div class="cta-box reveal">
     <h2>Ihr Smart-Home — wir planen es für Sie.</h2>
-    <p>Kostenlose Beratung vor Ort oder telefonisch — wir zeigen Ihnen, was in Ihrem Zuhause möglich ist.</p>
-    <a href="index.html#kontakt" class="btn-light">Jetzt Beratung anfragen</a>
+    <p>Erzählen Sie uns, was Sie sich vorstellen — wir zeigen Ihnen kostenlos, was in Ihrem Zuhause möglich ist, und Sie erhalten innerhalb von 24 Stunden einen konkreten Vorschlag. Unverbindlich, vor Ort oder telefonisch.</p>
+    <a href="#kontakt" class="btn-light">Jetzt Beratung anfragen</a>
+    <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
   </div>
 </section>
 
@@ -318,6 +433,10 @@
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann ich Smart Home auch ohne Umbauarbeiten nachrüsten?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, absolut. Viele unserer Lösungen sind nachrüstbar und benötigen keine Elektriker-Arbeiten. Wir finden immer eine passende Lösung für Ihre Situation.</p>
       </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was passiert, wenn das Internet ausfällt?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ihre Grundfunktionen laufen weiter: Schalter, Thermostate und Automatisierungen funktionieren lokal auch ohne Internet. Nur der Fernzugriff per App pausiert, bis die Verbindung wieder steht. Wir richten die Systeme so ein, dass Ihr Zuhause nie „dumm" wird.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -330,14 +449,70 @@
     { "@type": "Question", "name": "Welche Marken verbaut ihr?", "acceptedAnswer": { "@type": "Answer", "text": "Wir arbeiten mit Ajax Systems, Philips Hue, Shelly und weiteren hochwertigen Herstellern." } },
     { "@type": "Question", "name": "Funktioniert Smart Home auch in älteren Wohnungen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Mit Funkschaltern, WLAN-Steckdosen und Sensoren ohne Umbauarbeiten möglich." } },
     { "@type": "Question", "name": "Was kostet eine Smart Home Installation in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Einstiegspaket ab ca. 200 €. Größere Systeme individuell. Beratung kostenlos." } },
-    { "@type": "Question", "name": "Kann ich Smart Home auch ohne Umbauarbeiten nachrüsten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Viele Lösungen sind ohne Elektriker-Arbeiten nachrüstbar." } }
+    { "@type": "Question", "name": "Kann ich Smart Home auch ohne Umbauarbeiten nachrüsten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Viele Lösungen sind ohne Elektriker-Arbeiten nachrüstbar." } },
+    { "@type": "Question", "name": "Was passiert, wenn das Internet ausfällt?", "acceptedAnswer": { "@type": "Answer", "text": "Grundfunktionen wie Schalter, Thermostate und Automatisierungen laufen lokal weiter. Nur der Fernzugriff per App pausiert, bis die Verbindung wieder steht." } }
   ]
 }
 </script>
 
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Smart-Home-Beratung anfragen</h2>
+      <p class="ki-sub">Erzählen Sie uns, was Sie sich vorstellen — Sie erhalten innerhalb von 24 Stunden einen konkreten Vorschlag, vor Ort oder telefonisch.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – Smart-Home" />
+      <input type="hidden" name="bereich" value="Smart-Home" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Worum geht es? *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
+
 <footer>
-  <span>© 2026 AVplus e.U. · Wien</span>
-  <span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr Komplettanbieter für Sicherheits-, Medien- und Netzwerktechnik in Wien und ganz Österreich — von der Planung bis zur Wartung.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  </div>
 </footer>
 <script>
   const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.15});
@@ -345,5 +520,6 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="kontakt-inline.js"></script>
 </body>
 </html>

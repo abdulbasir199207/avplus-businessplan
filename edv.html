@@ -18,13 +18,13 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Computer &amp; IT-Hilfe Wien – PC-Reparatur, WLAN einrichten, Smartphone-Hilfe für Zuhause &amp; Büro. AVplus e.U. ✓ Persönliche Betreuung ✓ Faire Preise ✓ Jetzt anfragen!" />
+  <meta name="description" content="Computer &amp; IT-Hilfe Wien ab 49 € – PC-Reparatur, WLAN einrichten, Handy-Hilfe. Wir kommen zu Ihnen, erklären verständlich, 14 Tage Nachbetreuung inklusive. AVplus e.U." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/edv.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.avplus.at/edv.html" />
   <meta property="og:title" content="Computer & IT-Hilfe Wien – PC-Reparatur, WLAN & Technikhilfe | AVplus e.U." />
-  <meta property="og:description" content="PC-Reparatur, WLAN einrichten, Smartphone-Hilfe und persönliche Technikhilfe in Wien. AVplus e.U. – faire Preise, persönliche Betreuung." />
+  <meta property="og:description" content="PC-Reparatur, WLAN einrichten, Smartphone-Hilfe und persönliche Technikhilfe in Wien. AVplus e.U. – feste Preise ab 49 €, 14 Tage Nachbetreuung inklusive." />
   <meta property="og:image" content="https://www.avplus.at/bilder/laptop.jpg" />
   <meta property="og:locale" content="de_AT" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,11 +63,12 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT-Service Wien | PC-Reparatur, WLAN & Netzwerktechnik | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
     .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s}
@@ -128,6 +129,8 @@
     .feature-visual img { width:100%; height:100%; object-fit:cover; }
     .feature-visual .fv-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(15,39,68,0.5),rgba(45,110,168,0.3)); }
     .feature-visual .fv-badge { position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(255,255,255,0.95); border-radius:10px; padding:0.8rem 1.2rem; display:flex; align-items:center; gap:0.6rem; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .feature-visual .fv-swap-hover { position:absolute; inset:0; opacity:0; transition:opacity 0.45s ease; }
+    .feature-visual:hover .fv-swap-hover, .feature-visual:active .fv-swap-hover { opacity:1; }
     .fv-badge-icon { font-size:1.5rem; }
     .fv-badge-text strong { display:block; font-size:0.88rem; font-weight:700; color:var(--text); }
     .fv-badge-text span { font-size:0.75rem; color:var(--gray); }
@@ -201,13 +204,20 @@
     .th-trust-row { display:flex; flex-wrap:wrap; gap:1.2rem 2rem; }
     .th-trust-item { font-size:0.9rem; color:var(--gray); display:flex; align-items:center; gap:0.5rem; }
     .th-trust-check { color:var(--green); font-weight:800; font-size:1rem; }
+    .cta-box .cta-trust { justify-content:center; margin:0 0 2rem; }
+    .cta-box .cta-trust .th-trust-item { color:rgba(255,255,255,0.92); }
     @media(max-width:768px) { .th-problem-grid-2x2{grid-template-columns:1fr} }
 
     @media(max-width:1024px) { .services-grid{grid-template-columns:1fr} .pricing-grid{grid-template-columns:1fr 1fr} }
     @media(max-width:768px) { .feature-split{grid-template-columns:1fr} .pricing-grid{grid-template-columns:1fr} .footer-top{grid-template-columns:1fr;gap:2rem} }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .sc-img{height:auto} .sc-img img{height:auto} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
     @media (max-width: 768px) {
       .nav-toggle { display:block; }
       header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
@@ -223,7 +233,7 @@
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
     <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
-    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;">Sicherheitstechnik · Medientechnik · Netzwerktechnik</span>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
     <div class="nav-dropdown">
@@ -231,7 +241,7 @@
       <div class="dropdown-menu">
         <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
         <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
-
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
         <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
         <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
         <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
@@ -239,9 +249,9 @@
     </div>
     <a href="index.html#ueber" class="nav-link">Über uns</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
-    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <!-- HERO -->
@@ -261,200 +271,100 @@
 <section style="background:var(--white)">
   <div class="reveal" style="margin-bottom:3rem; max-width:680px;">
     <p class="section-label">Persönliche Technikhilfe für Zuhause</p>
-    <h2>Technik muss nicht kompliziert sein.</h2>
-    <p style="font-size:1.05rem;color:var(--gray);line-height:1.75;margin-top:0.8rem;">Nicht jede technische Herausforderung muss kompliziert sein. Wir unterstützen Sie persönlich bei allen Fragen rund um Computer, Internet, WLAN, Smartphones und Unterhaltungselektronik — direkt bei Ihnen vor Ort. Wir erklären alles verständlich, nehmen uns Zeit und sorgen dafür, dass Ihre Technik zuverlässig funktioniert.</p>
-  </div>
-
-  <div class="th-problem-grid-2x2 reveal">
-
-    <div class="th-card-big">
-      <img loading="lazy" decoding="async" class="th-card-img" src="bilder/technikhilfe-wlan.webp" alt="WLAN Router einrichten Wien – AVplus e.U. hilft bei schlechtem Internet">
-      <div class="th-card-body">
-        <div class="th-problem-icon">📶</div>
-        <h3>Kein Internet oder schlechtes WLAN?</h3>
-        <p>Ob kein Signal, langsames Internet oder WLAN das in manchen Räumen nicht ankommt — wir kommen vorbei, schauen uns die Situation an und sorgen dafür, dass Sie überall stabiles Internet haben. Einfach, schnell und ohne Stress.</p>
-        <ul class="th-mini-list">
-          <li>WLAN in jedem Raum, ohne tote Flecken</li>
-          <li>Router einrichten und absichern</li>
-          <li>Internet-Geschwindigkeit verbessern</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="th-card-big">
-      <img loading="lazy" decoding="async" class="th-card-img" src="bilder/technikhilfe-computer.webp" alt="Computer Reparatur Wien – PC langsam oder kaputt – AVplus e.U." style="object-position:center 55%;">
-      <div class="th-card-body">
-        <div class="th-problem-icon">💻</div>
-        <h3>Computer langsam oder kaputt?</h3>
-        <p>Startet Ihr Computer nicht mehr, läuft er quälend langsam oder erscheinen merkwürdige Fehlermeldungen? Kein Problem — wir schauen uns das an, erklären Ihnen genau was los ist und reparieren es. Ohne Fachbegriffe, ohne Überraschungen.</p>
-        <ul class="th-mini-list">
-          <li>Diagnose und Reparatur vor Ort</li>
-          <li>Viren entfernen, System reinigen</li>
-          <li>Ihre Daten werden dabei sicher gesichert</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="th-card-big">
-      <img loading="lazy" decoding="async" class="th-card-img" src="bilder/technikhilfe-handy.webp" alt="Handy und Tablet einrichten Wien – iPhone iPad Setup – AVplus e.U.">
-      <div class="th-card-body">
-        <div class="th-problem-icon">📱</div>
-        <h3>Neues Handy oder Tablet bekommen?</h3>
-        <p>Ein neues Gerät ist aufregend — aber die Einrichtung kann überwältigend sein. Wir richten alles für Sie ein: Apps, E-Mail, Fotos, Kontakte und alles was Sie brauchen. Und wir erklären Ihnen dabei, wie alles funktioniert.</p>
-        <ul class="th-mini-list">
-          <li>Alle Apps und Konten einrichten</li>
-          <li>Daten vom alten Gerät übertragen</li>
-          <li>Schritt für Schritt erklärt</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="th-card-big">
-      <img loading="lazy" decoding="async" class="th-card-img" src="bilder/technikhilfe-smarthome.webp" alt="Smart-TV einrichten Drucker Hilfe Wien – AVplus e.U.">
-      <div class="th-card-body">
-        <div class="th-problem-icon">📺</div>
-        <h3>Smart-TV, Streaming & Drucker?</h3>
-        <p>Netflix funktioniert nicht, der Drucker druckt nicht mehr oder Sie möchten Ihren Smart-TV richtig einrichten? Wir kümmern uns darum — und erklären alles so, dass Sie es danach selbst bedienen können.</p>
-        <ul class="th-mini-list">
-          <li>Smart-TV und Streaming einrichten</li>
-          <li>Drucker anschließen und konfigurieren</li>
-          <li>E-Mail, Apps und Benutzerkonten einrichten</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="th-home-banner reveal" style="margin-top:2rem;">
-    <div class="th-home-icon">🏠</div>
-    <div>
-      <strong>Wir kommen direkt zu Ihnen nach Hause</strong>
-      <span>Kein Stress, kein Umstecken, keine Wartezeit — wir lösen alles direkt bei Ihnen, persönlich und in Ruhe. Unser Ziel: dass Sie sich danach mit Ihrer Technik sicher fühlen.</span>
-    </div>
-  </div>
-
-  <div class="th-trust-row reveal" style="margin-top:1.5rem;">
-    <span class="th-trust-item"><span class="th-trust-check">✓</span> Ohne Fachbegriffe, verständlich erklärt</span>
-    <span class="th-trust-item"><span class="th-trust-check">✓</span> Faire Preise, keine versteckten Kosten</span>
-    <span class="th-trust-item"><span class="th-trust-check">✓</span> Auch nach dem Einsatz für Sie erreichbar</span>
-    <span class="th-trust-item"><span class="th-trust-check">✓</span> Kein Problem ist zu klein</span>
-  </div>
-
-  <div class="reveal" style="margin-top:2rem;">
-    <a href="index.html#kontakt" class="btn-green">Persönliche Technikhilfe anfragen →</a>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section style="background:var(--gray-light)">
-  <div class="reveal">
-    <p class="section-label">Was wir für Sie tun</p>
     <h2>Wir kümmern uns — Sie lehnen sich zurück.</h2>
-    <p class="section-intro">Egal ob Ihr Computer langsam ist, das Internet nicht funktioniert oder Sie ein neues Gerät einrichten möchten — wir helfen schnell und unkompliziert.</p>
+    <p style="font-size:1.05rem;color:var(--gray);line-height:1.75;margin-top:0.8rem;">Egal ob Ihr Computer langsam ist, das Internet nicht funktioniert oder Sie ein neues Gerät einrichten möchten — wir helfen schnell und unkompliziert. Direkt bei Ihnen vor Ort, verständlich erklärt: Wir nehmen uns Zeit und sorgen dafür, dass Ihre Technik zuverlässig funktioniert.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card reveal delay-1">
-      <div class="sc-img">
-        <img loading="lazy" decoding="async" src="bilder/laptop-reparatur.webp" alt="PC und Laptop Reparatur Wien – schnelle Reparatur vor Ort von AVplus e.U." />
-      </div>
-      <div class="sc-body">
-        <div class="sc-icon">🖥️</div>
-        <h3>Computer & Laptop Reparatur</h3>
-        <p>Ihr Gerät ist langsam, stürzt ab oder startet nicht mehr? Wir schauen uns das an — und reparieren es. Schnell, fair und bei Ihnen vor Ort.</p>
-        <div class="sc-tags">
-          <span class="sc-tag">Reparatur vor Ort</span>
-          <span class="sc-tag">Bildschirm tauschen</span>
-          <span class="sc-tag">Akku erneuern</span>
-          <span class="sc-tag">Daten sichern</span>
-          <span class="sc-tag">Windows neu einrichten</span>
-        </div>
-      </div>
+
+</section>
+
+<!-- FEATURE: WLAN & INTERNET -->
+<section style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/verteiler-netzwerk.webp" alt="Internet, WLAN und Netzwerkverkabelung Wien – Netzwerkverteiler professionell installiert von AVplus e.U." />
+      <img loading="lazy" decoding="async" class="fv-swap-hover" src="bilder/netzwerk-techniker.webp" alt="Netzwerk Techniker Wien – WLAN und Netzwerkverkabelung Experte von AVplus e.U." />
     </div>
-    <div class="service-card reveal delay-2">
-      <div class="sc-img">
-        <img loading="lazy" decoding="async" src="bilder/verteiler-netzwerk.webp" alt="Netzwerkverkabelung Wien – Netzwerkverteiler und WLAN-Installation von AVplus e.U." />
-      </div>
-      <div class="sc-body">
-        <div class="sc-icon">🔌</div>
-        <h3>Internet, WLAN einrichten & Netzwerkverkabelung</h3>
-        <p>Kein Signal, schlechtes WLAN oder neues Büro einrichten? Wir verlegen Kabel, richten Router ein und sorgen dafür, dass überall stabiles Internet verfügbar ist.</p>
-        <div class="sc-tags">
-          <span class="sc-tag">WLAN einrichten</span>
-          <span class="sc-tag">Router einrichten</span>
-          <span class="sc-tag">Kabel verlegen</span>
-          <span class="sc-tag">Internet absichern</span>
-          <span class="sc-tag">Alles dokumentiert</span>
-        </div>
-      </div>
+    <div class="reveal">
+      <p class="section-label">Internet, WLAN & Netzwerkverkabelung</p>
+      <h2>Kein Internet oder schlechtes WLAN?</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ob zuhause oder im Büro — wir kommen vorbei, verlegen Kabel, richten Router ein und sorgen dafür, dass Sie überall stabiles und schnelles Internet haben. Einfach, schnell und ohne Stress. Sie planen gleich größer? Für Büro, Schule oder Neubau realisieren wir auch <a href="lwl.html" style="color:var(--blue);font-weight:600;">strukturierte Verkabelung und Glasfaser</a>.</p>
+      <ul class="feature-list">
+        <li>WLAN in jedem Raum, ohne tote Flecken</li>
+        <li>Router anschließen, einrichten und absichern</li>
+        <li>Netzwerkkabel sauber verlegen — unsichtbar und ordentlich</li>
+        <li>Internet-Geschwindigkeit verbessern</li>
+        <li>Büro-Netzwerk: alle Geräte verbunden, Fernzugriff von unterwegs</li>
+        <li>Alles sauber beschriftet und dokumentiert übergeben</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- FEATURE: PC REPARATUR -->
+<!-- FEATURE: COMPUTER & LAPTOP -->
 <section style="background:var(--white)">
   <div class="feature-split">
+    <div class="reveal">
+      <p class="section-label">Computer & Laptop</p>
+      <h2>Windows, Programme & Daten — wir richten alles ein.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ihr Computer läuft langsam, Windows macht Probleme oder ein Programm will einfach nicht funktionieren? Wir kümmern uns um die Software — verständlich erklärt und direkt bei Ihnen vor Ort.</p>
+      <ul class="feature-list">
+        <li>Daten sichern und wiederherstellen</li>
+        <li>Windows neu einrichten oder aktualisieren</li>
+        <li>Programme installieren und konfigurieren</li>
+        <li>Netzwerk, Internet und Drucker einstellen</li>
+        <li>Viren entfernen und System aufräumen</li>
+        <li>Umzug auf den neuen Computer — Daten & Programme übernehmen</li>
+      </ul>
+    </div>
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" src="bilder/support.webp" alt="IT Support Wien – AVplus Techniker hilft Kunden persönlich vor Ort" />
-      <div class="fv-overlay"></div>
-      <div class="fv-badge">
-        <span class="fv-badge-icon">🖥️</span>
-        <div class="fv-badge-text">
-          <strong>Reparatur vor Ort</strong>
-          <span>Schnelle Diagnose & Behebung</span>
-        </div>
-      </div>
+      <img loading="lazy" decoding="async" src="bilder/windows-update-einrichtung.webp" alt="Windows und Software Hilfe Wien – Computer einrichten und Daten sichern, AVplus e.U." style="object-position:center 55%;" />
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: HANDY & TABLET -->
+<section style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/handy-tablet-einrichten.webp" alt="Neues Handy einrichten Wien – iPhone und iPad Ersteinrichtung mit Datenübernahme, AVplus e.U." />
     </div>
     <div class="reveal">
-      <p class="section-label">Computer & Laptop Reparatur</p>
-      <h2>Ihr Gerät läuft wieder — wir kümmern uns darum.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Ist Ihr Computer langsam, springt nicht an oder zeigt Fehlermeldungen? Kein Problem — wir schauen uns das an und erklären Ihnen genau, was los ist und was wir machen.</p>
+      <p class="section-label">Handy & Tablet</p>
+      <h2>Neues Handy oder Tablet bekommen?</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Ein neues Gerät ist aufregend — aber die Einrichtung kann überwältigend sein. Wir richten alles für Sie ein: Apps, E-Mail, Fotos, Kontakte und alles was Sie brauchen. Und wir erklären Ihnen dabei, wie alles funktioniert.</p>
       <ul class="feature-list">
-        <li>Kostenlose Erstdiagnose — wir schauen zuerst, dann reden wir über Kosten</li>
-        <li>Bildschirm, Tastatur oder Akku defekt? Wir tauschen es aus</li>
-        <li>Computer läuft langsam? Wir machen ihn wieder flott</li>
-        <li>Viren oder Schadsoftware? Wir entfernen alles sicher</li>
-        <li>Windows neu einrichten — alles sauber, alle Programme drauf</li>
-        <li>Ihre Daten (Fotos, Dokumente) werden vorher gesichert</li>
-        <li>E-Mail, Office und Cloud-Dienste danach gleich eingerichtet</li>
+        <li>Alle Apps und Konten einrichten</li>
+        <li>Daten vom alten Gerät übertragen</li>
+        <li>Schritt für Schritt erklärt</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- FEATURE: NETZWERK & WLAN -->
-<section style="background:var(--gray-light)">
+<!-- FEATURE: SMART-TV, STREAMING & DRUCKER -->
+<section style="background:var(--white)">
   <div class="feature-split">
     <div class="reveal">
-      <p class="section-label">Internet & WLAN</p>
-      <h2>Kein Internet? Schlechtes WLAN? Wir richten das.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Ob zuhause oder im Büro — wir kommen vorbei, richten alles ein und sorgen dafür, dass Sie überall ein stabiles und schnelles Internet haben.</p>
+      <p class="section-label">Smart-TV, Streaming & Drucker</p>
+      <h2>Streaming, Fernseher und Drucker — wir richten alles ein.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Netflix funktioniert nicht, der Drucker druckt nicht mehr oder Sie möchten Ihren Smart-TV richtig einrichten? Wir kümmern uns darum — und erklären alles so, dass Sie es danach selbst bedienen können. Soll der neue Fernseher auch gleich an die Wand? Das übernimmt unsere <a href="medientechnik.html" style="color:var(--blue);font-weight:600;">Medientechnik</a> ab 79 €.</p>
       <ul class="feature-list">
-        <li>WLAN einrichten — in jedem Raum, ohne tote Flecken</li>
-        <li>Router anschließen und absichern</li>
-        <li>Netzwerkkabel sauber verlegen — unsichtbar und ordentlich</li>
-        <li>Internet fürs Büro: alle Geräte verbunden und gesichert</li>
-        <li>Fernzugriff einrichten — von unterwegs auf Ihr Büro zugreifen</li>
-        <li>Alles wird sauber beschriftet und dokumentiert übergeben</li>
+        <li>Smart-TV und Streaming einrichten</li>
+        <li>Drucker anschließen und konfigurieren</li>
+        <li>E-Mail, Apps und Benutzerkonten einrichten</li>
       </ul>
     </div>
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" src="bilder/netzwerk-techniker.webp" alt="Netzwerk Techniker Wien – WLAN und Netzwerkverkabelung Experte von AVplus e.U." />
-      <div class="fv-overlay"></div>
-      <div class="fv-badge">
-        <span class="fv-badge-icon">🌐</span>
-        <div class="fv-badge-text">
-          <strong>Stabiles Internet überall</strong>
-          <span>Wir richten ein, Sie genießen</span>
-        </div>
-      </div>
+      <img loading="lazy" decoding="async" src="bilder/smarttv-streaming-drucker.webp" alt="Smart-TV einrichten Drucker Hilfe Wien – AVplus e.U." />
     </div>
   </div>
+
 </section>
 
 <!-- PREISE / SERVICE-PAKETE -->
-<section style="background:var(--white)">
+<section style="background:var(--gray-light)">
   <div class="reveal" style="margin-bottom:3rem;">
-    <p class="section-label">Faire Preise</p>
+    <p class="section-label">Transparente Preise</p>
     <h2>Was kostet das?</h2>
     <p class="section-intro">Keine versteckten Kosten, keine Überraschungen. Wir sagen Ihnen vorher genau, was wir machen und was es kostet.</p>
   </div>
@@ -470,7 +380,7 @@
         <li>Computer schneller machen</li>
         <li>30 Min. Hilfe per Telefon</li>
       </ul>
-      <a href="index.html#kontakt" class="pricing-btn">Jetzt anfragen</a>
+      <a href="#kontakt" class="pricing-btn">Jetzt anfragen</a>
     </div>
     <div class="pricing-card featured reveal delay-2">
       <div class="pricing-icon">⭐</div>
@@ -484,7 +394,7 @@
         <li>Daten vorher sichern</li>
         <li>14 Tage Nachbetreuung inklusive</li>
       </ul>
-      <a href="index.html#kontakt" class="pricing-btn">Jetzt anfragen</a>
+      <a href="#kontakt" class="pricing-btn">Jetzt anfragen</a>
     </div>
     <div class="pricing-card reveal delay-3">
       <div class="pricing-icon">🏢</div>
@@ -498,17 +408,24 @@
         <li>Laufende Betreuung möglich</li>
         <li>Fester Ansprechpartner für Ihr Büro</li>
       </ul>
-      <a href="index.html#kontakt" class="pricing-btn">Angebot anfragen</a>
+      <a href="#kontakt" class="pricing-btn">Angebot anfragen</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section style="background:var(--gray-light)">
+<section style="background:var(--white)">
   <div class="cta-box reveal">
-    <h2>Benötigen Sie Unterstützung?</h2>
-    <p>Wir helfen Ihnen schnell, verständlich und zuverlässig — ob IT-Problem im Büro oder technische Frage zuhause.</p>
-    <a href="index.html#kontakt" class="btn-green">Persönliche Technikhilfe anfragen →</a>
+    <div style="font-size:2.4rem;margin-bottom:0.6rem;">🏠</div>
+    <h2>Wir kommen direkt zu Ihnen — zuhause oder ins Büro.</h2>
+    <p>Kein Stress, kein Umstecken, keine Wartezeit: Wir lösen IT-Probleme im Büro und technische Fragen zuhause direkt bei Ihnen — persönlich, verständlich und in Ruhe. Unser Ziel: dass Sie sich danach mit Ihrer Technik sicher fühlen.</p>
+    <div class="th-trust-row cta-trust">
+      <span class="th-trust-item"><span class="th-trust-check">✓</span> Ohne Fachbegriffe, verständlich erklärt</span>
+      <span class="th-trust-item"><span class="th-trust-check">✓</span> Fixpreis vorab, keine versteckten Kosten</span>
+      <span class="th-trust-item"><span class="th-trust-check">✓</span> Auch nach dem Einsatz für Sie erreichbar</span>
+      <span class="th-trust-item"><span class="th-trust-check">✓</span> Kein Problem ist zu klein</span>
+    </div>
+    <a href="#kontakt" class="btn-green">Persönliche Technikhilfe anfragen →</a>
   </div>
 </section>
 
@@ -526,7 +443,7 @@
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Helft ihr auch älteren Menschen mit dem Smartphone oder Tablet?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, sehr gerne. Wir erklären alles in einfacher Sprache, ohne Fachbegriffe — so lange bis es wirklich verstanden wurde. Geduld ist für uns selbstverständlich.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, sehr gerne. Wir erklären alles in einfacher Sprache, ohne Fachbegriffe — so lange bis es wirklich verstanden wurde. Und wenn danach doch eine Frage auftaucht: einfach anrufen, die Nachbetreuung ist inklusive.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Mein Internet ist langsam — was kann man tun?</summary>
@@ -535,6 +452,10 @@
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Richtet ihr auch WLAN für größere Wohnungen oder Büros ein?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Wir planen und installieren professionelle WLAN-Systeme (Mesh, Access Points) für lückenlosen Empfang in der ganzen Wohnung oder im gesamten Büro.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Könnt ihr Probleme auch per Fernwartung lösen?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Viele Software-Probleme lösen wir per Fernwartung oder Telefon (ab 49 €) — schneller und günstiger als ein Vor-Ort-Termin. Wenn es doch mehr braucht, kommen wir zu Ihnen.</p>
       </details>
     </div>
   </div>
@@ -546,12 +467,41 @@
   "mainEntity": [
     { "@type": "Question", "name": "Was kostet ein PC-Reparatur-Einsatz in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Kleiner Einsatz ab 49 €, Vor-Ort-Einsatz inkl. Anfahrt ab 129 €. Für Unternehmen individuelle Angebote." } },
     { "@type": "Question", "name": "Kommt ihr auch nach Hause wenn ich Probleme habe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir kommen direkt zu Ihnen nach Hause in Wien und Umgebung." } },
-    { "@type": "Question", "name": "Helft ihr auch älteren Menschen mit dem Smartphone oder Tablet?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, sehr gerne. Wir erklären alles in einfacher Sprache ohne Fachbegriffe, so lange bis es verstanden wurde." } },
+    { "@type": "Question", "name": "Helft ihr auch älteren Menschen mit dem Smartphone oder Tablet?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, sehr gerne. Wir erklären alles in einfacher Sprache ohne Fachbegriffe, so lange bis es wirklich verstanden wurde. Und wenn danach doch eine Frage auftaucht: einfach anrufen, die Nachbetreuung ist inklusive." } },
     { "@type": "Question", "name": "Mein Internet ist langsam — was kann man tun?", "acceptedAnswer": { "@type": "Answer", "text": "Wir analysieren das Problem und lösen es — durch bessere Router-Platzierung, neue Hardware oder WLAN-Verstärker." } },
-    { "@type": "Question", "name": "Richtet ihr auch WLAN für größere Wohnungen oder Büros ein?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir planen professionelle WLAN-Systeme (Mesh, Access Points) für lückenlosen Empfang überall." } }
+    { "@type": "Question", "name": "Richtet ihr auch WLAN für größere Wohnungen oder Büros ein?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wir planen professionelle WLAN-Systeme (Mesh, Access Points) für lückenlosen Empfang überall." } },
+    { "@type": "Question", "name": "Könnt ihr Probleme auch per Fernwartung lösen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Viele Software-Probleme lösen wir per Fernwartung oder Telefon ab 49 € — schneller und günstiger als ein Vor-Ort-Termin." } }
   ]
 }
 </script>
+
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Technikhilfe anfragen</h2>
+      <p class="ki-sub">Beschreiben Sie kurz Ihr Problem — wir melden uns innerhalb von 24 Stunden und sagen Ihnen vorab, was der Einsatz kostet.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – Computer & IT-Hilfe" />
+      <input type="hidden" name="bereich" value="Computer & IT-Hilfe" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Worum geht es? *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="footer-top">
@@ -564,7 +514,7 @@
       <ul>
         <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
         <li><a href="medientechnik.html">Medientechnik</a></li>
-        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
         <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
         <li><a href="smarthome.html">Smart-Home</a></li>
         <li><a href="edv.html">EDV & IT-Service</a></li>
@@ -575,7 +525,7 @@
       <ul>
         <li><a href="tel:+436766520263">+43 676 6520263</a></li>
         <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
-        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
       </ul>
     </div>
   </div>
@@ -591,5 +541,6 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="kontakt-inline.js"></script>
 </body>
 </html>
