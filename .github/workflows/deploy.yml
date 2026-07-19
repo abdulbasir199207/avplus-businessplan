@@ -9,9 +9,9 @@
 #   SFTP_PASSWORD  zugehöriges Passwort
 # Die Zugangsdaten stehen bei IONOS unter Hosting → SFTP & SSH.
 #
-# Hinweis: remote_path "/" gilt, wenn avplus.at direkt auf das
-# Webspace-Stammverzeichnis zeigt. Zeigt die Domain auf einen
-# Unterordner (IONOS: Domains → Verwendung), den Pfad unten anpassen.
+# Hinweis: IONOS erlaubt keine Domain-Verbindung aufs Stammverzeichnis,
+# daher wird nach /public deployt — avplus.at muss im IONOS-Kundenkonto
+# mit dem Ordner "public" verbunden sein.
 # ═══════════════════════════════════════════════════════════════════
 name: Deploy zu IONOS
 
@@ -48,5 +48,5 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
           local_path: ./deploy/*
-          remote_path: /
+          remote_path: /public
           sftp_only: true
