@@ -125,7 +125,7 @@
         '<div id="avcc-details">' +
           '<div id="avcc-details-inner">' +
             buildToggleRow('avcc-necessary', 'Notwendige Cookies', 'Technisch erforderlich — immer aktiv', true, true) +
-            buildToggleRow('avcc-analytics', 'Analyse (Google Analytics 4)', 'Hilft uns, die Nutzung der Website zu verstehen', false, false) +
+            buildToggleRow('avcc-analytics', 'Analyse (Google Analytics 4 &amp; Microsoft Clarity)', 'Hilft uns, die Nutzung der Website zu verstehen', false, false) +
             buildToggleRow('avcc-marketing', 'Marketing (Google Ads &amp; Meta/Instagram)', 'Für personalisierte Werbung auf Google und Instagram', false, false) +
             '<div id="avcc-save-row">' +
               '<button class="avcc-btn avcc-btn-accept" id="avcc-save">Auswahl speichern</button>' +
@@ -208,7 +208,7 @@
         '<h3>🍪 Cookie-Einstellungen</h3>' +
         '<p>Passen Sie Ihre Einwilligung jederzeit an. Weitere Informationen in unserer <a href="' + DSE_URL + '">Datenschutzerklärung</a>.</p>' +
         buildToggleRow('avcc-m-necessary', 'Notwendige Cookies', 'Immer aktiv', true, true) +
-        buildToggleRow('avcc-m-analytics', 'Analyse (Google Analytics 4)', 'Nutzungsanalyse', false, false) +
+        buildToggleRow('avcc-m-analytics', 'Analyse (Google Analytics 4 &amp; Microsoft Clarity)', 'Nutzungsanalyse', false, false) +
         buildToggleRow('avcc-m-marketing', 'Marketing (Google Ads &amp; Meta/Instagram)', 'Personalisierte Werbung', false, false) +
         '<div id="avcc-save-row" style="margin-top:1.3rem;">' +
           '<button class="avcc-btn avcc-btn-accept" id="avcc-modal-save">Speichern</button>' +
