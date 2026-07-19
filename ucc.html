@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google Consent Mode v2: standardmäßig alles abgelehnt, bis der Besucher im Cookie-Banner zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-Z25PB37C6Y');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
+  <meta name="description" content="SAT-Anlage &amp; Starlink-Montage in Wien &amp; ganz Österreich – auch am Land ohne Kabelanschluss. Präzise ausgerichtet, sauber verkabelt, Fixpreis vorab. AVplus e.U." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.avplus.at/ucc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.avplus.at/ucc.html" />
+  <meta property="og:title" content="SAT-Technik & Starlink Wien – Montage, Ausrichtung & Einrichtung | AVplus e.U." />
+  <meta property="og:description" content="Satellitenanlagen und Starlink-Terminals in Wien und ganz Österreich – professionell montiert, präzise ausgerichtet und startklar übergeben. AVplus e.U." />
+  <meta property="og:image" content="https://www.avplus.at/bilder/starlink-wien.webp" />
+  <meta property="og:locale" content="de_AT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SAT-Technik & Starlink Wien | AVplus e.U." />
+  <meta name="twitter:description" content="Satellitenanlagen und Starlink-Terminals in Wien und ganz Österreich – professionell montiert und startklar übergeben." />
+  <meta name="twitter:image" content="https://www.avplus.at/bilder/starlink-wien.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.avplus.at/ucc.html",
+        "name": "Konferenztechnik Wien",
+        "description": "Videokonferenzsysteme, Mikrofonarrays und Raumsteuerung für Büros und Schulen in Wien.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "AVplus e.U.",
+          "telephone": "+436766520263",
+          "email": "office@avplus.at",
+          "address": { "@type": "PostalAddress", "streetAddress": "Edith-Kramer-Weg 6/12", "postalCode": "1220", "addressLocality": "Wien", "addressCountry": "AT" },
+          "url": "https://www.avplus.at/"
+        },
+        "areaServed": { "@type": "City", "name": "Wien" },
+        "serviceType": ["Videokonferenz", "Konferenztechnik", "Raumsteuerung", "Mikrofonanlage"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.avplus.at/" },
+          { "@type": "ListItem", "position": 2, "name": "Konferenztechnik", "item": "https://www.avplus.at/ucc.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAT-Anlage & Starlink Montage Wien & Österreich | AVplus e.U.</title>
+  <link rel="stylesheet" href="kontakt-inline.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --green-dark:#4e8a36; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; --sat:#1a2a5e; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; background: var(--white); }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-1{transition-delay:.1s} .delay-2{transition-delay:.2s} .delay-3{transition-delay:.3s} .delay-4{transition-delay:.4s} .delay-5{transition-delay:.5s} .delay-6{transition-delay:.6s}
+
+    /* HEADER */
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; box-shadow:0 2px 8px rgba(45,110,168,0.3); transition:background 0.2s; }
+    .btn:hover { background:var(--blue-dark); }
+
+    /* HERO */
+    .page-hero { margin-top:72px; background:linear-gradient(135deg, rgba(10,15,46,0.88) 0%, rgba(26,35,80,0.78) 50%, rgba(45,74,158,0.65) 100%), url('bilder/starlink-dachmontage.webp') center 30%/cover no-repeat; padding:5rem 5% 4rem; position:relative; overflow:hidden; min-height:380px; display:flex; align-items:center; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:30px 30px; }
+    .hero-stars { position:absolute; inset:0; overflow:hidden; }
+    .hero-stars::before, .hero-stars::after {
+      content:'★ ✦ ★ · ✦ · ★ ✦ · ★ · ✦ ★';
+      position:absolute; color:rgba(255,255,255,0.15); font-size:0.8rem; letter-spacing:2rem; white-space:nowrap;
+    }
+    .hero-stars::before { top:15%; left:40%; }
+    .hero-stars::after { top:60%; left:55%; font-size:0.5rem; }
+    .page-hero-shape { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(45,74,158,0.4), transparent); right:-100px; top:-100px; animation:float 10s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1.2rem; position:relative; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.95); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.2rem; }
+    .page-hero-content { position:relative; max-width:700px; color:var(--white); }
+    .page-hero-content h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:800; line-height:1.2; margin-bottom:1rem; }
+    .page-hero-content h1 span { color:#90c8ff; }
+    .page-hero-content p { font-size:1.05rem; opacity:0.85; max-width:560px; }
+
+    /* SECTIONS */
+    section { padding:5rem 5%; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
+    .section-intro { color:var(--gray); max-width:560px; margin-bottom:3rem; font-size:1rem; }
+
+    /* SERVICE CARDS */
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .service-card { background:var(--white); border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.3s,box-shadow 0.3s; border-top:3px solid var(--blue); }
+    a.service-card { display:block; text-decoration:none; color:inherit; cursor:pointer; }
+    .sc-link { display:inline-block; margin-top:0.8rem; color:var(--blue); font-weight:700; font-size:0.85rem; }
+    a.service-card:hover .sc-link { text-decoration:underline; }
+    section[id] { scroll-margin-top:85px; }
+    .service-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,0.1); }
+    .sc-icon { font-size:2.5rem; margin-bottom:1rem; display:block; }
+    .service-card h3 { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+    .service-card p { font-size:0.88rem; color:var(--gray); line-height:1.6; }
+
+    /* IMAGE PLACEHOLDER */
+    .img-placeholder { width:100%; height:100%; background:linear-gradient(135deg, #2d3748, #4a5568); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.6rem; }
+    .img-placeholder .ph-icon { font-size:2.5rem; opacity:0.4; }
+    .img-placeholder p { font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.4); letter-spacing:0.5px; text-align:center; padding:0 1rem; }
+
+    /* FEATURE SPLIT */
+    .feature-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .feature-visual { border-radius:20px; overflow:hidden; height:380px; position:relative; box-shadow:0 16px 48px rgba(0,0,0,0.15); }
+    .feature-visual img { width:100%; height:100%; object-fit:cover; }
+    .feature-visual .fv-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,15,46,0.5),rgba(45,74,158,0.3)); }
+    .feature-visual .fv-badge { position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(255,255,255,0.95); border-radius:10px; padding:0.8rem 1.2rem; display:flex; align-items:center; gap:0.6rem; box-shadow:0 4px 20px rgba(0,0,0,0.2); }
+    .fv-badge-icon { font-size:1.5rem; }
+    .fv-badge-text strong { display:block; font-size:0.88rem; font-weight:700; color:var(--text); }
+    .fv-badge-text span { font-size:0.75rem; color:var(--gray); }
+    .feature-list { list-style:none; margin:1.5rem 0; }
+    .feature-list li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.7rem 0; border-bottom:1px solid #f0f0f0; font-size:0.93rem; }
+    .feature-list li:last-child { border-bottom:none; }
+    .feature-list li::before { content:'✓'; color:var(--green); font-weight:800; font-size:1rem; margin-top:1px; flex-shrink:0; }
+
+    /* STARLINK BADGE */
+    .starlink-badge { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,#0a0f2e,#1a2a5e); color:#90c8ff; font-size:0.75rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1rem; border:1px solid rgba(144,200,255,0.3); }
+
+    /* PROZESS */
+    .steps-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; position:relative; }
+    .steps-grid::before { content:''; position:absolute; top:32px; left:12%; right:12%; height:2px; background:linear-gradient(90deg,var(--blue),var(--green)); }
+    .step-item { text-align:center; position:relative; }
+    .step-circle { width:64px; height:64px; border-radius:50%; background:var(--white); border:3px solid var(--blue); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; position:relative; z-index:1; box-shadow:0 4px 16px rgba(45,110,168,0.2); transition:transform 0.3s,border-color 0.3s; }
+    .step-item:hover .step-circle { transform:scale(1.1); border-color:var(--green); }
+    .step-item h4 { font-size:0.95rem; font-weight:700; margin-bottom:0.4rem; }
+    .step-item p { font-size:0.83rem; color:var(--gray); }
+
+    /* BRANDS */
+    .brands-bar { display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap; padding:2.5rem 5%; background:var(--white); border-top:1px solid #eee; border-bottom:1px solid #eee; }
+    .brand-logo { display:flex; align-items:center; justify-content:center; padding:0.8rem 1.4rem; border-radius:10px; border:1.5px solid #e8ecf0; background:var(--white); transition:border-color 0.2s,box-shadow 0.2s; min-width:120px; }
+    .brand-logo:hover { border-color:var(--blue); box-shadow:0 4px 16px rgba(45,110,168,0.12); }
+    .brand-logo span { font-size:0.9rem; font-weight:800; color:var(--text); letter-spacing:0.5px; }
+
+    /* CTA */
+    .cta-box { background:linear-gradient(135deg,#0a0f2e,var(--sat)); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
+    .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
+    .cta-box p { opacity:0.8; margin-bottom:2rem; max-width:560px; margin-left:auto; margin-right:auto; }
+    .btn-sat { background:#90c8ff; color:#0a0f2e; padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; display:inline-block; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 20px rgba(144,200,255,0.4); }
+    .btn-sat:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(144,200,255,0.5); }
+
+    /* FOOTER */
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+
+    @media(max-width:1024px) { .services-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:768px) { .services-grid,.feature-split,.steps-grid { grid-template-columns:1fr; } .steps-grid::before { display:none; } .footer-top { grid-template-columns:1fr; gap:2rem; } }
+    @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} }
+    /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
+
+    /* ── MOBILE NAVIGATION ── */
+    .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
+    @media (max-width: 768px) {
+      .nav-toggle { display:block; }
+      header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
+      header nav.nav-open { display:flex; }
+      header nav .nav-link { display:block; padding:0.85rem 0.4rem; font-size:1rem; }
+      .nav-dropdown .dropdown-menu { position:static; opacity:1; pointer-events:all; transform:none; box-shadow:none; min-width:0; padding:0 0 0 0.8rem; }
+      header nav .btn { text-align:center; margin-top:0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
+    <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
+  </div>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
+    <a href="#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-stars"></div>
+  <div class="page-hero-shape"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › Leistungen › SAT-Technik & Starlink</div>
+    <div class="page-badge">📡 SAT-Technik & Starlink</div>
+    <h1>Perfekter Empfang.<br><span>Überall. Ohne Kompromisse.</span></h1>
+    <p>Kein Kabelanschluss, lahmes Internet oder schlechter TV-Empfang am Standort? Wir montieren Satellitenanlagen und Starlink-Terminals — präzise ausgerichtet, sauber verkabelt und startklar übergeben. Für Privatpersonen und Unternehmen in Wien und ganz Österreich.</p>
+  </div>
+</div>
+
+<!-- LEISTUNGEN ÜBERBLICK -->
+<section style="background:var(--gray-light)">
+  <div class="reveal">
+    <p class="section-label">Was wir installieren</p>
+    <h2>SAT-Technik & Starlink im Überblick</h2>
+    <p class="section-intro">Selbst montieren, stundenlang ausrichten und am Ende doch kein Signal? Das können Sie sich sparen: Wir übernehmen alles — von der Standortwahl bis zum fertigen Sendersuchlauf. Einmal richtig gemacht, läuft Ihre Anlage jahrelang störungsfrei.</p>
+  </div>
+  <div class="services-grid">
+    <a href="#sat-anlage" class="service-card reveal delay-1">
+      <span class="sc-icon">🔧</span>
+      <h3>SAT-Antennen Montage</h3>
+      <p>Fachgerechte Montage von Satellitenschüsseln auf Dach, Balkon, Fassade oder Mastständer — sicher verankert, wetterfest und langlebig.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#sat-anlage" class="service-card reveal delay-2">
+      <span class="sc-icon">🎯</span>
+      <h3>Präzise Ausrichtung</h3>
+      <p>Exakte Ausrichtung auf Astra, Hotbird oder andere Satelliten mit professionellem Messgerät — für maximale Signalstärke und störungsfreien Empfang.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#sat-anlage" class="service-card reveal delay-3">
+      <span class="sc-icon">🔌</span>
+      <h3>Verkabelung</h3>
+      <p>Saubere Kabelverlegung vom Dach bis zur Anschlussdose — innerhalb der Wand oder als Außeninstallation, inklusive Durchführungen und Abdichtung.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#sat-anlage" class="service-card reveal delay-1">
+      <span class="sc-icon">⚙️</span>
+      <h3>Konfiguration & Einrichtung</h3>
+      <p>Einrichtung von Receivern, Multiswitches und Verteilanlagen — inkl. Sendersuchlauf, Programmierung und Einschulung.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#starlink" class="service-card reveal delay-2">
+      <span class="sc-icon">🛰️</span>
+      <h3>Starlink Installation</h3>
+      <p>Professionelle Montage und Einrichtung von SpaceX Starlink-Terminals — inklusive optimaler Standortwahl, Montage und Router-Konfiguration.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <div class="service-card reveal delay-3">
+      <span class="sc-icon">🔁</span>
+      <h3>Wartung & Fehlerdiagnose</h3>
+      <p>Signalmessung, Ausrichtungskontrolle und schnelle Fehlerdiagnose bei Empfangsproblemen — auch für bestehende Anlagen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: SAT-ANLAGEN -->
+<section id="sat-anlage" style="background:var(--white)">
+  <div class="feature-split">
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/sat-anlage.webp" alt="SAT-Anlage Montage Wien – Satellitenschüssel professionell installiert von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">🎯</span>
+        <div class="fv-badge-text">
+          <strong>Professionelle Ausrichtung</strong>
+          <span>Mit digitalem Messgerät</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Satellitenanlagen</p>
+      <h2>Klassische SAT-Anlage — zuverlässig installiert.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Rauschendes Bild, fehlende Sender oder gar kein Empfang? Ob Einfamilienhaus, Mehrparteienhaus oder Gewerbeobjekt — wir planen und installieren die Satellitenlösung, die zu Ihrem Empfangsbedarf passt. Ohne laufende Kosten: Einmal montiert, empfangen Sie hunderte Programme dauerhaft gratis.</p>
+      <ul class="feature-list">
+        <li>Einzelanlagen für 1 Receiver bis Multiswitchanlagen für 8+ Teilnehmer</li>
+        <li>Empfang von Astra 19,2° Ost (ORF, ServusTV, RTL, ARD, ZDF u.v.m.)</li>
+        <li>Hotbird, Türksat und weitere Satelliten auf Anfrage</li>
+        <li>Unterputz- oder Aufputzverkabelung möglich</li>
+        <li>Einzel- und Gruppenantennen für Wohnanlagen</li>
+        <li>Vollständiger Sendersuchlauf und Einschulung inklusive</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE: STARLINK -->
+<section id="starlink" style="background:var(--gray-light)">
+  <div class="feature-split">
+    <div class="reveal">
+      <div class="starlink-badge">🛰️ SpaceX Starlink Partner</div>
+      <h2>Starlink — Schnelles Internet überall, auch ohne Festnetz.</h2>
+      <p style="color:var(--gray);margin-bottom:1rem;">Am Land, im Ferienhaus oder auf der Baustelle ohne brauchbares Internet? Starlink von SpaceX liefert Highspeed-Internet via Satellit — überall dort, wo DSL und Glasfaser nicht hinkommen. Wir übernehmen die komplette Installation: Standortwahl, Montage, Verkabelung und WLAN-Einrichtung. Ist an Ihrem Standort doch Glasfaser verfügbar? Dann beraten wir Sie ehrlich — auch die <a href="lwl.html" style="color:var(--blue);font-weight:600;">Glasfasertechnik</a> übernehmen wir selbst.</p>
+      <ul class="feature-list">
+        <li>Download bis zu 200 Mbit/s — auch in ländlichen Gebieten</li>
+        <li>Optimale Standortwahl für freien Blick zum Himmel</li>
+        <li>Wandmontage, Dachmontage oder Mastmontage möglich</li>
+        <li>Saubere Kabelverlegung bis zum Router-Standort</li>
+        <li>WLAN-Konfiguration und Netzwerkeinrichtung</li>
+        <li>Geeignet für Einfamilienhäuser, Baustellen, Ferienhäuser & Betriebe</li>
+      </ul>
+    </div>
+    <div class="feature-visual reveal">
+      <img loading="lazy" decoding="async" src="bilder/starlink.webp" alt="Starlink Terminal Montage Wien – Satelliten-Internet Anlage installiert von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
+      <div class="fv-overlay"></div>
+      <div class="fv-badge">
+        <span class="fv-badge-icon">⚡</span>
+        <div class="fv-badge-text">
+          <strong>Bis 200 Mbit/s</strong>
+          <span>Satelliten-Internet via Starlink</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONTAGE-OPTIONEN -->
+<section style="background:var(--white)">
+  <div class="reveal" style="text-align:center;margin-bottom:1rem;">
+    <p class="section-label">Montagearten</p>
+    <h2>Jede Situation — die passende Lösung.</h2>
+    <p class="section-intro" style="margin:0 auto 3rem;">Wir montieren Ihre SAT-Anlage oder Ihren Starlink-Terminal sicher und sauber — egal wie der Standort aussieht.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1" style="border-top-color:var(--green);text-align:center;">
+      <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
+        <img loading="lazy" decoding="async" src="bilder/sat-dachmontage.webp" alt="SAT-Anlage Dachmontage Wien – Satellitenschüssel auf Flachdach mit Mastständer, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <h3>Dachmontage</h3>
+      <p>Sichere Befestigung auf Flach- oder Schrägdach mit wetterfestem Mastständer und Kabeleinführung.</p>
+    </div>
+    <div class="service-card reveal delay-2" style="border-top-color:var(--blue);text-align:center;">
+      <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
+        <img loading="lazy" decoding="async" src="bilder/sat-wandmontage.webp" alt="SAT-Schüssel Wandmontage Wien – Satellitenanlage an Hausfassade montiert, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <h3>Fassaden- & Wandmontage</h3>
+      <p>Montage an Außenwand oder Balkongeländer — platzsparend und optisch sauber integriert.</p>
+    </div>
+    <div class="service-card reveal delay-3" style="border-top-color:#1a2a5e;text-align:center;">
+      <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
+        <img loading="lazy" decoding="async" src="bilder/starlink-mast-garten.webp" alt="Starlink Montage freistehender Mast Wien – Terminal auf Erdmast im Garten, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <h3>Freistehender Mast</h3>
+      <p>Erdmast im Garten oder auf Terrasse — ideal wenn Dach oder Wand nicht zugänglich sind.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section style="background:var(--gray-light)">
+  <div class="reveal" style="text-align:center;margin-bottom:1rem;">
+    <p class="section-label">Unser Ablauf</p>
+    <h2>Von der Anfrage bis zum perfekten Empfang.</h2>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Schnell, sauber, zuverlässig — so läuft Ihre Installation ab.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-item reveal delay-1">
+      <div class="step-circle">📞</div>
+      <h4>Anfrage</h4>
+      <p>Kostenlose Beratung und Terminvereinbarung</p>
+    </div>
+    <div class="step-item reveal delay-2">
+      <div class="step-circle">🔍</div>
+      <h4>Standortcheck</h4>
+      <p>Prüfung des idealen Montageplatzes vor Ort</p>
+    </div>
+    <div class="step-item reveal delay-3">
+      <div class="step-circle">🔧</div>
+      <h4>Montage & Ausrichtung</h4>
+      <p>Professionelle Installation und Signalmessung</p>
+    </div>
+    <div class="step-item reveal delay-4">
+      <div class="step-circle">✅</div>
+      <h4>Übergabe</h4>
+      <p>Einschulung, Test und Dokumentation</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARKENPARTNER -->
+<div class="brands-bar">
+  <div class="brand-logo"><span>STARLINK</span></div>
+  <div class="brand-logo"><span>MEGASAT</span></div>
+  <div class="brand-logo"><span>KATHREIN</span></div>
+  <div class="brand-logo"><span>INVERTO</span></div>
+  <div class="brand-logo"><span>TECHNISAT</span></div>
+  <div class="brand-logo"><span>HUMAX</span></div>
+</div>
+
+<!-- CTA -->
+<section style="background:var(--white)">
+  <div class="cta-box reveal">
+    <h2>Jetzt SAT-Anlage oder Starlink installieren lassen.</h2>
+    <p>Schicken Sie uns kurz Ihre Adresse und ein Foto des Montageorts — Sie erhalten innerhalb von 24 Stunden ein Fixpreisangebot. Kostenlos und unverbindlich.</p>
+    <a href="#kontakt" class="btn-sat">Kostenloses Angebot einholen →</a>
+    <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
+  </div>
+</section>
+
+<section style="background:#f5f7fa; padding:4rem 1.5rem;">
+  <div style="max-width:800px; margin:0 auto;">
+    <h2 style="font-size:1.7rem; color:#1a2332; margin-bottom:2rem; text-align:center;">Häufige Fragen zu SAT-Technik & Starlink</h2>
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Montage einer SAT-Anlage in Wien?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Das hängt vom Montageort (Dach, Wand oder Mast) und dem Kabelweg ab. Schicken Sie uns kurz Ihre Adresse und ein Foto des Standorts — Sie erhalten einen Fixpreis, bevor wir kommen. Kostenlos und unverbindlich.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Starlink-Montage — und was brauche ich dafür?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Hardware und Abo bestellen Sie direkt bei Starlink — wir übernehmen Standortwahl, Montage, Kabelverlegung und die komplette WLAN-Einrichtung zum vorab vereinbarten Fixpreis. Auf Wunsch beraten wir Sie schon vor der Bestellung.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Wie schnell ist Starlink wirklich?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">In Österreich sind je nach Auslastung meist 50–200 Mbit/s im Download realistisch — genug für Streaming, Homeoffice und Videokonferenzen. Entscheidend ist freie Sicht zum Himmel; genau das prüfen wir beim Standortcheck.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Darf ich in einer Mietwohnung eine Schüssel montieren?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Bei Eingriffen in Fassade oder Dach sollte die Hausverwaltung zustimmen. Wir beraten Sie dazu und montieren auf Wunsch mietfreundlich — etwa am Balkongeländer oder auf einem freistehenden Mast, ganz ohne Bohren in die Fassade.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Repariert ihr auch bestehende SAT-Anlagen?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Signalmessung, Neuausrichtung, LNB-Tausch oder Fehlersuche — wir bringen auch Anlagen wieder zum Laufen, die nicht von uns installiert wurden.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was kostet die Montage einer SAT-Anlage in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Abhängig von Montageort und Kabelweg. Nach Adresse und Foto des Standorts erhalten Sie vorab einen Fixpreis — kostenlos und unverbindlich." } },
+    { "@type": "Question", "name": "Was kostet die Starlink-Montage — und was brauche ich dafür?", "acceptedAnswer": { "@type": "Answer", "text": "Hardware und Abo bestellen Sie direkt bei Starlink. Wir übernehmen Standortwahl, Montage, Verkabelung und WLAN-Einrichtung zum vereinbarten Fixpreis." } },
+    { "@type": "Question", "name": "Wie schnell ist Starlink wirklich?", "acceptedAnswer": { "@type": "Answer", "text": "In Österreich meist 50–200 Mbit/s im Download — genug für Streaming, Homeoffice und Videokonferenzen. Voraussetzung ist freie Sicht zum Himmel." } },
+    { "@type": "Question", "name": "Darf ich in einer Mietwohnung eine Schüssel montieren?", "acceptedAnswer": { "@type": "Answer", "text": "Bei Eingriffen in Fassade oder Dach sollte die Hausverwaltung zustimmen. Wir montieren auf Wunsch mietfreundlich am Balkon oder freistehenden Mast." } },
+    { "@type": "Question", "name": "Repariert ihr auch bestehende SAT-Anlagen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Signalmessung, Neuausrichtung, LNB-Tausch und Fehlersuche — auch bei Fremdanlagen." } }
+  ]
+}
+</script>
+
+<!-- LOKALES KONTAKTFORMULAR -->
+<section id="kontakt" class="ki-section">
+  <div class="ki-wrap">
+    <div class="ki-intro">
+      <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
+      <h2>Angebot für SAT oder Starlink anfragen</h2>
+      <p class="ki-sub">Schicken Sie uns Ihre Adresse und – wenn möglich – ein Foto des Montageorts. Sie erhalten innerhalb von 24 Stunden ein Fixpreisangebot.</p>
+      <div class="ki-contacts">
+        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
+        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+      </div>
+    </div>
+    <form class="ki-form" action="https://formspree.io/f/xvzjgjkg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – SAT-Technik & Starlink" />
+      <input type="hidden" name="bereich" value="SAT-Technik & Starlink" />
+      <div class="ki-row">
+        <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" />
+        <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" />
+      </div>
+      <input type="email" name="email" placeholder="E-Mail *" required aria-label="E-Mail" />
+      <textarea name="nachricht" placeholder="Adresse & worum es geht *" required aria-label="Ihre Nachricht"></textarea>
+      <button type="submit" class="ki-submit">Anfrage absenden →</button>
+      <div class="ki-msg" hidden></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik, SAT-Technik und Glasfasertechnik in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">SAT-Technik & Starlink</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="#kontakt">Anfrage senden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script src="cookie-consent.js"></script>
+<script src="site.js"></script>
+<script src="tracking.js"></script>
+<script src="kontakt-inline.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+# ═══════════════════════════════════════════════════════════════════
+# Auto-Deploy zu IONOS: Bei jedem Push auf `master` werden die
+# Webseiten-Dateien per SFTP auf den IONOS-Webspace hochgeladen.
+#
+# Voraussetzung — drei Secrets im GitHub-Repo hinterlegen
+# (Settings → Secrets and variables → Actions → New repository secret):
+#   SFTP_HOST      z. B. access-1234567890.webspace-host.com
+#   SFTP_USER      SFTP-Benutzername aus dem IONOS-Konto
+#   SFTP_PASSWORD  zugehöriges Passwort
+# Die Zugangsdaten stehen bei IONOS unter Hosting → SFTP & SSH.
+#
+# Hinweis: remote_path "/" gilt, wenn avplus.at direkt auf das
+# Webspace-Stammverzeichnis zeigt. Zeigt die Domain auf einen
+# Unterordner (IONOS: Domains → Verwendung), den Pfad unten anpassen.
+# ═══════════════════════════════════════════════════════════════════
+name: Deploy zu IONOS
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Deploy-Ordner zusammenstellen (nur Live-Dateien)
+        run: |
+          mkdir -p deploy/bilder
+          cp *.html site.js cookie-consent.js kontakt-inline.js kontakt-inline.css tracking.js \
+             logo.png robots.txt sitemap.xml agb-kommunikationselektroniker.pdf deploy/
+          # Nur Bilder mitnehmen, die in HTML/CSS/JS referenziert sind
+          grep -hoE 'bilder/[A-Za-z0-9_.-]+\.(webp|png|jpg|jpeg|svg|mp4|webm)' *.html *.js *.css \
+            | sort -u \
+            | while read -r f; do
+                [ -f "$f" ] && cp "$f" deploy/bilder/
+              done
+          echo "Dateien im Deploy-Ordner: $(find deploy -type f | wc -l)"
+
+      - name: Upload per SFTP zu IONOS
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          local_path: ./deploy/*
+          remote_path: /
+          sftp_only: true

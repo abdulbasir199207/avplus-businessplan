@@ -2,6 +2,8 @@
 
 Businessplan für AVplus e.U.
 
+Dieses Repository enthält die Planung und Strukturierung des Geschäftsbereichs für Sicherheitstechnik, Medientechnik und Lichtwellenleiter (LWL).
+
 ## Projektbereiche
 - Sicherheitstechnik
 - Medientechnik

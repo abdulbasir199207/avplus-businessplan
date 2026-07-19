@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google Consent Mode v2: standardmäßig alles abgelehnt, bis der Besucher im Cookie-Banner zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-Z25PB37C6Y');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum, AGB & Datenschutz – AVplus e.U.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#2d6ea8; --blue-dark:#1b4f7a; --blue-light:#e8f2fb; --green:#6ab04c; --white:#ffffff; --gray-light:#f5f7fa; --gray:#6b7280; --text:#1a2332; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); line-height: 1.7; overflow-x: hidden; background: var(--white); }
+
+    header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
+    .logo img { height:42px; }
+    nav { display:flex; gap:0.5rem; align-items:center; }
+    .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
+    .nav-link:hover { color:var(--blue); background:var(--blue-light); }
+    .nav-dropdown { position:relative; }
+    .nav-dropdown:hover .dropdown-menu { opacity:1; pointer-events:all; transform:translateY(0); }
+    .dropdown-menu { position:absolute; top:calc(100% + 8px); left:0; background:var(--white); border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.15); padding:0.6rem; min-width:240px; opacity:0; pointer-events:none; transform:translateY(-8px); transition:opacity 0.2s,transform 0.2s; }
+    .dropdown-menu a { display:flex; align-items:center; gap:0.75rem; padding:0.65rem 0.9rem; border-radius:8px; text-decoration:none; color:var(--text); font-size:0.9rem; font-weight:500; transition:background 0.15s; }
+    .dropdown-menu a:hover { background:var(--gray-light); }
+    .dropdown-menu a .di { font-size:1.1rem; }
+    .btn { display:inline-block; background:var(--blue); color:var(--white)!important; padding:0.6rem 1.4rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.3); }
+    .btn:hover { background:var(--blue-dark); }
+
+    /* PAGE HERO */
+    .page-hero { margin-top:72px; background:linear-gradient(135deg,#0f2744 0%,#1b4f7a 50%,#2d6ea8 100%); padding:4rem 5% 3rem; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:30px 30px; }
+    .page-hero-content { position:relative; max-width:700px; color:var(--white); }
+    .breadcrumb { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-bottom:1rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.6); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .breadcrumb span { margin:0 0.5rem; }
+    .page-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(45,110,168,0.3); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.9); font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1rem; }
+    .page-hero-content h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; line-height:1.2; }
+    .page-hero-content p { margin-top:0.8rem; opacity:0.8; font-size:1rem; }
+
+    /* TABS */
+    .tab-bar { background:var(--white); border-bottom:2px solid #eee; padding:0 5%; display:flex; gap:0; position:sticky; top:72px; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+    .tab-btn { padding:1.1rem 1.8rem; font-size:0.92rem; font-weight:600; color:var(--gray); text-decoration:none; border-bottom:3px solid transparent; margin-bottom:-2px; transition:color 0.2s, border-color 0.2s; cursor:pointer; background:none; border-top:none; border-left:none; border-right:none; font-family:inherit; }
+    .tab-btn:hover { color:var(--blue); }
+    .tab-btn.active { color:var(--blue); border-bottom-color:var(--blue); }
+
+    /* CONTENT */
+    .content-wrap { max-width:860px; margin:0 auto; padding:3.5rem 5%; }
+
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    /* Impressum table */
+    .imprint-table { width:100%; border-collapse:collapse; margin-bottom:2.5rem; }
+    .imprint-table tr { border-bottom:1px solid #eee; }
+    .imprint-table tr:last-child { border-bottom:none; }
+    .imprint-table td { padding:0.9rem 0; vertical-align:top; font-size:0.95rem; }
+    .imprint-table td:first-child { width:260px; color:var(--gray); font-weight:600; font-size:0.88rem; padding-right:1.5rem; }
+    .imprint-table td:last-child { color:var(--text); font-weight:500; }
+    .imprint-table a { color:var(--blue); text-decoration:none; }
+    .imprint-table a:hover { text-decoration:underline; }
+
+    .info-box { background:var(--blue-light); border-left:4px solid var(--blue); border-radius:0 10px 10px 0; padding:1.2rem 1.5rem; margin-bottom:2rem; }
+    .info-box p { font-size:0.92rem; color:var(--blue-dark); }
+
+    /* Privacy sections */
+    .privacy-section { margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid #eee; }
+    .privacy-section:last-child { border-bottom:none; }
+    .privacy-section h2 { font-size:1.25rem; font-weight:700; color:var(--text); margin-bottom:0.8rem; display:flex; align-items:center; gap:0.6rem; }
+    .privacy-section h3 { font-size:1rem; font-weight:700; color:var(--blue); margin:1.2rem 0 0.5rem; }
+    .privacy-section p { font-size:0.93rem; color:#444; margin-bottom:0.8rem; line-height:1.75; }
+    .privacy-section p:last-child { margin-bottom:0; }
+
+    .section-icon { width:36px; height:36px; background:var(--blue-light); border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+
+    /* Download button */
+    .download-btn { display:inline-flex; align-items:center; gap:0.6rem; background:var(--blue); color:var(--white); padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.9rem; margin-top:1rem; transition:background 0.2s; box-shadow:0 2px 8px rgba(45,110,168,0.25); }
+    .download-btn:hover { background:var(--blue-dark); }
+
+    footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; margin-top:0; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
+    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand p { font-size:0.88rem; line-height:1.7; }
+    .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.5rem; }
+    .footer-col ul li a { color:rgba(255,255,255,0.55); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; flex-wrap:wrap; gap:0.5rem; }
+    .footer-bottom a { color:rgba(255,255,255,0.55); text-decoration:none; }
+    .footer-bottom a:hover { color:var(--white); }
+
+    @media(max-width:768px) { .footer-top{grid-template-columns:1fr;gap:2rem} .imprint-table td:first-child{width:160px} .tab-btn{padding:1rem 1rem;font-size:0.85rem} }
+
+    /* ── MOBILE NAVIGATION ── */
+    .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
+    @media (max-width:768px) { .nav-toggle { display:flex; align-items:center; gap:0.5rem; background:var(--blue-light); color:var(--blue-dark); font-weight:700; font-size:0.85rem; padding:0.5rem 0.9rem; border-radius:8px; } .nav-toggle .nt-icon { font-size:1.25rem; line-height:1; } }
+    @media (max-width:768px) { header > div > span { font-size:0.64rem !important; letter-spacing:0.3px !important; white-space:normal !important; line-height:1.3 !important; } }
+    @media (max-width: 768px) {
+      .nav-toggle { display:block; }
+      header nav { position:fixed; top:72px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0.2rem; padding:0.8rem 5% 1.2rem; box-shadow:0 16px 30px rgba(0,0,0,0.14); display:none; max-height:calc(100vh - 72px); overflow-y:auto; }
+      header nav.nav-open { display:flex; }
+      header nav .nav-link { display:block; padding:0.85rem 0.4rem; font-size:1rem; }
+      .nav-dropdown .dropdown-menu { position:static; opacity:1; pointer-events:all; transform:none; box-shadow:none; min-width:0; padding:0 0 0 0.8rem; }
+      header nav .btn { text-align:center; margin-top:0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
+    <a href="index.html" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
+  </div>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="index.html#leistungen" class="nav-link">Leistungen ▾</a>
+      <div class="dropdown-menu">
+        <a href="sicherheitstechnik.html"><span class="di">🔒</span> Sicherheitstechnik</a>
+        <a href="medientechnik.html"><span class="di">📺</span> Medientechnik</a>
+        <a href="ucc.html"><span class="di">📡</span> SAT-Technik & Starlink</a>
+        <a href="lwl.html"><span class="di">🔗</span> Netzwerk- & Glasfasertechnik</a>
+        <a href="smarthome.html"><span class="di">🏠</span> Smart-Home</a>
+        <a href="edv.html"><span class="di">💻</span> EDV & IT-Service</a>
+      </div>
+    </div>
+    <a href="index.html#ueber" class="nav-link">Über uns</a>
+    <a href="index.html#kontakt" class="btn">Jetzt anfragen</a>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span> Impressum, AGB & Datenschutz</div>
+    <div class="page-badge">⚖️ Rechtliches</div>
+    <h1>Impressum, AGB & Datenschutz</h1>
+    <p>Pflichtangaben gemäß österreichischem Unternehmensrecht und EU-DSGVO.</p>
+  </div>
+</div>
+
+<!-- TAB NAVIGATION -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('impressum', this)">📋 Impressum</button>
+  <button class="tab-btn" onclick="showTab('datenschutz', this)">🔒 Datenschutzerklärung</button>
+</div>
+
+<div class="content-wrap">
+
+  <!-- IMPRESSUM -->
+  <div id="impressum" class="tab-panel active">
+
+    <div class="info-box">
+      <p>Informationspflicht laut § 5 ECG (E-Commerce-Gesetz), § 14 UGB (Unternehmensgesetzbuch) sowie Offenlegungspflicht laut § 25 MedienG.</p>
+    </div>
+
+    <table class="imprint-table">
+      <tr>
+        <td>Inhaber</td>
+        <td>Ing. Abdul Basir Alavi, MSc.</td>
+      </tr>
+      <tr>
+        <td>Firmenwortlaut</td>
+        <td>AVplus e.U.</td>
+      </tr>
+      <tr>
+        <td>Gewerberechtliche Tätigkeit</td>
+        <td>Elektrotechnik, eingeschränkt auf die Errichtung von Alarmanlagen<br>Kommunikationselektronik (Handwerk)</td>
+      </tr>
+      <tr>
+        <td>Firmenbuchnummer</td>
+        <td>612904f</td>
+      </tr>
+      <tr>
+        <td>UID-Nummer</td>
+        <td>ATU79397939</td>
+      </tr>
+      <tr>
+        <td>Firmengericht</td>
+        <td>Handelsgericht Wien</td>
+      </tr>
+      <tr>
+        <td>Firmensitz</td>
+        <td>Edith-Kramer-Weg 6/12, A-1220 Wien</td>
+      </tr>
+      <tr>
+        <td>Telefon</td>
+        <td><a href="tel:+436766520263">+43 676 6520263</a></td>
+      </tr>
+      <tr>
+        <td>E-Mail</td>
+        <td><a href="mailto:office@avplus.at">office@avplus.at</a></td>
+      </tr>
+    </table>
+
+    <a href="agb-kommunikationselektroniker.pdf" class="download-btn" download="AGB-AVplus.pdf">⬇ AGBs herunterladen</a>
+
+  </div>
+
+  <!-- DATENSCHUTZ -->
+  <div id="datenschutz" class="tab-panel">
+
+    <div class="info-box">
+      <p>Diese Datenschutzerklärung gilt gemäß EU-Datenschutzgrundverordnung (DSGVO), dem österreichischen Datenschutzgesetz (DSG 2018) sowie dem Telekommunikationsgesetz (TKG 2021). Stand: Juli 2026.</p>
+    </div>
+
+    <!-- 1. Verantwortlicher -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">👤</span> 1. Verantwortlicher</h2>
+      <p>Verantwortlicher im Sinne der DSGVO und des österreichischen DSG 2018 ist:</p>
+      <p>
+        <strong>AVplus e.U.</strong><br>
+        Inhaber: Ing. Abdul Basir Alavi, MSc.<br>
+        Edith-Kramer-Weg 6/12, A-1220 Wien, Österreich<br>
+        Telefon: <a href="tel:+436766520263" style="color:var(--blue)">+43 676 6520263</a><br>
+        E-Mail: <a href="mailto:office@avplus.at" style="color:var(--blue)">office@avplus.at</a><br>
+        Website: www.avplus.at
+      </p>
+    </div>
+
+    <!-- 2. Allgemeine Hinweise -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">ℹ️</span> 2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+      <p>Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.</p>
+      <p>Personenbezogene Daten sind alle Daten, die Rückschlüsse auf Ihre Person ermöglichen (z. B. Name, E-Mail-Adresse, IP-Adresse). Die Verarbeitung erfolgt nur auf Basis einer gültigen Rechtsgrundlage gemäß Art. 6 DSGVO.</p>
+      <h3>Rechtsgrundlagen im Überblick</h3>
+      <p><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> – Einwilligung: Sie haben Ihre Einwilligung zu einem bestimmten Zweck gegeben (z. B. Analyse, Werbung).<br>
+      <strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Vertragserfüllung: Verarbeitung zur Durchführung eines Vertrags oder vorvertraglicher Maßnahmen.<br>
+      <strong>Art. 6 Abs. 1 lit. c DSGVO</strong> – Rechtliche Verpflichtung: Verarbeitung zur Erfüllung einer gesetzlichen Pflicht.<br>
+      <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – Berechtigte Interessen: Verarbeitung auf Basis unserer überwiegenden berechtigten Interessen.</p>
+    </div>
+
+    <!-- 3. Datensicherheit -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">🔐</span> 3. Datensicherheit (SSL/TLS)</h2>
+      <p>Diese Website nutzt zur Sicherung der Übertragung personenbezogener Daten eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://" in der Adresszeile Ihres Browsers. Ohne diese Verschlüsselung übertragene Daten können von Dritten mitgelesen werden.</p>
+    </div>
+
+    <!-- 4. Server-Logfiles -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">🖥️</span> 4. Server-Logdateien (Hosting)</h2>
+      <p>Der Hosting-Anbieter dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser übermittelt:</p>
+      <p>Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse.</p>
+      <p>Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Erfassung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung der Website). Speicherdauer: 7 Tage, danach automatische Löschung.</p>
+    </div>
+
+    <!-- 5. Cookies -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">🍪</span> 5. Cookies und Einwilligungsmanagement</h2>
+      <p>Unsere Website verwendet Cookies gemäß § 165 Abs. 3 TKG 2021. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Wir unterscheiden zwischen:</p>
+      <h3>Technisch notwendige Cookies</h3>
+      <p>Diese Cookies sind für den Betrieb der Website unbedingt erforderlich (z. B. Speicherung Ihrer Cookie-Einstellungen). Sie werden ohne Ihre Einwilligung gesetzt, da sie auf Basis von Art. 6 Abs. 1 lit. f DSGVO bzw. § 165 Abs. 3 TKG 2021 zulässig sind. Speicherdauer: bis zum Ende der Browser-Sitzung bzw. maximal 1 Jahr für Einstellungs-Cookies.</p>
+      <h3>Analyse- und Marketing-Cookies</h3>
+      <p>Diese Cookies werden nur nach Ihrer ausdrücklichen Einwilligung über unseren Cookie-Banner gesetzt (Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 165 Abs. 3 TKG 2021). Sie können Ihre Einwilligung jederzeit widerrufen – über den Link „Cookie-Einstellungen" im Footer oder durch Löschen der Cookies in Ihrem Browser.</p>
+      <p>Sie können Ihren Browser so konfigurieren, dass er keine Cookies akzeptiert. Bei Deaktivierung von Analyse- und Marketing-Cookies sind alle Grundfunktionen der Website weiterhin verfügbar.</p>
+    </div>
+
+    <!-- 6. Kontaktformular -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">✉️</span> 6. Kontaktformular und Kontaktaufnahme</h2>
+      <p>Wenn Sie uns über das Kontaktformular, per E-Mail oder Telefon kontaktieren, werden Ihre übermittelten Daten (Name, E-Mail-Adresse, Telefonnummer, Nachrichteninhalt) zur Bearbeitung Ihrer Anfrage bei uns gespeichert.</p>
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Kundenanfragen).</p>
+      <p><strong>Speicherdauer:</strong> Ihre Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck der Datenspeicherung entfällt. Gesetzliche Aufbewahrungsfristen (z. B. UGB: 7 Jahre für Buchungsbelege) bleiben unberührt.</p>
+      <p><strong>Weitergabe:</strong> Ihre Daten werden nicht an Dritte weitergegeben, sofern dies nicht zur Vertragserfüllung erforderlich ist.</p>
+    </div>
+
+    <!-- 7. Google Analytics 4 -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">📊</span> 7. Google Analytics 4</h2>
+      <p>Diese Website verwendet Google Analytics 4 (GA4), einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Google Analytics verwendet Cookies, um eine Analyse der Benutzung der Website zu ermöglichen.</p>
+      <p><strong>Verarbeitete Daten:</strong> IP-Adresse (anonymisiert), Browser-Typ, Betriebssystem, Referrer-URL, besuchte Seiten, Verweildauer, Interaktionen.</p>
+      <p><strong>IP-Anonymisierung:</strong> Wir haben die IP-Anonymisierung aktiviert. Ihre IP-Adresse wird innerhalb der EU/EWR von Google gekürzt, bevor sie an einen Server in den USA übertragen wird.</p>
+      <p><strong>Datenübermittlung in Drittländer:</strong> Google verarbeitet Daten in den USA. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert, sodass ein angemessenes Datenschutzniveau gewährleistet ist.</p>
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung über den Cookie-Banner). Google Analytics wird nur aktiviert, wenn Sie Marketing/Analyse-Cookies akzeptiert haben.</p>
+      <p><strong>Speicherdauer:</strong> Die durch Google Analytics gesetzten Cookies haben eine Speicherdauer von bis zu 2 Jahren. Sie können die Datenerfassung durch Google Analytics verhindern, indem Sie das Browser-Add-on unter <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">tools.google.com/dlpage/gaoptout</a> installieren.</p>
+      <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Datenschutzerklärung Google</a></p>
+      <p><strong>Auftragsverarbeitung:</strong> Wir haben mit Google einen Vertrag zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO geschlossen.</p>
+    </div>
+
+    <!-- 8. Google Ads -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">📢</span> 8. Google Ads – Conversion-Tracking und Remarketing</h2>
+      <p>Diese Website verwendet Google Ads, einen Online-Werbedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+
+      <h3>8.1 Conversion-Tracking</h3>
+      <p>Wenn Sie über eine Google-Anzeige auf unsere Website gelangen und anschließend eine definierte Aktion durchführen (z. B. Kontaktformular absenden, Telefonnummer anklicken), setzt Google Ads einen Cookie auf Ihrem Endgerät. Zweck ist die Messung der Wirksamkeit unserer Werbekampagnen.</p>
+      <p><strong>Verarbeitete Daten:</strong> Cookie-ID, Zeitpunkt und Art der Konversion, anonymisierte Klick- und Nutzungsdaten.</p>
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Conversion-Tracking-Cookies werden nur nach Ihrer Einwilligung gesetzt.</p>
+      <p><strong>Speicherdauer:</strong> Conversion-Cookies laufen nach 30 Tagen ab. Die aggregierten Conversion-Daten werden bis zu 90 Tage in Google Ads gespeichert.</p>
+
+      <h3>8.2 Google Remarketing / Zielgruppen</h3>
+      <p>Wir nutzen die Remarketing-Funktion von Google Ads, um Personen, die unsere Website besucht haben, auf anderen Websites (z. B. in der Google-Suche, auf YouTube oder im Google Display-Netzwerk) gezielte Werbeanzeigen zu zeigen.</p>
+      <p><strong>Verarbeitete Daten:</strong> Cookie-ID, besuchte Seiten, Interessensprofile (pseudonymisiert).</p>
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Remarketing-Cookies werden nur nach Ihrer Einwilligung gesetzt.</p>
+      <p>Sie können personalisierte Werbung in Ihren <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Google-Anzeigeneinstellungen</a> deaktivieren.</p>
+      <p><strong>Datenübermittlung:</strong> Google verarbeitet Daten in den USA gemäß EU-US Data Privacy Framework. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Datenschutzerklärung Google</a></p>
+    </div>
+
+    <!-- 9. Meta Pixel / Instagram -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">📱</span> 9. Meta Pixel (Instagram & Facebook Werbung)</h2>
+      <p>Diese Website verwendet den Meta Pixel (auch „Facebook Pixel") der Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Der Meta Pixel ermöglicht es uns, Werbeanzeigen auf Instagram und Facebook gezielt an Personen auszuspielen, die unsere Website besucht haben, sowie die Wirksamkeit unserer Werbekampagnen zu messen.</p>
+
+      <h3>Verarbeitete Daten</h3>
+      <p>Wenn Sie eine Seite unserer Website besuchen, auf der der Meta Pixel eingebunden ist, wird eine Verbindung zu den Servern von Meta hergestellt. Dabei werden unter anderem folgende Daten übertragen: IP-Adresse (anonymisiert), Browser-Informationen, besuchte URL, Verweisquelle (Referrer), Zeitstempel, Interaktionen auf der Website (z. B. Formulareinsendungen, Seitenaufrufe).</p>
+
+      <h3>Verwendungszwecke</h3>
+      <p><strong>Custom Audiences:</strong> Wir können Besucherinnen und Besucher unserer Website auf Instagram und Facebook mit Werbeanzeigen erneut ansprechen (Remarketing).<br>
+      <strong>Lookalike Audiences:</strong> Meta kann ähnliche Nutzerprofile erstellen, um neue potenzielle Kundinnen und Kunden zu erreichen.<br>
+      <strong>Conversion-Tracking:</strong> Wir messen, welche Aktionen nach dem Klick auf eine Instagram- oder Facebook-Anzeige auf unserer Website erfolgen.</p>
+
+      <h3>Gemeinsame Verantwortlichkeit</h3>
+      <p>Für die Datenverarbeitung im Rahmen des Meta Pixels besteht zwischen AVplus e.U. und Meta Platforms Ireland Limited eine gemeinsame Verantwortlichkeit gemäß Art. 26 DSGVO. Unsere Hauptverantwortung betrifft die Einholung Ihrer Einwilligung; Meta ist verantwortlich für die anschließende Datenverarbeitung auf seinen Systemen.</p>
+
+      <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Der Meta Pixel wird nur aktiviert, wenn Sie Marketing-Cookies über unseren Cookie-Banner akzeptiert haben.</p>
+
+      <p><strong>Datenübermittlung in Drittländer:</strong> Meta überträgt Daten in die USA. Meta Platforms Inc. ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
+
+      <p>Sie können der Verwendung Ihrer Daten für personalisierte Werbung widersprechen: In Ihren <a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Facebook-/Instagram-Werbepräferenzen</a> sowie über <a href="https://www.youronlinechoices.com/at/" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Your Online Choices</a>.</p>
+
+      <p>Weitere Informationen: <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Meta-Datenschutzrichtlinie</a></p>
+    </div>
+
+    <!-- 10. Externe Dienste -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">🌐</span> 10. Externe Dienste und eingebettete Inhalte</h2>
+
+      <h3>Google Maps</h3>
+      <p>Diese Website kann den Kartendienst Google Maps der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland einbinden. Bei Nutzung von Google Maps werden Informationen (inkl. Ihrer IP-Adresse) an Google übertragen. Google Maps wird auf Basis von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) eingebunden. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Datenschutzerklärung Google</a></p>
+
+      <h3>Google Fonts</h3>
+      <p>Sofern diese Website Google Fonts verwendet, werden beim Seitenaufruf Schriftarten von Servern der Google Ireland Limited geladen. Dabei wird Ihre IP-Adresse übertragen. Google Fonts wird auf Basis von Art. 6 Abs. 1 lit. f DSGVO eingebunden (berechtigtes Interesse an einheitlicher Darstellung). Sofern eine Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO.</p>
+    </div>
+
+    <!-- 11. Social Media -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">📲</span> 11. Links zu sozialen Netzwerken</h2>
+      <p>Unsere Website enthält Links zu sozialen Netzwerken (Instagram, Facebook). Diese Links führen zu externen Seiten. Beim Anklicken eines Links verlassen Sie unsere Website und unterliegen den Datenschutzbestimmungen des jeweiligen Anbieters. Eine Datenübertragung an soziale Netzwerke findet durch das bloße Vorhandensein der Links (ohne Klick) nicht statt.</p>
+      <p><strong>Instagram / Meta Platforms Ireland Limited:</strong> <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Instagram-Datenschutzrichtlinie</a></p>
+    </div>
+
+    <!-- 12. Betroffenenrechte -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">⚖️</span> 12. Ihre Rechte als betroffene Person</h2>
+      <p>Gemäß DSGVO und DSG 2018 haben Sie folgende Rechte. Zur Geltendmachung wenden Sie sich an: <a href="mailto:office@avplus.at" style="color:var(--blue)">office@avplus.at</a></p>
+
+      <h3>Auskunftsrecht (Art. 15 DSGVO)</h3>
+      <p>Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob wir personenbezogene Daten von Ihnen verarbeiten. Bei einer solchen Verarbeitung können Sie Auskunft über diese Daten und weitere Informationen verlangen.</p>
+
+      <h3>Recht auf Berichtigung (Art. 16 DSGVO)</h3>
+      <p>Sie haben das Recht, unverzüglich die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen.</p>
+
+      <h3>Recht auf Löschung (Art. 17 DSGVO)</h3>
+      <p>Sie haben das Recht, die Löschung Ihrer bei uns gespeicherten Daten zu verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+      <h3>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
+      <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</p>
+
+      <h3>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</h3>
+      <p>Sie haben das Recht, die Sie betreffenden Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</p>
+
+      <h3>Widerspruchsrecht (Art. 21 DSGVO)</h3>
+      <p>Sie haben das Recht, jederzeit Widerspruch gegen die Verarbeitung Ihrer Daten einzulegen, die auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen) erfolgt. Im Falle von Direktwerbung haben Sie ein unbedingtes Widerspruchsrecht.</p>
+
+      <h3>Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO)</h3>
+      <p>Soweit die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Der Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung. Sie können Ihre Cookie-Einwilligung über den Link „Cookie-Einstellungen" im Footer dieser Website widerrufen.</p>
+
+      <h3>Beschwerderecht bei der Datenschutzbehörde (Art. 77 DSGVO)</h3>
+      <p>Unbeschadet anderweitiger Rechtsbehelfe steht Ihnen das Recht zu, Beschwerde bei der zuständigen Datenschutzbehörde einzulegen:</p>
+      <p>
+        <strong>Österreichische Datenschutzbehörde (DSB)</strong><br>
+        Barichgasse 40–42, 1030 Wien<br>
+        Telefon: +43 1 52152-0<br>
+        E-Mail: <a href="mailto:dsb@dsb.gv.at" style="color:var(--blue)">dsb@dsb.gv.at</a><br>
+        Website: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">www.dsb.gv.at</a>
+      </p>
+    </div>
+
+    <!-- 13. Aktualität -->
+    <div class="privacy-section">
+      <h2><span class="section-icon">📅</span> 13. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+      <p>Diese Datenschutzerklärung hat den Stand Juli 2026. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren, um sie an geänderte Rechtslagen oder bei Änderungen unserer Dienstleistungen anzupassen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.</p>
+      <p>Wir empfehlen Ihnen, diese Datenschutzerklärung regelmäßig zu lesen, um über den Schutz der von uns erhobenen personenbezogenen Daten auf dem Laufenden zu bleiben.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <p>AVplus e.U. ist Ihr zuverlässiger Partner für Sicherheitstechnik, Medientechnik, EDV und Glasfasertechnik in Wien und ganz Österreich.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="sicherheitstechnik.html">Sicherheitstechnik</a></li>
+        <li><a href="medientechnik.html">Medientechnik</a></li>
+        <li><a href="ucc.html">UCC & Konferenztechnik</a></li>
+        <li><a href="lwl.html">Netzwerk- & Glasfasertechnik</a></li>
+        <li><a href="smarthome.html">Smart-Home</a></li>
+        <li><a href="edv.html">EDV & IT-Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436766520263">+43 676 6520263</a></li>
+        <li><a href="mailto:office@avplus.at">office@avplus.at</a></li>
+        <li><a href="index.html#kontakt">Anfrage senden</a></li>
+        <li><a href="impressum.html">Impressum & AGB</a></li>
+        <li><a href="impressum.html#datenschutz">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AVplus e.U. · Wien · Alle Rechte vorbehalten</span>
+    <span><a href="impressum.html">Impressum & AGB</a> · <a href="impressum.html#datenschutz">Datenschutz</a> · <a href="#" onclick="window.avplusOpenCookieSettings();return false;">Cookie-Einstellungen</a></span>
+  </div>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  // Auto-open Datenschutz if URL hash says so
+  if (window.location.hash === '#datenschutz') {
+    showTab('datenschutz', document.querySelectorAll('.tab-btn')[1]);
+  }
+</script>
+<script src="cookie-consent.js"></script>
+<script src="site.js"></script>
+<script src="tracking.js"></script>
+</body>
+</html>

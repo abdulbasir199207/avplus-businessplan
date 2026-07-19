@@ -1,0 +1,137 @@
+/* =====================================================
+   AVplus e.U. – Lokales Kontaktformular (Leistungsseiten)
+   Nutzt die auf jeder Seite vorhandenen CSS-Variablen
+   (--blue, --green, --gray, --text, --white, --gray-light).
+   ===================================================== */
+.ki-section {
+  background: var(--gray-light);
+  padding: 4.5rem 5%;
+  scroll-margin-top: 90px;
+}
+.ki-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.ki-intro {
+  background: linear-gradient(135deg, #0f2744, var(--blue));
+  color: var(--white);
+  padding: 2.6rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ki-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #a8e88a;
+  margin: 0 0 0.6rem;
+}
+.ki-intro h2 {
+  color: var(--white);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 0.7rem;
+}
+.ki-sub {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin: 0 0 1.6rem;
+}
+.ki-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.ki-contact {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+.ki-contact:hover { color: #a8e88a; }
+
+.ki-form {
+  padding: 2.6rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.ki-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.ki-form input,
+.ki-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ki-form input:focus,
+.ki-form textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(45, 110, 168, 0.12);
+}
+.ki-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.ki-submit {
+  background: var(--green, #6ab04c);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(106, 176, 76, 0.35);
+}
+.ki-submit:hover {
+  background: var(--green-dark, #4e8a36);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(106, 176, 76, 0.45);
+}
+.ki-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+  transform: none;
+}
+.ki-msg {
+  margin-top: 0.3rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.ki-msg.ok  { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.ki-msg.err { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+@media (max-width: 760px) {
+  .ki-section { padding: 3rem 5%; }
+  .ki-wrap { grid-template-columns: 1fr; border-radius: 16px; }
+  .ki-intro { padding: 2rem 1.6rem; }
+  .ki-form { padding: 2rem 1.6rem; }
+  .ki-row { grid-template-columns: 1fr; }
+}
