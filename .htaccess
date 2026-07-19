@@ -6,3 +6,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^avplus\.at$ [NC]
 RewriteRule ^ https://www.avplus.at%{REQUEST_URI} [L,R=301]
+
+# /index.html dauerhaft auf die kanonische Startseiten-URL / umleiten
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ https://www.avplus.at/ [L,R=301]
