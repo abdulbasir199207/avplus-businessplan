@@ -23,6 +23,8 @@
         headers: { 'Accept': 'application/json' }
       }).then(function (response) {
         if (!response.ok) throw new Error('Serverfehler');
+        /* Erfolg an das Tracking melden (GA4 "generate_lead" + Google-Ads-Conversion) */
+        try { window.dispatchEvent(new CustomEvent('avplusLeadSuccess')); } catch (err) {}
         if (msg) {
           msg.className = 'ki-msg ok';
           msg.textContent = '✓ Ihre Anfrage wurde gesendet! Wir melden uns innerhalb von 24 Stunden.';

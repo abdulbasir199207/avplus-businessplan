@@ -30,7 +30,7 @@ jobs:
       - name: Deploy-Ordner zusammenstellen (nur Live-Dateien)
         run: |
           mkdir -p deploy/bilder
-          cp *.html site.js cookie-consent.js kontakt-inline.js kontakt-inline.css \
+          cp *.html site.js cookie-consent.js kontakt-inline.js kontakt-inline.css tracking.js \
              logo.png robots.txt sitemap.xml agb-kommunikationselektroniker.pdf deploy/
           # Nur Bilder mitnehmen, die in HTML/CSS/JS referenziert sind
           grep -hoE 'bilder/[A-Za-z0-9_.-]+\.(webp|png|jpg|jpeg|svg|mp4|webm)' *.html *.js *.css \

@@ -2133,6 +2133,8 @@
       });
 
       if (response.ok) {
+        /* Erfolg an das Tracking melden (GA4 "generate_lead" + Google-Ads-Conversion) */
+        try { window.dispatchEvent(new CustomEvent('avplusLeadSuccess')); } catch (err) {}
         msg.style.display = 'block';
         msg.style.background = '#d4edda';
         msg.style.color = '#155724';
@@ -2157,6 +2159,7 @@
 </script>
 <script src="cookie-consent.js"></script>
 <script src="site.js"></script>
+<script src="tracking.js"></script>
 
 <script>
 setTimeout(function() {
