@@ -1,0 +1,8 @@
+# AVplus e.U. — Umleitung auf die kanonische Adresse
+# Alles (http:// und avplus.at ohne www) wird dauerhaft auf
+# https://www.avplus.at umgeleitet — passend zu den
+# rel="canonical"-Angaben der Seiten und der Sitemap.
+RewriteEngine On
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^avplus\.at$ [NC]
+RewriteRule ^ https://www.avplus.at%{REQUEST_URI} [L,R=301]
