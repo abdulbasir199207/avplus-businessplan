@@ -12,6 +12,10 @@ while ($listener.IsListening) {
         $path = [System.Uri]::UnescapeDataString($req.Url.LocalPath).TrimStart('/')
         if ($path -eq '') { $path = 'index.html' }
         $file = Join-Path $root $path
+        # Saubere URLs wie live per .htaccess: /medientechnik -> medientechnik.html
+        if (-not (Test-Path $file -PathType Leaf) -and [System.IO.Path]::GetExtension($file) -eq '') {
+            if (Test-Path "$file.html" -PathType Leaf) { $file = "$file.html" }
+        }
         if (Test-Path $file -PathType Leaf) {
             $ext = [System.IO.Path]::GetExtension($file)
             $mime = switch ($ext) {

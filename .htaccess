@@ -10,3 +10,14 @@ RewriteRule ^ https://www.avplus.at%{REQUEST_URI} [L,R=301]
 # /index.html dauerhaft auf die kanonische Startseiten-URL / umleiten
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^index\.html$ https://www.avplus.at/ [L,R=301]
+
+# .html-Endung aus allen Unterseiten-URLs entfernen
+# (z. B. /medientechnik.html -> /medientechnik, dauerhaft 301)
+RewriteCond %{THE_REQUEST} \s/+([a-z-]+)\.html[\s?] [NC]
+RewriteRule ^([a-z-]+)\.html$ https://www.avplus.at/$1 [L,R=301]
+
+# Saubere URLs intern auf die .html-Dateien abbilden
+# (z. B. /medientechnik liefert medientechnik.html aus)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([a-z-]+)$ $1.html [L]
