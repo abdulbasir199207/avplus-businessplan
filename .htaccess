@@ -21,3 +21,18 @@ RewriteRule ^([a-z-]+)\.html$ https://www.avplus.at/$1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([a-z-]+)$ $1.html [L]
+
+# ── Alte Webseiten-Pfade (vor Relaunch Juli 2026) ──
+# Bekannte Seiten der alten Webseite gezielt auf die passende
+# neue Seite umleiten, damit alte Google-Treffer nicht ins
+# Leere führen und ihr Ranking-Wert übergeht.
+# ("konferenzr" fängt /konferenzräume in jeder Kodierung ab)
+RewriteRule ^konferenzr https://www.avplus.at/medientechnik [L,R=301]
+
+# Auffangregel: Alles, was es weder als Datei, Ordner noch als
+# .html-Seite gibt (= restliche alte Pfade), dauerhaft auf die
+# Startseite umleiten statt eine 404-Seite zu zeigen.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteRule ^ https://www.avplus.at/ [L,R=301]
