@@ -30,7 +30,7 @@
 
   if (GOOGLE_ADS_ID) gtag('config', GOOGLE_ADS_ID);
 
-  var PAGE = (location.pathname.split('/').pop() || 'index.html');
+  var PAGE = (location.pathname.split('/').pop() || 'home');
 
   function track(name, params) {
     params = params || {};

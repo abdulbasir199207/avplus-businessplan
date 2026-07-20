@@ -7,7 +7,7 @@
 
   var STORAGE_KEY = 'avplus_consent';
   var VERSION = '1';
-  var DSE_URL = '/impressum.html#datenschutz';
+  var DSE_URL = '/impressum#datenschutz';
 
   /* ── Consent lesen / schreiben ── */
   function getConsent() {
