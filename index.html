@@ -738,74 +738,6 @@
     }
     .l-card:hover .l-card-arrow { background: var(--blue); color: var(--white); transform: translateX(3px); }
 
-    /* ── ÜBER UNS ── */
-    #ueber { background: var(--white); }
-
-    .ueber-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .ueber-img-wrap { position: relative; }
-
-    .ueber-main-img {
-      width: 100%;
-      border-radius: 20px;
-      background: var(--blue-dark);
-      overflow: hidden;
-      height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(45,110,168,0.25);
-    }
-
-    .ueber-main-img .bg-dots {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    .ueber-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: var(--green);
-      color: var(--white);
-      border-radius: 16px;
-      padding: 1.2rem 1.6rem;
-      box-shadow: 0 8px 32px rgba(106,176,76,0.4);
-    }
-    .ueber-badge-num { font-size: 2rem; font-weight: 800; }
-    .ueber-badge-label { font-size: 0.78rem; opacity: 0.9; }
-
-    .ueber-text .section-label { margin-bottom: 0.4rem; }
-    .ueber-text p { color: var(--gray); margin-bottom: 1rem; font-size: 1rem; }
-
-    .ueber-features { margin: 1.8rem 0; display: flex; flex-direction: column; gap: 1rem; }
-
-    .ueber-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .uf-icon {
-      width: 42px; height: 42px;
-      background: var(--blue-light);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-    .uf-text strong { display: block; font-size: 0.92rem; font-weight: 700; color: var(--text); }
-    .uf-text span { font-size: 0.85rem; color: var(--gray); }
-
     /* ── NUMBERS ── */
     #zahlen {
       background: linear-gradient(135deg, #0f2744 0%, #1b4f7a 100%);
@@ -1207,7 +1139,7 @@
     }
 
     @media (max-width: 768px) {
-      .ueber-wrap, .kunden-wrap, .kontakt-wrap { grid-template-columns: 1fr; }
+      .kunden-wrap, .kontakt-wrap { grid-template-columns: 1fr; }
       .leistungen-grid { grid-template-columns: 1fr; }
       .ref-track .ref-card { flex-basis: 86%; }
       .prozess-steps { grid-template-columns: 1fr 1fr; }
@@ -1216,8 +1148,6 @@
       .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
       .zahlen-grid { grid-template-columns: repeat(2, 1fr); }
-      .ueber-main-img:has(img) { height: auto; }
-      .ueber-main-img img { height: auto !important; }
       /* Hero kompakter: Aktions-Box direkt unter den Text, weniger Leerraum danach */
       #hero { gap: 1.2rem; }
       .hero-content p { margin-bottom: 0.6rem; }
@@ -1444,54 +1374,6 @@
     <div class="zahl-item reveal delay-4">
       <div class="zahl-num" data-count="24">0</div>
       <div class="zahl-label">h Reaktionszeit</div>
-    </div>
-  </div>
-</section>
-
-<!-- ÜBER UNS -->
-<section id="ueber">
-  <div class="ueber-wrap">
-    <div class="ueber-img-wrap reveal-left">
-      <div class="ueber-main-img">
-        <img loading="lazy" decoding="async" width="1200" height="800" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen für Unternehmen und Privatkunden" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block;border-radius:20px;" />
-      </div>
-      <div class="ueber-badge">
-        <div class="ueber-badge-num">AVplus</div>
-        <div class="ueber-badge-label">e.U. · Wien</div>
-      </div>
-    </div>
-
-    <div class="ueber-text reveal-right">
-      <p class="section-label">Wer dahinter steht</p>
-      <h2>Hinter AVplus steht <br>ein Name.</h2>
-      <p>Ich bin Ing. Basir Alavi, MSc. Gründer von AVplus und der Techniker, mit dem Sie hier sprechen. Als Kind habe ich Geräte aufgeschraubt um zu sehen was drinnen steckt. Nicht jedes hat das überlebt. Aus der Neugier wurde ein Beruf: HTL, danach Bachelor- und Masterstudium im technischen Bereich. Gearbeitet habe ich nebenbei immer. Zuerst in der IT- und Netzwerktechnik, dann im Projektmanagement für Medientechnik und später in der Sicherheitstechnik.</p>
-      <p>2023 habe ich AVplus gegründet, um all das zusammenzubringen. Heute plane und montiere ich Anlagen für Privathaushalte, Schulen und Unternehmen in Wien. Sie reden bei mir immer mit jemandem, der Ihr Gebäude wirklich kennt. Und ich berate ehrlich: Wenn die kleine Lösung reicht, sage ich Ihnen das.</p>
-      <p style="margin-top:0.5rem;"><a href="/ueber-uns" style="color:var(--blue);font-weight:700;text-decoration:none;">Mehr über mich und meinen Werdegang →</a></p>
-
-
-      <div class="ueber-features">
-        <div class="ueber-feature">
-          <div class="uf-icon">🎯</div>
-          <div class="uf-text">
-            <strong>Gesamtlösungen statt Einzelgewerke</strong>
-            <span>Von der Planung über Installation bis zur Wartung und Nutzerschulung</span>
-          </div>
-        </div>
-        <div class="ueber-feature">
-          <div class="uf-icon">🏛️</div>
-          <div class="uf-text">
-            <strong>Zertifizierter Gewerbebetrieb</strong>
-            <span>Elektrotechnik, eingeschränkt auf die Errichtung von Alarmanlagen (§ 94 Z 16 GewO) & Kommunikationselektronik (§ 94 Z 39 GewO)</span>
-          </div>
-        </div>
-        <div class="ueber-feature">
-          <div class="uf-icon">📋</div>
-          <div class="uf-text">
-            <strong>Vollständige Dokumentation</strong>
-            <span>Benutzerhandbücher, Bedienungsanleitungen und Ausführungspläne</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
