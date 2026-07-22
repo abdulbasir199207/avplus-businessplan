@@ -17,14 +17,17 @@
     gtag('config', 'G-Z25PB37C6Y');
   </script>
   <!-- Google tag (gtag.js) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Sicherheitstechnik, Medientechnik, Glasfaser, Smart Home &amp; IT-Hilfe in Wien – alles aus einer Hand. Kostenlose Beratung ✓ Angebot in 24 h ✓ AVplus e.U. Jetzt anfragen!" />
+  <meta name="description" content="Alarmanlage, Medientechnik, Glasfaser, Smart Home &amp; IT-Hilfe in Wien. Persönlich geplant von Ing. Basir Alavi, MSc. Kostenlose Beratung ✓ Festpreis in 24 h ✓" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon / Firmenlogo für Browser-Tab & Google-Suche -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Ohne JavaScript: Scroll-Animationen deaktivieren, damit alle Inhalte sichtbar sind -->
+  <noscript><style>.reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important}</style></noscript>
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/" />
   <!-- Open Graph -->
@@ -49,6 +52,16 @@
     "url": "https://www.avplus.at",
     "logo": "https://www.avplus.at/logo.png",
     "image": "https://www.avplus.at/logo.png",
+    "foundingDate": "2023-09-27",
+    "founder": {
+      "@type": "Person",
+      "name": "Basir Alavi",
+      "honorificPrefix": "Ing.",
+      "honorificSuffix": "MSc",
+      "jobTitle": "Gründer & Inhaber",
+      "worksFor": { "@id": "https://www.avplus.at/" },
+      "knowsAbout": ["Sicherheitstechnik", "Alarmanlagen", "Medientechnik", "Glasfasertechnik", "Netzwerktechnik", "Smart Home", "Satellitentechnik"]
+    },
     "telephone": "+436766520263",
     "email": "office@avplus.at",
     "address": {
@@ -86,7 +99,44 @@
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Computer & IT-Hilfe Wien", "url": "https://www.avplus.at/edv"}}
       ]
     },
-    "sameAs": []
+    "sameAs": [
+      "https://firmen.wko.at/avplus-eu-glasfaser--netzwerk---medien-und-sicherheitstechnik/wien/?firmaid=19e0b712-6e92-4921-a608-9145b6416cbd",
+      "https://www.evi.gv.at/f/612904f"
+    ]
+  }
+  </script>
+  <!-- Schema.org: FAQ der Startseite (Fragen stehen sichtbar im FAQ-Abschnitt) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet die Erstberatung?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nichts. Ich schaue mir Ihr Projekt vor Ort an und Sie bekommen innerhalb von 24 Stunden ein schriftliches Festpreisangebot. Das Angebot ist unverbindlich. Sie entscheiden danach in Ruhe." }
+      },
+      {
+        "@type": "Question",
+        "name": "In welchen Gebieten ist AVplus tätig?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hauptsächlich in Wien und Umgebung. SAT- und Starlink-Montagen übernehmen wir in ganz Österreich. Bei größeren Projekten zahlt sich auch eine weitere Anfahrt aus. Fragen kostet nichts." }
+      },
+      {
+        "@type": "Question",
+        "name": "Übernehmt ihr auch kleine Aufträge?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ein einzelner Fernseher an der Wand ist genauso willkommen wie ein komplettes Bürogebäude. TV-Montage gibt es ab 79 Euro. IT-Hilfe ab 49 Euro." }
+      },
+      {
+        "@type": "Question",
+        "name": "Meine Anlage wurde von einer anderen Firma installiert. Betreut ihr die auch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In den meisten Fällen ja. Ich sehe mir die bestehende Anlage an und sage Ihnen ehrlich, ob eine Übernahme sinnvoll ist. Manchmal reicht ein Service. Manchmal ist der Umstieg günstiger als die Reparatur." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum ein kleiner Betrieb statt einer großen Firma?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Weil Sie bei AVplus immer mit derselben Person sprechen. Ing. Basir Alavi plant Ihre Anlage, montiert sie und hebt ab, wenn Sie später anrufen. Dazu kommen fixe Preise. Was im Angebot steht, gilt." }
+      }
+    ]
   }
   </script>
   <title>Sicherheitstechnik, Medientechnik & Smart Home Wien | AVplus e.U.</title>
@@ -388,25 +438,6 @@
 
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
-
-    /* ── CANVAS PARTIKEL ── */
-    #hero-canvas { position:absolute; inset:0; z-index:0; pointer-events:none; }
-
-    /* ── TYPEWRITER CURSOR ── */
-    .type-cursor {
-      display:inline-block;
-      width:3px;
-      height:0.82em;
-      background:rgba(255,255,255,0.9);
-      vertical-align:middle;
-      margin-left:3px;
-      border-radius:2px;
-      animation:type-blink 0.75s step-end infinite;
-    }
-    @keyframes type-blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
-    /* H1 startet unsichtbar — Typewriter übernimmt */
-    .hero-content h1 { animation:none !important; opacity:1; }
 
     /* ── PREMIUM PROMO CARD ── */
     .promo-card {
@@ -1229,7 +1260,7 @@
         <a href="/edv"><span class="di">💻</span> EDV & IT-Service</a>
       </div>
     </div>
-    <a href="#ueber" class="nav-link">Über uns</a>
+    <a href="/ueber-uns" class="nav-link">Über uns</a>
     <a href="#kunden" class="nav-link">Kunden</a>
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;transition:background 0.2s;" onmouseover="this.style.background='#d0eeda'" onmouseout="this.style.background='#eaf4ee'">📞 +43 676 6520263</a>
     <a href="#kontakt" class="btn">Jetzt anfragen</a>
@@ -1243,12 +1274,12 @@
 <!-- HERO -->
 <section id="hero" style="margin-top:0">
   <div class="hero-grid"></div>
-  <img fetchpriority="high" src="bilder/header.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:0.35;pointer-events:none;z-index:0;transform:translateZ(0);will-change:transform;backface-visibility:hidden;" />
+  <img fetchpriority="high" width="1600" height="422" src="bilder/header.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;opacity:0.35;pointer-events:none;z-index:0;transform:translateZ(0);will-change:transform;backface-visibility:hidden;" />
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,46,0.85) 0%,rgba(13,27,46,0.65) 50%,rgba(13,27,46,0.85) 100%);z-index:1;pointer-events:none;"></div>
 
   <div class="hero-content">
-    <h1>Technik, die <span>schützt</span><br><em>und</em> <span>verbindet.</span></h1>
-    <p>Alarmanlage, Medientechnik, Glasfaser, Smart Home oder IT-Hilfe: AVplus plant, installiert und betreut Ihre komplette Technik — für Zuhause, Unternehmen und Schulen in Wien. Ein Ansprechpartner statt fünf Firmen.</p>
+    <h1>Technik, die <span>schützt</span> <br><em>und</em> <span>verbindet.</span></h1>
+    <p>Alarmanlage, Medientechnik, Glasfaser, Smart Home oder IT-Hilfe: AVplus plant, installiert und betreut Ihre komplette Technik. Für Zuhause, Unternehmen und Schulen in Wien. Ein Ansprechpartner statt fünf Firmen.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-hero">Kostenloses Erstgespräch</a>
       <a href="#leistungen" class="btn-ghost">Unsere Leistungen</a>
@@ -1259,7 +1290,7 @@
   <div class="hero-visual">
     <div class="promo-card">
       <div class="promo-badge">☀️ Sommeraktion −20 %</div>
-      <h3>Genießen Sie Ihren Urlaub –<br>wir <span>schützen</span> Ihr Zuhause.</h3>
+      <h3>Genießen Sie Ihren Urlaub. <br>Wir <span>schützen</span> Ihr Zuhause.</h3>
 <ul class="promo-list">
         <li>Kostenlose Sicherheitsanalyse vor Ort</li>
         <li>Individuelles Festpreisangebot innerhalb von 24 Stunden</li>
@@ -1268,7 +1299,7 @@
       </ul>
       <div class="promo-urgency">
         <span class="promo-live-dot"></span>
-        <span><strong>Warum jetzt?</strong> In den Sommermonaten stehen Wohnungen oft wochenlang leer — der richtige Moment, den Einbruchschutz vorher zu prüfen.</span>
+        <span><strong>Warum jetzt?</strong> Die meisten Einbrüche passieren dann, wenn die Wohnung erkennbar leer steht. Also genau in der Urlaubszeit. Wer jetzt plant fährt beruhigt weg.</span>
       </div>
       <a href="#kontakt" class="promo-cta">Kostenlose Sicherheitsanalyse anfragen →</a>
     </div>
@@ -1279,16 +1310,16 @@
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-track">
-  <div class="trust-item"><span class="ti">✅</span> Zertifizierter Fachbetrieb</div>
+  <div class="trust-item"><span class="ti">👤</span> Inhabergeführt von Ing. Basir Alavi, MSc</div>
   <div class="trust-item"><span class="ti">🏛️</span> Gewerbe nach GewO § 94</div>
   <div class="trust-item"><span class="ti">📍</span> Wien & ganz Österreich</div>
-  <div class="trust-item"><span class="ti">🤝</span> Alles aus einer Hand — von Planung bis Wartung</div>
+  <div class="trust-item"><span class="ti">🤝</span> Ein Ansprechpartner für Planung, Montage und Wartung</div>
   <div class="trust-item"><span class="ti">⚡</span> Angebot innerhalb von 24 Stunden</div>
   <!-- Duplikat für die nahtlose Endlos-Schleife -->
-  <div class="trust-item" aria-hidden="true"><span class="ti">✅</span> Zertifizierter Fachbetrieb</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">👤</span> Inhabergeführt von Ing. Basir Alavi, MSc</div>
   <div class="trust-item" aria-hidden="true"><span class="ti">🏛️</span> Gewerbe nach GewO § 94</div>
   <div class="trust-item" aria-hidden="true"><span class="ti">📍</span> Wien & ganz Österreich</div>
-  <div class="trust-item" aria-hidden="true"><span class="ti">🤝</span> Alles aus einer Hand — von Planung bis Wartung</div>
+  <div class="trust-item" aria-hidden="true"><span class="ti">🤝</span> Ein Ansprechpartner für Planung, Montage und Wartung</div>
   <div class="trust-item" aria-hidden="true"><span class="ti">⚡</span> Angebot innerhalb von 24 Stunden</div>
   </div>
 </div>
@@ -1298,18 +1329,18 @@
   <div class="reveal">
     <p class="section-label">Ein Ansprechpartner für alles</p>
     <h2>Unsere Leistungen</h2>
-    <p class="section-intro">Sechs Fachbereiche, ein Team: Wir planen, installieren und warten Ihre gesamte Gebäude- und Kommunikationstechnik — damit alles zusammenpasst und Sie sich um nichts kümmern müssen.</p>
+    <p class="section-intro">Sechs Fachbereiche, ein Team: Wir planen, installieren und warten Ihre gesamte Gebäudetechnik und Kommunikationstechnik. So passt alles zusammen und Sie müssen sich um nichts kümmern.</p>
   </div>
 
   <div class="leistungen-grid">
     <a href="/sicherheitstechnik" class="l-card reveal delay-1">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/sicherheit-collage.webp" alt="Sicherheitstechnik Wien – Ajax Alarmanlage, Videoüberwachung und Zutrittskontrolle von AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1536" height="1024" src="bilder/sicherheit-collage.webp" alt="Sicherheitstechnik Wien – Ajax Alarmanlage, Videoüberwachung und Zutrittskontrolle von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Sicherheitstechnik</h3>
-        <p>Sie möchten Ihr Zuhause oder Geschäft zuverlässig schützen? Alarmanlage, Videoüberwachung und Zutrittskontrolle — geplant und montiert vom zertifizierten Fachbetrieb.</p>
+        <p>Sie möchten Ihr Zuhause oder Geschäft zuverlässig schützen? Alarmanlage, Videoüberwachung und Zutrittskontrolle. Geplant und montiert vom zertifizierten Fachbetrieb.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1319,12 +1350,12 @@
 
     <a href="/medientechnik" class="l-card reveal delay-2">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="Medientechnik Wien – TV-Montage, Displays und Digital Signage von AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1200" height="800" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="Medientechnik Wien – TV-Montage, Displays und Digital Signage von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Medientechnik</h3>
-        <p>Vom Fernseher an der Wohnzimmerwand bis zum fertig ausgestatteten Konferenzraum: Displays, Beamer, LED-Walls und Digital Signage — montiert, verkabelt und startklar eingerichtet.</p>
+        <p>Vom Fernseher an der Wohnzimmerwand bis zum fertig ausgestatteten Konferenzraum: Displays, Beamer, LED-Walls und Digital Signage. Montiert, verkabelt und startklar eingerichtet.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1335,12 +1366,12 @@
 
     <a href="/ucc" class="l-card reveal delay-3">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/starlink-wien.webp" alt="Starlink Montage Wien – Techniker installiert Starlink-Antenne auf Dach mit Wiener Skyline, AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1600" height="900" src="bilder/starlink-wien.webp" alt="Starlink Montage Wien – Techniker installiert Starlink-Antenne auf Dach mit Wiener Skyline, AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Starlink & Sat-Technik</h3>
-        <p>Schlechter Empfang oder kein schnelles Internet am Standort? Sat-Anlagen und Starlink-Terminals — professionell montiert, präzise ausgerichtet und startklar übergeben.</p>
+        <p>Schlechter Empfang oder kein schnelles Internet am Standort? Sat-Anlagen und Starlink-Terminals. Professionell montiert, präzise ausgerichtet und startklar übergeben.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1350,12 +1381,12 @@
 
     <a href="/lwl" class="l-card reveal delay-4">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/lwl-glasfaser.webp" alt="Glasfasertechnik Wien – LWL-Verlegung und Spleißtechnik von AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1600" height="1067" src="bilder/lwl-glasfaser.webp" alt="Glasfasertechnik Wien – LWL-Verlegung und Spleißtechnik von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Glasfasertechnik</h3>
-        <p>Ihr Netzwerk soll schnell, stabil und zukunftssicher sein? Wir verlegen, spleißen und messen Glasfaser — inklusive Messprotokoll und vollständiger Dokumentation.</p>
+        <p>Ihr Netzwerk soll schnell, stabil und zukunftssicher sein? Wir verlegen, spleißen und messen Glasfaser. Inklusive Messprotokoll und vollständiger Dokumentation.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1365,12 +1396,12 @@
 
     <a href="/smarthome" class="l-card reveal delay-5">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/smarthome-system.webp" alt="Smart Home Wien – Beleuchtung, Heizung, Rolläden und Sicherheit per App steuern, AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1600" height="900" src="bilder/smarthome-system.webp" alt="Smart Home Wien – Beleuchtung, Heizung, Rolläden und Sicherheit per App steuern, AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Smart-Home-Systeme</h3>
-        <p>Licht, Heizung, Rollläden und Sicherheit automatisch gesteuert — per App oder Sprachbefehl. Spart Energie und lässt sich auch ohne Umbau nachrüsten.</p>
+        <p>Licht, Heizung, Rollläden und Sicherheit automatisch gesteuert. Per App oder Sprachbefehl. Spart Energie und lässt sich auch ohne Umbau nachrüsten.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1380,12 +1411,12 @@
 
     <a href="/edv" class="l-card reveal delay-1">
       <div class="l-card-img">
-        <img loading="lazy" decoding="async" src="bilder/serverraum.webp" alt="Computer und IT-Hilfe Wien – PC-Reparatur, WLAN und Technikhilfe von AVplus e.U." />
+        <img loading="lazy" decoding="async" width="1600" height="1068" src="bilder/serverraum.webp" alt="Computer und IT-Hilfe Wien – PC-Reparatur, WLAN und Technikhilfe von AVplus e.U." />
         <div class="img-overlay"></div>
       </div>
       <div class="l-card-body">
         <h3>Computer, Netzwerktechnik & IT-Hilfe</h3>
-        <p>Computer streikt, WLAN lahmt, Drucker schweigt? Wir kommen zu Ihnen, lösen das Problem vor Ort und erklären alles verständlich — ohne Fachchinesisch, ab 49 €.</p>
+        <p>Computer streikt, WLAN lahmt, Drucker schweigt? Wir kommen zu Ihnen, lösen das Problem vor Ort und erklären alles verständlich. Ohne Fachchinesisch, ab 49 €.</p>
         <div class="l-card-footer">
           <span>Mehr erfahren</span>
           <div class="l-card-arrow">→</div>
@@ -1407,8 +1438,8 @@
       <div class="zahl-label">Jahre Garantie auf alle Systeme</div>
     </div>
     <div class="zahl-item reveal delay-3">
-      <div class="zahl-num">Wien</div>
-      <div class="zahl-label">Unser Standort</div>
+      <div class="zahl-num">5,0 ★</div>
+      <div class="zahl-label">in allen Kundenbewertungen</div>
     </div>
     <div class="zahl-item reveal delay-4">
       <div class="zahl-num" data-count="24">0</div>
@@ -1422,7 +1453,7 @@
   <div class="ueber-wrap">
     <div class="ueber-img-wrap reveal-left">
       <div class="ueber-main-img">
-        <img loading="lazy" decoding="async" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen für Unternehmen und Privatkunden" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block;border-radius:20px;" />
+        <img loading="lazy" decoding="async" width="1200" height="800" src="bilder/medientechnik-konferenzraum-avplus.webp" alt="AVplus e.U. Wien – professionelle Techniklösungen für Unternehmen und Privatkunden" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block;border-radius:20px;" />
       </div>
       <div class="ueber-badge">
         <div class="ueber-badge-num">AVplus</div>
@@ -1431,10 +1462,11 @@
     </div>
 
     <div class="ueber-text reveal-right">
-      <p class="section-label">Wer wir sind</p>
-      <h2>Ein Partner für Ihre<br>gesamte Technik.</h2>
-      <p>Ob Alarmanlage, Konferenzraum, Glasfasernetz oder Smart Home: Bei AVplus bekommen Sie alles von einem Team — Beratung, Planung, Installation und Wartung. Sie sparen sich die Abstimmung zwischen mehreren Firmen und haben einen Ansprechpartner, der Ihr Gebäude und Ihre Technik wirklich kennt.</p>
-      <p>Als zertifizierter Gewerbebetrieb arbeiten wir normgerecht, dokumentieren jede Anlage vollständig und bleiben auch nach der Übergabe für Sie erreichbar.</p>
+      <p class="section-label">Wer dahinter steht</p>
+      <h2>Hinter AVplus steht <br>ein Name.</h2>
+      <p>Ich bin Ing. Basir Alavi, MSc. Gründer von AVplus und der Techniker, mit dem Sie hier sprechen. Als Kind habe ich Geräte aufgeschraubt um zu sehen was drinnen steckt. Nicht jedes hat das überlebt. Aus der Neugier wurde ein Beruf: HTL, danach Bachelor- und Masterstudium im technischen Bereich. Gearbeitet habe ich nebenbei immer. Zuerst in der IT- und Netzwerktechnik, dann im Projektmanagement für Medientechnik und später in der Sicherheitstechnik.</p>
+      <p>2023 habe ich AVplus gegründet, um all das zusammenzubringen. Heute plane und montiere ich Anlagen für Privathaushalte, Schulen und Unternehmen in Wien. Sie reden bei mir immer mit jemandem, der Ihr Gebäude wirklich kennt. Und ich berate ehrlich: Wenn die kleine Lösung reicht, sage ich Ihnen das.</p>
+      <p style="margin-top:0.5rem;"><a href="/ueber-uns" style="color:var(--blue);font-weight:700;text-decoration:none;">Mehr über mich und meinen Werdegang →</a></p>
 
 
       <div class="ueber-features">
@@ -1469,29 +1501,29 @@
   <div class="reveal" style="text-align:center; margin-bottom:1rem;">
     <p class="section-label">Wie wir arbeiten</p>
     <h2>Unser Prozess</h2>
-    <p class="section-intro" style="margin:0 auto 3.5rem;">Strukturiert, transparent und zuverlässig — von der ersten Anfrage bis zur Übergabe.</p>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Strukturiert und transparent. Von der ersten Anfrage bis zur Übergabe.</p>
   </div>
 
   <div class="prozess-steps">
     <div class="prozess-step reveal delay-1">
       <div class="step-num">💬</div>
       <h3>Beratung</h3>
-      <p>Kostenlos und unverbindlich — wir hören zu und nehmen Ihre Anforderungen vor Ort auf</p>
+      <p>Kostenlos und vor Ort. Ich schaue mir Ihr Gebäude an und höre zu, bevor ich etwas empfehle</p>
     </div>
     <div class="prozess-step reveal delay-2">
       <div class="step-num">📐</div>
       <h3>Planung</h3>
-      <p>Sie erhalten ein maßgeschneidertes Konzept mit transparentem Festpreisangebot</p>
+      <p>Sie bekommen ein schriftliches Festpreisangebot innerhalb von 24 Stunden. Was drinsteht gilt</p>
     </div>
     <div class="prozess-step reveal delay-3">
       <div class="step-num">🔧</div>
       <h3>Installation</h3>
-      <p>Saubere, termintreue Montage durch zertifizierte Techniker</p>
+      <p>Montage meist an einem Werktag. Wir arbeiten sauber und räumen die Baustelle auf</p>
     </div>
     <div class="prozess-step reveal delay-4">
       <div class="step-num">✅</div>
       <h3>Übergabe</h3>
-      <p>Einschulung, vollständige Dokumentation und laufender Support</p>
+      <p>Ich erkläre die Anlage, bis Sie sie selbst bedienen können. Mit Doku und direkter Nummer für Rückfragen</p>
     </div>
   </div>
 </section>
@@ -1501,7 +1533,7 @@
   <div class="reveal">
     <p class="section-label">Für wen wir da sind</p>
     <h2>Unsere Zielgruppen</h2>
-    <p class="section-intro">Privathaushalt, Schule oder Unternehmen: Wir kennen die Anforderungen jeder Zielgruppe — und liefern Lösungen, die im Alltag zuverlässig funktionieren.</p>
+    <p class="section-intro">Privathaushalt, Schule oder Unternehmen: Wir kennen die Anforderungen jeder Zielgruppe und liefern Lösungen, die im Alltag funktionieren.</p>
   </div>
 
   <div class="kunden-wrap">
@@ -1576,7 +1608,7 @@
   <div class="reveal" style="text-align:center; margin-bottom:1rem;">
     <p class="section-label">Kundenstimmen</p>
     <h2>Das sagen unsere Kunden</h2>
-    <p class="section-intro" style="margin:0 auto 3.5rem;">Ehrliche Rückmeldungen aus abgeschlossenen Aufträgen — so, wie unsere Kunden sie formuliert haben.</p>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Ehrliche Rückmeldungen aus abgeschlossenen Aufträgen. So wie unsere Kunden sie formuliert haben.</p>
   </div>
 
   <div class="ref-slider reveal">
@@ -1661,7 +1693,7 @@
     <button class="ref-nav ref-nav-rechts" type="button" aria-label="Weitere Bewertungen anzeigen">›</button>
   </div>
 
-  <p class="ref-hinweis reveal"><span class="check">✔</span>Alle Kundenstimmen stammen aus echten, abgeschlossenen Aufträgen und wurden von unseren Kunden nach Abschluss der Arbeiten abgegeben. Wir geben Bewertungen unverändert wieder — allenfalls leicht gekürzt, ohne den Inhalt zu verändern.</p>
+  <p class="ref-hinweis reveal"><span class="check">✔</span>Alle Kundenstimmen stammen aus echten, abgeschlossenen Aufträgen und wurden von unseren Kunden nach Abschluss der Arbeiten abgegeben. Wir geben Bewertungen unverändert wieder. Allenfalls leicht gekürzt, ohne den Inhalt zu verändern.</p>
 
 <!-- ═══ BEWERTUNGS-ROTATION ═══════════════════════════════════════════
      Es werden nur echte Kundenbewertungen angezeigt. Neue Bewertungen
@@ -1814,18 +1846,56 @@
 </script>
 </section>
 
+<!-- FAQ -->
+<section id="faq" style="background:var(--gray-light);">
+  <div class="reveal" style="text-align:center; margin-bottom:1rem;">
+    <p class="section-label">Häufige Fragen</p>
+    <h2>Was Kunden uns am öftesten fragen</h2>
+    <p class="section-intro" style="margin:0 auto 3rem;">Kurz und ehrlich beantwortet. Ihre Frage ist nicht dabei? Rufen Sie einfach an.</p>
+  </div>
+  <div class="reveal" style="max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:1rem;">
+    <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+      <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Erstberatung?</summary>
+      <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Nichts. Ich schaue mir Ihr Projekt vor Ort an und Sie bekommen innerhalb von 24 Stunden ein schriftliches Festpreisangebot. Das Angebot ist unverbindlich. Sie entscheiden danach in Ruhe.</p>
+    </details>
+    <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+      <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">In welchen Gebieten ist AVplus tätig?</summary>
+      <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Hauptsächlich in Wien und Umgebung. SAT- und Starlink-Montagen übernehmen wir in ganz Österreich. Bei größeren Projekten zahlt sich auch eine weitere Anfahrt aus. Fragen kostet nichts.</p>
+    </details>
+    <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+      <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Übernehmt ihr auch kleine Aufträge?</summary>
+      <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Ein einzelner Fernseher an der Wand ist genauso willkommen wie ein komplettes Bürogebäude. <a href="/medientechnik" style="color:var(--blue);">TV-Montage gibt es ab 79 Euro</a>. <a href="/edv" style="color:var(--blue);">IT-Hilfe ab 49 Euro</a>.</p>
+    </details>
+    <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+      <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Meine Anlage wurde von einer anderen Firma installiert. Betreut ihr die auch?</summary>
+      <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">In den meisten Fällen ja. Ich sehe mir die bestehende Anlage an und sage Ihnen ehrlich, ob eine Übernahme sinnvoll ist. Manchmal reicht ein Service. Manchmal ist der Umstieg günstiger als die Reparatur.</p>
+    </details>
+    <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+      <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Warum ein kleiner Betrieb statt einer großen Firma?</summary>
+      <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Weil Sie bei AVplus immer mit derselben Person sprechen. Ich plane Ihre Anlage, ich montiere sie und ich hebe ab, wenn Sie später anrufen. Dazu kommen fixe Preise. Was im Angebot steht, gilt.</p>
+    </details>
+  </div>
+</section>
+
 <!-- KONTAKT -->
 <section id="kontakt">
   <div class="kontakt-wrap">
     <div class="reveal-left">
       <p class="section-label">Sprechen Sie uns an</p>
       <h2>Kontakt</h2>
-      <p style="color:var(--gray);margin-bottom:2rem;">Beschreiben Sie kurz Ihr Anliegen — Sie erhalten innerhalb von 24 Stunden eine Antwort, auf Wunsch mit konkretem Angebot. Kostenlos und unverbindlich.</p>
+      <p style="color:var(--gray);margin-bottom:2rem;">Beschreiben Sie kurz Ihr Anliegen. Sie erhalten innerhalb von 24 Stunden eine Antwort, auf Wunsch mit konkretem Angebot. Kostenlos und unverbindlich.</p>
 
       <div class="kontakt-info-card">
         <h3>AVplus e.U.</h3>
-        <p>Ihr Ansprechpartner für Sicherheits-, Medien- und Netzwerktechnik in Wien — persönlich und verlässlich.</p>
+        <p>Sicherheits-, Medien- und Netzwerktechnik in Wien. Sie erreichen direkt den Techniker, nicht eine Zentrale.</p>
 
+        <div class="ki-item">
+          <div class="ki-icon">👤</div>
+          <div>
+            <div class="ki-label">Ihr Ansprechpartner</div>
+            <div class="ki-value">Ing. Basir Alavi, MSc</div>
+          </div>
+        </div>
         <div class="ki-item">
           <div class="ki-icon">📍</div>
           <div>
@@ -1852,7 +1922,7 @@
 
     <div class="kontakt-form-wrap reveal-right">
       <h3>Anfrage senden</h3>
-      <p>In zwei Minuten ausgefüllt — Antwort innerhalb von 24 Stunden. Unverbindlich und kostenlos.</p>
+      <p>In zwei Minuten ausgefüllt. Antwort innerhalb von 24 Stunden. Unverbindlich und kostenlos.</p>
       <form id="kontakt-form" action="https://formspree.io/f/xvzjgjkg" method="POST" onsubmit="handleSubmit(event)">
 
         <!-- Spam-Schutz (Honeypot) -->
@@ -1908,7 +1978,7 @@
   <div class="footer-top">
     <div class="footer-brand">
       <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
-      <p>AVplus e.U. ist Ihr Komplettanbieter für Sicherheits-, Medien- und Netzwerktechnik in Wien und ganz Österreich — von der Planung bis zur Wartung.</p>
+      <p>AVplus e.U. ist der Technikbetrieb von Ing. Basir Alavi in Wien. Sicherheits-, Medien- und Netzwerktechnik von der Planung bis zur Wartung.</p>
     </div>
     <div class="footer-col">
       <h4>Leistungen</h4>
@@ -1975,154 +2045,6 @@
       backTop.classList.remove('show');
     }
   });
-
-  /* ══════════════════════════════════════════
-     CANVAS PARTIKEL / NETZWERK ANIMATION
-  ══════════════════════════════════════════ */
-  (function () {
-    const canvas = document.getElementById('hero-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const HERO = document.getElementById('hero');
-    const N = 68, MAX_D = 145;
-    let W, H, particles = [];
-
-    function resize() {
-      W = canvas.width  = HERO.offsetWidth;
-      H = canvas.height = HERO.offsetHeight;
-    }
-
-    function Particle() {
-      this.reset();
-    }
-    Particle.prototype.reset = function () {
-      this.x  = Math.random() * W;
-      this.y  = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
-      this.r  = Math.random() * 1.8 + 0.6;
-      this.a  = Math.random() * 0.38 + 0.08;
-    };
-    Particle.prototype.update = function () {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > W) this.vx *= -1;
-      if (this.y < 0 || this.y > H) this.vy *= -1;
-    };
-    Particle.prototype.draw = function () {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,' + this.a + ')';
-      ctx.fill();
-    };
-
-    function init() {
-      particles = [];
-      for (let i = 0; i < N; i++) particles.push(new Particle());
-    }
-
-    function frame() {
-      ctx.clearRect(0, 0, W, H);
-      for (let i = 0; i < N; i++) {
-        particles[i].update();
-        particles[i].draw();
-        for (let j = i + 1; j < N; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const d  = Math.sqrt(dx * dx + dy * dy);
-          if (d < MAX_D) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'rgba(144,200,255,' + (1 - d / MAX_D) * 0.13 + ')';
-            ctx.lineWidth = 0.75;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(frame);
-    }
-
-    resize();
-    init();
-    frame();
-    window.addEventListener('resize', function () { resize(); init(); });
-  })();
-
-  /* ══════════════════════════════════════════
-     TYPEWRITER HERO HEADLINE
-  ══════════════════════════════════════════ */
-  (function () {
-    const h1 = document.querySelector('.hero-content h1');
-    if (!h1) return;
-
-    const segments = [
-      { text: 'Technik, die ',  tag: null  },
-      { text: 'schützt',        tag: 'span' },
-      { br: true },
-      { text: 'und ',           tag: 'em'   },
-      { text: 'verbindet.',     tag: 'span' }
-    ];
-
-    h1.innerHTML = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'type-cursor';
-    h1.appendChild(cursor);
-
-    let si = 0, ci = 0, activeEl = h1;
-
-    function moveCursorToEnd() {
-      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-      h1.appendChild(cursor);
-    }
-
-    function tick() {
-      if (si >= segments.length) {
-        setTimeout(function () {
-          cursor.style.animation = 'none';
-          cursor.style.opacity   = '0';
-        }, 800);
-        return;
-      }
-
-      const seg = segments[si];
-
-      if (seg.br) {
-        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-        h1.appendChild(document.createElement('br'));
-        activeEl = h1;
-        h1.appendChild(cursor);
-        si++; ci = 0;
-        setTimeout(tick, 100);
-        return;
-      }
-
-      if (ci === 0) {
-        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-        if (seg.tag) {
-          activeEl = document.createElement(seg.tag);
-          h1.appendChild(activeEl);
-        } else {
-          activeEl = h1;
-        }
-        h1.appendChild(cursor);
-      }
-
-      if (ci < seg.text.length) {
-        if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
-        activeEl.appendChild(document.createTextNode(seg.text[ci]));
-        h1.appendChild(cursor);
-        ci++;
-        const delay = seg.text[ci - 1] === ' ' ? 38 : (ci % 5 === 0 ? 95 : 72);
-        setTimeout(tick, delay);
-      } else {
-        si++; ci = 0;
-        setTimeout(tick, 60);
-      }
-    }
-
-    setTimeout(tick, 700);
-  })();
 
   async function handleSubmit(e) {
     e.preventDefault();
