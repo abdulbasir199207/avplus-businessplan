@@ -194,7 +194,7 @@
     @media(max-width:768px) { .services-grid,.products-grid{grid-template-columns:1fr} .feature-split{grid-template-columns:1fr} .footer-top{grid-template-columns:1fr;gap:2rem} }
     @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .product-img{height:auto} .product-img img{height:auto} }
     /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
-    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:16/9 !important; object-fit:cover !important; width:100% !important;} .sc-card-img,.product-img img,.room-img img,.sc-img img,.mounting-item img{aspect-ratio:16/9 !important; object-fit:cover !important; height:auto !important; width:100% !important;} .feature-visual img.img-frei,.sc-card-img.img-frei,.product-img img.img-frei,.room-img img.img-frei,.sc-img img.img-frei,.mounting-item img.img-frei{aspect-ratio:auto !important;object-fit:contain !important;height:auto !important;width:100% !important} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
@@ -263,7 +263,7 @@
   </div>
   <div class="services-grid">
     <a href="#videoueberwachung" class="service-card reveal delay-1">
-      <img loading="lazy" decoding="async" class="sc-card-img" width="1600" height="533" src="bilder/videoueberwachung.webp" alt="Videoüberwachung Wien – IP-Kameras und NVR-Systeme von AVplus e.U.">
+      <img loading="lazy" decoding="async" class="sc-card-img" width="1600" height="533" src="bilder/videoueberwachung.webp" alt="Videoüberwachung Wien – IP-Kameras und NVR-Systeme von AVplus e.U." style="object-position:left center">
       <div class="sc-body">
         <div class="sc-icon">📷</div>
         <h3>Videoüberwachung</h3>
@@ -281,7 +281,7 @@
       </div>
     </a>
     <a href="#gegensprechanlagen" class="service-card reveal delay-1">
-      <img loading="lazy" decoding="async" class="sc-card-img" width="1600" height="533" src="bilder/gegensprechanlagen.webp" alt="Gegensprechanlagen Wien – Video-Türsprechanlagen von AVplus e.U.">
+      <img loading="lazy" decoding="async" class="sc-card-img" width="1600" height="533" src="bilder/gegensprechanlagen.webp" alt="Gegensprechanlagen Wien – Video-Türsprechanlagen von AVplus e.U." style="object-position:left center">
       <div class="sc-body">
         <div class="sc-icon">🔔</div>
         <h3>Gegensprechanlagen</h3>
@@ -305,7 +305,7 @@
 <section id="videoueberwachung" style="background:var(--white)">
   <div class="feature-split">
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" width="800" height="800" src="bilder/ST Kamera 2.webp" alt="Überwachungskamera Nahaufnahme – Videoüberwachung Wien AVplus e.U." style="object-fit:contain;background:#ffffff;" />
+      <img class="img-frei" loading="lazy" decoding="async" width="800" height="800" src="bilder/ST Kamera 2.webp" alt="Überwachungskamera Nahaufnahme – Videoüberwachung Wien AVplus e.U." style="object-fit:contain;background:#ffffff;" />
       <div class="fv-overlay"></div>
       <div class="fv-badge">
         <span class="fv-badge-icon">📷</span>

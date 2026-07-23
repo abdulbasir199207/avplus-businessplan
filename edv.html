@@ -221,7 +221,7 @@
     @media(max-width:768px) { .feature-split{grid-template-columns:1fr} .pricing-grid{grid-template-columns:1fr} .footer-top{grid-template-columns:1fr;gap:2rem} }
     @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .sc-img{height:auto} .sc-img img{height:auto} }
     /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
-    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:16/9 !important; object-fit:cover !important; width:100% !important;} .sc-card-img,.product-img img,.room-img img,.sc-img img,.mounting-item img{aspect-ratio:16/9 !important; object-fit:cover !important; height:auto !important; width:100% !important;} .feature-visual img.img-frei,.sc-card-img.img-frei,.product-img img.img-frei,.room-img img.img-frei,.sc-img img.img-frei,.mounting-item img.img-frei{aspect-ratio:auto !important;object-fit:contain !important;height:auto !important;width:100% !important} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }

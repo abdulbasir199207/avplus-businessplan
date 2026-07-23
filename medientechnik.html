@@ -249,7 +249,7 @@
     @media(max-width:768px) { .services-grid,.display-compare,.mounting-grid,.rooms-grid,.feature-split{grid-template-columns:1fr} }
     @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} .room-img{height:auto} .room-img img{height:auto} .mounting-item img{height:auto !important} }
     /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
-    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:16/9 !important; object-fit:cover !important; width:100% !important;} .sc-card-img,.product-img img,.room-img img,.sc-img img,.mounting-item img{aspect-ratio:16/9 !important; object-fit:cover !important; height:auto !important; width:100% !important;} .feature-visual img.img-frei,.sc-card-img.img-frei,.product-img img.img-frei,.room-img img.img-frei,.sc-img img.img-frei,.mounting-item img.img-frei{aspect-ratio:auto !important;object-fit:contain !important;height:auto !important;width:100% !important} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
@@ -368,8 +368,8 @@
     <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;">Montageoptionen</h3>
     <div class="mounting-grid">
       <div class="mounting-item reveal delay-1"><img loading="lazy" decoding="async" width="648" height="487" src="bilder/displayhalterung.webp" alt="TV Wandhalterung fix Wien – Flachbildschirm sauber an Wand montiert von AVplus" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;" /><h4>Wandhalterung Fix</h4></div>
-      <div class="mounting-item reveal delay-2"><img loading="lazy" decoding="async" width="664" height="681" src="bilder/3d-halterung.webp" alt="Schwenkbare TV-Halterung Wien – neigbarer und drehbarer Displayarm von AVplus" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;" /><h4>Schwenkbar & neigbar</h4></div>
-      <div class="mounting-item reveal delay-3"><img loading="lazy" decoding="async" width="264" height="327" src="bilder/mobile-displayhalterung.webp" alt="Mobiles Display Fahrgestell Wien – rollbare Halterung für Präsentationen und Schulungen" style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:0.8rem;" /><h4>Fahrgestell mobil</h4></div>
+      <div class="mounting-item reveal delay-2"><img class="img-frei" loading="lazy" decoding="async" width="664" height="681" src="bilder/3d-halterung.webp" alt="Schwenkbare TV-Halterung Wien – neigbarer und drehbarer Displayarm von AVplus" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;" /><h4>Schwenkbar & neigbar</h4></div>
+      <div class="mounting-item reveal delay-3"><img class="img-frei" loading="lazy" decoding="async" width="264" height="327" src="bilder/mobile-displayhalterung.webp" alt="Mobiles Display Fahrgestell Wien – rollbare Halterung für Präsentationen und Schulungen" style="width:100%;height:120px;object-fit:contain;border-radius:8px;margin-bottom:0.8rem;" /><h4>Fahrgestell mobil</h4></div>
       <div class="mounting-item reveal delay-4"><div class="mi-icon">🏛️</div><h4>Pylonensystem</h4></div>
     </div>
   </div>

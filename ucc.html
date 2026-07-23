@@ -198,7 +198,7 @@
     @media(max-width:768px) { .services-grid,.feature-split,.steps-grid { grid-template-columns:1fr; } .steps-grid::before { display:none; } .footer-top { grid-template-columns:1fr; gap:2rem; } }
     @media(max-width:768px) { .feature-visual:has(img){height:auto} .feature-visual img{height:auto} }
     /* Mobil: immer Text zuerst, Bild danach; Bilder einheitlich 13:9 */
-    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:13/9;} }
+    @media(max-width:768px) { .feature-split > .feature-visual{order:2} .feature-visual img{height:auto !important; aspect-ratio:16/9 !important; object-fit:cover !important; width:100% !important;} .sc-card-img,.product-img img,.room-img img,.sc-img img,.mounting-item img{aspect-ratio:16/9 !important; object-fit:cover !important; height:auto !important; width:100% !important;} .feature-visual img.img-frei,.sc-card-img.img-frei,.product-img img.img-frei,.room-img img.img-frei,.sc-img img.img-frei,.mounting-item img.img-frei{aspect-ratio:auto !important;object-fit:contain !important;height:auto !important;width:100% !important} }
 
     /* ── MOBILE NAVIGATION ── */
     .nav-toggle { display:none; background:none; border:none; font-size:1.6rem; line-height:1; cursor:pointer; color:var(--text); padding:0.3rem 0.6rem; border-radius:8px; }
@@ -303,7 +303,7 @@
 <section id="sat-anlage" style="background:var(--white)">
   <div class="feature-split">
     <div class="feature-visual reveal">
-      <img loading="lazy" decoding="async" width="785" height="778" src="bilder/sat-anlage.webp" alt="SAT-Anlage Montage Wien – Satellitenschüssel professionell installiert von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
+      <img class="img-frei" loading="lazy" decoding="async" width="785" height="778" src="bilder/sat-anlage.webp" alt="SAT-Anlage Montage Wien – Satellitenschüssel professionell installiert von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
       <div class="fv-overlay"></div>
       <div class="fv-badge">
         <span class="fv-badge-icon">🎯</span>
@@ -369,21 +369,21 @@
   <div class="services-grid">
     <div class="service-card reveal delay-1" style="border-top-color:var(--green);text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
-        <img loading="lazy" decoding="async" width="800" height="1016" src="bilder/sat-dachmontage.webp" alt="SAT-Anlage Dachmontage Wien – Satellitenschüssel auf Flachdach mit Mastständer, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+        <img class="img-frei" loading="lazy" decoding="async" width="800" height="1016" src="bilder/sat-dachmontage.webp" alt="SAT-Anlage Dachmontage Wien – Satellitenschüssel auf Flachdach mit Mastständer, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
       </div>
       <h3>Dachmontage</h3>
       <p>Sichere Befestigung auf Flach- oder Schrägdach mit wetterfestem Mastständer und Kabeleinführung.</p>
     </div>
     <div class="service-card reveal delay-2" style="border-top-color:var(--blue);text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
-        <img loading="lazy" decoding="async" width="800" height="1004" src="bilder/sat-wandmontage.webp" alt="SAT-Schüssel Wandmontage Wien – Satellitenanlage an Hausfassade montiert, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+        <img class="img-frei" loading="lazy" decoding="async" width="800" height="1004" src="bilder/sat-wandmontage.webp" alt="SAT-Schüssel Wandmontage Wien – Satellitenanlage an Hausfassade montiert, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
       </div>
       <h3>Fassaden- & Wandmontage</h3>
       <p>Montage an Außenwand oder Balkongeländer. Platzsparend und optisch sauber integriert.</p>
     </div>
     <div class="service-card reveal delay-3" style="border-top-color:#1a2a5e;text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
-        <img loading="lazy" decoding="async" width="800" height="996" src="bilder/starlink-mast-garten.webp" alt="Starlink Montage freistehender Mast Wien – Terminal auf Erdmast im Garten, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+        <img class="img-frei" loading="lazy" decoding="async" width="800" height="996" src="bilder/starlink-mast-garten.webp" alt="Starlink Montage freistehender Mast Wien – Terminal auf Erdmast im Garten, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
       </div>
       <h3>Freistehender Mast</h3>
       <p>Erdmast im Garten oder auf Terrasse. Ideal wenn Dach oder Wand nicht zugänglich sind.</p>
