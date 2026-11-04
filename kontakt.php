@@ -233,7 +233,13 @@ if (is_array($config) && !empty($config['dry_run_file'])) {
 } elseif (is_array($config) && !empty($config['host']) && !empty($config['user'])) {
     $sent = smtpSend($config, MAIL_TO, $encodedSubject, $body, $headers);
 } else {
-    $sent = @mail(MAIL_TO, $encodedSubject, $body, implode("\r\n", $headers));
+    /* Absender der Mail ist office@avplus.at (Header "From"). Zusätzlich wird versucht, auch den
+       technischen Absender (Envelope-From) auf diese Adresse zu setzen. Erlaubt der Hoster das nicht,
+       wird ohne diese Angabe gesendet, damit keine Anfrage verloren geht. */
+    $sent = @mail(MAIL_TO, $encodedSubject, $body, implode("\r\n", $headers), '-f' . MAIL_FROM);
+    if (!$sent) {
+        $sent = @mail(MAIL_TO, $encodedSubject, $body, implode("\r\n", $headers));
+    }
 }
 
 if (!$sent) {
