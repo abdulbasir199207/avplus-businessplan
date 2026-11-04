@@ -11,13 +11,15 @@
     var btn = form.querySelector('.ki-submit');
     var msg = form.querySelector('.ki-msg');
     var defaultLabel = btn ? btn.textContent : 'Anfrage absenden →';
+    var openedAt = Date.now();   /* Spam-Schutz: Bots senden sofort nach dem Laden */
+    var syncRequired = function () {};
 
     /* Formulare mit data-require-contact: Telefon ODER E-Mail genügt.
        Solange eines davon ausgefüllt ist, ist das andere optional. */
     if (form.hasAttribute('data-require-contact')) {
       var tel = form.querySelector('[name="telefon"]');
       var mail = form.querySelector('[name="email"]');
-      var syncRequired = function () {
+      syncRequired = function () {
         if (!tel || !mail) return;
         var hasTel = tel.value.trim() !== '';
         var hasMail = mail.value.trim() !== '';
@@ -34,12 +36,20 @@
       if (btn) { btn.textContent = 'Wird gesendet …'; btn.disabled = true; }
       if (msg) { msg.hidden = true; msg.className = 'ki-msg'; }
 
+      var data = new FormData(form);
+      data.append('_elapsed', String(Date.now() - openedAt));
+
       fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: data,
         headers: { 'Accept': 'application/json' }
       }).then(function (response) {
         if (!response.ok) throw new Error('Serverfehler');
+        /* Erfolg zählt nur, wenn das Skript ausdrücklich "ok" meldet
+           (eine umgeleitete Startseite mit Status 200 ist kein Erfolg) */
+        return response.json();
+      }).then(function (result) {
+        if (!result || result.ok !== true) throw new Error('Kein Erfolg gemeldet');
         /* Erfolg an das Tracking melden (GA4 "generate_lead" + Google-Ads-Conversion) */
         try { window.dispatchEvent(new CustomEvent('avplusLeadSuccess')); } catch (err) {}
         if (msg) {
@@ -48,6 +58,7 @@
           msg.hidden = false;
         }
         form.reset();
+        syncRequired();
       }).catch(function () {
         if (msg) {
           msg.className = 'ki-msg err';

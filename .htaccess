@@ -57,3 +57,10 @@ RewriteRule ^ https://www.avplus.at/ [L,R=301]
   ExpiresByType text/javascript "access plus 1 day"
   ExpiresByType application/javascript "access plus 1 day"
 </IfModule>
+
+# ── Konfigurationsdatei des Formular-Skripts nicht ausliefern ──
+<IfModule mod_authz_core.c>
+  <FilesMatch "^kontakt-config\.php$">
+    Require all denied
+  </FilesMatch>
+</IfModule>

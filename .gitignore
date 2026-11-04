@@ -3,3 +3,6 @@ bilder-original/
 
 # Private Arbeitsdokumente (Word)
 *.docx
+
+# Zugangsdaten für den Mailversand – nur auf dem Server, nie im Repository
+kontakt-config.php

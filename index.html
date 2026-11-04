@@ -1809,7 +1809,7 @@
     <div class="kontakt-form-wrap reveal-right">
       <h3>Anfrage senden</h3>
       <p>In zwei Minuten ausgefüllt. Antwort innerhalb von 24 Stunden. Unverbindlich und kostenlos.</p>
-      <form id="kontakt-form" action="https://formspree.io/f/xvzjgjkg" method="POST" onsubmit="handleSubmit(event)">
+      <form id="kontakt-form" action="/kontakt.php" method="POST" onsubmit="handleSubmit(event)">
 
         <!-- Spam-Schutz (Honeypot) -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -1932,6 +1932,8 @@
     }
   });
 
+  const formOpenedAt = Date.now();   /* Spam-Schutz: Bots senden sofort nach dem Laden */
+
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
@@ -1944,13 +1946,22 @@
     msg.style.display = 'none';
 
     try {
+      const data = new FormData(form);
+      data.append('_elapsed', String(Date.now() - formOpenedAt));
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: data,
         headers: { 'Accept': 'application/json' }
       });
 
+      /* Erfolg zählt nur, wenn das Skript ausdrücklich "ok" meldet
+         (eine umgeleitete Startseite mit Status 200 ist kein Erfolg) */
+      let result = null;
       if (response.ok) {
+        try { result = await response.json(); } catch (err) { result = null; }
+      }
+
+      if (response.ok && result && result.ok === true) {
         /* Erfolg an das Tracking melden (GA4 "generate_lead" + Google-Ads-Conversion) */
         try { window.dispatchEvent(new CustomEvent('avplusLeadSuccess')); } catch (err) {}
         msg.style.display = 'block';

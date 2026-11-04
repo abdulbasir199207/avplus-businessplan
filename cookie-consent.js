@@ -114,7 +114,7 @@
         '<div id="avcc-header"><div id="avcc-title">🍪 Diese Website verwendet Cookies</div></div>' +
         '<div id="avcc-text">' +
           'Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten, den Website-Traffic zu analysieren ' +
-          'und Ihnen relevante Werbung auf Google sowie Instagram/Facebook zu zeigen. ' +
+          'und Ihnen relevante Werbung auf Google zu zeigen. ' +
           'Weitere Infos in unserer <a href="' + DSE_URL + '">Datenschutzerklärung</a>.' +
         '</div>' +
         '<div id="avcc-btns">' +
@@ -126,7 +126,7 @@
           '<div id="avcc-details-inner">' +
             buildToggleRow('avcc-necessary', 'Notwendige Cookies', 'Technisch erforderlich — immer aktiv', true, true) +
             buildToggleRow('avcc-analytics', 'Analyse (Google Analytics 4 &amp; Microsoft Clarity)', 'Hilft uns, die Nutzung der Website zu verstehen', false, false) +
-            buildToggleRow('avcc-marketing', 'Marketing (Google Ads &amp; Meta/Instagram)', 'Für personalisierte Werbung auf Google und Instagram', false, false) +
+            buildToggleRow('avcc-marketing', 'Marketing (Google Ads)', 'Für personalisierte Werbung auf Google', false, false) +
             '<div id="avcc-save-row">' +
               '<button class="avcc-btn avcc-btn-accept" id="avcc-save">Auswahl speichern</button>' +
               '<button class="avcc-btn avcc-btn-reject" id="avcc-cancel">Abbrechen</button>' +
@@ -209,7 +209,7 @@
         '<p>Passen Sie Ihre Einwilligung jederzeit an. Weitere Informationen in unserer <a href="' + DSE_URL + '">Datenschutzerklärung</a>.</p>' +
         buildToggleRow('avcc-m-necessary', 'Notwendige Cookies', 'Immer aktiv', true, true) +
         buildToggleRow('avcc-m-analytics', 'Analyse (Google Analytics 4 &amp; Microsoft Clarity)', 'Nutzungsanalyse', false, false) +
-        buildToggleRow('avcc-m-marketing', 'Marketing (Google Ads &amp; Meta/Instagram)', 'Personalisierte Werbung', false, false) +
+        buildToggleRow('avcc-m-marketing', 'Marketing (Google Ads)', 'Personalisierte Werbung', false, false) +
         '<div id="avcc-save-row" style="margin-top:1.3rem;">' +
           '<button class="avcc-btn avcc-btn-accept" id="avcc-modal-save">Speichern</button>' +
           '<button class="avcc-btn avcc-btn-reject" id="avcc-modal-close">Schließen</button>' +
