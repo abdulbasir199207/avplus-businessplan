@@ -12,6 +12,23 @@
     var msg = form.querySelector('.ki-msg');
     var defaultLabel = btn ? btn.textContent : 'Anfrage absenden →';
 
+    /* Formulare mit data-require-contact: Telefon ODER E-Mail genügt.
+       Solange eines davon ausgefüllt ist, ist das andere optional. */
+    if (form.hasAttribute('data-require-contact')) {
+      var tel = form.querySelector('[name="telefon"]');
+      var mail = form.querySelector('[name="email"]');
+      var syncRequired = function () {
+        if (!tel || !mail) return;
+        var hasTel = tel.value.trim() !== '';
+        var hasMail = mail.value.trim() !== '';
+        tel.required = !hasMail;
+        mail.required = !hasTel;
+      };
+      if (tel) tel.addEventListener('input', syncRequired);
+      if (mail) mail.addEventListener('input', syncRequired);
+      syncRequired();
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (btn) { btn.textContent = 'Wird gesendet …'; btn.disabled = true; }

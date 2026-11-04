@@ -135,3 +135,9 @@
   .ki-form { padding: 2rem 1.6rem; }
   .ki-row { grid-template-columns: 1fr; }
 }
+
+.ki-hint {
+  margin: -0.3rem 0 0.2rem;
+  font-size: 0.85rem;
+  color: var(--gray, #6b7280);
+}
