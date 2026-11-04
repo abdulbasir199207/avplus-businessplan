@@ -21,9 +21,9 @@
   'use strict';
 
   /* ── KONFIGURATION ── */
-  var GOOGLE_ADS_ID = '';                    /* z. B. 'AW-1234567890' */
-  var CONVERSION_LABEL_LEAD = '';            /* Label der Conversion "Anfrage gesendet" */
-  var CONVERSION_LABEL_PHONE = '';           /* Label der Conversion "Anruf-Klick" */
+  var GOOGLE_ADS_ID = 'AW-18509332860';              /* Google-Ads-Konto 596-026-1749 */
+  var CONVERSION_LABEL_LEAD = '9ELJCKCjgrIdEPyC-PlE';  /* Conversion "Anfrage gesendet" */
+  var CONVERSION_LABEL_PHONE = 'rB9DCKOjgrIdEPyC-PlE'; /* Conversion "Anruf-Klick" */
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
