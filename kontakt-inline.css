@@ -96,7 +96,7 @@
   min-height: 120px;
 }
 .ki-submit {
-  background: var(--green, #6ab04c);
+  background: #447f2f;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -108,7 +108,7 @@
   box-shadow: 0 4px 16px rgba(106, 176, 76, 0.35);
 }
 .ki-submit:hover {
-  background: var(--green-dark, #4e8a36);
+  background: #386b27;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(106, 176, 76, 0.45);
 }

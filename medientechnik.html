@@ -83,7 +83,7 @@
 
     /* HEADER */
     header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.97); backdrop-filter:blur(10px); box-shadow:0 2px 20px rgba(0,0,0,0.08); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:72px; }
-    .logo img { height:42px; }
+    .logo img { width:auto; height:42px; }
     nav { display:flex; gap:0.5rem; align-items:center; }
     .nav-link { text-decoration:none; color:var(--text); font-size:0.92rem; font-weight:500; padding:0.5rem 0.9rem; border-radius:6px; transition:color 0.2s,background 0.2s; }
     .nav-link:hover { color:var(--blue); background:var(--blue-light); }
@@ -120,7 +120,7 @@
 
     /* SECTIONS */
     section { padding:4rem 5%; }
-    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); margin-bottom:0.6rem; }
+    .section-label { font-size:0.75rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#3f7a2b; margin-bottom:0.6rem; }
     h2 { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--text); margin-bottom:1rem; }
     .section-intro { color:var(--gray); max-width:600px; margin-bottom:2.5rem; }
 
@@ -228,12 +228,12 @@
     .cta-box { background:linear-gradient(135deg,#1a3a1a,#2d6ea8); border-radius:20px; padding:3rem; text-align:center; color:var(--white); }
     .cta-box h2 { color:var(--white); margin-bottom:0.8rem; }
     .cta-box p { opacity:0.8; margin-bottom:2rem; }
-    .btn-green { background:var(--green); color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); display:inline-block; transition:transform 0.2s; }
+    .btn-green { background:#447f2f; color:var(--white); padding:0.9rem 2.5rem; border-radius:10px; text-decoration:none; font-weight:700; font-size:1rem; box-shadow:0 4px 20px rgba(106,176,76,0.4); display:inline-block; transition:transform 0.2s; }
     .btn-green:hover { transform:translateY(-2px); }
 
     footer { background:#0d1b2a; color:rgba(255,255,255,0.6); padding:3rem 5% 1.5rem; }
     .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom:1.5rem; }
-    .footer-brand img { height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
+    .footer-brand img { width:auto; height:36px; margin-bottom:1rem; opacity:0.95; border-radius:6px; }
     .footer-brand p { font-size:0.88rem; line-height:1.7; }
     .footer-col h4 { color:var(--white); font-size:0.92rem; font-weight:700; margin-bottom:1rem; }
     .footer-col ul { list-style:none; }
@@ -268,7 +268,7 @@
 <body>
 <header>
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;">
-    <a href="/" class="logo"><img src="logo.png" alt="AVplus e.U." /></a>
+    <a href="/" class="logo"><img src="logo.png" alt="AVplus e.U." width="600" height="159" /></a>
     <span style="font-size:0.85rem;font-weight:600;color:#2d6ea8;letter-spacing:0.5px;white-space:nowrap;line-height:1;margin-top:2px;margin-bottom:6px;">Sicherheitstechnik · Medientechnik</span>
   </div>
   <nav>
@@ -287,7 +287,7 @@
     <a href="tel:+436766520263" style="display:inline-flex;align-items:center;gap:0.4rem;background:#eaf4ee;color:#2d7a3a;font-weight:700;font-size:0.9rem;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;border:1px solid #b6dfc0;" >📞 +43 676 6520263</a>
     <a href="#kontakt" class="btn">Jetzt anfragen</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Leistungen Menü öffnen" aria-expanded="false"><span class="nt-text">Leistungen</span><span class="nt-icon">☰</span></button>
 </header>
 
 <!-- HERO -->
@@ -619,7 +619,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." />
+      <img loading="lazy" decoding="async" src="logo.png" alt="AVplus e.U." width="600" height="159" />
       <p>AVplus e.U. ist der Technikbetrieb von Ing. Basir Alavi in Wien. Sicherheits-, Medien- und Netzwerktechnik von der Planung bis zur Wartung.</p>
     </div>
     <div class="footer-col">

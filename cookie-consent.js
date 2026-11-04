@@ -47,8 +47,8 @@
       /* Button row */
       '#avcc-btns{display:flex;gap:0.7rem;flex-wrap:wrap;align-items:center;}',
       '.avcc-btn{padding:0.65rem 1.3rem;border-radius:9px;font-size:0.88rem;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all 0.2s;white-space:nowrap;font-family:inherit;line-height:1;}',
-      '.avcc-btn-accept{background:#6ab04c;color:#fff;border-color:#6ab04c;}',
-      '.avcc-btn-accept:hover{background:#4e8a36;border-color:#4e8a36;transform:translateY(-1px);}',
+      '.avcc-btn-accept{background:#447f2f;color:#fff;border-color:#447f2f;}',
+      '.avcc-btn-accept:hover{background:#386b27;border-color:#386b27;transform:translateY(-1px);}',
       '.avcc-btn-reject{background:#fff;color:#1a2332;border-color:#d1d5db;}',
       '.avcc-btn-reject:hover{border-color:#1a2332;}',
       '.avcc-btn-settings{background:none;border:none;color:#2d6ea8;font-size:0.83rem;font-weight:600;text-decoration:underline;cursor:pointer;padding:0.6rem 0.3rem;font-family:inherit;}',
@@ -161,7 +161,7 @@
     return '<div class="avcc-row">' +
       '<div class="avcc-row-label"><strong>' + label + '</strong><span>' + desc + '</span></div>' +
       '<label class="avcc-switch">' +
-        '<input type="checkbox" id="' + id + '"' + (checked ? ' checked' : '') + (disabled ? ' disabled' : '') + '>' +
+        '<input type="checkbox" aria-label="' + label + '" id="' + id + '"' + (checked ? ' checked' : '') + (disabled ? ' disabled' : '') + '>' +
         '<span class="avcc-slider"></span>' +
       '</label>' +
     '</div>';

@@ -36,3 +36,24 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html !-f
 RewriteRule ^ https://www.avplus.at/ [L,R=301]
+
+# ── Browser-Cache für statische Dateien ──
+# Bilder, Schriften und Icons bleiben 30 Tage im Browser, Skripte und
+# Stylesheets nur 1 Tag (sie werden bei Änderungen nicht umbenannt).
+# HTML-Seiten werden nicht zwischengespeichert, damit Änderungen sofort sichtbar sind.
+# Ohne das Apache-Modul mod_expires wird der Block ignoriert.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType image/vnd.microsoft.icon "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType video/webm "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+</IfModule>

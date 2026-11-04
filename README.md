@@ -10,7 +10,7 @@ Dieses Repository enthält die Planung und Strukturierung des Geschäftsbereichs
 - Lichtwellenleiter (LWL)
 
 ## Status
-In Planung
+Webseite avplus.at ist live (statisches HTML, Auto-Deploy per GitHub-Action nach IONOS). Marketing- und Analysedokumente liegen in werbung/
 
 ## Kontakt
 - Unternehmen: AVplus e.U.
