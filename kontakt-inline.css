@@ -141,3 +141,19 @@
   font-size: 0.85rem;
   color: var(--gray, #6b7280);
 }
+
+/* Kontaktdaten im Formular-Kasten: gleiche Darstellung wie die Kontaktkarte der Startseite */
+.ki-contacts .ki-item { display: flex; align-items: flex-start; gap: 1rem; }
+.ki-contacts .ki-icon {
+  width: 44px; height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.ki-contacts { gap: 1.1rem; }
+.ki-contacts .ki-label { font-size: 0.78rem; opacity: 0.6; margin-bottom: 0.2rem; }
+.ki-contacts .ki-value { font-weight: 600; font-size: 0.95rem; }
+.ki-contacts .ki-value a { color: var(--white); text-decoration: none; }
+.ki-contacts .ki-value a:hover { color: #a8e88a; }

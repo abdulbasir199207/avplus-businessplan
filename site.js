@@ -61,7 +61,7 @@
         '#av-callbar .av-call{background:#447f2f}' +
         '#av-callbar .av-ask{background:#1b4f7a}' +
         'body[data-call-bar]{padding-bottom:72px}' +
-        'body[data-call-bar] #avcc-reopen{bottom:5rem !important}' +
+        'body[data-call-bar] #avcc-reopen,body[data-call-bar] #back-top{display:none !important}' +
       '}';
     document.head.appendChild(css);
 

@@ -1,6 +1,6 @@
 # AVplus e.U.
 
-> Technikbetrieb für Sicherheits-, Medien-, Netzwerk- und Glasfasertechnik in Wien, Österreich. Gegründet 2023 von Ing. Basir Alavi, MSc (Elektro- und Kommunikationstechnik). Konzessionierter Gewerbebetrieb nach § 94 GewO (Alarmanlagen-Errichtung, Kommunikationselektronik). Kostenlose Beratung vor Ort, schriftliches Festpreisangebot innerhalb von 24 Stunden, gesetzliche Gewährleistung auf Montage und Installation.
+> Technikbetrieb für Sicherheits-, Medien-, Netzwerk- und Glasfasertechnik in Wien, Österreich. Gegründet 2023 von Ing. Basir Alavi, MSc (Elektro- und Kommunikationstechnik). Fachbetrieb nach § 94 GewO (Alarmanlagen-Errichtung, Kommunikationselektronik). Kostenlose Beratung vor Ort, danach schriftliches Festpreisangebot innerhalb von 24 Stunden, gesetzliche Gewährleistung auf Montage und Installation.
 
 Kontakt: office@avplus.at · +43 676 6520263 · Edith-Kramer-Weg 6, 1220 Wien
 
@@ -8,7 +8,7 @@ Kontakt: office@avplus.at · +43 676 6520263 · Edith-Kramer-Weg 6, 1220 Wien
 
 - [Sicherheitstechnik](https://www.avplus.at/sicherheitstechnik): Alarmanlagen (Funk und verkabelt), Videoüberwachung, Zutrittskontrolle. Kostenlose Sicherheitsanalyse vor Ort. Nachrüstung auch im Altbau und in Mietwohnungen möglich.
 - [Medientechnik](https://www.avplus.at/medientechnik): TV-Wandmontage ab 79 €, Displays, Beamer, LED-Walls, Digital Signage und Konferenzräume. Für Zuhause und Unternehmen.
-- [SAT-Technik & Starlink](https://www.avplus.at/ucc): Satellitenanlagen und Starlink-Montage in Wien, Niederösterreich und Burgenland. Fixpreis vorab.
+- [SAT-Technik & Starlink](https://www.avplus.at/ucc): Satellitenanlagen und Starlink-Montage in Wien, Niederösterreich und Burgenland, im übrigen Österreich auf Anfrage. Starlink-Montage, WLAN im ganzen Haus, SAT-Anlagen. Antwort innerhalb von 24 Stunden, Angebot nach Besichtigung.
 - [Netzwerk- & Glasfasertechnik](https://www.avplus.at/lwl): LWL-Verlegung, Spleißen, OTDR-Messung, strukturierte Verkabelung. Mit Messprotokoll und Dokumentation.
 - [Smart Home](https://www.avplus.at/smarthome): Licht, Heizung, Rollläden und Sicherheit per App. Nachrüstung ohne Stemmarbeiten ab ca. 200 €.
 - [Computer & IT-Hilfe](https://www.avplus.at/edv): PC-Reparatur, WLAN, Netzwerk und Technikhilfe vor Ort ab 49 €. Mit 14 Tagen Nachbetreuung.

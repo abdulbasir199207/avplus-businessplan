@@ -18,7 +18,7 @@
   </script>
   <!-- Google tag (gtag.js) -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z25PB37C6Y"></script>
-  <meta name="description" content="Starlink- und SAT-Montage in Wien, Niederösterreich &amp; Burgenland. Standortprüfung, Montage, Verkabelung und Einrichtung aus einer Hand. Fixpreis vorab. AVplus e.U." />
+  <meta name="description" content="Starlink- und SAT-Montage in Wien, Niederösterreich &amp; Burgenland. Standortprüfung, Montage, Verkabelung und Einrichtung aus einer Hand. Angebot nach Besichtigung. AVplus e.U." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.avplus.at/ucc" />
   <meta property="og:type" content="website" />
@@ -39,7 +39,7 @@
         "@type": "Service",
         "@id": "https://www.avplus.at/ucc",
         "name": "SAT-Technik & Starlink-Montage Wien",
-        "description": "Satellitenanlagen und Starlink-Terminals in Wien, Niederösterreich und Burgenland. Standortprüfung, Montage, Verkabelung und Einrichtung mit Fixpreis vorab.",
+        "description": "Satellitenanlagen und Starlink-Terminals in Wien, Niederösterreich und Burgenland. Standortprüfung, Montage, Verkabelung und Einrichtung mit Angebot nach Besichtigung.",
         "provider": {
           "@type": "LocalBusiness",
           "name": "AVplus e.U.",
@@ -127,6 +127,61 @@
     .problem-list { list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; padding:0; margin:0; text-align:left; }
     .problem-list li { background:var(--gray-light); border-radius:12px; padding:0.9rem 1.1rem; font-weight:600; font-size:0.98rem; color:var(--text); }
     @media(max-width:600px) { .problem-list { grid-template-columns:1fr; } }
+
+    .hero-btn-second { background:rgba(255,255,255,0.12); color:#fff; border:1.5px solid rgba(255,255,255,0.5); }
+    .hero-btn-second:hover { background:rgba(255,255,255,0.22); }
+    .hero-paths { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; margin-top:1.4rem; max-width:620px; }
+    .hero-path { display:flex; flex-direction:column; gap:0.25rem; padding:1rem 1.15rem; border-radius:14px; text-decoration:none; color:#fff; background:rgba(255,255,255,0.1); border:1.5px solid rgba(255,255,255,0.35); backdrop-filter:blur(4px); transition:transform 0.2s,background 0.2s,border-color 0.2s; }
+    .hero-path:hover { transform:translateY(-3px); background:rgba(255,255,255,0.18); border-color:#fff; }
+    .hero-path .hp-ico { font-size:1.5rem; line-height:1; }
+    .hero-path .hp-title { font-weight:800; font-size:1.02rem; }
+    .hero-path .hp-sub { font-size:0.85rem; opacity:0.85; line-height:1.35; }
+    .hero-path .hp-more { font-size:0.85rem; font-weight:700; color:#c9e3ff; margin-top:0.3rem; }
+    @media(max-width:560px) { .hero-paths { grid-template-columns:1fr; } }
+    .check-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; max-width:980px; margin:0 auto 2rem; text-align:left; }
+    .check-step { background:var(--white); border-radius:14px; padding:1.4rem 1.3rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:3px solid var(--green); }
+    .check-step .cs-nr { display:inline-flex; width:34px; height:34px; border-radius:50%; background:var(--blue); color:#fff; font-weight:800; align-items:center; justify-content:center; margin-bottom:0.7rem; }
+    .check-step h3 { font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+    .check-step p { font-size:0.88rem; color:var(--gray); }
+    .check-step { display:flex; flex-direction:column; align-items:flex-start; }
+    .check-step .cs-btn { margin-top:auto; padding-top:0.9rem; color:var(--blue); font-weight:700; font-size:0.9rem; text-decoration:none; }
+    .check-step .cs-btn:hover { text-decoration:underline; }
+    .compare-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; max-width:980px; margin:0 auto; }
+    .compare-card { background:var(--white); border-radius:14px; padding:1.5rem 1.4rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:3px solid #cbd5e1; }
+    .compare-card.cc-main { border-top-color:var(--blue); box-shadow:0 8px 30px rgba(45,110,168,0.18); }
+    .compare-card h3 { font-size:1.05rem; font-weight:800; margin-bottom:0.3rem; }
+    .compare-card .cc-when { font-weight:600; color:#3f7a2b; font-size:0.9rem; margin-bottom:0.7rem; }
+    .compare-card ul { list-style:none; font-size:0.88rem; color:var(--gray); }
+    .compare-card li { padding:0.3rem 0 0.3rem 1.2rem; position:relative; }
+    .compare-card li::before { content:'•'; position:absolute; left:0.2rem; color:var(--blue); font-weight:800; }
+    .compare-card a { color:var(--blue); font-weight:600; }
+    @media(max-width:768px) { .compare-grid { grid-template-columns:1fr; } }
+    .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    .why-item { background:var(--gray-light); border-radius:14px; padding:1.3rem 1.1rem; text-align:left; }
+    .why-item span { font-size:1.8rem; display:block; margin-bottom:0.5rem; }
+    .why-item strong { display:block; font-size:0.95rem; margin-bottom:0.3rem; }
+    .why-item p { font-size:0.85rem; color:var(--gray); }
+    .wlan-steps { list-style:none; counter-reset:ws; display:grid; gap:0.8rem; padding:0; }
+    .wlan-steps li { counter-increment:ws; position:relative; padding:0.9rem 1rem 0.9rem 3.4rem; background:var(--gray-light); border-radius:12px; font-size:0.95rem; }
+    .wlan-steps li::before { content:counter(ws); position:absolute; left:0.9rem; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; background:var(--green-dark); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+    @media(max-width:1024px) { .why-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:768px) { .why-grid { grid-template-columns:1fr; } .two-col[style] { grid-template-columns:1fr !important; } }
+    .sat-side { max-width:980px; margin:0 auto; display:grid; grid-template-columns:240px 1fr; gap:2rem; align-items:center; }
+    .sat-side img { width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:16px; }
+    @media(max-width:768px) { .sat-side { grid-template-columns:1fr; } .sat-side img { max-width:260px; } }
+    .check-note { max-width:700px; margin:1.2rem auto 0; font-size:0.85rem; color:var(--gray); }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .two-col .tc-card { background:var(--white); border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .two-col .tc-card.tc-net { border-top:4px solid var(--blue); }
+    .two-col .tc-card.tc-wifi { border-top:4px solid var(--green); }
+    .tc-card .tc-nr { font-size:0.75rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#3f7a2b; margin-bottom:0.4rem; }
+    .tc-card h3 { font-size:1.3rem; font-weight:800; margin-bottom:0.6rem; }
+    .tc-card > p { color:var(--gray); font-size:0.95rem; margin-bottom:0.8rem; }
+    @media(max-width:768px) { .check-steps,.two-col { grid-template-columns:1fr; } }
+    .ki-interest { border:0; padding:0; margin:0; display:grid; gap:0.4rem; }
+    .ki-interest legend { font-size:0.9rem; font-weight:700; margin-bottom:0.3rem; color:inherit; }
+    .ki-interest label { display:flex; align-items:flex-start; gap:0.6rem; font-size:0.93rem; cursor:pointer; }
+    .ki-form .ki-interest input[type=checkbox] { width:auto; margin-top:0.25rem; flex-shrink:0; }
 
     /* SECTIONS */
     section { padding:5rem 5%; }
@@ -259,7 +314,6 @@
     <div class="page-badge">📡 SAT-Technik & Starlink</div>
     <h1>Starlink und SAT-Anlage. <br><span>Fachgerecht montiert und eingerichtet.</span></h1>
     <p>Kein Kabelanschluss, lahmes Internet oder schlechter TV-Empfang? Wir prüfen Ihren Standort, montieren, verkabeln und richten alles ein. Sie bekommen eine Anlage, die läuft. Für Privatpersonen und Unternehmen.</p>
-    <p class="hero-region">📍 Einsatzgebiet: Wien, Niederösterreich und Burgenland</p>
     <div class="hero-cta">
       <a href="#kontakt" class="hero-btn hero-btn-main">Jetzt unverbindlich anfragen</a>
     </div>
@@ -272,88 +326,97 @@
   <div class="reveal" style="max-width:860px;margin:0 auto;text-align:center;">
     <p class="section-label">Ihre Ausgangslage</p>
     <h2>Probleme mit Ihrem Internet oder Empfang?</h2>
-    <p class="section-intro" style="margin:0 auto 1.8rem;">Wir prüfen, welche Lösung für Ihr Gebäude sinnvoll ist. Starlink ist nicht überall die beste Wahl. Wir sagen Ihnen ehrlich, was bei Ihnen passt.</p>
+    <p class="section-intro" style="margin:0 auto 1.8rem;">Die Leitung ist zu langsam, der Handyempfang reicht nicht, und im Haus kommt vom WLAN auch nicht überall etwas an. Wir prüfen, welche Lösung für Ihr Gebäude sinnvoll ist. Starlink ist nicht überall die beste Wahl, und wir sagen Ihnen ehrlich, was bei Ihnen passt.</p>
     <ul class="problem-list">
       <li>🐢 Internet langsam oder instabil</li>
-      <li>📵 Kein Festnetz oder Glasfaser am Standort</li>
-      <li>🏡 Ferienhaus, Baustelle oder Betrieb ohne Anschluss</li>
-      <li>📺 Schlechter oder fehlender SAT-Empfang</li>
+      <li>📵 Kein Glasfaser, schwacher 4G/5G-Empfang</li>
+      <li>🚜 Hof, Betrieb oder Ferienhaus ohne brauchbaren Anschluss</li>
+      <li>📶 WLAN erreicht nicht jedes Zimmer oder Nebengebäude</li>
+      <li>💻 Videocalls, Kassa oder Kameras brechen ab</li>
+      <li>🏗️ Baustelle oder Betrieb braucht schnell Internet</li>
     </ul>
+  </div>
+</section>
+
+<!-- INTERNET-CHECK -->
+<section id="internet-check" style="background:var(--gray-light)">
+  <div class="reveal" style="max-width:980px;margin:0 auto;text-align:center;">
+    <p class="section-label">In drei Schritten zur Antwort</p>
+    <h2>Wie schnell kann Ihr Internet an Ihrer Adresse werden?</h2>
+    <p class="section-intro" style="margin:0 auto 2rem;">Oft hilft weder Glasfaser noch der Handyempfang weiter. Schicken Sie uns Ihre Adresse, wir prüfen für Sie, was dort möglich ist: ob Starlink verfügbar ist, welche Lösung die höchste Datenrate bringt und mit welchem Aufwand die Montage verbunden ist. Sie müssen nichts selbst recherchieren.</p>
+  </div>
+  <div class="check-steps">
+    <div class="check-step reveal delay-1"><span class="cs-nr">1</span><h3>Anfrage senden</h3><p>Schicken Sie uns Ihre Adresse. Ein Foto vom gewünschten Montageort hilft, ist aber kein Muss. Es dauert eine Minute.</p><a class="cs-btn" href="#kontakt" data-interesse="check">Jetzt Anfrage senden →</a></div>
+    <div class="check-step reveal delay-2"><span class="cs-nr">2</span><h3>Wir prüfen für Sie</h3><p>Wir klären, ob Starlink an Ihrer Adresse verfügbar ist, welche Datenrate möglich ist und wie Festnetz und Mobilfunk dort abschneiden. Dazu bewerten wir die Sicht zum Himmel.</p></div>
+    <div class="check-step reveal delay-3"><span class="cs-nr">3</span><h3>Antwort in 24 Stunden</h3><p>Sie erfahren, welche Datenrate höchstens möglich ist, welche Lösung wir empfehlen und wie es weitergeht. Ein seriöses Angebot erstellen wir Ihnen nach Besichtigung oder wenn uns ausreichend Informationen vorliegen.</p></div>
+  </div>
+  <p class="check-note" style="text-align:center;">Alle Geschwindigkeiten sind Höchstwerte der Anbieter („bis zu“). Was tatsächlich ankommt, hängt von Tarif, Standort und Auslastung ab.</p>
+
+  <div class="reveal" style="max-width:980px;margin:3.5rem auto 1.5rem;text-align:center;">
+    <p class="section-label">Welche Lösung passt zu mir?</p>
+    <h2 style="font-size:clamp(1.4rem,2.6vw,2rem);">Starlink, Festnetz oder Mobilfunk: ein ehrlicher Überblick</h2>
+  </div>
+  <div class="compare-grid">
+    <div class="compare-card reveal delay-1">
+      <h3>🔗 Glasfaser / Festnetz</h3>
+      <p class="cc-when">Die beste Wahl, wenn sie verfügbar ist.</p>
+      <ul><li>Am stabilsten und meist am schnellsten</li><li>Am Land oft nicht vorhanden oder erst in Planung</li><li>Verlegen im Haus übernehmen wir, siehe <a href="/lwl">Glasfasertechnik</a></li></ul>
+    </div>
+    <div class="compare-card reveal delay-2">
+      <h3>📱 Mobilfunk (4G/5G)</h3>
+      <p class="cc-when">Gut, wenn der Empfang am Standort passt.</p>
+      <ul><li>Einfach in Betrieb zu nehmen</li><li>Hängt stark vom Empfang am Haus ab</li><li>Eine Außenantenne kann viel verbessern</li></ul>
+    </div>
+    <div class="compare-card cc-main reveal delay-3">
+      <h3>🛰️ Starlink</h3>
+      <p class="cc-when">Die Lösung, wenn nichts anderes reicht.</p>
+      <ul><li>Unabhängig von Leitung und Handymast</li><li>Bis zu 600 Mbit/s, je nach Tarif und Standort</li><li>Braucht freie Sicht zum Himmel, deshalb die Standortwahl</li></ul>
+    </div>
   </div>
 </section>
 
 <!-- LEISTUNGEN ÜBERBLICK -->
 <section style="background:var(--gray-light)">
   <div class="reveal">
-    <p class="section-label">Was wir installieren</p>
-    <h2>SAT-Technik & Starlink im Überblick</h2>
-    <p class="section-intro">Selbst montieren, stundenlang ausrichten und am Ende doch kein Signal? Das können Sie sich sparen: Wir übernehmen alles. Von der Standortwahl bis zum fertigen Sendersuchlauf. Einmal richtig gemacht, läuft Ihre Anlage jahrelang störungsfrei.</p>
+    <p class="section-label">Was wir für Sie übernehmen</p>
+    <h2>Starlink von der Standortwahl bis zum fertigen WLAN</h2>
+    <p class="section-intro">Selbst montieren, lange nach dem besten Platz suchen und am Ende hakt es doch? Das können Sie sich sparen: Wir übernehmen alles, vom Standortcheck bis zum Verbindungstest. Einmal richtig gemacht, läuft Ihr Internet jahrelang stabil.</p>
   </div>
   <div class="services-grid">
-    <a href="#sat-anlage" class="service-card reveal delay-1">
+    <a href="#starlink" class="service-card reveal delay-1">
+      <span class="sc-icon">🔍</span>
+      <h3>Standortcheck</h3>
+      <p>Wir suchen den Platz mit freier Sicht zum Himmel und prüfen Bäume, Dachvorsprünge und Nachbargebäude. Davon hängt die Qualität Ihrer Verbindung ab.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#montage" class="service-card reveal delay-2">
       <span class="sc-icon">🔧</span>
-      <h3>SAT-Antennen Montage</h3>
-      <p>Fachgerechte Montage von Satellitenschüsseln auf Dach, Balkon, Fassade oder Mastständer. Sicher verankert, wetterfest und langlebig.</p>
+      <h3>Starlink-Montage</h3>
+      <p>Auf Dach, Fassade oder freistehendem Mast. Sicher verankert, wetterfest und passend zu Wind und Untergrund.</p>
       <span class="sc-link">Mehr erfahren ↓</span>
     </a>
-    <a href="#sat-anlage" class="service-card reveal delay-2">
-      <span class="sc-icon">🎯</span>
-      <h3>Präzise Ausrichtung</h3>
-      <p>Exakte Ausrichtung auf Astra, Hotbird oder andere Satelliten mit professionellem Messgerät. Für maximale Signalstärke und störungsfreien Empfang.</p>
-      <span class="sc-link">Mehr erfahren ↓</span>
-    </a>
-    <a href="#sat-anlage" class="service-card reveal delay-3">
+    <a href="#montage" class="service-card reveal delay-3">
       <span class="sc-icon">🔌</span>
-      <h3>Verkabelung</h3>
-      <p>Saubere Kabelverlegung vom Dach bis zur Anschlussdose. Innerhalb der Wand oder als Außeninstallation, inklusive Durchführungen und Abdichtung.</p>
+      <h3>Kabelverlegung</h3>
+      <p>Saubere Kabelführung vom Terminal bis zum Router. Innerhalb der Wand oder außen, mit dichter Durchführung und Abdichtung.</p>
       <span class="sc-link">Mehr erfahren ↓</span>
     </a>
-    <a href="#sat-anlage" class="service-card reveal delay-1">
-      <span class="sc-icon">⚙️</span>
-      <h3>Konfiguration & Einrichtung</h3>
-      <p>Einrichtung von Receivern, Multiswitches und Verteilanlagen. Inklusive Sendersuchlauf, Programmierung und Einschulung.</p>
-      <span class="sc-link">Mehr erfahren ↓</span>
-    </a>
-    <a href="#starlink" class="service-card reveal delay-2">
+    <a href="#starlink" class="service-card reveal delay-1">
       <span class="sc-icon">🛰️</span>
-      <h3>Starlink Installation</h3>
-      <p>Professionelle Montage und Einrichtung von SpaceX Starlink-Terminals. Inklusive optimaler Standortwahl, Montage und Router-Konfiguration.</p>
+      <h3>Einrichtung &amp; Inbetriebnahme</h3>
+      <p>Wir nehmen Starlink in Betrieb, richten den Router ein und testen die Verbindung. Danach erklären wir Ihnen kurz alles Wichtige.</p>
+      <span class="sc-link">Mehr erfahren ↓</span>
+    </a>
+    <a href="#wlan" class="service-card reveal delay-2">
+      <span class="sc-icon">📶</span>
+      <h3>WLAN im ganzen Haus</h3>
+      <p>Mesh-WLAN, Access Points oder Netzwerkkabel, damit das Internet auch im Obergeschoss und im Nebengebäude ankommt.</p>
       <span class="sc-link">Mehr erfahren ↓</span>
     </a>
     <div class="service-card reveal delay-3">
       <span class="sc-icon">🔁</span>
-      <h3>Wartung & Fehlerdiagnose</h3>
-      <p>Signalmessung, Ausrichtungskontrolle und schnelle Fehlerdiagnose bei Empfangsproblemen. Auch für bestehende Anlagen.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE: SAT-ANLAGEN -->
-<section id="sat-anlage" style="background:var(--white)">
-  <div class="feature-split">
-    <div class="feature-visual reveal">
-      <img class="img-frei" loading="lazy" decoding="async" width="785" height="778" src="bilder/sat-anlage.webp" alt="SAT-Anlage Montage Wien – Satellitenschüssel professionell installiert von AVplus e.U." style="display:block;width:100%;height:100%;object-fit:cover;" />
-      <div class="fv-overlay"></div>
-      <div class="fv-badge">
-        <span class="fv-badge-icon">🎯</span>
-        <div class="fv-badge-text">
-          <strong>Professionelle Ausrichtung</strong>
-          <span>Mit digitalem Messgerät</span>
-        </div>
-      </div>
-    </div>
-    <div class="reveal">
-      <p class="section-label">Satellitenanlagen</p>
-      <h2>Klassische SAT-Anlage. Zuverlässig installiert.</h2>
-      <p style="color:var(--gray);margin-bottom:1rem;">Rauschendes Bild, fehlende Sender oder gar kein Empfang? Ob Einfamilienhaus, Mehrparteienhaus oder Gewerbeobjekt. Wir planen und installieren die Satellitenlösung, die zu Ihrem Empfangsbedarf passt. Ohne laufende Kosten: Einmal montiert, empfangen Sie hunderte Programme dauerhaft gratis.</p>
-      <ul class="feature-list">
-        <li>Einzelanlagen für 1 Receiver bis Multiswitchanlagen für 8+ Teilnehmer</li>
-        <li>Empfang von Astra 19,2° Ost (ORF, ServusTV, RTL, ARD, ZDF u.v.m.)</li>
-        <li>Hotbird, Türksat und weitere Satelliten auf Anfrage</li>
-        <li>Unterputz- oder Aufputzverkabelung möglich</li>
-        <li>Einzel- und Gruppenantennen für Wohnanlagen</li>
-        <li>Vollständiger Sendersuchlauf und Einschulung inklusive</li>
-      </ul>
+      <h3>Wartung &amp; Fehlersuche</h3>
+      <p>Starlink läuft schlecht oder bricht ab? Wir prüfen Standort, Hindernisse, Kabel und Router. Auch bei Anlagen, die nicht von uns stammen.</p>
     </div>
   </div>
 </section>
@@ -371,7 +434,7 @@
         <li>Wandmontage, Dachmontage oder Mastmontage möglich</li>
         <li>Saubere Kabelverlegung bis zum Router-Standort</li>
         <li>WLAN-Konfiguration und Netzwerkeinrichtung</li>
-        <li>Geeignet für Einfamilienhäuser, Baustellen, Ferienhäuser & Betriebe</li>
+        <li>Geeignet für Einfamilienhäuser, Mehrfamilienhäuser, Baustellen, Ferienhäuser & Betriebe</li>
       </ul>
     </div>
     <div class="feature-visual reveal">
@@ -388,27 +451,77 @@
   </div>
 </section>
 
+<!-- INTERNET + WLAN -->
+<section id="wlan" style="background:var(--white)">
+  <div class="reveal" style="text-align:center;margin-bottom:2.5rem;">
+    <p class="section-label">Der zweite Teil, der oft vergessen wird</p>
+    <h2>Schnelles Internet nützt nichts, wenn das WLAN nicht reicht.</h2>
+    <p class="section-intro" style="margin:0 auto;">Viele kaufen eine bessere Leitung und wundern sich, dass es im Obergeschoss, in der Werkstatt oder im Stall trotzdem hakt. Dann liegt es nicht am Internet, sondern daran, wie es im Gebäude verteilt wird.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-item reveal delay-1"><span>🧱</span><strong>Dicke Wände und Decken</strong><p>Stahlbeton, Ziegel und Fußbodenheizung schlucken das WLAN-Signal.</p></div>
+    <div class="why-item reveal delay-2"><span>🏠</span><strong>Mehrere Stockwerke</strong><p>Ein Router im Erdgeschoss reicht selten bis ins Dachgeschoss.</p></div>
+    <div class="why-item reveal delay-3"><span>🏚️</span><strong>Nebengebäude</strong><p>Werkstatt, Stall, Hofladen oder Garage liegen oft außer Reichweite.</p></div>
+    <div class="why-item reveal delay-4"><span>📍</span><strong>Router am falschen Platz</strong><p>Hinter dem Schrank oder im Keller geht Leistung verloren.</p></div>
+  </div>
+
+  <div class="reveal" style="text-align:center;margin:3rem 0 1.5rem;">
+    <p class="section-label">Unsere Lösungen</p>
+    <h3 style="font-size:1.5rem;font-weight:800;">So kommt das Internet in jeden Raum</h3>
+  </div>
+  <div class="two-col" style="grid-template-columns:repeat(3,1fr);">
+    <div class="tc-card tc-wifi reveal delay-1">
+      <p class="tc-nr">Für Wohnhaus und Büro</p>
+      <h3>Mesh-WLAN</h3>
+      <p>Mehrere Geräte bilden ein gemeinsames Netz. Sie gehen durchs Haus und bleiben verbunden, ohne etwas umzuschalten.</p>
+    </div>
+    <div class="tc-card tc-wifi reveal delay-2">
+      <p class="tc-nr">Wenn es richtig stabil sein soll</p>
+      <h3>Access Points mit Kabel</h3>
+      <p>Wir verlegen Netzwerkkabel und setzen die Sender dort, wo sie gebraucht werden. Das ist die stabilste Lösung für größere Häuser und Betriebe.</p>
+    </div>
+    <div class="tc-card tc-net reveal delay-3">
+      <p class="tc-nr">Für Hof und Nebengebäude</p>
+      <h3>Verbindung zum zweiten Gebäude</h3>
+      <p>Werkstatt, Stall oder Hofladen bekommen per Kabel Anschluss ans Netz. Auch mit <a href="/lwl" style="color:var(--blue);font-weight:600;">Glasfaser</a>, wenn die Strecke länger ist.</p>
+    </div>
+  </div>
+
+  <div class="reveal" style="max-width:860px;margin:3rem auto 0;">
+    <h3 style="font-size:1.2rem;font-weight:800;text-align:center;margin-bottom:1.2rem;">So gehen wir bei Ihrem WLAN vor</h3>
+    <ol class="wlan-steps">
+      <li><strong>Messen:</strong> Wir sehen vor Ort, wo das Signal abbricht und warum.</li>
+      <li><strong>Planen:</strong> Wir legen fest, welche Geräte wohin kommen und wo Kabel nötig sind. Der Aufwand hängt von Ihrem Gebäude ab, das besprechen wir vorher mit Ihnen.</li>
+      <li><strong>Einbauen:</strong> Montage, Verkabelung und Einrichtung aus einer Hand, auch gleich mit der Starlink-Installation.</li>
+      <li><strong>Testen:</strong> Wir prüfen jeden Raum und erklären Ihnen kurz, wie alles funktioniert.</li>
+    </ol>
+    <p style="text-align:center;margin-top:1.6rem;"><a href="#kontakt" class="hero-btn hero-btn-main" data-interesse="wlan">WLAN-Beratung anfragen →</a></p>
+    <p class="check-note" style="text-align:center;">Reine WLAN-Hilfe ohne neues Internet machen wir auch. Mehr dazu unter <a href="/edv" style="color:var(--blue);font-weight:600;">EDV &amp; IT-Service</a>.</p>
+  </div>
+</section>
+
 <!-- MONTAGE-OPTIONEN -->
-<section style="background:var(--white)">
+<section id="montage" style="background:var(--white)">
   <div class="reveal" style="text-align:center;margin-bottom:1rem;">
     <p class="section-label">Montagearten</p>
-    <h2>Für jede Situation die passende Lösung.</h2>
-    <p class="section-intro" style="margin:0 auto 3rem;">Wir montieren Ihre SAT-Anlage oder Ihren Starlink-Terminal sicher und sauber. Egal wie der Standort aussieht.</p>
+    <h2>Für jedes Gebäude die passende Starlink-Montage.</h2>
+    <p class="section-intro" style="margin:0 auto 3rem;">Wir montieren Ihr Starlink-Terminal sicher und sauber, auf Schrägdach, Flachdach, an der Fassade oder auf einem eigenen Mast. Egal wie der Standort aussieht.</p>
   </div>
   <div class="services-grid">
     <div class="service-card reveal delay-1" style="border-top-color:var(--green);text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
-        <img class="img-frei" loading="lazy" decoding="async" width="800" height="1016" src="bilder/sat-dachmontage.webp" alt="SAT-Anlage Dachmontage Wien – Satellitenschüssel auf Flachdach mit Mastständer, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+        <img loading="lazy" decoding="async" width="1448" height="1086" src="bilder/starlink-dachmontage.webp" alt="Starlink Dachmontage – Terminal auf Schrägdach mit Dachhalterung montiert, AVplus e.U." style="width:100%;height:100%;object-fit:cover;object-position:70% center;" />
       </div>
-      <h3>Dachmontage</h3>
-      <p>Sichere Befestigung auf Flach- oder Schrägdach mit wetterfestem Mastständer und Kabeleinführung.</p>
+      <h3>Schrägdach</h3>
+      <p>Sichere Befestigung mit wetterfester Dachhalterung und dichter Kabeleinführung.</p>
     </div>
     <div class="service-card reveal delay-2" style="border-top-color:var(--blue);text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
-        <img class="img-frei" loading="lazy" decoding="async" width="800" height="1004" src="bilder/sat-wandmontage.webp" alt="SAT-Schüssel Wandmontage Wien – Satellitenanlage an Hausfassade montiert, AVplus e.U." style="width:100%;height:100%;object-fit:cover;" />
+        <img loading="lazy" decoding="async" width="1672" height="941" src="bilder/starlink-wien.webp" alt="Starlink Flachdachmontage Wien – Terminal auf Standrohr mit Dachplatte, AVplus e.U." style="width:100%;height:100%;object-fit:cover;object-position:40% center;" />
       </div>
-      <h3>Fassaden- & Wandmontage</h3>
-      <p>Montage an Außenwand oder Balkongeländer. Platzsparend und optisch sauber integriert.</p>
+      <h3>Flachdach &amp; Fassade</h3>
+      <p>Auf Flachdach mit Standrohr oder an der Außenwand. Platzsparend, sicher und optisch sauber.</p>
     </div>
     <div class="service-card reveal delay-3" style="border-top-color:#1a2a5e;text-align:center;">
       <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;margin-bottom:1rem;">
@@ -424,14 +537,14 @@
 <section style="background:var(--gray-light)">
   <div class="reveal" style="text-align:center;margin-bottom:1rem;">
     <p class="section-label">Unser Ablauf</p>
-    <h2>Von der Anfrage bis zum perfekten Empfang.</h2>
-    <p class="section-intro" style="margin:0 auto 3.5rem;">Schnell und sauber. So läuft Ihre Installation ab.</p>
+    <h2>Von der Anfrage bis zum laufenden Internet.</h2>
+    <p class="section-intro" style="margin:0 auto 3.5rem;">Schnell und sauber. So läuft Ihre Starlink-Installation ab.</p>
   </div>
   <div class="steps-grid">
     <div class="step-item reveal delay-1">
       <div class="step-circle">📞</div>
       <h4>Anfrage</h4>
-      <p>Adresse und Foto schicken, Fixpreisangebot innerhalb von 24 Stunden</p>
+      <p>Adresse und Foto schicken, Rückmeldung innerhalb von 24 Stunden</p>
     </div>
     <div class="step-item reveal delay-2">
       <div class="step-circle">🔍</div>
@@ -441,7 +554,7 @@
     <div class="step-item reveal delay-3">
       <div class="step-circle">🔧</div>
       <h4>Montage & Einrichtung</h4>
-      <p>Montage, Verkabelung, Ausrichtung und Signalmessung</p>
+      <p>Montage, Verkabelung, Router und WLAN einrichten, Verbindung testen</p>
     </div>
     <div class="step-item reveal delay-4">
       <div class="step-circle">✅</div>
@@ -451,41 +564,45 @@
   </div>
 </section>
 
-<!-- MARKENPARTNER -->
-<div class="brands-bar">
-  <div class="brand-logo"><span>STARLINK</span></div>
-  <div class="brand-logo"><span>MEGASAT</span></div>
-  <div class="brand-logo"><span>KATHREIN</span></div>
-  <div class="brand-logo"><span>INVERTO</span></div>
-  <div class="brand-logo"><span>TECHNISAT</span></div>
-  <div class="brand-logo"><span>HUMAX</span></div>
-</div>
-
 <!-- CTA -->
 <section style="background:var(--white)">
   <div class="cta-box reveal">
-    <h2>Jetzt SAT-Anlage oder Starlink installieren lassen.</h2>
-    <p>Schicken Sie uns kurz Ihre Adresse und ein Foto des Montageorts. Sie erhalten innerhalb von 24 Stunden ein Fixpreisangebot. Kostenlos und unverbindlich.</p>
+    <h2>Jetzt Starlink installieren lassen.</h2>
+    <p>Schicken Sie uns kurz Ihre Adresse und ein Foto des Montageorts. Wir melden uns innerhalb von 24 Stunden bei Ihnen. Kostenlos und unverbindlich.</p>
     <a href="#kontakt" class="btn-sat">Kostenloses Angebot einholen →</a>
     <p style="margin-top:1.2rem;font-size:0.95rem;">Lieber persönlich? <a href="tel:+436766520263" style="color:inherit;font-weight:700;">📞 +43 676 6520263</a></p>
   </div>
 </section>
 
+<!-- SAT-ANLAGEN (Nebenleistung) -->
+<section id="sat-anlage" style="background:var(--white);padding:3.5rem 5%;">
+  <div class="sat-side reveal">
+    <img loading="lazy" decoding="async" width="785" height="778" src="bilder/sat-anlage.webp" alt="SAT-Anlage Montage Wien – Satellitenschüssel installiert von AVplus e.U." />
+    <div>
+      <p class="section-label">Auch im Angebot</p>
+      <h2 style="font-size:1.5rem;">SAT-Anlage für TV-Empfang</h2>
+      <p style="color:var(--gray);margin-bottom:0.8rem;">Neben Starlink montieren und richten wir auch klassische SAT-Anlagen für Fernsehempfang aus, vom Einzelanschluss bis zur Anlage für mehrere Wohnungen. Ohne laufende Kosten für den Empfang der freien Programme.</p>
+      <ul class="feature-list" style="margin:0.5rem 0 1rem;">
+        <li>Montage, Ausrichtung auf Astra 19,2° Ost und Sendersuchlauf</li>
+        <li>Anlagen für 1 Receiver bis Multiswitch für mehrere Teilnehmer</li>
+        <li>Fehlersuche und Neuausrichtung bei bestehenden Anlagen</li>
+      </ul>
+      <a href="#kontakt" class="sc-link" data-interesse="sat">SAT-Anlage anfragen →</a>
+    </div>
+  </div>
+</section>
+
 <section style="background:#f5f7fa; padding:4rem 1.5rem;">
   <div style="max-width:800px; margin:0 auto;">
-    <h2 style="font-size:1.7rem; color:#1a2332; margin-bottom:2rem; text-align:center;">Häufige Fragen zu SAT-Technik & Starlink</h2>
+    <h2 style="font-size:1.7rem; color:#1a2332; margin-bottom:2rem; text-align:center;">Häufige Fragen zu Starlink, WLAN &amp; SAT-Anlagen</h2>
     <div style="display:flex; flex-direction:column; gap:1rem;">
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Montage einer SAT-Anlage in Wien?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Das hängt vom Montageort (Dach, Wand oder Mast) und dem Kabelweg ab. Schicken Sie uns kurz Ihre Adresse und ein Foto des Standorts. Sie erhalten einen Fixpreis, bevor wir kommen. Kostenlos und unverbindlich.</p>
-      </details>
-      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Starlink-Montage und was brauche ich dafür?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Hardware und Abo bestellen Sie direkt bei Starlink. Wir übernehmen Standortwahl, Montage, Kabelverlegung und die komplette WLAN-Einrichtung zum vorab vereinbarten Fixpreis. Auf Wunsch beraten wir Sie schon vor der Bestellung.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Wir begleiten Sie von der Beratung bis zur Wartung: Standortwahl, Beschaffung aller benötigten Produkte, Montage, Kabelverlegung, WLAN-Einrichtung und späterer Service. Sie müssen sich um nichts selbst kümmern. Die Kosten hängen von den Gegebenheiten vor Ort ab, nach einer Besichtigung oder ausreichenden Informationen erstellen wir Ihnen ein seriöses Angebot.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Ist Starlink an meinem Standort verfügbar?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ob Starlink an Ihrer Adresse bestellt werden kann, sehen Sie auf der Website von Starlink, wenn Sie dort Ihre Adresse eingeben. Ob der Montageort für guten Empfang geeignet ist, prüfen wir mit Ihnen. Entscheidend ist freie Sicht zum Himmel.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Das prüfen wir gerne für Sie. Schicken Sie uns Ihre Adresse, wir klären die Verfügbarkeit und sagen Ihnen, welche Datenrate dort möglich ist. Ob der Montageort für guten Empfang geeignet ist, sehen wir uns mit Ihnen an. Entscheidend ist freie Sicht zum Himmel.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann Starlink auf dem Dach oder Flachdach montiert werden?</summary>
@@ -504,36 +621,48 @@
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Je nach Tarif, Standort und optimaler Position der Antenne sind bis zu 600 Mbit/s im Download möglich. Genug für Streaming, Homeoffice und Videokonferenzen. Entscheidend ist freie Sicht zum Himmel; genau das prüfen wir beim Standortcheck.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Darf ich in einer Mietwohnung eine Schüssel montieren?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Bei Eingriffen in Fassade oder Dach sollte die Hausverwaltung zustimmen. Wir beraten Sie dazu und montieren auf Wunsch mietfreundlich. Etwa am Balkongeländer oder auf einem freistehenden Mast, ganz ohne Bohren in die Fassade.</p>
-      </details>
-      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Repariert ihr auch bestehende SAT-Anlagen?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Signalmessung, Neuausrichtung, LNB-Tausch oder Fehlersuche. Wir bringen auch Anlagen wieder zum Laufen, die nicht von uns installiert wurden.</p>
-      </details>
-      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Gibt es Gewährleistung auf die Montage?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Auf unsere Montage- und Installationsarbeiten gilt die gesetzliche Gewährleistung, bei Verbrauchern 2 Jahre. Für die Geräte selbst gelten zusätzlich die Bedingungen des jeweiligen Herstellers.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">In welchen Gebieten montiert ihr Starlink und SAT-Anlagen?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Wir sind in Wien, Niederösterreich und Burgenland für Sie da. Besonders schnell und günstig sind wir im Umkreis von etwa 80 km um Wien. Weiter entfernte Standorte übernehmen wir auf Anfrage, die Anfahrt besprechen wir vorab. Fragen kostet nichts.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Wir sind vor allem in Wien, Niederösterreich und dem Burgenland im Einsatz. Auch im übrigen Österreich sind wir für Sie da, das besprechen wir gerne auf Anfrage. Fragen kostet nichts.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet eine Starlink-Montage in Wien ungefähr?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Unsere Arbeitsleistung beginnt ab 300 €. Das gilt für den einfachsten Fall, etwa ein Starlink-Terminal auf einem Ständer im Garten mit kurzem Kabelweg. Bei Dach, Mast, Kabel durch die Wand oder einer längeren Anfahrt wird es mehr, deshalb gibt es keinen Einheitspreis. Den genauen Preis erhalten Sie vorab als Fixpreis. Hardware und Abo bestellen Sie direkt bei Starlink.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Unsere Arbeitsleistung beginnt ab 300 €. Das gilt für den einfachsten Fall, etwa ein Starlink-Terminal auf einem Ständer im Garten mit kurzem Kabelweg. Bei Dach, Mast, Kabel durch die Wand oder einer längeren Anfahrt wird es mehr, deshalb gibt es keinen Einheitspreis. Den genauen Preis nennen wir Ihnen nach einer Besichtigung oder wenn uns ausreichend Informationen vorliegen. Die Beschaffung der benötigten Produkte übernehmen wir auf Wunsch ebenfalls.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Wie läuft ein Termin ab?</summary>
-        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Wir prüfen vor Ort den Standort und die freie Sicht zum Himmel, montieren die Halterung, verlegen das Kabel, richten Starlink und WLAN ein und testen die Verbindung. Danach erklären wir Ihnen kurz alles Wichtige. Den Preis kennen Sie vorher.</p>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Wir prüfen vor Ort den Standort und die freie Sicht zum Himmel, montieren die Halterung, verlegen das Kabel, richten Starlink und WLAN ein und testen die Verbindung. Danach erklären wir Ihnen kurz alles Wichtige. Den Aufwand besprechen wir vorher mit Ihnen.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann ich Starlink selbst montieren?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja, das ist möglich. Starlink liefert eine Standardhalterung mit. Sinnvoll ist ein Fachmann dort, wo es schwieriger wird: Dach oder Mast in größerer Höhe, Kabel durch die Wand, mehrere Gebäude. Dabei geht es auch um Ihre Sicherheit und um dichte Durchführungen. Wir montieren das dann für Sie.</p>
       </details>
       <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Warum ist mein WLAN im Obergeschoss oder in der Werkstatt so schlecht?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Meist liegt es an dicken Wänden und Decken, an großen Entfernungen oder daran, dass der Router ungünstig steht. Eine schnellere Internetleitung ändert daran nichts. Mit Mesh-WLAN oder Access Points an den richtigen Stellen, bei Bedarf mit Netzwerkkabel, kommt das Internet überall an. Wir sehen uns das vor Ort an und sagen Ihnen, was nötig ist.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Kann ich das Internet auch in Werkstatt, Stall oder Nebengebäude bringen?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Je nach Entfernung verbinden wir das zweite Gebäude per Netzwerkkabel oder bei längeren Strecken mit Glasfaser und richten dort ein eigenes WLAN ein. Die Lösung hängt von Entfernung und Gelände ab, deshalb schauen wir sie uns an.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
         <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was passiert bei Sturm oder Schnee?</summary>
         <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Die Befestigung wählen wir passend zu Untergrund, Wind und Last (Dach, Wand oder Mast) und legen sie beim Standortcheck fest. Starker Schneefall kann den Empfang vorübergehend stören. Das liegt an Starlink selbst und nicht an der Montage.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Was kostet die Montage einer SAT-Anlage in Wien?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Das hängt vom Montageort (Dach, Wand oder Mast) und dem Kabelweg ab. Schicken Sie uns kurz Ihre Adresse und ein Foto des Standorts. Nach einer Besichtigung oder mit ausreichenden Informationen erstellen wir Ihnen ein seriöses Angebot. Kostenlos und unverbindlich.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Darf ich in einer Mietwohnung eine Schüssel montieren?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Bei Eingriffen in Fassade oder Dach sollte die Hausverwaltung zustimmen. Wir beraten Sie dazu und montieren auf Wunsch mietfreundlich. Etwa am Balkongeländer oder auf einem freistehenden Mast, ganz ohne Bohren in die Fassade.</p>
+      </details>
+      <details style="background:#fff; border-radius:10px; padding:1.2rem 1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <summary style="font-weight:600; color:#1a2332; cursor:pointer; font-size:1.05rem;">Repariert ihr auch bestehende SAT-Anlagen?</summary>
+        <p style="margin-top:0.8rem; color:#6b7280; line-height:1.6;">Ja. Signalmessung, Neuausrichtung, LNB-Tausch oder Fehlersuche. Wir bringen auch Anlagen wieder zum Laufen, die nicht von uns installiert wurden.</p>
       </details>
     </div>
   </div>
@@ -543,9 +672,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Was kostet die Montage einer SAT-Anlage in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Abhängig von Montageort und Kabelweg. Nach Adresse und Foto des Standorts erhalten Sie vorab einen Fixpreis. Kostenlos und unverbindlich." } },
-    { "@type": "Question", "name": "Was kostet die Starlink-Montage und was brauche ich dafür?", "acceptedAnswer": { "@type": "Answer", "text": "Hardware und Abo bestellen Sie direkt bei Starlink. Wir übernehmen Standortwahl, Montage, Verkabelung und WLAN-Einrichtung zum vereinbarten Fixpreis." } },
-    { "@type": "Question", "name": "Ist Starlink an meinem Standort verfügbar?", "acceptedAnswer": { "@type": "Answer", "text": "Ob Starlink an Ihrer Adresse bestellt werden kann, sehen Sie auf der Website von Starlink. Ob der Montageort geeignet ist, prüfen wir mit Ihnen. Entscheidend ist freie Sicht zum Himmel." } },
+    { "@type": "Question", "name": "Was kostet die Montage einer SAT-Anlage in Wien?", "acceptedAnswer": { "@type": "Answer", "text": "Abhängig von Montageort und Kabelweg. Nach einer Besichtigung oder mit Adresse und Foto des Standorts erstellen wir Ihnen ein seriöses Angebot. Kostenlos und unverbindlich." } },
+    { "@type": "Question", "name": "Was kostet die Starlink-Montage und was brauche ich dafür?", "acceptedAnswer": { "@type": "Answer", "text": "Wir begleiten Sie von der Beratung bis zur Wartung, inklusive Beschaffung aller benötigten Produkte, Montage, Verkabelung und WLAN-Einrichtung. Die Kosten hängen von den Gegebenheiten ab, nach einer Besichtigung erstellen wir ein seriöses Angebot." } },
+    { "@type": "Question", "name": "Ist Starlink an meinem Standort verfügbar?", "acceptedAnswer": { "@type": "Answer", "text": "Das prüfen wir gerne für Sie. Mit Ihrer Adresse klären wir die Verfügbarkeit und die mögliche Datenrate. Ob der Montageort geeignet ist, sehen wir uns mit Ihnen an. Entscheidend ist freie Sicht zum Himmel." } },
     { "@type": "Question", "name": "Kann Starlink auf dem Dach oder Flachdach montiert werden?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Montage auf Flach- und Schrägdach, an der Wand oder auf einem freistehenden Mast. Die passende Variante hängt vom Gebäude und der Sicht zum Himmel ab." } },
     { "@type": "Question", "name": "Wie kommt das Kabel ins Gebäude?", "acceptedAnswer": { "@type": "Answer", "text": "Sauber vom Montageort bis zum Router, innerhalb der Wand oder als Außeninstallation, inklusive Durchführung und Abdichtung." } },
     { "@type": "Question", "name": "Richtet ihr auch das WLAN ein?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wir übernehmen die Router- und WLAN-Konfiguration. Wie sich das mit einem bestehenden Netzwerk verbinden lässt, besprechen wir vorab." } },
@@ -553,10 +682,12 @@
     { "@type": "Question", "name": "Darf ich in einer Mietwohnung eine Schüssel montieren?", "acceptedAnswer": { "@type": "Answer", "text": "Bei Eingriffen in Fassade oder Dach sollte die Hausverwaltung zustimmen. Wir montieren auf Wunsch mietfreundlich am Balkon oder freistehenden Mast." } },
     { "@type": "Question", "name": "Repariert ihr auch bestehende SAT-Anlagen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Signalmessung, Neuausrichtung, LNB-Tausch und Fehlersuche. Auch bei Fremdanlagen." } },
     { "@type": "Question", "name": "Gibt es Gewährleistung auf die Montage?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Auf unsere Montage- und Installationsarbeiten gilt die gesetzliche Gewährleistung, bei Verbrauchern 2 Jahre. Für die Geräte selbst gelten zusätzlich die Bedingungen des jeweiligen Herstellers." } },
-    { "@type": "Question", "name": "In welchen Gebieten montiert ihr Starlink und SAT-Anlagen?", "acceptedAnswer": { "@type": "Answer", "text": "Wir sind in Wien, Niederösterreich und Burgenland für Sie da. Besonders schnell und günstig sind wir im Umkreis von etwa 80 km um Wien. Weiter entfernte Standorte übernehmen wir auf Anfrage, die Anfahrt besprechen wir vorab. Fragen kostet nichts." } },
-    { "@type": "Question", "name": "Was kostet eine Starlink-Montage in Wien ungefähr?", "acceptedAnswer": { "@type": "Answer", "text": "Unsere Arbeitsleistung beginnt ab 300 €. Das gilt für den einfachsten Fall, etwa ein Starlink-Terminal auf einem Ständer im Garten mit kurzem Kabelweg. Bei Dach, Mast, Kabel durch die Wand oder einer längeren Anfahrt wird es mehr, deshalb gibt es keinen Einheitspreis. Den genauen Preis erhalten Sie vorab als Fixpreis. Hardware und Abo bestellen Sie direkt bei Starlink." } },
-    { "@type": "Question", "name": "Wie läuft ein Termin ab?", "acceptedAnswer": { "@type": "Answer", "text": "Wir prüfen vor Ort den Standort und die freie Sicht zum Himmel, montieren die Halterung, verlegen das Kabel, richten Starlink und WLAN ein und testen die Verbindung. Danach erklären wir Ihnen kurz alles Wichtige. Den Preis kennen Sie vorher." } },
+    { "@type": "Question", "name": "In welchen Gebieten montiert ihr Starlink und SAT-Anlagen?", "acceptedAnswer": { "@type": "Answer", "text": "Wir sind vor allem in Wien, Niederösterreich und dem Burgenland im Einsatz. Auch im übrigen Österreich sind wir für Sie da, das besprechen wir gerne auf Anfrage. Fragen kostet nichts." } },
+    { "@type": "Question", "name": "Was kostet eine Starlink-Montage in Wien ungefähr?", "acceptedAnswer": { "@type": "Answer", "text": "Unsere Arbeitsleistung beginnt ab 300 €. Das gilt für den einfachsten Fall, etwa ein Starlink-Terminal auf einem Ständer im Garten mit kurzem Kabelweg. Bei Dach, Mast, Kabel durch die Wand oder einer längeren Anfahrt wird es mehr, deshalb gibt es keinen Einheitspreis. Den genauen Preis nennen wir Ihnen nach einer Besichtigung oder wenn uns ausreichend Informationen vorliegen. Die Beschaffung der benötigten Produkte übernehmen wir auf Wunsch ebenfalls." } },
+    { "@type": "Question", "name": "Wie läuft ein Termin ab?", "acceptedAnswer": { "@type": "Answer", "text": "Wir prüfen vor Ort den Standort und die freie Sicht zum Himmel, montieren die Halterung, verlegen das Kabel, richten Starlink und WLAN ein und testen die Verbindung. Danach erklären wir Ihnen kurz alles Wichtige. Den Aufwand besprechen wir vorher mit Ihnen." } },
     { "@type": "Question", "name": "Kann ich Starlink selbst montieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, das ist möglich. Starlink liefert eine Standardhalterung mit. Sinnvoll ist ein Fachmann dort, wo es schwieriger wird: Dach oder Mast in größerer Höhe, Kabel durch die Wand, mehrere Gebäude. Dabei geht es auch um Ihre Sicherheit und um dichte Durchführungen. Wir montieren das dann für Sie." } },
+    { "@type": "Question", "name": "Warum ist mein WLAN im Obergeschoss oder in der Werkstatt so schlecht?", "acceptedAnswer": { "@type": "Answer", "text": "Meist liegt es an dicken Wänden und Decken, großen Entfernungen oder einem ungünstigen Router-Standort. Mit Mesh-WLAN oder Access Points an den richtigen Stellen, bei Bedarf mit Netzwerkkabel, kommt das Internet überall an. Wir sehen uns das vor Ort an." } },
+    { "@type": "Question", "name": "Kann ich das Internet auch in Werkstatt, Stall oder Nebengebäude bringen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Je nach Entfernung verbinden wir das zweite Gebäude per Netzwerkkabel oder bei längeren Strecken mit Glasfaser und richten dort ein eigenes WLAN ein." } },
     { "@type": "Question", "name": "Was passiert bei Sturm oder Schnee?", "acceptedAnswer": { "@type": "Answer", "text": "Die Befestigung wählen wir passend zu Untergrund, Wind und Last (Dach, Wand oder Mast) und legen sie beim Standortcheck fest. Starker Schneefall kann den Empfang vorübergehend stören. Das liegt an Starlink selbst und nicht an der Montage." } }
   ]
 }
@@ -567,24 +698,59 @@
   <div class="ki-wrap">
     <div class="ki-intro">
       <p class="ki-eyebrow">Kostenlos &amp; unverbindlich</p>
-      <h2>Angebot für SAT oder Starlink anfragen</h2>
-      <p class="ki-sub">Schicken Sie uns Ihre Adresse und – wenn möglich – ein Foto des Montageorts. Sie erhalten innerhalb von 24 Stunden ein Fixpreisangebot.</p>
+      <h2>Internet-Check und Angebot anfragen</h2>
+      <p class="ki-sub">Schicken Sie uns Ihre Adresse. Wir prüfen, welche Datenrate dort möglich ist, und melden uns innerhalb von 24 Stunden mit dem Ergebnis. Ein Angebot erstellen wir nach Besichtigung oder wenn uns ausreichend Informationen vorliegen.</p>
       <div class="ki-contacts">
-        <a href="tel:+436766520263" class="ki-contact">📞 +43 676 6520263</a>
-        <a href="mailto:office@avplus.at" class="ki-contact">✉️ office@avplus.at</a>
+        <div class="ki-item">
+          <div class="ki-icon">👤</div>
+          <div>
+            <div class="ki-label">Ihr Ansprechpartner</div>
+            <div class="ki-value">Team AVplus</div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon">📍</div>
+          <div>
+            <div class="ki-label">Adresse</div>
+            <div class="ki-value">Edith-Kramer-Weg 6<br>1220 Wien, Österreich</div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon">📞</div>
+          <div>
+            <div class="ki-label">Telefon</div>
+            <div class="ki-value"><a href="tel:+436766520263">+43 676 6520263</a></div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon">✉️</div>
+          <div>
+            <div class="ki-label">E-Mail</div>
+            <div class="ki-value"><a href="mailto:office@avplus.at">office@avplus.at</a></div>
+          </div>
+        </div>
       </div>
     </div>
     <form class="ki-form" action="/kontakt.php" method="POST" data-require-contact>
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="_subject" value="Neue Anfrage über avplus.at – SAT-Technik & Starlink" />
       <input type="hidden" name="bereich" value="SAT-Technik & Starlink" />
+      <input type="hidden" name="nachricht" value="" />
       <input type="text" name="name" placeholder="Ihr Name *" required aria-label="Ihr Name" autocomplete="name" />
       <div class="ki-row">
         <input type="tel" name="telefon" placeholder="Telefon" aria-label="Telefon" autocomplete="tel" />
         <input type="email" name="email" placeholder="E-Mail" aria-label="E-Mail" autocomplete="email" />
       </div>
       <p class="ki-hint">Telefon <strong>oder</strong> E-Mail genügt.</p>
-      <textarea name="nachricht" placeholder="Ort oder Adresse und worum es geht (hilft für den Fixpreis)" aria-label="Ihre Nachricht"></textarea>
+      <input type="text" name="adresse" placeholder="Adresse (Straße, PLZ, Ort) *" required aria-label="Adresse" autocomplete="street-address" />
+      <fieldset class="ki-interest">
+        <legend>Wobei sollen wir helfen?</legend>
+        <label><input type="checkbox" name="interesse" value="Internet-Check: höchstmögliche Datenrate an der Adresse" id="int-check" /> Wie schnell kann das Internet bei mir werden?</label>
+        <label><input type="checkbox" name="interesse" value="Starlink-Montage und Einrichtung" /> Starlink montieren und einrichten</label>
+        <label><input type="checkbox" name="interesse" value="WLAN-Abdeckung im Haus / Gebäude" id="int-wlan" /> WLAN im ganzen Haus oder Hof</label>
+        <label><input type="checkbox" name="interesse" value="SAT-Anlage (TV-Empfang)" id="int-sat" /> SAT-Anlage für TV</label>
+      </fieldset>
+      <textarea name="anmerkung" placeholder="Anmerkungen (z. B. Gebäude, aktuelles Problem)" aria-label="Anmerkungen"></textarea>
       <button type="submit" class="ki-submit">Anfrage absenden →</button>
       <p class="ki-hint">Ihre Angaben verwenden wir nur zur Bearbeitung Ihrer Anfrage. Mehr in der <a href="/impressum#datenschutz">Datenschutzerklärung</a>.</p>
       <div class="ki-msg" hidden></div>
@@ -624,6 +790,30 @@
   </div>
 </footer>
 
+<script>
+  /* Anfrage-Text für kontakt.php zusammenbauen (Adresse, Auswahl, Anmerkung); läuft vor kontakt-inline.js */
+  (function () {
+    document.querySelectorAll('.ki-form').forEach(function (form) {
+      form.addEventListener('submit', function () {
+        var teile = [];
+        var adr = form.querySelector('[name="adresse"]');
+        if (adr && adr.value.trim()) teile.push('Adresse: ' + adr.value.trim());
+        var wahl = Array.prototype.map.call(form.querySelectorAll('[name="interesse"]:checked, input[type="hidden"][name="interesse"]'), function (c) { return '- ' + c.value; });
+        if (wahl.length) teile.push('Gewünscht:\n' + wahl.join('\n'));
+        var anm = form.querySelector('[name="anmerkung"]');
+        if (anm && anm.value.trim()) teile.push('Anmerkungen:\n' + anm.value.trim());
+        form.querySelector('[name="nachricht"]').value = teile.join('\n\n');
+      });
+    });
+    /* Knöpfe mit data-interesse wählen die passende Option vor */
+    document.querySelectorAll('[data-interesse]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var box = document.getElementById('int-' + a.getAttribute('data-interesse'));
+        if (box) box.checked = true;
+      });
+    });
+  })();
+</script>
 <script>
   const observer = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
