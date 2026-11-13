@@ -144,11 +144,32 @@ if (count($hits) >= MAX_PER_HOUR) {
     respond(429, false, 'Zu viele Anfragen. Bitte rufen Sie uns an: +43 676 6520263.', $wantsJson);
 }
 
+/* ── Spam-Verdacht: Die Anfrage wird trotzdem zugestellt, nur im Betreff markiert.
+      So geht keine echte Anfrage verloren. ── */
+$verdacht = [];
+if ($elapsed === null) {
+    $verdacht[] = 'Zeitfeld fehlt (ohne JavaScript gesendet)';
+}
+$botTexte = [
+    '/Ich wünsche weitere Informationen\.\s*Bitte kontaktieren Sie mich per E-Mail/iu',
+    '/hear more about company news/i',
+    '/send me news and updates/i',
+    '/medientechnik\s*&\s*smart home wien/iu',
+];
+foreach ($botTexte as $muster) {
+    if (preg_match($muster, $nachricht) === 1) {
+        $verdacht[] = 'bekannter Bot-Text';
+        break;
+    }
+}
+
 /* ── E-Mail zusammenstellen ── */
 $referer = (string) parse_url($_SERVER['HTTP_REFERER'] ?? '', PHP_URL_PATH);
 $zeit = (new DateTimeImmutable('now', new DateTimeZone('Europe/Vienna')))->format('d.m.Y H:i');
-$subject = 'Neue Anfrage über avplus.at' . ($bereich !== '' ? ' – ' . headerSafe($bereich) : '');
-$body = "Neue Anfrage über die Webseite\n"
+$subject = ($verdacht !== [] ? '[Spam-Verdacht] ' : '')
+    . 'Neue Anfrage über avplus.at' . ($bereich !== '' ? ' – ' . headerSafe($bereich) : '');
+$body = ($verdacht !== [] ? 'Spam-Verdacht: ' . implode(', ', $verdacht) . "\n\n" : '')
+    . "Neue Anfrage über die Webseite\n"
     . "------------------------------\n"
     . 'Bereich:  ' . ($bereich !== '' ? $bereich : '-') . "\n"
     . 'Name:     ' . $name . "\n"
