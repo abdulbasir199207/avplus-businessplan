@@ -43,6 +43,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.avplus.at/wlan</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
     <loc>https://www.avplus.at/ueber-uns</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
